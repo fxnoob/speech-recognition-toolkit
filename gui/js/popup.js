@@ -49,6 +49,8 @@ $('#myTab a').click(function (e) {
 
 
 
+
+
 //-----------------Utils-----------------------------------------
 
 function set_vals(key , value , callback=null){
@@ -60,7 +62,7 @@ function set_vals(key , value , callback=null){
 function get_vals(key,callback){
 	var res = localStorage.getItem(key);
 	var res_obj = {};
-		res_obj[key] = res;
+	res_obj[key] = res;
 	console.log(res_obj);
 	callback(res_obj);
 }

@@ -1,32 +1,57 @@
- var Coord ={x:null,y:null};
-document.addEventListener("mousedown",mff,false);
+var D ={data:null};
+//getting status of allow copypaste from extensions localStorage using message passing mechanism
+chrome.runtime.sendMessage({method: "settings_fastcp"}, function(response) {
+  //alert(response);
+  console.log(response);
+  if (response.data.allow_fast_cp_status=="yes") {
+    //fast copy
+    document.addEventListener("mouseup",ff,false);
+    //fast paste
+    document.addEventListener("mousemove",mff,false);
+    //cutting the text from document
+    document.addEventListener("cut",cff,false);
+  }
+});
+
+//capituring message
+
+
+
+function ff(e)
+{
+
+  var data = document.getSelection().toString() ;
+  if(data!=''&&data.length!=0)
+  {
+    D.data= data;
+    document.execCommand('copy');
+    event.preventDefault();
+  }
+}
 function mff(e)
 {
-     Coord.x = e.clientX;
-     Coord.y = e.clientY;
-}
-chrome.runtime.onMessage.addListener(function(message,sender,sendResponse){
-  //console.log(message);  
-  if(message.action.menuItemId==12)
-      {
-         //codes for handling first context menu
-          var  ele;
-     if(Coord.x!=null&&Coord.y!=null)
-        {
-          ele = document.elementFromPoint(Coord.x, Coord.y);
-          if(ele.type=='password')
-          {
-               ele.type='text';
-          }else
-           alert("Not a passord field!");
-        }
+  var x = e.clientX;
+  var y = e.clientY;
+  var ele = document.elementFromPoint(x,y);
+  var data;
+  if(ele.type=='text'||ele.type=='textarea'||ele.type=='password'||ele.type=='email')
+  {
+    ele.addEventListener('dblclick',function(ee){
+
+      if(D.data!=null) {
+        ele.value = D.data;
+        event.preventDefault();
+
       }
-      else if(message.action.menuItemId==13)
-	{
-           //codes for handling second context menu
-        }
-      else if(message.action.menuItemId==14)
-	{
-         //codes for handling third context menu
-        }
-});
+    },false);
+  }
+
+
+}
+//function for handling cut event
+function cff(e)
+{
+  e.srcElement.innerHTML = e.srcElement.innerHTML.substring(0,e.srcElement.innerHTML.indexOf(document.getSelection().toString()))+e.srcElement.innerHTML.substring(e.srcElement.innerHTML.indexOf(document.getSelection().toString())+document.getSelection().toString().length);
+    // console.log(document.getSelection().getRangeAt(0));
+  }
+
