@@ -34,16 +34,14 @@ $('#myTab a').click(function (e) {
    document.getElementById('allow_fast_cp').addEventListener("click",function(){
    	var value = document.getElementById('allow_fast_cp').checked?"yes":"no";
    	set_vals('allow_fast_cp_status',value);
+   	refresh_page();
    });
 
 
    document.getElementById('allow_fast_override').addEventListener("click",function(){
    	var value = document.getElementById('allow_fast_override').checked?"yes":"no";
-   	set_vals('allow_fast_override_status',value,function(){
-   		get_vals('allow_fast_override_status', function(result) {
-   			console.log(result);
-   		});
-   	});
+   	set_vals('allow_fast_override_status',value);
+   	refresh_page();
    });
 
 
@@ -65,4 +63,10 @@ function get_vals(key,callback){
 	res_obj[key] = res;
 	console.log(res_obj);
 	callback(res_obj);
+}
+
+function refresh_page(){
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		chrome.tabs.update(tabs[0].id, {url: tabs[0].url});
+	});
 }
