@@ -15,6 +15,14 @@ function __setData(D){
   }
   return ret;
 }
+//broadcasting data 
+//params - > data:__getData()
+function __BsetData(D){
+  var ret = __setData(D);
+  if(ret)
+    chrome.runtime.sendMessage({method: "BsetDataPlease",data:D});
+  return ret;
+}
 function __getData(){
   return ____D;
 }
@@ -25,7 +33,15 @@ function __isNonCopyElements(ele){
   return ret;  
 }
 //init
-var ____D = new __D(null);
+var ____D = new __D(null); 
+//listening to broadcast event  
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
+
+  if (request.method == "BsetDataPlease"){ 
+    console.log(request);
+    __setData(request.data);
+  } 
+}); 
 //getting status of allow copypaste from extensions localStorage using message passing mechanism
 chrome.runtime.sendMessage({method: "settings_fastcp"}, function(response) {
   //alert(response);
@@ -40,16 +56,11 @@ chrome.runtime.sendMessage({method: "settings_fastcp"}, function(response) {
     document.addEventListener("cut",cff,false);
   }
 });
-
-//utils
-
-
-
+//setting brodcasted data
 
 //capituring message
 function ff(e)
 {
-
   var data = document.getSelection().toString() ;
   var x = e.clientX;
   var y = e.clientY;
@@ -59,7 +70,7 @@ function ff(e)
     {
       //D.data= data;
       var temp = new __D(data);
-      if(__setData(temp))
+      if(__BsetData(temp))
         document.execCommand('copy'); 
       event.preventDefault();
     }
@@ -72,24 +83,23 @@ function mff(e)
   var ele = document.elementFromPoint(x,y);
   var data;
   if(ele!=null)
-  if(ele.type=='text'||ele.type=='textarea'||ele.type=='password'||ele.type=='email')
-  {
-    ele.addEventListener('dblclick',function(ee){
-      var D = __getData();
-      if(D.data!=null) {
-        if (D.override = "yes")
-          ele.value = D.data;
-        else {
-          var dat = ele.value +D.data;
-          ele.value=dat;
+    if(ele.type=='text'||ele.type=='textarea'||ele.type=='password'||ele.type=='email')
+    {
+      ele.addEventListener('dblclick',function(ee){
+        var D = __getData();
+        if(D.data!=null) {
+          if (D.override = "yes")
+            ele.value = D.data;
+          else {
+            var dat = ele.value +D.data;
+            ele.value=dat;
+          }
+          event.preventDefault();
         }
-        event.preventDefault();
-      }
-    },false);
+      },false);
+    }
   }
 
-
-}
 //function for handling cut event
 function cff(e)
 {

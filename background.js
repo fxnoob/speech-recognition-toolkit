@@ -23,18 +23,26 @@ var child2 = chrome.contextMenus.create
 function genericOnClick(){} 
 
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
+
 	if (request.method == "settings_fastcp"){ 
 		var _data = getSettings(); 
 		console.log(_data);
 		sendResponse({data:_data});
 	}
+	else if(request.method == "BsetDataPlease"){
+		var dat = request.data; 
+		chrome.tabs.query({}, function(tabs) {
+			var message = {method:"BsetDataPlease",data: dat};
+			for (var i=0; i<tabs.length; ++i) {
+				chrome.tabs.sendMessage(tabs[i].id, message);
+			}
+		});
+	}
 	else
       sendResponse({}); // snub them.
-});
 
-
-
+}); 
 //-----------------Util------------------------
 
 function getSettings(){
