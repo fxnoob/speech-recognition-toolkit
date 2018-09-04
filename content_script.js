@@ -37,15 +37,15 @@ var ____D = new __D(null);
 //listening to broadcast event  
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
 
-  if (request.method == "BsetDataPlease"){ 
-    console.log(request);
+  if (request.method == "BsetDataPlease"){  
     __setData(request.data);
   } 
 }); 
 //getting status of allow copypaste from extensions localStorage using message passing mechanism
 chrome.runtime.sendMessage({method: "settings_fastcp"}, function(response) {
-  //alert(response);
-  console.log(response);
+  console.log(response.data.savedData);
+  //already copied data for newly opened tab
+  __setData(response.data.savedData);
   if (response.data.allow_fast_cp_status=="yes") {
     //fast copy
     document.addEventListener("mouseup",ff,false);
@@ -105,5 +105,5 @@ function cff(e)
 {
   e.srcElement.innerHTML = e.srcElement.innerHTML.substring(0,e.srcElement.innerHTML.indexOf(document.getSelection().toString()))+e.srcElement.innerHTML.substring(e.srcElement.innerHTML.indexOf(document.getSelection().toString())+document.getSelection().toString().length);
     // console.log(document.getSelection().getRangeAt(0));
-  }
+}
 
