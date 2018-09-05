@@ -1,12 +1,12 @@
 {
-   "name" : "Speedster",
+   "name" : "Fast Copy Paste",
    "version":"2.0",
-   "permissions":["tabs","storage","activeTab","webNavigation", "*://*/*","clipboardWrite", "clipboardRead","contextMenus"],
+   "permissions":["tabs","storage","webNavigation","*://*/*","clipboardWrite"],
    "background":{
                 "scripts":["background.js"]
                },
   "browser_action": {
-    "default_title": "Speedster",
+    "default_title": "Fast Copy Paste",
     "default_icon": "gui/images/icon.png",
     "default_popup": "gui/popup.html"
   },
