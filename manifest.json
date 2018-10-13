@@ -1,12 +1,12 @@
 {
-   "name" : "Speedster",
+   "name" : "Fast Copy Paste",
    "version":"2.0",
-   "permissions":["tabs","storage","activeTab","webNavigation", "*://*/*","clipboardWrite", "clipboardRead","contextMenus"],
+   "permissions":["tabs","storage","webNavigation","*://*/*","clipboardWrite"],
    "background":{
                 "scripts":["background.js"]
                },
   "browser_action": {
-    "default_title": "Speedster",
+    "default_title": "Fast Copy Paste",
     "default_icon": "gui/images/icon.png",
     "default_popup": "gui/popup.html"
   },
@@ -16,10 +16,9 @@
         },
 "content_scripts": [{
      "matches": ["<all_urls>"],
-     "js": ["content_script.js"],
-     "run_at": "document_idle"
-      
-  }],
+     "js": ["jquery.min.js", "annyang.min.js","js/classie.js","js/cssParser.js","js/modalEffects.js","js/modernizr.custom.js","content_script.js"],
+     "run_at": "document_end"
+  }], 
   "manifest_version": 2
-
 }
+
