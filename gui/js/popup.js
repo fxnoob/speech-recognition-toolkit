@@ -3,7 +3,7 @@ $('#myTab a').click(function (e) {
 	$(this).tab('show')
 })
 
-/*
+   /*
    clicking on the setting buttons
    */ 
 
@@ -30,19 +30,46 @@ $('#myTab a').click(function (e) {
    	} 
    });
 
+   get_vals('allow_speech_recog_status', function(result) {
+      console.log(result);
+      if('allow_speech_recog_status' in result){
+         console.log("if");
+         document.getElementById('allow_speech_recog').checked = (result['allow_speech_recog_status']=="yes")?true:false;
+      }
+      else{
+         console.log("else");
+         set_vals('allow_speech_recog_status',"no");
+         document.getElementById('allow_speech_recog').checked = false;
+      } 
+   });
 
+   /*
+      enable/disable fast copy paste
+   */
    document.getElementById('allow_fast_cp').addEventListener("click",function(){
    	var value = document.getElementById('allow_fast_cp').checked?"yes":"no";
    	set_vals('allow_fast_cp_status',value);
    	refresh_page();
    });
 
-
+   /*
+      enable/disable fast override
+   */
    document.getElementById('allow_fast_override').addEventListener("click",function(){
    	var value = document.getElementById('allow_fast_override').checked?"yes":"no";
    	set_vals('allow_fast_override_status',value);
    	refresh_page();
    });
+
+   /*
+      enable/disable speech recognition
+   */
+   document.getElementById('allow_speech_recog').addEventListener("click",function(){
+      var value = document.getElementById('allow_speech_recog').checked?"yes":"no";
+      set_vals('allow_speech_recog_status',value,function(){
+         toggle_speech_recog();
+      });
+   });   
 
 
 
@@ -69,4 +96,13 @@ function refresh_page(){
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 		chrome.tabs.update(tabs[0].id, {url: tabs[0].url});
 	});
+}
+
+function toggle_speech_recog(){
+   get_vals("allow_speech_recog_status",function(val){
+      if(val['allow_speech_recog_status']=="yes")
+         chrome.tabs.executeScript(null, {file: "js/start.js"});
+      else
+         chrome.tabs.executeScript(null, {file: "js/abort.js"});  
+   });
 }

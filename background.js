@@ -5,8 +5,7 @@ function __D(value){
   this.override = null;//override setting
 }
 //already selected data for newly opened tab
-var savedData = new __D(null);
- 
+var savedData = new __D(null); 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) { 
 
 	if (request.method == "settings_fastcp"){ 
@@ -21,7 +20,17 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		chrome.tabs.query({}, function(tabs) {
 			var message = {method:"BsetDataPlease",data: dat};
 			for (var i=0; i<tabs.length; ++i) {
+				//console.log("BsetDataPlease");    	
+				//console.log(tabs[i].id);	
 				chrome.tabs.sendMessage(tabs[i].id, message);
+			}
+		});
+	}
+	else if(request.method == "speechRecognitionPlease"){
+		var tab_num = request.data-1;
+		chrome.tabs.query({}, function(tabs) {
+			if(tab_num<tabs.length){
+				 chrome.tabs.highlight({'tabs': tab_num}, function() {});
 			}
 		});
 	}
@@ -32,7 +41,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 //-----------------Util------------------------
 
 function getSettings(){
-	var data = {'allow_fast_override_status':'no','allow_fast_cp_status':'yes',savedData:savedData};
+	var data = {'allow_fast_override_status':'no','allow_fast_cp_status':'yes','savedData':savedData};
 	if ('allow_fast_override_status' in localStorage)
 		data.allow_fast_override_status = localStorage['allow_fast_override_status'];
 	if ('allow_fast_cp_status' in localStorage) 

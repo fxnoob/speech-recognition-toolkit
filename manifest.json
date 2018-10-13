@@ -16,10 +16,10 @@
         },
 "content_scripts": [{
      "matches": ["<all_urls>"],
-     "js": ["content_script.js"],
-     "run_at": "document_idle"
-      
-  }],
+     "js": ["jquery.min.js", "annyang.min.js","js/classie.js","js/cssParser.js","js/modalEffects.js","js/modernizr.custom.js","content_script.js"],
+     "css":["css/component.css"],
+     "run_at": "document_end"
+  }], 
   "manifest_version": 2
-
 }
+
