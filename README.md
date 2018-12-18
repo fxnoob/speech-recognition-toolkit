@@ -1,6 +1,6 @@
 # fast-copy-paste
 
-> Published on chrome store.
+> Published on 
 > [Chrome store](https://chrome.google.com/webstore/detail/hmpihaioaacpehkghnkmnmgmihalkmdf)
 
 
