@@ -1,6 +1,7 @@
 # fast-copy-paste
 
-[![N|Solid](https://raw.githubusercontent.com/fxnoob/fast-copy-paste/master/image.gif)](https://raw.githubusercontent.com/fxnoob/fast-copy-paste)
+> Published on chrome store.
+> [![N|Solid](https://chrome.google.com/webstore/detail/hmpihaioaacpehkghnkmnmgmihalkmdf)](https://chrome.google.com/webstore/detail/hmpihaioaacpehkghnkmnmgmihalkmdf)
 
 
 ## Feature request and contributions to the project are always welcome!
