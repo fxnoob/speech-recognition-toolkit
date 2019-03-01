@@ -15,16 +15,16 @@ export default class Setting {
     }
     async set(params) {
         const data = await this.get();
-        if("isExtAllowed" in data ) {
+        if(typeof  data.isExtAllowed !== "undefined") {
             this.settingvars.isExtAllowed = data.isExtAllowed;
         }
-        if("isExtAllowed" in params ) {
+        if(typeof  params.isExtAllowed !== "undefined") {
             this.settingvars.isExtAllowed = params.isExtAllowed;
         }
-        if("isOverridable" in data) {
+        if(typeof data.isOverridable !== "undefined") {
             this.settingvars.isOverridable = data.isOverridable;
         }
-        if("isOverridable" in params) {
+        if(typeof params.isOverridable !== "undefined") {
             this.settingvars.isOverridable = params.isOverridable;
         }
         await db.set({settings: this.settingvars});
