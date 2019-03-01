@@ -24,4 +24,8 @@ export class Dom {
             }
         }
     }
+    cutDomText(e) {
+        e.srcElement.innerHTML = e.srcElement.innerHTML.substring(0,e.srcElement.innerHTML.indexOf(document.getSelection().toString()))+e.srcElement.innerHTML.substring(e.srcElement.innerHTML.indexOf(document.getSelection().toString())+document.getSelection().toString().length);
+    }
+
 }

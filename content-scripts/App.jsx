@@ -20,9 +20,9 @@ chrome.runtime.sendMessage({method: "getSettings"}, (response) => {
         document.addEventListener("mouseup", dom.setSelectedText,false);
         /** fast paste */
         document.addEventListener("mousemove", dom.fillByPreviouslySelectedText,false);
-        // //cutting the text from document
-        // document.addEventListener("cut",cff,false);
-        // //search on double click
+        /** cutting the text from document */
+         document.addEventListener("cut" , dom.cutDomText ,false);
+        /** search selected text on double click*/
         // document.addEventListener("dblclick" , searchOnDblClick);
     }
 });

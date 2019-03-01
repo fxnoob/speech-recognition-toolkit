@@ -46,6 +46,7 @@
     "react-hot-loader": "^4.6.3",
     "react-particle-effect-button": "^1.0.1",
     "react-particles-js": "^2.4.2",
+    "react-swipeable-views": "^0.13.1",
     "webpack-notifier": "^1.7.0"
   }
 }
