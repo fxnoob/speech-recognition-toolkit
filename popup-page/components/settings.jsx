@@ -22,9 +22,10 @@ class Settings extends React.Component {
     };
     componentDidMount() {
         const message = new MessageLib();
-        message.getData()
+        Setting.get()
             .then(res => {
-                this.setState(res);
+                console.log("componentDidMount",res);
+                this.setState(res.settings);
             });
     }
     handleChange = name => event => {
@@ -44,7 +45,7 @@ class Settings extends React.Component {
                             <Switch
                                 checked={this.state.isExtAllowed}
                                 onChange={this.handleChange('isExtAllowed')}
-                                value="gilad"
+                                value="Enable/Disable Extension"
                             />
                         }
                         label="Enable/Disable Extension"
