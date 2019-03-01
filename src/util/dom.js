@@ -11,15 +11,17 @@ export class Dom {
     }
     fillByPreviouslySelectedText(e) {
         const ele = document.elementFromPoint(e.clientX,e.clientY);
-        if(ele!=null)
+        if(ele!=null) {
             if(ele.type=='text'||ele.type=='textarea'||ele.type=='password'||ele.type=='email') {
                 ele.addEventListener('dblclick',(ee) => {
                     chrome.runtime.sendMessage({method: "getData"}, (response) => {
                         console.log("getData" , response);
-                        ele.value = response.data.data;
+                        ele.value = response.data.data.data;
+                        return true;
                     });
                     e.preventDefault();
                 },false);
             }
+        }
     }
 }
