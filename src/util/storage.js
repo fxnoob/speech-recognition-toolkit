@@ -4,6 +4,7 @@ const db = new Db();
 export default class Storage {
     constructor() {
         this.data = {
+            isExtAllowed: true ,
             timeStamp: +new Date ,
             data: "" ,
             isOverridable: false
