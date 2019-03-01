@@ -3,15 +3,16 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Switch from '@material-ui/core/Switch';
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
 
 import MessageLib from "../../src/util/message";
 import {Pages as PageLib} from "../../src/util/pages";
+import SettingLib  from "../../src/util/setting";
 
 const page = new PageLib();
+const Setting = new SettingLib();
 class Settings extends React.Component {
     state = {
         isExtAllowed: true ,
@@ -28,6 +29,7 @@ class Settings extends React.Component {
     }
     handleChange = name => event => {
         this.setState({ [name]: event.target.checked });
+        Setting.set({[name]: event.target.checked });
     };
     openOptionPage() {
         page.openPage("option.html");
@@ -41,7 +43,7 @@ class Settings extends React.Component {
                         control={
                             <Switch
                                 checked={this.state.isExtAllowed}
-                                onChange={this.handleChange('gilad')}
+                                onChange={this.handleChange('isExtAllowed')}
                                 value="gilad"
                             />
                         }
@@ -51,11 +53,11 @@ class Settings extends React.Component {
                         control={
                             <Switch
                                 checked={this.state.isOverridable}
-                                onChange={this.handleChange('jason')}
+                                onChange={this.handleChange('isOverridable')}
                                 value="Override text"
                             />
                         }
-                        label="Override text"
+                        label="Override Text"
                     />
                     <FormControlLabel
                         control={
