@@ -30,4 +30,9 @@ export default class Message {
         const setting = new Setting();
         return setting.settingvars;
     }
+    putOnHighlightedInputfield(text) {
+        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+            chrome.tabs.sendMessage(tabs[0].id, {method: "speech_recognition_text", text: text});
+        });
+    }
 }

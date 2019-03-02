@@ -14,6 +14,9 @@ import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 
+import { speechRecognition } from "../../src/util/speech_recognition";
+
+const speechRecognitionController = new speechRecognition();
 const styles = theme => ({
     root: {
         width: '100%',
@@ -30,10 +33,19 @@ const styles = theme => ({
     },
 });
 
-class NestedList extends React.Component {
+class Home extends React.Component {
     state = {
         open: true,
     };
+    componentDidMount() {
+        speechRecognitionController.addCommand({'*text': (text) => {
+                const appendText = " " + text;
+                document.getElementById("speech_recognition_input_textarea").value+= appendText ;
+                speechRecognitionController.sendTextToDom(text);
+            }
+        });
+        speechRecognitionController.start();
+    }
 
     handleClick = () => {
         this.setState(state => ({ open: !state.open }));
@@ -60,7 +72,7 @@ class NestedList extends React.Component {
                         <List component="div" disablePadding>
                             <ListItem button className={classes.nested}>
                                 <TextField
-                                    id="standard-full-width"
+                                    id="speech_recognition_input_textarea"
                                     label="Speech Text"
                                     placeholder="recognised text"
                                     helperText="recognised text"
@@ -89,8 +101,8 @@ class NestedList extends React.Component {
         );
     }
 }
-NestedList.propTypes = {
+Home.propTypes = {
     classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(NestedList);
+export default withStyles(styles)(Home);
