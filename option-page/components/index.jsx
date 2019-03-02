@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-
-
+import Divder from '@material-ui/core/Divider';
+import HeaderComponent from "./header";
+import HomeComponent from "./home";
 function TabContainer({ children, dir }) {
     return (
         <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
@@ -45,35 +42,11 @@ class FullWidthTabs extends React.Component {
         const { classes, theme } = this.props;
 
         return (
-            <div className={classes.root}>
-                <AppBar position="static" color="default">
-                    <Tabs
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                        indicatorColor="primary"
-                        textColor="primary"
-                        variant="fullWidth"
-                    >
-                        <Tab label="Settings" />
-                        <Tab label="Faq" />
-                        <Tab label="About me" />
-                    </Tabs>
-                </AppBar>
-                <SwipeableViews
-                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                    index={this.state.value}
-                    onChangeIndex={this.handleChangeIndex}
-                >
-                    <TabContainer dir={theme.direction}>
-                        1
-                    </TabContainer>
-                    <TabContainer dir={theme.direction}>
-                        2
-                    </TabContainer>
-                    <TabContainer dir={theme.direction}>
-                        3
-                    </TabContainer>
-                </SwipeableViews>
+            <div>
+                <HeaderComponent/>
+                <Divder/>
+                <HomeComponent/>
+                <Divder/>
             </div>
         );
     }

@@ -5,9 +5,16 @@ export class Dom {
     setSelectedText(event) {
         const data = document.getSelection().toString() ;
         if(data !=='' && data.length !== 0) {
-                console.log(data);
-                clientMessage.setSelectedText(data);
+            chrome.runtime.sendMessage({method: "getData"}, (response) => {
+                const currentTimeStamp = +new Date;
+                const diffTimestamp = currentTimeStamp - response.data.timeStamp;
+                if(diffTimestamp > 2000) {
+                    clientMessage.setSelectedText(data);
+                }
+                return true;
+            });
         }
+        event.preventDefault();
     }
     fillByPreviouslySelectedText(e) {
         const ele = document.elementFromPoint(e.clientX,e.clientY);
