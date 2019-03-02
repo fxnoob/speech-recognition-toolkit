@@ -20,11 +20,11 @@ const styles = {
     },
 };
 
-function ButtonAppBar(props) {
+const ButtonAppBar = (props) => {
     const { classes } = props;
     return (
         <div className={classes.root}>
-            <AppBar position="static" style={{ background: '#ccfffc', boxShadow: 'none'}}>
+            <AppBar position="static" style={{ background: '#ffffff', boxShadow: 'none'}}>
                 <Toolbar>
                     <Typography variant="h6" className={classes.grow}>
                         Fast Input

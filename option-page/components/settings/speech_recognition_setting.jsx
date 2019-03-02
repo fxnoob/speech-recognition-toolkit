@@ -4,12 +4,11 @@ import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
-import Fab from '@material-ui/core/Fab';
-import NavigationIcon from '@material-ui/icons/Navigation';
+import Divder from '@material-ui/core/Divider';
 
-import MessageLib from "../../src/util/message";
-import {Pages as PageLib} from "../../src/util/pages";
-import SettingLib  from "../../src/util/setting";
+import MessageLib from "../../../src/util/message";
+import {Pages as PageLib} from "../../../src/util/pages";
+import SettingLib  from "../../../src/util/setting";
 
 const page = new PageLib();
 const Setting = new SettingLib();
@@ -38,37 +37,30 @@ class Settings extends React.Component {
     render() {
         return (
             <FormControl component="fieldset">
-                <FormLabel component="legend">Basic Settings</FormLabel>
+                <FormLabel component="legend">Advanced Settings</FormLabel>
                 <FormGroup>
                     <FormControlLabel
                         control={
                             <Switch
                                 checked={this.state.isExtAllowed}
                                 onChange={this.handleChange('isExtAllowed')}
-                                value="Enable/Disable Extension"
+                                value="Start 'Speech Recognition' when Chrome starts"
                             />
                         }
-                        label="Enable/Disable Extension"
+                        label="Start 'Speech Recognition' when Chrome starts"
                     />
+                    <Divder/>
                     <FormControlLabel
                         control={
                             <Switch
                                 checked={this.state.isOverridable}
                                 onChange={this.handleChange('isOverridable')}
-                                value="Override text"
+                                value="Submit search fields automatically"
                             />
                         }
-                        label="Override Text"
+                        label="Submit search fields automatically"
                     />
-                    <FormControlLabel
-                        control={
-                            <Fab variant="extended" aria-label="Delete" onClick={this.openOptionPage}>
-                                <NavigationIcon />
-                                Speech/Gesture Recognition
-                            </Fab>
-                        }
-                        label=""
-                    />
+                    <Divder/>
                 </FormGroup>
             </FormControl>
         );

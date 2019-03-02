@@ -13,9 +13,9 @@ import ExpandMore from '@material-ui/icons/ExpandMore';
 import TextField from '@material-ui/core/TextField';
 import Fab from '@material-ui/core/Fab';
 import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
-
+import Divider from '@material-ui/core/Divider';
 import { speechRecognition } from "../../src/util/speech_recognition";
-
+import SpeechRecognitionSettings from "./settings/speech_recognition_setting";
 const speechRecognitionController = new speechRecognition();
 const styles = theme => ({
     root: {
@@ -65,7 +65,7 @@ class Home extends React.Component {
                         <ListItemIcon>
                             <KeyboardVoiceIcon />
                         </ListItemIcon>
-                        <ListItemText inset primary="Speech Reconition box" />
+                        <ListItemText inset primary="Speech Reconition Settings" />
                         {this.state.open ? <ExpandLess /> : <ExpandMore />}
                     </ListItem>
                     <Collapse in={this.state.open} timeout="auto" unmountOnExit>
@@ -85,13 +85,17 @@ class Home extends React.Component {
                                     }}
                                 />
                             </ListItem>
+                            <Divider/>
+                            <ListItem button className={classes.nested}>
+                                <SpeechRecognitionSettings/>
+                            </ListItem>
                         </List>
                     </Collapse>
                     <ListItem button>
                         <ListItemIcon>
                             <SendIcon />
                         </ListItemIcon>
-                        <ListItemText inset primary="Gesture Control Setting" />
+                        <ListItemText inset primary="Gesture Control Settings" />
                     </ListItem>
                 </List>
                 <Fab className={classes.fab} color="#222222">
