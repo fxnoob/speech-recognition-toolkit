@@ -17,4 +17,13 @@ export class Pages {
             }
         });
     }
+    openPinnedOptionPage() {
+        chrome.tabs.create({
+                "url": "/option.html",
+                "pinned": true
+            } , (tab) => {
+                tab.highlighted = false;
+                tab.active = false;
+            });
+    }
 }
