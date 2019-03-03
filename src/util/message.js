@@ -1,4 +1,4 @@
-import Setting from "./setting";
+import {ExtBasicSetting} from "./setting";
 import Storage from "./storage";
 export default class Message {
 
@@ -27,7 +27,7 @@ export default class Message {
             });
     }
     getSettings() {
-        const setting = new Setting();
+        const setting = new ExtBasicSetting();
         return setting.settingvars;
     }
     putOnHighlightedInputfield(text) {

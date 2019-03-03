@@ -9,10 +9,10 @@ import NavigationIcon from '@material-ui/icons/Navigation';
 
 import MessageLib from "../../src/util/message";
 import {Pages as PageLib} from "../../src/util/pages";
-import SettingLib  from "../../src/util/setting";
+import {ExtBasicSetting}  from "../../src/util/setting";
 
 const page = new PageLib();
-const Setting = new SettingLib();
+const Setting = new ExtBasicSetting();
 class Settings extends React.Component {
     state = {
         isExtAllowed: true ,
@@ -60,7 +60,7 @@ class Settings extends React.Component {
                         }
                         label="Override Text"
                     />
-                    <FormControlLabel
+                    {this.state.isExtAllowed && <FormControlLabel
                         control={
                             <Fab variant="extended" aria-label="Delete" onClick={this.openOptionPage}>
                                 <NavigationIcon />
@@ -68,7 +68,7 @@ class Settings extends React.Component {
                             </Fab>
                         }
                         label=""
-                    />
+                    />}
                 </FormGroup>
             </FormControl>
         );

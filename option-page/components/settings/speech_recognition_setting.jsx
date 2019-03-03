@@ -6,30 +6,37 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Divder from '@material-ui/core/Divider';
 
-import MessageLib from "../../../src/util/message";
 import {Pages as PageLib} from "../../../src/util/pages";
-import SettingLib  from "../../../src/util/setting";
+import { ExtBasicSetting , ExtSpeechRecognitionSetting }  from "../../../src/util/setting";
 
 const page = new PageLib();
-const Setting = new SettingLib();
+const Setting = new ExtBasicSetting();
+const SpeechRecognitionSetting = new ExtSpeechRecognitionSetting();
+
 class Settings extends React.Component {
     state = {
         isExtAllowed: true ,
         timeStamp: +new Date ,
         data: "" ,
-        isOverridable: false
+        isOverridable: false ,
+        alwaysOpenWithChromeStart: false ,
+        submitSearchField: false ,
     };
     componentDidMount() {
-        const message = new MessageLib();
+        /** fetching default extension settings*/
         Setting.get()
             .then(res => {
-                console.log("componentDidMount",res);
                 this.setState(res.settings);
+            });
+        /** fetching speech recognition settings */
+        SpeechRecognitionSetting.get()
+            .then(res => {
+                this.setState(res.ExtSpeechRecognitionSetting);
             });
     }
     handleChange = name => event => {
         this.setState({ [name]: event.target.checked });
-        Setting.set({[name]: event.target.checked });
+        SpeechRecognitionSetting.set({[name]: event.target.checked });
     };
     openOptionPage() {
         page.openPage("option.html");
@@ -42,8 +49,8 @@ class Settings extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                checked={this.state.isExtAllowed}
-                                onChange={this.handleChange('isExtAllowed')}
+                                checked={this.state.alwaysOpenWithChromeStart}
+                                onChange={this.handleChange('alwaysOpenWithChromeStart')}
                                 value="Start 'Speech Recognition' when Chrome starts"
                             />
                         }
@@ -53,8 +60,8 @@ class Settings extends React.Component {
                     <FormControlLabel
                         control={
                             <Switch
-                                checked={this.state.isOverridable}
-                                onChange={this.handleChange('isOverridable')}
+                                checked={this.state.submitSearchField}
+                                onChange={this.handleChange('submitSearchField')}
                                 value="Submit search fields automatically"
                             />
                         }

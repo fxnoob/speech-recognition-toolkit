@@ -1,6 +1,6 @@
 import Db from "./db";
 const db = new Db();
-export default class Setting {
+export  class ExtBasicSetting {
     constructor() {
         this.settingvars = {
             isExtAllowed: true ,
@@ -28,6 +28,36 @@ export default class Setting {
             this.settingvars.isOverridable = params.isOverridable;
         }
         await db.set({settings: this.settingvars});
+        const d = await this.get();
+        console.log("set",d);
+    }
+}
+export  class ExtSpeechRecognitionSetting {
+    constructor() {
+        this.settingvars = {
+            alwaysOpenWithChromeStart: false ,
+            submitSearchField: false
+        };
+    }
+    async get() {
+        const data = await db.get("ExtSpeechRecognitionSetting");
+        return data;
+    }
+    async set(params) {
+        const data = await this.get();
+        if(typeof  data.alwaysOpenWithChromeStart !== "undefined") {
+            this.settingvars.alwaysOpenWithChromeStart = data.alwaysOpenWithChromeStart;
+        }
+        if(typeof  params.alwaysOpenWithChromeStart !== "undefined") {
+            this.settingvars.alwaysOpenWithChromeStart = params.alwaysOpenWithChromeStart;
+        }
+        if(typeof data.submitSearchField !== "undefined") {
+            this.settingvars.submitSearchField = data.submitSearchField;
+        }
+        if(typeof params.submitSearchField !== "undefined") {
+            this.settingvars.submitSearchField = params.submitSearchField;
+        }
+        await db.set({ExtSpeechRecognitionSetting: this.settingvars});
         const d = await this.get();
         console.log("set",d);
     }

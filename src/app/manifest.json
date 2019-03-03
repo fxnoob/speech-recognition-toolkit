@@ -1,5 +1,6 @@
 {
   "name" : "Fast Input",
+  "key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiGOxmtLLktIuFpZaIPsz\nacv3b4WdHmqynIkhp58fMBsx/ADqe9zxQkj0fWWUa95uY4eenIW2OmkaE+IymbHu\niW1dCUfujKdqGp7Ui1LxfYifN1OdlDQ2WwxjFMymHnH89MFry07jk8c5yBpoZixx\n9/877k9JcMa9DI4230xVv7pmNVtlsIi7vJd+LQAmI1JtqEHjDv0ovWHffkvno5Gm\n3uTk6Deu/ZOtB9llEyRKyzSCYfq+ZHC0B6UFzOQyeszVvY5ip5DVP2TvUDjGS0fo\ntSJ5UqBOIXiCfISL9V8Ai4mjjDPDD+RMHACFgXTUX0uDzSllsArDg4iBCDWzNelW\n1wIDAQAB\n-----END PUBLIC KEY-----\n",
   "description": "A chrome extension to help you input data in webpage input fields very fast using smart human computer interaction techniques",
   "version":"2.2",
   "permissions":["tabs","storage","webNavigation","activeTab","clipboardWrite"],
