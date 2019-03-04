@@ -8,7 +8,7 @@ export class Dom {
             chrome.runtime.sendMessage({method: "getData"}, (response) => {
                 const currentTimeStamp = +new Date;
                 const diffTimestamp = currentTimeStamp - response.data.timeStamp;
-                if(diffTimestamp > 2000) {
+                if(true) {
                     clientMessage.setSelectedText(data);
                 }
                 return true;

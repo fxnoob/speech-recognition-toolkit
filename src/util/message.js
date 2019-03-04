@@ -19,6 +19,7 @@ export default class Message {
         console.log(value);
         if(value == "" || value == null || value == undefined)
             return;
+        console.log("setSelectedText",value);
         const storage = new Storage();
         storage.set({data: value});
         storage.getData()

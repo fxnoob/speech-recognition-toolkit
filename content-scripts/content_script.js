@@ -28,6 +28,9 @@ export default class contentScript {
         const ele = document.activeElement;
         if( ele.type=='text'||ele.type=='textarea'||ele.type=='password'||ele.type=='email') {
             ele.value+= ' ' + text;
+            ele.focus();
+            ele.addEventListener('keypress',  (e) => { /* ... */ }, false);
+            ele.dispatchEvent(new KeyboardEvent('keypress',{'key':'Enter'}));
         }
     }
 }
