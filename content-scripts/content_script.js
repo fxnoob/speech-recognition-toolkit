@@ -29,8 +29,18 @@ export default class contentScript {
         if( ele.type=='text'||ele.type=='textarea'||ele.type=='password'||ele.type=='email') {
             ele.value+= ' ' + text;
             ele.focus();
-            ele.addEventListener('keypress',  (e) => { /* ... */ }, false);
-            ele.dispatchEvent(new KeyboardEvent('keypress',{'key':'Enter'}));
+            setTimeout(() => {
+                ele.addEventListener("keydown");
+                ele.addEventListener("keyup");
+                ele.addEventListener("keypress");
+                let event = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, shiftKey : false , code: 13});
+                ele.dispatchEvent(event);
+                event = new KeyboardEvent("keyup", {bubbles : true, cancelable : true, shiftKey : false, code: 13});
+                ele.dispatchEvent(event);
+                event = new KeyboardEvent("keypress", {bubbles : true, cancelable : true, shiftKey : false, code: 13});
+                ele.dispatchEvent(event);
+            },250);
         }
     }
 }
+
