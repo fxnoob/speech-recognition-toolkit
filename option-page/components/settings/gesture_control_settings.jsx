@@ -116,7 +116,8 @@ class Home extends React.Component {
                 if (fist_pos_old) {
                     var dx = (fist_pos[0] - fist_pos_old[0]) / video.videoWidth,
                         dy = (fist_pos[1] - fist_pos_old[1]) / video.videoHeight;
-                    window.scrollBy(dx * 200, dy * 200);
+                        /** send message to active tab with dx and dy */
+                        window.scrollBy(dx * 200, dy * 200);
                 } else
                     this.fist_pos_old = fist_pos;
                 /* Draw coordinates on video overlay: */
@@ -133,6 +134,8 @@ class Home extends React.Component {
             else
                 this.fist_pos_old = null;
         }
+        /** send data to content script with current canvas page */
+
     }
 
     HandleSnackBar(close) {

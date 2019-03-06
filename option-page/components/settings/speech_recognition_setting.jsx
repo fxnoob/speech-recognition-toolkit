@@ -145,7 +145,7 @@ class Settings extends React.Component {
                                                 }
                                                 label="Submit search fields automatically"
                                             />
-                                            <Divder/>
+                                            <Divider/>
                                         </FormGroup>
                                     </FormControl>
                                 </ListItem>
