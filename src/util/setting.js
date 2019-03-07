@@ -36,7 +36,8 @@ export  class ExtSpeechRecognitionSetting {
     constructor() {
         this.settingvars = {
             alwaysOpenWithChromeStart: false ,
-            submitSearchField: false
+            submitSearchField: false ,
+            langVal: 'en-AU'
         };
     }
     async get() {
@@ -56,6 +57,12 @@ export  class ExtSpeechRecognitionSetting {
         }
         if(typeof params.submitSearchField !== "undefined") {
             this.settingvars.submitSearchField = params.submitSearchField;
+        }
+        if(typeof data.langVal !== "undefined") {
+            this.settingvars.langVal = data.langVal;
+        }
+        if(typeof params.langVal !== "undefined") {
+            this.settingvars.langVal = params.langVal;
         }
         await db.set({ExtSpeechRecognitionSetting: this.settingvars});
         const d = await this.get();

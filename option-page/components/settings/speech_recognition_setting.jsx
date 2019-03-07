@@ -18,12 +18,13 @@ import KeyboardVoiceIcon from '@material-ui/icons/KeyboardVoice';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import {withStyles} from "@material-ui/core";
-import {Pages as PageLib} from "../../../src/util/pages";
-import { ExtBasicSetting , ExtSpeechRecognitionSetting }  from "../../../src/util/setting";
-import { speechRecognition } from "../../../src/util/speech_recognition";
 import MenuItem from "@material-ui/core/MenuItem";
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+
+import {Pages as PageLib} from "../../../src/util/pages";
+import { ExtBasicSetting , ExtSpeechRecognitionSetting }  from "../../../src/util/setting";
+import { speechRecognition } from "../../../src/util/speech_recognition";
 
 const page = new PageLib();
 const Setting = new ExtBasicSetting();
@@ -64,13 +65,6 @@ class Settings extends React.Component {
         langName: 'English'
     };
     componentDidMount() {
-        speechRecognitionController.addCommand({'*text': (text) => {
-                const appendText = " " + text;
-                document.getElementById("speech_recognition_input_textarea").value+= appendText ;
-                speechRecognitionController.sendTextToDom(text);
-            }
-        });
-        speechRecognitionController.start();
         /** fetching default extension settings*/
         Setting.get()
             .then(res => {
@@ -79,6 +73,14 @@ class Settings extends React.Component {
         /** fetching speech recognition settings */
         SpeechRecognitionSetting.get()
             .then(res => {
+                speechRecognitionController.addCommand({'*text': (text) => {
+                        const appendText = " " + text;
+                        document.getElementById("speech_recognition_input_textarea").value+= appendText ;
+                        speechRecognitionController.sendTextToDom(text);
+                    }
+                });
+                speechRecognitionController.setLang(res.ExtSpeechRecognitionSetting.langVal);
+                speechRecognitionController.start();
                 this.setState(res.ExtSpeechRecognitionSetting);
             });
     }
@@ -86,6 +88,7 @@ class Settings extends React.Component {
         super(props);
         this.handleLangListClose = this.handleLangListClose.bind(this);
         this.handleLangListOpen = this.handleLangListOpen.bind(this);
+        this.handleLangChange = this.handleLangChange.bind(this);
     }
     handleLangListClose() {
         this.setState({openSelect: false});
@@ -94,7 +97,10 @@ class Settings extends React.Component {
         this.setState({openSelect: true});
     }
     handleLangChange(event) {
-        console.log(event.target.value, event.target.name)
+        console.log(event);
+        SpeechRecognitionSetting.set({langVal: event.target.value});
+        console.log(event.target.value, event.target.name);
+            this.setState({langName: event.target.name , langVal: event.target.value});
     }
     handleClick = () => {
         this.setState(state => ({ open: !state.open }));
@@ -116,7 +122,7 @@ class Settings extends React.Component {
                 <Grid item xs={6}>
                     <List
                         component="nav"
-                        subheader={<ListSubheader component="div">Speech Regconiton settings</ListSubheader>}
+                        subheader={<ListSubheader component="div">Speech Recognition settings</ListSubheader>}
                         className={classes.root}
                     >
                         <ListItem button onClick={this.handleClick}>
@@ -173,27 +179,28 @@ class Settings extends React.Component {
                                         </FormGroup>
                                     </FormControl>
                                 </ListItem>
+                                <ListItem button className={classes.nested}>
+                                    <FormControl>
+                                        <InputLabel htmlFor="demo-controlled-open-select">{this.state.langName}</InputLabel>
+                                        <Select
+                                            open={this.state.openSelect}
+                                            onClose={this.handleLangListClose}
+                                            onOpen={this.handleLangListOpen}
+                                            value={this.state.langVal}
+                                            onChange={this.handleLangChange}
+                                            inputProps={{
+                                                name: 'name' ,
+                                                id: 'demo-controlled-open-select'
+                                            }}
+                                        >
+                                            {LangSelectVals}
+                                        </Select>
+                                    </FormControl>
+                                    <ListItemText inset primary="Select Language" />
+                                </ListItem>
+                                <Divder/>
                             </List>
                         </Collapse>
-                        <ListItem button>
-                            <FormControl>
-                                <InputLabel htmlFor="demo-controlled-open-select">{this.state.langName}</InputLabel>
-                                <Select
-                                    open={this.state.openSelect}
-                                    onClose={this.handleLangListClose}
-                                    onOpen={this.handleLangListOpen}
-                                    value={this.state.langVal}
-                                    onChange={this.handleLangChange}
-                                    inputProps={{
-                                        name: 'langVal',
-                                        id: 'demo-controlled-open-select'
-                                    }}
-                                >
-                                    {LangSelectVals}
-                                </Select>
-                            </FormControl>
-                            <ListItemText inset primary="Select Language" />
-                        </ListItem>
                     </List>
                 </Grid>
         );
