@@ -21,6 +21,9 @@ import {withStyles} from "@material-ui/core";
 import {Pages as PageLib} from "../../../src/util/pages";
 import { ExtBasicSetting , ExtSpeechRecognitionSetting }  from "../../../src/util/setting";
 import { speechRecognition } from "../../../src/util/speech_recognition";
+import MenuItem from "@material-ui/core/MenuItem";
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
 
 const page = new PageLib();
 const Setting = new ExtBasicSetting();
@@ -56,6 +59,9 @@ class Settings extends React.Component {
         alwaysOpenWithChromeStart: false ,
         submitSearchField: false ,
         open: true,
+        openSelect: false,
+        langVal: 'en-US',
+        langName: 'English'
     };
     componentDidMount() {
         speechRecognitionController.addCommand({'*text': (text) => {
@@ -76,6 +82,20 @@ class Settings extends React.Component {
                 this.setState(res.ExtSpeechRecognitionSetting);
             });
     }
+    constructor(props) {
+        super(props);
+        this.handleLangListClose = this.handleLangListClose.bind(this);
+        this.handleLangListOpen = this.handleLangListOpen.bind(this);
+    }
+    handleLangListClose() {
+        this.setState({openSelect: false});
+    }
+    handleLangListOpen() {
+        this.setState({openSelect: true});
+    }
+    handleLangChange(event) {
+        console.log(event.target.value, event.target.name)
+    }
     handleClick = () => {
         this.setState(state => ({ open: !state.open }));
     };
@@ -88,6 +108,10 @@ class Settings extends React.Component {
     }
     render() {
         const { classes } = this.props;
+        const langList = speechRecognitionController.langs;
+        const LangSelectVals = langList.map((lang) =>
+            <MenuItem key={lang.key} value={lang.key}>{lang.name}</MenuItem>
+        );
         return (
                 <Grid item xs={6}>
                     <List
@@ -151,6 +175,25 @@ class Settings extends React.Component {
                                 </ListItem>
                             </List>
                         </Collapse>
+                        <ListItem button>
+                            <FormControl>
+                                <InputLabel htmlFor="demo-controlled-open-select">{this.state.langName}</InputLabel>
+                                <Select
+                                    open={this.state.openSelect}
+                                    onClose={this.handleLangListClose}
+                                    onOpen={this.handleLangListOpen}
+                                    value={this.state.langVal}
+                                    onChange={this.handleLangChange}
+                                    inputProps={{
+                                        name: 'langVal',
+                                        id: 'demo-controlled-open-select'
+                                    }}
+                                >
+                                    {LangSelectVals}
+                                </Select>
+                            </FormControl>
+                            <ListItemText inset primary="Select Language" />
+                        </ListItem>
                     </List>
                 </Grid>
         );
