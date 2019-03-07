@@ -9,7 +9,7 @@
     ]
   },
   "browser_action": {
-    "default_title": "Fast Copy Paste",
+    "default_title": "Fast Input",
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
   },

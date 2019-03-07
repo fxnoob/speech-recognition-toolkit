@@ -7,116 +7,246 @@ export class speechRecognition {
     constructor() {
         this.SpeechRecognition = SpeechRecognitionLib;
         this.langs = [
-            ['Afrikaans', ['af-ZA']],
-            ['አማርኛ', ['am-ET']],
-            ['Azərbaycanca', ['az-AZ']],
-            ['বাংলা', ['bn-BD', 'বাংলাদেশ'],
-                ['bn-IN', 'ভারত']
-            ],
-            ['Bahasa Indonesia', ['id-ID']],
-            ['Bahasa Melayu', ['ms-MY']],
-            ['Català', ['ca-ES']],
-            ['Čeština', ['cs-CZ']],
-            ['Dansk', ['da-DK']],
-            ['Deutsch', ['de-DE']],
-            ['English', ['en-AU', 'Australia'],
-                ['en-CA', 'Canada'],
-                ['en-IN', 'India'],
-                ['en-KE', 'Kenya'],
-                ['en-TZ', 'Tanzania'],
-                ['en-GH', 'Ghana'],
-                ['en-NZ', 'New Zealand'],
-                ['en-NG', 'Nigeria'],
-                ['en-ZA', 'South Africa'],
-                ['en-PH', 'Philippines'],
-                ['en-GB', 'United Kingdom'],
-                ['en-US', 'United States']
-            ],
-            ['Español', ['es-AR', 'Argentina'],
-                ['es-BO', 'Bolivia'],
-                ['es-CL', 'Chile'],
-                ['es-CO', 'Colombia'],
-                ['es-CR', 'Costa Rica'],
-                ['es-EC', 'Ecuador'],
-                ['es-SV', 'El Salvador'],
-                ['es-ES', 'España'],
-                ['es-US', 'Estados Unidos'],
-                ['es-GT', 'Guatemala'],
-                ['es-HN', 'Honduras'],
-                ['es-MX', 'México'],
-                ['es-NI', 'Nicaragua'],
-                ['es-PA', 'Panamá'],
-                ['es-PY', 'Paraguay'],
-                ['es-PE', 'Perú'],
-                ['es-PR', 'Puerto Rico'],
-                ['es-DO', 'República Dominicana'],
-                ['es-UY', 'Uruguay'],
-                ['es-VE', 'Venezuela']
-            ],
-            ['Euskara', ['eu-ES']],
-            ['Filipino', ['fil-PH']],
-            ['Français', ['fr-FR']],
-            ['Basa Jawa', ['jv-ID']],
-            ['Galego', ['gl-ES']],
-            ['ગુજરાતી', ['gu-IN']],
-            ['Hrvatski', ['hr-HR']],
-            ['IsiZulu', ['zu-ZA']],
-            ['Íslenska', ['is-IS']],
-            ['Italiano', ['it-IT', 'Italia'],
-                ['it-CH', 'Svizzera']
-            ],
-            ['ಕನ್ನಡ', ['kn-IN']],
-            ['ភាសាខ្មែរ', ['km-KH']],
-            ['Latviešu', ['lv-LV']],
-            ['Lietuvių', ['lt-LT']],
-            ['മലയാളം', ['ml-IN']],
-            ['मराठी', ['mr-IN']],
-            ['Magyar', ['hu-HU']],
-            ['ລາວ', ['lo-LA']],
-            ['Nederlands', ['nl-NL']],
-            ['नेपाली भाषा', ['ne-NP']],
-            ['Norsk bokmål', ['nb-NO']],
-            ['Polski', ['pl-PL']],
-            ['Português', ['pt-BR', 'Brasil'],
-                ['pt-PT', 'Portugal']
-            ],
-            ['Română', ['ro-RO']],
-            ['සිංහල', ['si-LK']],
-            ['Slovenščina', ['sl-SI']],
-            ['Basa Sunda', ['su-ID']],
-            ['Slovenčina', ['sk-SK']],
-            ['Suomi', ['fi-FI']],
-            ['Svenska', ['sv-SE']],
-            ['Kiswahili', ['sw-TZ', 'Tanzania'],
-                ['sw-KE', 'Kenya']
-            ],
-            ['ქართული', ['ka-GE']],
-            ['Հայերեն', ['hy-AM']],
-            ['தமிழ்', ['ta-IN', 'இந்தியா'],
-                ['ta-SG', 'சிங்கப்பூர்'],
-                ['ta-LK', 'இலங்கை'],
-                ['ta-MY', 'மலேசியா']
-            ],
-            ['తెలుగు', ['te-IN']],
-            ['Tiếng Việt', ['vi-VN']],
-            ['Türkçe', ['tr-TR']],
-            ['اُردُو', ['ur-PK', 'پاکستان'],
-                ['ur-IN', 'بھارت']
-            ],
-            ['Ελληνικά', ['el-GR']],
-            ['български', ['bg-BG']],
-            ['Pусский', ['ru-RU']],
-            ['Српски', ['sr-RS']],
-            ['Українська', ['uk-UA']],
-            ['한국어', ['ko-KR']],
-            ['中文', ['cmn-Hans-CN', '普通话 (中国大陆)'],
-                ['cmn-Hans-HK', '普通话 (香港)'],
-                ['cmn-Hant-TW', '中文 (台灣)'],
-                ['yue-Hant-HK', '粵語 (香港)']
-            ],
-            ['日本語', ['ja-JP']],
-            ['हिन्दी', ['hi-IN']],
-            ['ภาษาไทย', ['th-TH']]
+            {
+                "name": "Afrikaans",
+                "key": "af-ZA"
+            },
+            {
+                "name": "አማርኛ",
+                "key": "am-ET"
+            },
+            {
+                "name": "Azərbaycanca",
+                "key": "az-AZ"
+            },
+            {
+                "name": "বাংলা",
+                "key": "bn-BD"
+            },
+            {
+                "name": "Bahasa Indonesia",
+                "key": "id-ID"
+            },
+            {
+                "name": "Bahasa Melayu",
+                "key": "ms-MY"
+            },
+            {
+                "name": "Català",
+                "key": "ca-ES"
+            },
+            {
+                "name": "Čeština",
+                "key": "cs-CZ"
+            },
+            {
+                "name": "Dansk",
+                "key": "da-DK"
+            },
+            {
+                "name": "Deutsch",
+                "key": "de-DE"
+            },
+            {
+                "name": "English",
+                "key": "en-AU"
+            },
+            {
+                "name": "Español",
+                "key": "es-AR"
+            },
+            {
+                "name": "Euskara",
+                "key": "eu-ES"
+            },
+            {
+                "name": "Filipino",
+                "key": "fil-PH"
+            },
+            {
+                "name": "Français",
+                "key": "fr-FR"
+            },
+            {
+                "name": "Basa Jawa",
+                "key": "jv-ID"
+            },
+            {
+                "name": "Galego",
+                "key": "gl-ES"
+            },
+            {
+                "name": "ગુજરાતી",
+                "key": "gu-IN"
+            },
+            {
+                "name": "Hrvatski",
+                "key": "hr-HR"
+            },
+            {
+                "name": "IsiZulu",
+                "key": "zu-ZA"
+            },
+            {
+                "name": "Íslenska",
+                "key": "is-IS"
+            },
+            {
+                "name": "Italiano",
+                "key": "it-IT"
+            },
+            {
+                "name": "ಕನ್ನಡ",
+                "key": "kn-IN"
+            },
+            {
+                "name": "ភាសាខ្មែរ",
+                "key": "km-KH"
+            },
+            {
+                "name": "Latviešu",
+                "key": "lv-LV"
+            },
+            {
+                "name": "Lietuvių",
+                "key": "lt-LT"
+            },
+            {
+                "name": "മലയാളം",
+                "key": "ml-IN"
+            },
+            {
+                "name": "मराठी",
+                "key": "mr-IN"
+            },
+            {
+                "name": "Magyar",
+                "key": "hu-HU"
+            },
+            {
+                "name": "ລາວ",
+                "key": "lo-LA"
+            },
+            {
+                "name": "Nederlands",
+                "key": "nl-NL"
+            },
+            {
+                "name": "नेपाली भाषा",
+                "key": "ne-NP"
+            },
+            {
+                "name": "Norsk bokmål",
+                "key": "nb-NO"
+            },
+            {
+                "name": "Polski",
+                "key": "pl-PL"
+            },
+            {
+                "name": "Português",
+                "key": "pt-BR"
+            },
+            {
+                "name": "Română",
+                "key": "ro-RO"
+            },
+            {
+                "name": "සිංහල",
+                "key": "si-LK"
+            },
+            {
+                "name": "Slovenščina",
+                "key": "sl-SI"
+            },
+            {
+                "name": "Basa Sunda",
+                "key": "su-ID"
+            },
+            {
+                "name": "Slovenčina",
+                "key": "sk-SK"
+            },
+            {
+                "name": "Suomi",
+                "key": "fi-FI"
+            },
+            {
+                "name": "Svenska",
+                "key": "sv-SE"
+            },
+            {
+                "name": "Kiswahili",
+                "key": "sw-TZ"
+            },
+            {
+                "name": "ქართული",
+                "key": "ka-GE"
+            },
+            {
+                "name": "Հայերեն",
+                "key": "hy-AM"
+            },
+            {
+                "name": "தமிழ்",
+                "key": "ta-IN"
+            },
+            {
+                "name": "తెలుగు",
+                "key": "te-IN"
+            },
+            {
+                "name": "Tiếng Việt",
+                "key": "vi-VN"
+            },
+            {
+                "name": "Türkçe",
+                "key": "tr-TR"
+            },
+            {
+                "name": "اُردُو",
+                "key": "ur-PK"
+            },
+            {
+                "name": "Ελληνικά",
+                "key": "el-GR"
+            },
+            {
+                "name": "български",
+                "key": "bg-BG"
+            },
+            {
+                "name": "Pусский",
+                "key": "ru-RU"
+            },
+            {
+                "name": "Српски",
+                "key": "sr-RS"
+            },
+            {
+                "name": "Українська",
+                "key": "uk-UA"
+            },
+            {
+                "name": "한국어",
+                "key": "ko-KR"
+            },
+            {
+                "name": "中文",
+                "key": "cmn-Hans-CN"
+            },
+            {
+                "name": "日本語",
+                "key": "ja-JP"
+            },
+            {
+                "name": "हिन्दी",
+                "key": "hi-IN"
+            },
+            {
+                "name": "ภาษาไทย",
+                "key": "th-TH"
+            }
         ];
     }
     addCommand(commands) {
@@ -126,8 +256,8 @@ export class speechRecognition {
         this.SpeechRecognition.start();
     }
     /** set language*/
-    setLang(langId) {
-        this.SpeechRecognition.setLanguage(langId);
+    setLang(langKey) {
+        this.SpeechRecognition.setLanguage(langKey);
     }
     /** send recognised speech to highlighted input element */
     sendTextToDom(text) {
