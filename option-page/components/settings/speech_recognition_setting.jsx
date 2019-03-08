@@ -112,12 +112,17 @@ class Settings extends React.Component {
     openOptionPage() {
         page.openPage("option.html");
     }
+    getLangList = (langExt) => {
+        let langOptions = [];
+        for (let langKey in langExt) {
+            langOptions.push( <MenuItem key={langKey} value={langKey}>{langExt[langKey]}</MenuItem>)
+        }
+        return langOptions;
+    }
     render() {
         const { classes } = this.props;
-        const langList = speechRecognitionController.langs;
-        const LangSelectVals = langList.map((lang) =>
-            <MenuItem key={lang.key} value={lang.key}>{lang.name}</MenuItem>
-        );
+        const langList = speechRecognitionController.langExt;
+        const LangSelectVals = this.getLangList(langList);
         return (
                 <Grid item xs={6}>
                     <List

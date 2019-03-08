@@ -7,11 +7,6 @@ const pages = new Pages()
 
 export class onStartUp {
   constructor () {
-    try {
-      console.log('JsObjectDetect', objectdetect)
-    } catch (e) {
-      console.log('JsObjectDetect', e)
-    }
   }
   EnableSpeechRecognitionIfSet () {
     SpeechRecognitionSetting.get()

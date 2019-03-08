@@ -34,7 +34,14 @@ class FullWidthTabs extends React.Component {
     state = {
         value: 0,
     };
-
+    componentDidMount () {
+        window.addEventListener('offline', function(e) {
+            logger.log("Connection is flaky.");
+        }, false);
+        window.addEventListener('offline', function(e) {
+            logger.log("Connection is flaky.");
+        }, false);
+    }
     handleChange = (event, value) => {
         this.setState({ value });
     };

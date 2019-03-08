@@ -1,9 +1,20 @@
 import '@babel/polyfill'
 import Message from './util/message'
 import { onStartUp as OnStartUp } from './util/onstartup'
+import { speechTranslation } from "./util/speech_translation";
 
 const message = new Message()
 const onstartup = new OnStartUp()
+const speechTranslationController = new speechTranslation()
+
+speechTranslationController.translate('Ik spreek Engels', {to: 'en'}).then(res => {
+  console.log(res.text);
+  //=> I speak English
+  console.log(res.from.language.iso);
+  //=> nl
+}).catch(err => {
+  console.log("error catch" , err);
+});
 
 /** event fires when  chrome starts */
 chrome.runtime.onStartup.addListener(() => {

@@ -2,7 +2,15 @@
   "name" : "Fast Input",
   "description": "A chrome extension to help you input data in webpage input fields very fast using smart human computer interaction techniques",
   "version":"2.2",
-  "permissions":["tabs","storage","webNavigation","activeTab","clipboardWrite"],
+  "permissions":[
+    "tabs",
+    "storage",
+    "webNavigation",
+    "activeTab",
+    "clipboardWrite",
+    "<all_urls>",
+    "notifications"
+  ],
   "background": {
     "scripts": [
       "background.bundle.js"
