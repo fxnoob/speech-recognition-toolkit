@@ -1,23 +1,22 @@
-import Db from "./db";
-const db = new Db();
+import Db from './db'
+const db = new Db()
 
 export default class Storage {
-    constructor() {
-        this.data = {
-            isExtAllowed: true ,
-            timeStamp: +new Date ,
-            data: "" ,
-            isOverridable: false
-        };
+  constructor () {
+    this.data = {
+      isExtAllowed: true,
+      timeStamp: +new Date(),
+      data: '',
+      isOverridable: false
     }
-    async getData() {
-        try {
-             this.data.data = await db.get("data");
-        }
-        catch (e) {}
-        return this.data;
-    }
-    set(params) {
-        return db.set(params);
-    }
+  }
+  async getData () {
+    try {
+      this.data.data = await db.get('data')
+    } catch (e) {}
+    return this.data
+  }
+  set (params) {
+    return db.set(params)
+  }
 }
