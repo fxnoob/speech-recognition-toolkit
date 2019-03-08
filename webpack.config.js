@@ -1,6 +1,5 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
 module.exports = {
     entry: {
         content_script: './content-scripts/App.jsx',
@@ -54,5 +53,9 @@ module.exports = {
             "node_modules"
         ],
         extensions: [".js" , ".jsx",".json",".jpg"]
+    },
+    watch: false,
+    watchOptions: {
+        ignored: /node_modules/
     }
 };

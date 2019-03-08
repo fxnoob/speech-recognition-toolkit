@@ -252,6 +252,8 @@ export class speechRecognition {
     addCommand(commands) {
         this.SpeechRecognition.addCommands(commands);
     }
+    stop() {
+    }
     start() {
         this.SpeechRecognition.start();
     }
