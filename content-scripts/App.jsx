@@ -4,8 +4,8 @@ import Index from './components/'
 import ContentScript from './content_script'
 
 const Element = document.createElement('div')
-Element.setAttribute('id', 'dfghbnjmERHJKFGHNMVBNDFHFGDMFBNMbmvvxnbdgf')
+Element.setAttribute('id', 'DSFGHKJJGFDDSFUYGHfvcbcxvggjhfdfzxcv')
 document.body.appendChild(Element)
-ReactDOM.render(<Index />, document.getElementById('dfghbnjmERHJKFGHNMVBNDFHFGDMFBNMbmvvxnbdgf'))
+ReactDOM.render(<Index />, document.getElementById('DSFGHKJJGFDDSFUYGHfvcbcxvggjhfdfzxcv'))
 
 const ContentScriptController = new ContentScript()
