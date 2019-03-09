@@ -100,6 +100,7 @@ class Dom extends React.Component {
             vertical: 'bottom',
             horizontal: 'left',
           }}
+          style={{zIndex: 4444444444444444444}}
           open={this.state.open}
           autoHideDuration={6000}
           onClose={this.handleClose}
