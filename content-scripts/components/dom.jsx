@@ -1,15 +1,18 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import FileCopy from '@material-ui/icons/FileCopy';
 import Snackbar from '@material-ui/core/Snackbar';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
+
+import { Client_message } from "../../src/util/client_message";
 
 const styles = theme => ({
   close: {
     padding: theme.spacing.unit / 2,
   },
 });
+const clientMessage = new Client_message();
 
 class Dom extends React.Component {
   queue = [];
@@ -83,7 +86,10 @@ class Dom extends React.Component {
     }
     this.setState({ open: false });
   };
-
+  handleCopy(message){
+    clientMessage.setSelectedText(message);
+    this.setState({ open: false });
+  }
   handleExited = () => {
     this.processQueue();
   };
@@ -110,9 +116,15 @@ class Dom extends React.Component {
           }}
           message={<span id="message-id">{messageInfo.message}</span>}
           action={[
-            <Button key="undo" color="secondary" size="small" onClick={this.handleClose}>
-              UNDO
-            </Button>,
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              className={classes.close}
+              onClick={()=>{this.handleCopy(messageInfo.message)}}
+            >
+              <FileCopy />
+            </IconButton>,
             <IconButton
               key="close"
               aria-label="Close"
