@@ -10,9 +10,9 @@ export default class contentScript {
         /** fast copy */
         document.addEventListener('mouseup', dom.setSelectedText, false)
         /** fast paste */
-        document.addEventListener('mousemove', dom.fillByPreviouslySelectedText, false)
+        document.addEventListener('dblclick', dom.fillByPreviouslySelectedText, false)
         /** cutting the text from document */
-        document.addEventListener('cut', dom.cutDomText, false)
+        document.addEventListener('cut', Dom.cutDomText, false)
         /** search selected text on double click */
         // document.addEventListener("dblclick" , searchOnDblClick);
      }

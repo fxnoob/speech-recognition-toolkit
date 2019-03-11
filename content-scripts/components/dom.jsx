@@ -6,6 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 import { Client_message } from "../../src/util/client_message";
+import { Simulaiton } from "../../src/util/simulation";
 
 const styles = theme => ({
   close: {
@@ -13,6 +14,7 @@ const styles = theme => ({
   },
 });
 const clientMessage = new Client_message();
+const simulation = new Simulaiton();
 
 class Dom extends React.Component {
   queue = [];
@@ -31,28 +33,12 @@ class Dom extends React.Component {
 
   speechToTextListener (text) {
     const ele = document.activeElement
-    console.log(ele.tagName);
-    if (ele.type == 'text' || ele.type == 'textarea' || ele.type == 'password' || ele.type == 'email') {
-      ele.value += ' ' + text
-      ele.focus()
-      // setTimeout(() => {
-      //   ele.addEventListener('keydown')
-      //   ele.addEventListener('keyup')
-      //   ele.addEventListener('keypress')
-      //   let event = new KeyboardEvent('keydown', { bubbles: true, cancelable: true, shiftKey: false, code: 13 })
-      //   ele.dispatchEvent(event)
-      //   event = new KeyboardEvent('keyup', { bubbles: true, cancelable: true, shiftKey: false, code: 13 })
-      //   ele.dispatchEvent(event)
-      //   event = new KeyboardEvent('keypress', { bubbles: true, cancelable: true, shiftKey: false, code: 13 })
-      //   ele.dispatchEvent(event)
-      // }, 250)
-    } else if (ele.tagName === 'yt-formatted-string') {
-      ele.innerHTML += ' ' + text
-    } else {
-      console.log("this.handleClick(text);");
-     /** open snackbar with recognised text */
-      this.handleClick(text)();
-    }
+    let strArray = text.split('');
+    strArray.map((str_char) => {
+      simulation.keypress([new String(str_char).charCodeAt(0)]);
+    });
+    /** open snackbar with recognised text */
+    this.handleClick(text)();
   }
 
   handleClick = message => () => {
