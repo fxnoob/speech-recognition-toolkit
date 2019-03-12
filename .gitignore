@@ -1,0 +1,7 @@
+temp/
+npm-debug.log
+node_modules/
+dist/js
+tmp/
+dist
+.idea
