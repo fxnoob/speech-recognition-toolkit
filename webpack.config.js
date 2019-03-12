@@ -1,5 +1,7 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const JavaScriptObfuscator = require('webpack-obfuscator');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
   entry: {
     content_script: './content-scripts/App.jsx',
@@ -41,7 +43,11 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './popup-page/popup.html', force: true },
       { from: './src/app/', force: true }
-    ], {})
+    ], {}) ,
+    new JavaScriptObfuscator ({
+      rotateUnicodeArray: true
+    }, []),
+    new BundleAnalyzerPlugin()
   ],
   output: {
     path: path.join(__dirname, 'dist'),
