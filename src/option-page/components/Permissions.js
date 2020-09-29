@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import voice from "../../services/voiceService";
-import chromeService from "../../services/chromeService";
-
 export default () => {
   const [message, setMessage] = useState("");
   const allowPermissions = async () => {
     voice.start();
-    chromeService.setBadgeOnActionIcon("");
     const { state } = await voice.permissionGranted();
     if (state == "granted") {
       voice.stop();
@@ -15,6 +12,7 @@ export default () => {
       );
     } else {
       setMessage("Please Allow Permissions in order to use this tool!");
+      alert("Please Allow Permissions in order to use this tool!");
     }
   };
   return (

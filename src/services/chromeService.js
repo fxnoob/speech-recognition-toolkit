@@ -208,14 +208,6 @@ class ChromeApi {
   }
 
   /**
-   *Set Badge color on extension icon
-   * @method
-   * @memberOf ChromeApi
-   */
-  setBadgeColorOnActionIcon(color) {
-    chrome.browserAction.setBadgeBackgroundColor({ color });
-  }
-  /**
    * Open help page
    *
    * @method
@@ -246,12 +238,7 @@ class ChromeApi {
       }
     });
   }
-  /**
-   * tts stop
-   *
-   * @method
-   * @memberof ChromeApi
-   */
+
   stop() {
     chrome.tts.stop();
   }

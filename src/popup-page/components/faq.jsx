@@ -7,13 +7,7 @@ export default class Faq extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          This is an Open Source project created by{" "}
-          <a href="https://www.facebook.com/HiteshSaini99/" target="_blank">
-            Hitesh Saini
-          </a>
-          .
-        </p>
+        <p>This is an Open Source project.</p>
         <p>
           If you run into any issue, report it{" "}
           <a

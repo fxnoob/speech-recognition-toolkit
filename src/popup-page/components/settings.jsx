@@ -3,6 +3,7 @@ import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
 import Fab from "@material-ui/core/Fab";
 import GearIcon from "@material-ui/icons/Settings";
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
@@ -18,24 +19,19 @@ class Settings extends React.Component {
     isMicListening: false,
     isExtAllowed: true,
     timeStamp: +new Date(),
-    data: "",
-    language: ""
+    data: ""
   };
   componentDidMount() {
     this.init();
   }
   init = async () => {
     const { state } = await voice.permissionGranted();
-    const { isMicListening, defaultLanguage } = await db.get(
-      "isMicListening",
-      "defaultLanguage"
-    );
+    const { isMicListening } = await db.get("isMicListening");
     console.log({ isMicListening });
     this.setState({
       permissionGranted: state == "granted",
       loaded: true,
-      isMicListening,
-      language: defaultLanguage.label
+      isMicListening
     });
   };
   handleChange = name => event => {
@@ -62,24 +58,23 @@ class Settings extends React.Component {
   };
   render() {
     return (
-      <FormControl component="fieldset" style={{ marginTop: "1rem" }}>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Basic Settings</FormLabel>
         <FormGroup style={{ flexDirection: "row" }}>
-          {this.state.permissionGranted && (
-            <div>
-              <FormLabel component="legend">Default Language</FormLabel>
-              <div style={{ marginTop: "0.5rem" }}>
-                <a
-                  href={chrome.runtime.getURL("option.html") + "/#"}
-                  target="_blank"
-                >
-                  <b>{this.state.language}</b>
-                </a>
-              </div>
-            </div>
-          )}
-          {this.state.loaded &&
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.isExtAllowed}
+                onChange={this.handleChange("isExtAllowed")}
+                value="Enable/Disable Extension"
+              />
+            }
+            label="Enable/Disable Extension"
+          />
+          {this.state.isExtAllowed &&
+            this.state.loaded &&
             (this.state.permissionGranted ? (
-              <div style={{ marginLeft: "2rem" }}>
+              <div style={{ marginLeft: "1.5rem" }}>
                 <FormControlLabel
                   control={
                     <Fab

@@ -32,7 +32,7 @@ export default function() {
       "defaultLanguage",
       "alwaysOpen"
     );
-    setLang(defaultLanguage.label);
+    setLang(defaultLanguage.code);
     setOnBootStart(alwaysOpen);
   };
   const classes = useStyles();
@@ -55,11 +55,10 @@ export default function() {
   };
   const changeLanguage = async event => {
     setLang(event.target.value);
-    console.log(event.target);
     await db.set({
       defaultLanguage: {
-        code: voice.supportedLanguages[event.target.value],
-        label: event.target.value
+        code: event.target.value,
+        label: voice.supportedLanguages[event.target.value]
       }
     });
     messagePassing.sendMessage("/restart_sr", {}, () => {});
@@ -98,12 +97,12 @@ export default function() {
             onChange={changeLanguage}
             inputProps={{
               name: "name",
-              id: "open-select"
+              id: "demo-controlled-open-select"
             }}
           >
-            {Object.keys(voice.supportedLanguages).map(name => (
-              <MenuItem key={name} value={name}>
-                {name}
+            {Object.keys(voice.supportedLanguages).map(key => (
+              <MenuItem key={key} value={key}>
+                {voice.supportedLanguages[key]}
               </MenuItem>
             ))}
           </Select>

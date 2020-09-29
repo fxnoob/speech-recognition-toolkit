@@ -71,10 +71,10 @@ class Main {
           const { isMicListening } = await db.get("isMicListening");
           if (isMicListening) {
             await this.stopSR();
-            contextMenuTitle = "Start Speech Recognition Toolkit";
+            contextMenuTitle = "Start Speech Recognition tool";
           } else {
             await this.startSR();
-            contextMenuTitle = "Stop Speech Recognition Toolkit";
+            contextMenuTitle = "Stop Speech Recognition tool";
           }
           chrome.contextMenus.update(
             this.startStopSRContextMenu,
