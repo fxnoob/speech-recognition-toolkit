@@ -1,35 +1,34 @@
 {
-  "name" : "Fast Input",
-  "description": "A chrome extension to help you input data in webpage input fields very fast using smart human computer interaction techniques",
-  "version":"2.2",
-  "permissions":[
+  "name": "Speech Recognition Tool",
+  "description": "An easy to use speech synthesis and recognition tool for your browser! on any web page!",
+  "version": "2.2",
+  "permissions": [
+    "contextMenus",
     "tabs",
     "storage",
-    "webNavigation",
     "activeTab",
     "clipboardWrite",
-    "<all_urls>",
-    "notifications"
+    "<all_urls>"
   ],
   "background": {
-    "scripts": [
-      "background.bundle.js"
-    ]
+    "scripts": ["background.bundle.js"]
   },
   "browser_action": {
-    "default_title": "Fast Input",
+    "default_title": "Speech Recognition Tool",
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "images/icon.png" ,
+    "16": "images/icon.png",
     "128": "images/gear.png"
   },
-  "content_scripts": [{
-    "matches": ["<all_urls>"],
-    "js": ["content_script.bundle.js"],
-    "run_at": "document_end"
-  }],
-  "manifest_version": 2
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.bundle.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
-

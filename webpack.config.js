@@ -1,67 +1,77 @@
-const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const JavaScriptObfuscator = require('webpack-obfuscator');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-module.exports = {
-  entry: {
-    content_script: './content-scripts/App.jsx',
-    background: './src/background.js',
-    popup: './popup-page/App.jsx',
-    option: './option-page/App.jsx'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.((jsx)|(jpg))$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        options: {
-          presets: ['@babel/preset-react', '@babel/preset-env']
+const webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const dotenv = require("dotenv").config({ path: __dirname + "/.env" });
+const { manifestTransform } = require("./scripts/transform");
+
+module.exports = (env, options) => {
+  return {
+    entry: {
+      content_script: "./src/content-scripts/index.js",
+      background: "./src/background.js",
+      popup: "./src/popup-page/index.js",
+      option: "./src/option-page/index.js"
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/,
+          exclude: /node_modules/,
+          use: ["babel-loader"]
+        },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader"]
+        },
+        {
+          test: /\.(gif|png|jpe?g|svg)$/i,
+          use: [
+            "file-loader",
+            {
+              loader: "image-webpack-loader",
+              options: {
+                bypassOnDebug: true, // webpack@1.x
+                disable: true // webpack@2.x and newer
+              }
+            }
+          ]
         }
-      },
-      {
-        test: /src\.m?((js)|(jpg))$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
+      ]
+    },
+    resolve: {
+      extensions: ["*", ".js", ".jsx", ".json"]
+    },
+    output: {
+      path: __dirname + "/dist",
+      publicPath: "/",
+      filename: "[name].bundle.js"
+    },
+    devtool: "inline-sourcemap",
+    plugins: [
+      new CopyWebpackPlugin(
+        [
+          { from: "./src/popup-page/popup.html", force: true },
+          { from: "./src/option-page/option.html", force: true },
+          { from: "./src/app/", force: true }
+        ],
+        {}
+      ),
+      new webpack.DefinePlugin({
+        "process.env": dotenv.parsed
+      }),
+      new CopyWebpackPlugin([
+        {
+          from: "./src/app/manifest.json",
+          force: true,
+          transform(content, path) {
+            return manifestTransform(content, path, options);
           }
         }
-      },
-      {
-        test: /src\.m?((js)|(jpg))$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
-  },
-  plugins: [
-    new CopyWebpackPlugin([
-      { from: './popup-page/popup.html', force: true },
-      { from: './src/app/', force: true }
-    ], {}) ,
-    new JavaScriptObfuscator ({
-      rotateUnicodeArray: true
-    }, []),
-    new BundleAnalyzerPlugin()
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].bundle.js'
-  },
-  resolve: {
-    modules: [
-      './src/data',
-      'node_modules'
+      ]),
+      new webpack.HotModuleReplacementPlugin()
     ],
-    extensions: ['.js', '.jsx', '.json', '.jpg']
-  },
-  watch: false,
-  watchOptions: {
-    ignored: /node_modules/
-  }
-}
+    devServer: {
+      contentBase: "./dist",
+      hot: true
+    }
+  };
+};
