@@ -7,6 +7,7 @@ import Routes from "./routes";
 class Main {
   constructor() {
     this.startStopSRContextMenu = null;
+    this.fastPasteContextMenu = null;
     this.init();
   }
   init = async () => {
@@ -64,6 +65,30 @@ class Main {
       : "Start Speech Recognition tool";
     if (!this.startStopSRContextMenu) {
       this.startStopSRContextMenu = chromeService.createContextMenu({
+        title: contextMenuTitle,
+        contexts: ["all"],
+        onclick: async (info, tab) => {
+          let contextMenuTitle = "";
+          const { isMicListening } = await db.get("isMicListening");
+          if (isMicListening) {
+            await this.stopSR();
+            contextMenuTitle = "Start Speech Recognition tool";
+          } else {
+            await this.startSR();
+            contextMenuTitle = "Stop Speech Recognition tool";
+          }
+          chrome.contextMenus.update(
+            this.startStopSRContextMenu,
+            {
+              title: contextMenuTitle
+            },
+            () => {}
+          );
+        }
+      });
+    }
+    if (!this.fastPasteContextMenu) {
+      this.fastPasteContextMenu = chromeService.createContextMenu({
         title: contextMenuTitle,
         contexts: ["all"],
         onclick: async (info, tab) => {

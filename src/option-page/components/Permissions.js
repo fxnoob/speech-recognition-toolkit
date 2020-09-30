@@ -12,7 +12,6 @@ export default () => {
       );
     } else {
       setMessage("Please Allow Permissions in order to use this tool!");
-      alert("Please Allow Permissions in order to use this tool!");
     }
   };
   return (

@@ -40,6 +40,9 @@ class Home extends React.Component {
           <SpeechRecognitionSettings />
           {/*<GestureControlSettings />*/}
         </Grid>
+        <div style={{ textAlign: "center", marginTop: "3rem" }}>
+          Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
+        </div>
         <Fab className={classes.fab} color="#222222">
           <KeyboardVoiceIcon />
         </Fab>

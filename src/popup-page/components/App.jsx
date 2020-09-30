@@ -33,22 +33,6 @@ class FullWidthTabs extends React.Component {
   state = {
     value: 0
   };
-  componentDidMount() {
-    window.addEventListener(
-      "offline",
-      function(e) {
-        logger.log("Connection is flaky.");
-      },
-      false
-    );
-    window.addEventListener(
-      "offline",
-      function(e) {
-        logger.log("Connection is flaky.");
-      },
-      false
-    );
-  }
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -71,7 +55,7 @@ class FullWidthTabs extends React.Component {
             variant="fullWidth"
           >
             <Tab label="Settings" />
-            <Tab label="Faq" />
+            <Tab label="Help" />
           </Tabs>
         </AppBar>
         <SwipeableViews
