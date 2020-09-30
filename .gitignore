@@ -4,4 +4,4 @@ node_modules/
 dist/js
 tmp/
 dist
-.idea
+.idea/

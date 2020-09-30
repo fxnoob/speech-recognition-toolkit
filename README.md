@@ -1,13 +1,7 @@
-# Fast Input - A chrome extension with fastest way to input on chrome web pages.
+Fill out any input feild on web using only your voice!
+An easy to use speech synthesis and recognition tool for your browser!
+Speech Recognition Toolkit is an extension that helps you convert your speech to text and fill out forms on the websites.
 
-## Features : -
+It can recognize a wide variety of languages. In order to work with this extension, simply open the addon's UI and then press on the big microphone icon to start converting your voice to text. Please note that, when the add-on is first started, it asks for microphone permission. Please accept the permission to start working with the add-on.
 
-* Select text to copy (in context, different than main context)
-
-* double click on any input to paste selected text by fast copy
-
-* input any query or data using speech recognition feature on any input field on chrome pages in any of more than 30 languages.
-
-* operate mouse by hand gestures and simulate click and other events (under development)
-
-
+Chrome Store Link: https://chrome.google.com/webstore/detail/fast-input/hmpihaioaacpehkghnkmnmgmihalkmdf
