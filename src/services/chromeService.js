@@ -246,7 +246,12 @@ class ChromeApi {
       }
     });
   }
-
+  /**
+   * tts stop
+   *
+   * @method
+   * @memberof ChromeApi
+   */
   stop() {
     chrome.tts.stop();
   }

@@ -63,22 +63,23 @@ class Settings extends React.Component {
   render() {
     return (
       <FormControl component="fieldset" style={{ marginTop: "1rem" }}>
-        <FormLabel component="legend">Basic Settings</FormLabel>
         <FormGroup style={{ flexDirection: "row" }}>
           {this.state.permissionGranted && (
-            <div style={{ marginTop: "0.5rem" }}>
-              Default language:{" "}
-              <a
-                href={chrome.runtime.getURL("option.html") + "/#"}
-                target="_blank"
-              >
-                <b>{this.state.language}</b>
-              </a>
+            <div>
+              <FormLabel component="legend">Default Language</FormLabel>
+              <div style={{ marginTop: "0.5rem" }}>
+                <a
+                  href={chrome.runtime.getURL("option.html") + "/#"}
+                  target="_blank"
+                >
+                  <b>{this.state.language}</b>
+                </a>
+              </div>
             </div>
           )}
           {this.state.loaded &&
             (this.state.permissionGranted ? (
-              <div style={{ marginLeft: "2rem", marginTop: "-1rem" }}>
+              <div style={{ marginLeft: "2rem" }}>
                 <FormControlLabel
                   control={
                     <Fab

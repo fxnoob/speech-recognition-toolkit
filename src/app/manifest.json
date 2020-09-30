@@ -2,7 +2,14 @@
   "name": "Speech Recognition Toolkit",
   "description": "Fill out any form by using only your voice!",
   "version": "3.0.1",
-  "permissions": ["contextMenus", "tabs", "storage", "activeTab", "<all_urls>"],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "storage",
+    "activeTab",
+    "<all_urls>",
+    "tts"
+  ],
   "background": {
     "scripts": ["background.bundle.js"]
   },

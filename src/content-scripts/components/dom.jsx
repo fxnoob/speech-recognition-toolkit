@@ -4,6 +4,7 @@ import FileCopy from "@material-ui/icons/FileCopy";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+import SpeakerIcon from "@material-ui/icons/PlayArrow";
 import IFrame from "./FrameMUI";
 import initialContent from "./initialFrame";
 import messagePassing from "../../services/messagePassing";
@@ -73,6 +74,9 @@ class Dom extends React.Component {
     );
     this.setState({ open: false });
   }
+  handleSpeak(text) {
+    messagePassing.sendMessage("/speak_sr", { text });
+  }
   handleExited = () => {
     this.processQueue();
   };
@@ -121,6 +125,23 @@ class Dom extends React.Component {
                 }}
               >
                 <FileCopy />
+              </IconButton>
+            </IFrame>,
+            <IFrame
+              initialContent={initialContent()}
+              className="default-iframe"
+              style={{ border: "none", height: "50px", width: "50px" }}
+            >
+              <IconButton
+                key="speakText"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={() => {
+                  this.handleSpeak(messageInfo.message);
+                }}
+              >
+                <SpeakerIcon />
               </IconButton>
             </IFrame>,
             <IFrame

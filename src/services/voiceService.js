@@ -18,11 +18,14 @@ class Voice {
     chromeService.setBadgeOnActionIcon("");
     this.SR.abort();
   }
-  setLanguage(langKey = "en-AU") {
+  setLanguage(langKey = "en-US") {
     this.SR.setLanguage(langKey);
   }
   permissionGranted() {
     return navigator.permissions.query({ name: "microphone" });
+  }
+  speak(text, options) {
+    chrome.tts.speak(text, options); // options : {lang: lang_key}
   }
 }
 
