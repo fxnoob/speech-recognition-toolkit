@@ -4,6 +4,8 @@ import FileCopy from "@material-ui/icons/FileCopy";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
+import IFrame from "./FrameMUI";
+import initialContent from "./initialFrame";
 import messagePassing from "../../services/messagePassing";
 import simulation from "../../services/simulationService";
 
@@ -63,6 +65,7 @@ class Dom extends React.Component {
     this.setState({ open: false });
   };
   handleCopy(message) {
+    this.copyText(message);
     messagePassing.sendMessage(
       "/set_selected_text",
       { data: message },
@@ -72,6 +75,14 @@ class Dom extends React.Component {
   }
   handleExited = () => {
     this.processQueue();
+  };
+  copyText = text => {
+    const dummy = document.createElement("textarea");
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
   };
   render() {
     const { classes } = this.props;
@@ -95,26 +106,38 @@ class Dom extends React.Component {
           }}
           message={<span id="message-id">{messageInfo.message}</span>}
           action={[
-            <IconButton
-              key="copyclose"
-              aria-label="Close"
-              color="inherit"
-              className={classes.close}
-              onClick={() => {
-                this.handleCopy(messageInfo.message);
-              }}
+            <IFrame
+              initialContent={initialContent()}
+              className="default-iframe"
+              style={{ border: "none", height: "50px", width: "50px" }}
             >
-              <FileCopy />
-            </IconButton>,
-            <IconButton
-              key="closeclose"
-              aria-label="Close"
-              color="inherit"
-              className={classes.close}
-              onClick={this.handleClose}
+              <IconButton
+                key="copyclose"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={() => {
+                  this.handleCopy(messageInfo.message);
+                }}
+              >
+                <FileCopy />
+              </IconButton>
+            </IFrame>,
+            <IFrame
+              initialContent={initialContent()}
+              className="default-iframe"
+              style={{ border: "none", height: "50px", width: "50px" }}
             >
-              <CloseIcon />
-            </IconButton>
+              <IconButton
+                key="closeclose"
+                aria-label="Close"
+                color="inherit"
+                className={classes.close}
+                onClick={this.handleClose}
+              >
+                <CloseIcon />
+              </IconButton>
+            </IFrame>
           ]}
         />
       </div>
