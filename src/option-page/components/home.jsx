@@ -38,7 +38,6 @@ class Home extends React.Component {
           style={{ display: "flex", justifyContent: "center" }}
         >
           <SpeechRecognitionSettings />
-          {/*<GestureControlSettings />*/}
         </Grid>
         <div style={{ textAlign: "center", marginTop: "3rem" }}>
           Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
