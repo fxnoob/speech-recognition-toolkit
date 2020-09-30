@@ -1,26 +1,21 @@
 {
-  "name": "Speech Recognition Tool",
-  "description": "An easy to use speech synthesis and recognition tool for your browser! on any web page!",
-  "version": "2.2",
-  "permissions": [
-    "contextMenus",
-    "tabs",
-    "storage",
-    "activeTab",
-    "clipboardWrite",
-    "<all_urls>"
-  ],
+  "name": "Speech Recognition Toolkit",
+  "description": "Fill out any form by using only your voice!",
+  "version": "3.0.1",
+  "permissions": ["contextMenus", "storage", "activeTab", "<all_urls>"],
   "background": {
     "scripts": ["background.bundle.js"]
   },
   "browser_action": {
-    "default_title": "Speech Recognition Tool",
+    "default_title": "Speech Recognition Toolkit",
     "default_icon": "images/icon.png",
     "default_popup": "popup.html"
   },
   "icons": {
-    "16": "images/icon.png",
-    "128": "images/gear.png"
+    "16": "images/icon-16.png",
+    "19": "images/icon-19.png",
+    "38": "images/icon-38.png",
+    "128": "images/icon-128.png"
   },
   "content_scripts": [
     {

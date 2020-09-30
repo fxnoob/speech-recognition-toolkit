@@ -2,7 +2,7 @@ const guid = require("./src/services/guid");
 
 const constants = {
   appConfig: {
-    appName: "extension name",
+    appName: "Speech Recognition Toolkit",
     // put extension key here if required which would only be used development mode
     "key ":
       "-----BEGIN PUBLIC KEY-----\n" +

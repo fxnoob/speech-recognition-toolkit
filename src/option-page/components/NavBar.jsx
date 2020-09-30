@@ -30,7 +30,7 @@ const ButtonAppBar = props => {
       >
         <Toolbar>
           <Typography variant="h6" className={classes.grow}>
-            Speech Recognition Tool
+            Speech Recognition Toolkit
           </Typography>
         </Toolbar>
       </AppBar>
