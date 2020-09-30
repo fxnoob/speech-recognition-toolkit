@@ -1,44 +1,108 @@
-import '@babel/polyfill'
-import Message from './util/message'
-import { onStartUp as OnStartUp } from './util/onstartup'
-import { speechTranslation } from "./util/speech_translation";
+import "@babel/polyfill";
+import db, { schema } from "./services/db";
+import voice from "./services/voiceService";
+import chromeService from "./services/chromeService";
+import Routes from "./routes";
 
-const message = new Message()
-const onstartup = new OnStartUp()
-const speechTranslationController = new speechTranslation()
-
-speechTranslationController.translate('Ik spreek Engels', {to: 'en'}).then(res => {
-  console.log(res.text);
-  //=> I speak English
-  console.log(res.from.language.iso);
-  //=> nl
-}).catch(err => {
-  console.log("error catch" , err);
-});
-
-/** event fires when  chrome starts */
-chrome.runtime.onStartup.addListener(() => {
-  console.log('Chrome start')
-  /** open option page to listen to speech commands if option is enabled */
-  onstartup.EnableSpeechRecognitionIfSet()
-})
-
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.method === 'setSelectedText') {
-    console.log(request.data)
-    message.setSelectedText(request.data)
-  } else if (request.method === 'getData') {
-    console.log(request)
-    message.getData()
-      .then((data) => {
-        sendResponse({ data: data })
-      })
-      .catch(e => {
-        console.log(e)
-      })
-  } else if (request.method === 'getSettings') {
-    const setting = message.getSettings()
-    sendResponse({ data: setting })
+class Main {
+  constructor() {
+    this.startStopSRContextMenu = null;
+    this.init();
   }
-  return true
-})
+  init = async () => {
+    await this.initDb();
+    await this.initContextMenu();
+    await Routes(voice, {
+      startStopSRContextMenu: this.startStopSRContextMenu
+    });
+    this.startUpInit();
+  };
+  /**
+   * initialize db settings
+   *
+   * @method
+   * @memberof Main
+   */
+  initDb = async () => {
+    const res = await db.get("loaded");
+    if (!res.hasOwnProperty("loaded")) {
+      await db.set(schema.data);
+    }
+  };
+  /**
+   * Start speech recognition with default language
+   *
+   * @method
+   * @memberof Main
+   */
+  startSR = async () => {
+    const { defaultLanguage } = await db.get("defaultLanguage");
+    voice.setLanguage(defaultLanguage.key);
+    voice.start();
+    await db.set({ isMicListening: true });
+  };
+  /**
+   * Stop speech recognition
+   *
+   * @method
+   * @memberof Main
+   */
+  stopSR = async () => {
+    voice.stop();
+    await db.set({ isMicListening: false });
+  };
+  /**
+   * Context menu option initialization
+   *
+   * @method
+   * @memberof Main
+   */
+  initContextMenu = async () => {
+    const { isMicListening } = await db.get("isMicListening");
+    const contextMenuTitle = isMicListening
+      ? "Stop Speech Recognition tool"
+      : "Start Speech Recognition tool";
+    if (!this.startStopSRContextMenu) {
+      this.startStopSRContextMenu = chromeService.createContextMenu({
+        title: contextMenuTitle,
+        contexts: ["all"],
+        onclick: async (info, tab) => {
+          let contextMenuTitle = "";
+          const { isMicListening } = await db.get("isMicListening");
+          if (isMicListening) {
+            await this.stopSR();
+            contextMenuTitle = "Start Speech Recognition Toolkit";
+          } else {
+            await this.startSR();
+            contextMenuTitle = "Stop Speech Recognition Toolkit";
+          }
+          chrome.contextMenus.update(
+            this.startStopSRContextMenu,
+            {
+              title: contextMenuTitle
+            },
+            () => {}
+          );
+        }
+      });
+    }
+  };
+  /**
+   * Chrome startup initializations
+   *
+   * @method
+   * @memberof Main
+   */
+  startUpInit() {
+    /** event fires when chrome starts */
+    chrome.runtime.onStartup.addListener(async () => {
+      /** open option page to listen to speech commands if option is enabled */
+      const { alwaysOpen } = await db.get("alwaysOpen");
+      if (alwaysOpen) {
+        await this.startSR();
+      }
+    });
+  }
+}
+
+new Main();
