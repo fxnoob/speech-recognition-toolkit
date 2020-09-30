@@ -40,12 +40,12 @@ const Routes = async (voice, contextMenus) => {
     const { isMicListening } = await db.get("isMicListening");
     if (isMicListening) {
       voice.stop();
-      contextMenuTitle = "Start Speech Recognition tool";
+      contextMenuTitle = "Start Speech Recognition Toolkit";
     } else {
       const { defaultLanguage } = await db.get("defaultLanguage");
       voice.setLanguage(defaultLanguage.code);
       voice.start();
-      contextMenuTitle = "Stop Speech Recognition tool";
+      contextMenuTitle = "Stop Speech Recognition Toolkit";
     }
     await db.set({ isMicListening: !isMicListening });
     chrome.contextMenus.update(
@@ -68,6 +68,12 @@ const Routes = async (voice, contextMenus) => {
       voice.setLanguage(defaultLanguage.code);
       voice.start();
     }
+  });
+  //speak sr sound
+  MessagePassing.on("/speak_sr", async (req, res, options) => {
+    const { text } = req;
+    const { defaultLanguage } = await db.get("defaultLanguage");
+    voice.speak(text, { lang: defaultLanguage.code });
   });
 };
 

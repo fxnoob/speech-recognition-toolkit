@@ -11,8 +11,8 @@ class Schema {
       audioAccess: false,
       alwaysOpen: false,
       defaultLanguage: {
-        code: "en-AU",
-        label: "English"
+        code: "en-US",
+        label: "English - United States"
       }
     };
   }
