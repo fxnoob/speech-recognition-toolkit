@@ -65,7 +65,7 @@ class Main {
    * @method
    * @memberof Main
    */
-  mountCSOnActiveTab = async () => {
+  mountCSOnActiveTabIfNotMountedAlready = async () => {
     /***
      * load content script if not laoded already
      */
@@ -89,7 +89,7 @@ class Main {
       "mountedCSOnActiveTabOnlyOnce"
     );
     if (!mountedCSOnActiveTabOnlyOnce) {
-      this.mountCSOnActiveTab();
+      this.mountCSOnActiveTabIfNotMountedAlready();
       await db.set({ mountedCSOnActiveTabOnlyOnce: true });
     }
   };
@@ -144,7 +144,7 @@ class Main {
    */
   onTabChangeInit = () => {
     chrome.tabs.onActivated.addListener(activeInfo => {
-      this.mountCSOnActiveTab();
+      this.mountCSOnActiveTabIfNotMountedAlready();
     });
   };
   /**
