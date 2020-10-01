@@ -3,10 +3,6 @@ import db from "../../services/db";
 import voice from "../../services/voiceService";
 import messagePassing from "../../services/messagePassing";
 import { makeStyles } from "@material-ui/core/styles";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import Checkbox from "@material-ui/core/Checkbox";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
@@ -17,14 +13,14 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import FormControl from "@material-ui/core/FormControl";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: "100%",
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper
+    width: "100%"
   }
 }));
+
 export default function() {
   const [onBootStart, setOnBootStart] = useState(false);
   const [languageSelectOptionOpen, setLanguageSelectOptionOpen] = useState(
@@ -45,18 +41,6 @@ export default function() {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
 
-  const handleToggle = value => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
-  };
   const closeLanguageSelectOption = () => {
     setLanguageSelectOptionOpen(false);
   };
@@ -76,47 +60,61 @@ export default function() {
     setOnBootStart(!onBootStart);
     await db.set({ alwaysOpen });
   };
+
   return (
-    <List className={classes.root}>
-      <ListItem key={1} role={undefined} dense button onClick={handleToggle(2)}>
-        <ListItemIcon>
-          <Checkbox
-            edge="start"
-            checked={onBootStart}
-            tabIndex={-1}
-            onChange={toggleOnBootSetting}
-            inputProps={{ "aria-labelledby": "aria" }}
-          />
-        </ListItemIcon>
-        <ListItemText
-          id={1}
-          primary={`Start 'Speech Recognition' when Chrome starts`}
-        />
-      </ListItem>
-      <ListItem key={2} role={undefined} dense button onClick={handleToggle(2)}>
-        <ListItemIcon>
-          <Select
-            open={languageSelectOptionOpen}
-            onClose={closeLanguageSelectOption}
-            onOpen={() => {
-              setLanguageSelectOptionOpen(true);
-            }}
-            value={lang}
-            onChange={changeLanguage}
-            inputProps={{
-              name: "name",
-              id: "open-select"
-            }}
-          >
-            {Object.keys(voice.supportedLanguages).map(name => (
-              <MenuItem key={name} value={name}>
-                {name}
-              </MenuItem>
-            ))}
-          </Select>
-        </ListItemIcon>
-        <ListItemText id={2} primary={`Change Speech Recognition Language`} />
-      </ListItem>
-    </List>
+    <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableBody>
+          <TableRow>
+            <TableCell
+              style={{
+                paddding: "1rem",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <Checkbox
+                edge="start"
+                checked={onBootStart}
+                tabIndex={-1}
+                onChange={toggleOnBootSetting}
+                inputProps={{ "aria-labelledby": "aria" }}
+              />
+            </TableCell>
+            <TableCell align="right">
+              Start 'Speech Recognition' when Chrome starts
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>
+              <FormControl variant="outlined" style={{ maxWidth: "205px" }}>
+                <Select
+                  open={languageSelectOptionOpen}
+                  onClose={closeLanguageSelectOption}
+                  onOpen={() => {
+                    setLanguageSelectOptionOpen(true);
+                  }}
+                  value={lang}
+                  onChange={changeLanguage}
+                  inputProps={{
+                    name: "name",
+                    id: "open-select"
+                  }}
+                >
+                  {Object.keys(voice.supportedLanguages).map(name => (
+                    <MenuItem key={name} value={name}>
+                      {name}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </TableCell>
+            <TableCell align="right">
+              Change Speech Recognition Language
+            </TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 }

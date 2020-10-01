@@ -9,13 +9,23 @@ class Main {
     this.startStopSRContextMenu = null;
     this.init();
   }
+  /**
+   * init method
+   *
+   * @method
+   * @memberof Main
+   */
   init = async () => {
     await this.initDb();
+    this.mountCSOnActiveTabOnlyOnce();
+    this.onTabChangeInit();
     await this.initContextMenu();
     await Routes(voice, {
       startStopSRContextMenu: this.startStopSRContextMenu
     });
-    this.startUpInit();
+    this.startUpInit({
+      startStopSRContextMenu: this.startStopSRContextMenu
+    });
   };
   /**
    * initialize db settings
@@ -26,7 +36,7 @@ class Main {
   initDb = async () => {
     const res = await db.get("loaded");
     if (!res.hasOwnProperty("loaded")) {
-      await db.set(schema.data);
+      await db.set({ loaded: true, ...schema.data });
     }
   };
   /**
@@ -52,6 +62,40 @@ class Main {
     await db.set({ isMicListening: false });
   };
   /**
+   * mount content script on active tab
+   *
+   * @method
+   * @memberof Main
+   */
+  mountCSOnActiveTabIfNotMountedAlready = async () => {
+    /***
+     * load content script if not laoded already
+     */
+    chromeService.sendMessageToActiveTab({ path: "/cs_mounted" }, async res => {
+      if (!(res && res.mounted)) {
+        const activeTab = await chromeService.getActiveTab();
+        chrome.tabs.executeScript(activeTab.id, {
+          file: "content_script.bundle.js"
+        });
+      }
+    });
+  };
+  /**
+   * mount content script on active tab only once
+   *
+   * @method
+   * @memberof Main
+   */
+  mountCSOnActiveTabOnlyOnce = async () => {
+    const { mountedCSOnActiveTabOnlyOnce } = await db.get(
+      "mountedCSOnActiveTabOnlyOnce"
+    );
+    if (!mountedCSOnActiveTabOnlyOnce) {
+      this.mountCSOnActiveTabIfNotMountedAlready();
+      await db.set({ mountedCSOnActiveTabOnlyOnce: true });
+    }
+  };
+  /**
    * Context menu option initialization
    *
    * @method
@@ -67,25 +111,43 @@ class Main {
         title: contextMenuTitle,
         contexts: ["all"],
         onclick: async (info, tab) => {
-          let contextMenuTitle = "";
-          const { isMicListening } = await db.get("isMicListening");
-          if (isMicListening) {
-            await this.stopSR();
-            contextMenuTitle = "Start Speech Recognition Toolkit";
+          const { state } = await voice.permissionGranted();
+          if (state != "granted") {
+            chromeService.openHelpPage("/#/permissions");
           } else {
-            await this.startSR();
-            contextMenuTitle = "Stop Speech Recognition Toolkit";
+            let contextMenuTitle = "";
+            const { isMicListening } = await db.get("isMicListening");
+            if (isMicListening) {
+              await this.stopSR();
+              contextMenuTitle = "Start Speech Recognition Toolkit";
+            } else {
+              await this.startSR();
+              contextMenuTitle = "Stop Speech Recognition Toolkit";
+            }
+            chrome.contextMenus.update(
+              this.startStopSRContextMenu,
+              {
+                title: contextMenuTitle
+              },
+              () => {}
+            );
           }
-          chrome.contextMenus.update(
-            this.startStopSRContextMenu,
-            {
-              title: contextMenuTitle
-            },
-            () => {}
-          );
         }
       });
     }
+  };
+  /**
+   * Listens for tab change
+   * helpful for checking if content script was mounted or not
+   * mount content script if not mounted already
+   *
+   * @method
+   * @memberof Main
+   */
+  onTabChangeInit = () => {
+    chrome.tabs.onActivated.addListener(activeInfo => {
+      this.mountCSOnActiveTabIfNotMountedAlready();
+    });
   };
   /**
    * Chrome startup initializations
@@ -93,14 +155,44 @@ class Main {
    * @method
    * @memberof Main
    */
-  startUpInit() {
+  startUpInit(contextMenus) {
     /** event fires when chrome starts */
     chrome.runtime.onStartup.addListener(async () => {
+      console.log("onStartup called");
       /** open option page to listen to speech commands if option is enabled */
       const { alwaysOpen } = await db.get("alwaysOpen");
       if (alwaysOpen) {
         await this.startSR();
+      } else {
+        chromeService.setBadgeOnActionIcon("");
       }
+    });
+    chrome.windows.onCreated.addListener(async () => {
+      chrome.windows.getAll(async windows => {
+        if (windows.length == 1) {
+          const { alwaysOpen, isMicListening } = await db.get(
+            "alwaysOpen",
+            "isMicListening"
+          );
+          console.log(alwaysOpen, isMicListening);
+          if (alwaysOpen) {
+            await this.startSR();
+            const { startStopSRContextMenu } = contextMenus;
+            const contextMenuTitle = alwaysOpen
+              ? "Stop Speech Recognition tool"
+              : "Start Speech Recognition tool";
+            chrome.contextMenus.update(
+              startStopSRContextMenu,
+              {
+                title: contextMenuTitle
+              },
+              () => {}
+            );
+          } else if (!isMicListening) {
+            chromeService.setBadgeOnActionIcon("");
+          }
+        }
+      });
     });
   }
 }

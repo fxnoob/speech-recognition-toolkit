@@ -30,7 +30,6 @@ class Settings extends React.Component {
       "isMicListening",
       "defaultLanguage"
     );
-    console.log({ isMicListening });
     this.setState({
       permissionGranted: state == "granted",
       loaded: true,
@@ -55,7 +54,6 @@ class Settings extends React.Component {
         action: "toggle_sr"
       },
       res => {
-        console.log({ res });
         this.setState({ isMicListening: res.isMicListening });
       }
     );
@@ -69,6 +67,8 @@ class Settings extends React.Component {
               <FormLabel component="legend">Default Language</FormLabel>
               <div style={{ marginTop: "0.5rem" }}>
                 <a
+                  aria-label="Click to change default language"
+                  data-balloon-pos="down"
                   href={chrome.runtime.getURL("option.html") + "/#"}
                   target="_blank"
                 >
@@ -81,28 +81,27 @@ class Settings extends React.Component {
             (this.state.permissionGranted ? (
               <div style={{ marginLeft: "2rem" }}>
                 <FormControlLabel
+                  aria-label="click here to turn on/off speech recognition"
+                  data-balloon-pos="down"
                   control={
                     <Fab
                       style={{
                         background: this.state.isMicListening ? "#f50057" : ""
                       }}
                       variant="extended"
-                      aria-label="Mic Icon"
                       onClick={this.sendMessageToActivateVoiceRecognition}
                     >
                       <KeyboardVoiceIcon />
+                      {this.state.isMicListening ? "Listening" : ""}
                     </Fab>
                   }
-                  label=""
                 />
                 <FormControlLabel
+                  aria-label="open settings"
+                  data-balloon-pos="down"
                   style={{ marginLeft: "0.5rem" }}
                   control={
-                    <Fab
-                      variant="extended"
-                      aria-label="Gear Icon"
-                      onClick={this.openOptionPage}
-                    >
+                    <Fab variant="extended" onClick={this.openOptionPage}>
                       <GearIcon />
                     </Fab>
                   }
@@ -111,11 +110,12 @@ class Settings extends React.Component {
               </div>
             ) : (
               <FormControlLabel
+                aria-label="click here to Allow Audio Permission"
+                data-balloon-pos="down"
                 style={{ marginTop: "0.5rem" }}
                 control={
                   <Fab
                     variant="extended"
-                    aria-label="Gear Icon"
                     onClick={this.openOptionPermissionsPage}
                   >
                     <GearIcon />
