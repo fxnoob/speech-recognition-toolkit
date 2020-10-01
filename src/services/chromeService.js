@@ -127,9 +127,12 @@ class ChromeApi {
   };
 
   sendMessageToActiveTab = async (payload, callback) => {
-    console.log("sendMessageToActiveTab called", payload);
-    const tab = await this.getActiveTab();
-    chrome.tabs.sendMessage(tab.id, payload, callback);
+    try {
+      const tab = await this.getActiveTab();
+      chrome.tabs.sendMessage(tab.id, payload, callback);
+    } catch (e) {
+      console.log(e);
+    }
     return true;
   };
 
@@ -225,7 +228,12 @@ class ChromeApi {
     const helpUrl = chrome.runtime.getURL("option.html") + `${path}`;
     chrome.tabs.create({ url: helpUrl }, () => {});
   };
-
+  /**
+   * create context menu
+   *
+   * @method
+   * @memberof ChromeApi
+   */
   createContextMenu = opts => {
     return chrome.contextMenus.create(opts);
   };

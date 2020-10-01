@@ -6,6 +6,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Fab from "@material-ui/core/Fab";
 import GearIcon from "@material-ui/icons/Settings";
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
+import Tooltip from "@material-ui/core/Tooltip";
 import messagePassing from "../../services/messagePassing";
 import chromeService from "../../services/chromeService";
 import voice from "../../services/voiceService";
@@ -30,7 +31,6 @@ class Settings extends React.Component {
       "isMicListening",
       "defaultLanguage"
     );
-    console.log({ isMicListening });
     this.setState({
       permissionGranted: state == "granted",
       loaded: true,
@@ -55,7 +55,6 @@ class Settings extends React.Component {
         action: "toggle_sr"
       },
       res => {
-        console.log({ res });
         this.setState({ isMicListening: res.isMicListening });
       }
     );
@@ -68,12 +67,18 @@ class Settings extends React.Component {
             <div>
               <FormLabel component="legend">Default Language</FormLabel>
               <div style={{ marginTop: "0.5rem" }}>
-                <a
-                  href={chrome.runtime.getURL("option.html") + "/#"}
-                  target="_blank"
+                <Tooltip
+                  placement="bottom"
+                  style={{ marginTop: "2rem !important" }}
+                  title="Click to change default language"
                 >
-                  <b>{this.state.language}</b>
-                </a>
+                  <a
+                    href={chrome.runtime.getURL("option.html") + "/#"}
+                    target="_blank"
+                  >
+                    <b>{this.state.language}</b>
+                  </a>
+                </Tooltip>
               </div>
             </div>
           )}
@@ -90,7 +95,10 @@ class Settings extends React.Component {
                       aria-label="Mic Icon"
                       onClick={this.sendMessageToActivateVoiceRecognition}
                     >
-                      <KeyboardVoiceIcon />
+                      <Tooltip title="Turn on/off mic listening">
+                        <KeyboardVoiceIcon />
+                      </Tooltip>
+                      {this.state.isMicListening ? "Listening" : ""}
                     </Fab>
                   }
                   label=""
@@ -103,7 +111,9 @@ class Settings extends React.Component {
                       aria-label="Gear Icon"
                       onClick={this.openOptionPage}
                     >
-                      <GearIcon />
+                      <Tooltip title="open settings">
+                        <GearIcon />
+                      </Tooltip>
                     </Fab>
                   }
                   label=""

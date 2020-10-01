@@ -22,6 +22,10 @@ class Dom extends React.Component {
     messageInfo: {}
   };
   componentDidMount() {
+    /** Check for content script mount acknowledgement from background script */
+    messagePassing.on("/cs_mounted", async (req, res, options) => {
+      res({ mounted: true });
+    });
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async (req, res, options) => {
       const { text } = req;

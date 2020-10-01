@@ -9,8 +9,16 @@ class Main {
     this.startStopSRContextMenu = null;
     this.init();
   }
+  /**
+   * init method
+   *
+   * @method
+   * @memberof Main
+   */
   init = async () => {
     await this.initDb();
+    this.mountCSOnActiveTabOnlyOnce();
+    this.onTabChangeInit();
     await this.initContextMenu();
     await Routes(voice, {
       startStopSRContextMenu: this.startStopSRContextMenu
@@ -52,6 +60,40 @@ class Main {
     await db.set({ isMicListening: false });
   };
   /**
+   * mount content script on active tab
+   *
+   * @method
+   * @memberof Main
+   */
+  mountCSOnActiveTab = async () => {
+    /***
+     * load content script if not laoded already
+     */
+    chromeService.sendMessageToActiveTab({ path: "/cs_mounted" }, async res => {
+      if (!(res && res.mounted)) {
+        const activeTab = await chromeService.getActiveTab();
+        chrome.tabs.executeScript(activeTab.id, {
+          file: "content_script.bundle.js"
+        });
+      }
+    });
+  };
+  /**
+   * mount content script on active tab only once
+   *
+   * @method
+   * @memberof Main
+   */
+  mountCSOnActiveTabOnlyOnce = async () => {
+    const { mountedCSOnActiveTabOnlyOnce } = await db.get(
+      "mountedCSOnActiveTabOnlyOnce"
+    );
+    if (!mountedCSOnActiveTabOnlyOnce) {
+      this.mountCSOnActiveTab();
+      await db.set({ mountedCSOnActiveTabOnlyOnce: true });
+    }
+  };
+  /**
    * Context menu option initialization
    *
    * @method
@@ -67,25 +109,43 @@ class Main {
         title: contextMenuTitle,
         contexts: ["all"],
         onclick: async (info, tab) => {
-          let contextMenuTitle = "";
-          const { isMicListening } = await db.get("isMicListening");
-          if (isMicListening) {
-            await this.stopSR();
-            contextMenuTitle = "Start Speech Recognition Toolkit";
+          const { state } = voice.permissionGranted();
+          if (state != "granted") {
+            chromeService.openHelpPage("/#/permissions");
           } else {
-            await this.startSR();
-            contextMenuTitle = "Stop Speech Recognition Toolkit";
+            let contextMenuTitle = "";
+            const { isMicListening } = await db.get("isMicListening");
+            if (isMicListening) {
+              await this.stopSR();
+              contextMenuTitle = "Start Speech Recognition Toolkit";
+            } else {
+              await this.startSR();
+              contextMenuTitle = "Stop Speech Recognition Toolkit";
+            }
+            chrome.contextMenus.update(
+              this.startStopSRContextMenu,
+              {
+                title: contextMenuTitle
+              },
+              () => {}
+            );
           }
-          chrome.contextMenus.update(
-            this.startStopSRContextMenu,
-            {
-              title: contextMenuTitle
-            },
-            () => {}
-          );
         }
       });
     }
+  };
+  /**
+   * Listens for tab change
+   * helpful for checking if content script was mounted or not
+   * mount content script if not mounted already
+   *
+   * @method
+   * @memberof Main
+   */
+  onTabChangeInit = () => {
+    chrome.tabs.onActivated.addListener(activeInfo => {
+      this.mountCSOnActiveTab();
+    });
   };
   /**
    * Chrome startup initializations

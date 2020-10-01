@@ -37,6 +37,7 @@ module.exports = (env, options) => {
         }
       ]
     },
+    devtool: "inline-sourcemap",
     resolve: {
       extensions: ["*", ".js", ".jsx", ".json"]
     },
