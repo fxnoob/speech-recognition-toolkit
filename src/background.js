@@ -109,7 +109,7 @@ class Main {
         title: contextMenuTitle,
         contexts: ["all"],
         onclick: async (info, tab) => {
-          const { state } = voice.permissionGranted();
+          const { state } = await voice.permissionGranted();
           if (state != "granted") {
             chromeService.openHelpPage("/#/permissions");
           } else {
