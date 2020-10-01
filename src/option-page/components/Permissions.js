@@ -34,6 +34,8 @@ export default () => {
           <div className="mt-8 flex justify-center">
             <div className="ml-3 inline-flex">
               <button
+                aria-label="click here to turn on/off speech recognition"
+                data-balloon-pos="down"
                 onClick={allowPermissions}
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out btn"
               >

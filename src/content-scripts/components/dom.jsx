@@ -29,14 +29,13 @@ class Dom extends React.Component {
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async (req, res, options) => {
       const { text } = req;
-      console.log({ text });
       this.speechToTextListener(text);
     });
   }
   speechToTextListener(text) {
     let strArray = text.split("");
     strArray.map(str_char => {
-      simulation.keypress([new String(str_char).charCodeAt(0)]);
+      simulation.keypress(new String(str_char).charCodeAt(0));
     });
     /** open snackbar with recognised text */
     this.handleClick(text)();

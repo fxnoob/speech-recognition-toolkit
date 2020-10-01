@@ -86,7 +86,7 @@ export class Simulaiton {
 
     // array is an array: [keyCode, ctrl, alt, shift]
     if (Array.isArray(array)) {
-      keyCode = array[0]; // Version 0.99.7
+      keyCode = array[0];
       ctrl =
         typeof array[1] != "undefined" &&
         array[1] != "0" &&
@@ -115,90 +115,7 @@ export class Simulaiton {
         array[4] != false
           ? true
           : false;
-    } else keyCode = array; // keypress(32) instead of keypress([32])
-    const keyCodes = [
-      {
-        keyCode: 8,
-        code: "Backspace",
-        key: "Backspace"
-      },
-      {
-        keyCode: 9,
-        code: "Tab",
-        key: "Tab"
-      },
-      {
-        keyCode: 13,
-        code: "Enter",
-        key: "Enter"
-      },
-      {
-        keyCode: 16,
-        code: "ShiftLeft",
-        key: "Shift"
-      },
-      {
-        keyCode: 17,
-        code: "ControlRight",
-        key: "Control"
-      },
-      {
-        keyCode: 18,
-        code: "AltLeft",
-        key: "Alt"
-      },
-      {
-        keyCode: 27,
-        code: "Escape",
-        key: "Escape"
-      },
-      {
-        keyCode: 32,
-        code: "Space",
-        key: " ",
-        no_insertText: false
-      },
-      {
-        keyCode: 35,
-        code: "End",
-        key: "End"
-      },
-      {
-        keyCode: 36,
-        code: "Home",
-        key: "Home"
-      },
-      {
-        keyCode: 37,
-        code: "ArrowLeft",
-        key: "ArrowLeft"
-      },
-      {
-        keyCode: 38,
-        code: "ArrowUp",
-        key: "ArrowUp"
-      },
-      {
-        keyCode: 39,
-        code: "ArrowRight",
-        key: "ArrowRight"
-      },
-      {
-        keyCode: 40,
-        code: "ArrowDown",
-        key: "ArrowDown"
-      },
-      {
-        keyCode: 45,
-        code: "Insert",
-        key: "Insert"
-      },
-      {
-        keyCode: 46,
-        code: "Delete",
-        key: "Delete"
-      }
-    ];
+    } else keyCode = array;
     if (isNaN(keyCode)) {
       // if keyCode is not a number
       keyCode = keyCode.charCodeAt(0); // Convert string character into charCode
@@ -207,15 +124,6 @@ export class Simulaiton {
     var keyCodeLowerCase = keyCode;
     var key = String.fromCharCode(keyCode);
     var code = "Key" + key.toUpperCase();
-    for (var c = 0; c < keyCodes.length; c++) {
-      if (keyCode == keyCodes[c].keyCode) {
-        code = keyCodes[c].code;
-        key = keyCodes[c].key;
-        no_insertText = true; // Don't insert text for keys in keyCodes array
-        if (keyCodes[c].hasOwnProperty("no_insertText"))
-          no_insertText = keyCodes[c].no_insertText;
-      }
-    }
     // keydown and keyup change a-z (97-122) to A-Z (65-90); keypress leaves it as lowercase
     if (keyCode >= 97 && keyCode <= 122) keyCodeLowerCase = keyCode - 32;
     var keyObj = {

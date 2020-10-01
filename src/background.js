@@ -23,7 +23,9 @@ class Main {
     await Routes(voice, {
       startStopSRContextMenu: this.startStopSRContextMenu
     });
-    this.startUpInit();
+    this.startUpInit({
+      startStopSRContextMenu: this.startStopSRContextMenu
+    });
   };
   /**
    * initialize db settings
@@ -34,7 +36,7 @@ class Main {
   initDb = async () => {
     const res = await db.get("loaded");
     if (!res.hasOwnProperty("loaded")) {
-      await db.set(schema.data);
+      await db.set({ loaded: true, ...schema.data });
     }
   };
   /**
@@ -153,14 +155,44 @@ class Main {
    * @method
    * @memberof Main
    */
-  startUpInit() {
+  startUpInit(contextMenus) {
     /** event fires when chrome starts */
     chrome.runtime.onStartup.addListener(async () => {
+      console.log("onStartup called");
       /** open option page to listen to speech commands if option is enabled */
       const { alwaysOpen } = await db.get("alwaysOpen");
       if (alwaysOpen) {
         await this.startSR();
+      } else {
+        chromeService.setBadgeOnActionIcon("");
       }
+    });
+    chrome.windows.onCreated.addListener(async () => {
+      chrome.windows.getAll(async windows => {
+        if (windows.length == 1) {
+          const { alwaysOpen, isMicListening } = await db.get(
+            "alwaysOpen",
+            "isMicListening"
+          );
+          console.log(alwaysOpen, isMicListening);
+          if (alwaysOpen) {
+            await this.startSR();
+            const { startStopSRContextMenu } = contextMenus;
+            const contextMenuTitle = alwaysOpen
+              ? "Stop Speech Recognition tool"
+              : "Start Speech Recognition tool";
+            chrome.contextMenus.update(
+              startStopSRContextMenu,
+              {
+                title: contextMenuTitle
+              },
+              () => {}
+            );
+          } else if (!isMicListening) {
+            chromeService.setBadgeOnActionIcon("");
+          }
+        }
+      });
     });
   }
 }

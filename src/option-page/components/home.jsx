@@ -3,7 +3,8 @@ import { withStyles } from "@material-ui/core/styles";
 import Fab from "@material-ui/core/Fab";
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 import Grid from "@material-ui/core/Grid";
-import SpeechRecognitionSettings from "./SpeechRecognitionSettings";
+import Container from "@material-ui/core/Container";
+import SpeechRecognitionSettings from "./speechRecognitionsSetting";
 
 const styles = theme => ({
   root: {
@@ -14,14 +15,11 @@ const styles = theme => ({
   },
   fab: {
     position: "absolute",
-    bottom: theme.spacing.unit * 2,
-    right: theme.spacing.unit * 2
-  },
-  nested: {
-    paddingLeft: theme.spacing.unit * 4
+    bottom: theme.spacing(2),
+    right: theme.spacing(2)
   },
   paper: {
-    padding: theme.spacing.unit * 2,
+    padding: theme.spacing(2),
     textAlign: "center",
     color: theme.palette.text.secondary
   }
@@ -31,10 +29,16 @@ class Home extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div>
+      <Container
+        style={{
+          marginTop: "3rem",
+          marginBottom: "3rem",
+          maxWidth: "500px"
+        }}
+      >
         <Grid
           container
-          spacing={24}
+          spacing={10}
           style={{ display: "flex", justifyContent: "center" }}
         >
           <SpeechRecognitionSettings />
@@ -42,10 +46,10 @@ class Home extends React.Component {
         <div style={{ textAlign: "center", marginTop: "3rem" }}>
           Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
         </div>
-        <Fab className={classes.fab} color="#222222">
+        <Fab className={classes.fab} color="default">
           <KeyboardVoiceIcon />
         </Fab>
-      </div>
+      </Container>
     );
   }
 }

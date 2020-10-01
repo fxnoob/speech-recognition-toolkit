@@ -6,7 +6,6 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Fab from "@material-ui/core/Fab";
 import GearIcon from "@material-ui/icons/Settings";
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
-import Tooltip from "@material-ui/core/Tooltip";
 import messagePassing from "../../services/messagePassing";
 import chromeService from "../../services/chromeService";
 import voice from "../../services/voiceService";
@@ -67,18 +66,14 @@ class Settings extends React.Component {
             <div>
               <FormLabel component="legend">Default Language</FormLabel>
               <div style={{ marginTop: "0.5rem" }}>
-                <Tooltip
-                  placement="bottom"
-                  style={{ marginTop: "2rem !important" }}
-                  title="Click to change default language"
+                <a
+                  aria-label="Click to change default language"
+                  data-balloon-pos="down"
+                  href={chrome.runtime.getURL("option.html") + "/#"}
+                  target="_blank"
                 >
-                  <a
-                    href={chrome.runtime.getURL("option.html") + "/#"}
-                    target="_blank"
-                  >
-                    <b>{this.state.language}</b>
-                  </a>
-                </Tooltip>
+                  <b>{this.state.language}</b>
+                </a>
               </div>
             </div>
           )}
@@ -86,34 +81,28 @@ class Settings extends React.Component {
             (this.state.permissionGranted ? (
               <div style={{ marginLeft: "2rem" }}>
                 <FormControlLabel
+                  aria-label="click here to turn on/off speech recognition"
+                  data-balloon-pos="down"
                   control={
                     <Fab
                       style={{
                         background: this.state.isMicListening ? "#f50057" : ""
                       }}
                       variant="extended"
-                      aria-label="Mic Icon"
                       onClick={this.sendMessageToActivateVoiceRecognition}
                     >
-                      <Tooltip title="Turn on/off mic listening">
-                        <KeyboardVoiceIcon />
-                      </Tooltip>
+                      <KeyboardVoiceIcon />
                       {this.state.isMicListening ? "Listening" : ""}
                     </Fab>
                   }
-                  label=""
                 />
                 <FormControlLabel
+                  aria-label="open settings"
+                  data-balloon-pos="down"
                   style={{ marginLeft: "0.5rem" }}
                   control={
-                    <Fab
-                      variant="extended"
-                      aria-label="Gear Icon"
-                      onClick={this.openOptionPage}
-                    >
-                      <Tooltip title="open settings">
-                        <GearIcon />
-                      </Tooltip>
+                    <Fab variant="extended" onClick={this.openOptionPage}>
+                      <GearIcon />
                     </Fab>
                   }
                   label=""
@@ -121,11 +110,12 @@ class Settings extends React.Component {
               </div>
             ) : (
               <FormControlLabel
+                aria-label="click here to Allow Audio Permission"
+                data-balloon-pos="down"
                 style={{ marginTop: "0.5rem" }}
                 control={
                   <Fab
                     variant="extended"
-                    aria-label="Gear Icon"
                     onClick={this.openOptionPermissionsPage}
                   >
                     <GearIcon />
