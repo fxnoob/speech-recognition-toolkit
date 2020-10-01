@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import voice from "../../services/voiceService";
 import chromeService from "../../services/chromeService";
+import helpIMage from "./helpImage.png";
 
 export default () => {
   const [message, setMessage] = useState("");
@@ -61,6 +62,17 @@ export default () => {
             <br />
             corner of search bar of this tab
           </p>
+          {message == "Please Allow Permissions in order to use this tool!" && (
+            <p
+              style={{
+                marginTop: "0.5rem",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <img src={helpIMage} />
+            </p>
+          )}
         </div>
       </div>
     </div>
