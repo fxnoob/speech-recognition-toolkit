@@ -137,3 +137,42 @@ button[disabled] {
   flex-shrink: 0;
   background-color: rgba(0, 0, 0, 0.12);
 }
+
+#spinner-1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+}
+
+#spinner-1:before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 80px;
+  margin-top: -40px;
+  margin-left: -40px;
+  border-radius: 50%;
+  border: 8px solid #f7f7f7;
+  border-top-color: var(--main-color);
+  -webkit-animation: splash-spinner 0.7s linear infinite;
+  animation: splash-spinner 0.7s linear infinite;
+}
+
+@-webkit-keyframes splash-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes splash-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

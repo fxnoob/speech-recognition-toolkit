@@ -113,7 +113,7 @@ class Main {
         onclick: async (info, tab) => {
           const { state } = await voice.permissionGranted();
           if (state != "granted") {
-            chromeService.openHelpPage("/#/permissions");
+            chromeService.openHelpPage();
           } else {
             let contextMenuTitle = "";
             const { isMicListening } = await db.get("isMicListening");

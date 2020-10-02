@@ -36,16 +36,13 @@ class Settings extends React.Component {
       isMicListening,
       language: defaultLanguage.label
     });
-  };
-  handleChange = name => event => {
-    this.setState({ [name]: event.target.checked });
-    db.set({ [name]: event.target.checked });
+    await db.set({ permissionGranted: state == "granted" });
   };
   openOptionPage() {
     chromeService.openHelpPage("");
   }
   openOptionPermissionsPage() {
-    chromeService.openHelpPage("/#/permissions");
+    chromeService.openHelpPage();
   }
   sendMessageToActivateVoiceRecognition = async () => {
     messagePassing.sendMessage(
