@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import { MemoryRouter as Router, Switch, Route } from "react-router-dom";
 import "balloon-css";
 import NavBar from "./NavBar";
 import Home from "./home";
