@@ -1,26 +1,40 @@
 import React, { useState } from "react";
-import voice from "../../services/voiceService";
-import chromeService from "../../services/chromeService";
-import helpIMage from "./helpImage.png";
+import Alert from "@material-ui/lab/Alert";
+import db from "../../services/db";
+import helpImage from "./helpImage.png";
 
 export default () => {
+  const SUCCESS_MSG =
+    "Now you can close this tab and use this tool to type on any website with your voice!";
+  const ERROR_MSG = "Please Allow Permissions in order to use this tool!";
   const [message, setMessage] = useState("");
   const allowPermissions = async () => {
     navigator.mediaDevices
       .getUserMedia({ audio: true })
-      .then(stream => {
-        setMessage(
-          "Now you can close this tab and use this tool to type on any website with your voice!"
-        );
+      .then(async stream => {
+        setMessage(SUCCESS_MSG);
+        await db.set({ audioAccess: true });
         stream.getTracks().forEach(track => {
           track.stop();
         });
       })
-      .catch(err => {
+      .catch(async err => {
+        await db.set({ audioAccess: false });
         console.log(err);
-        setMessage("Please Allow Permissions in order to use this tool!");
+        setMessage(ERROR_MSG);
       });
   };
+
+  const GetMessage = ({ message }) => {
+    let component = "";
+    if (message == SUCCESS_MSG) {
+      component = <Alert>{message}</Alert>;
+    } else if (message == ERROR_MSG) {
+      component = <Alert severity="error">{message}</Alert>;
+    }
+    return component;
+  };
+
   return (
     <div>
       <div className="bg-white align-center" style={{ textAlign: "center" }}>
@@ -35,7 +49,7 @@ export default () => {
           <div className="mt-8 flex justify-center">
             <div className="ml-3 inline-flex">
               <button
-                aria-label="click here to turn on/off speech recognition"
+                aria-label="click here to allow audio permissions"
                 data-balloon-pos="down"
                 onClick={allowPermissions}
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out btn"
@@ -51,7 +65,7 @@ export default () => {
               paddingRight: "30%"
             }}
           >
-            {message}
+            <GetMessage message={message} />
           </p>
           <p className="mt-8 text-2xl">
             <hr />
@@ -62,7 +76,7 @@ export default () => {
             <br />
             corner of search bar of this tab
           </p>
-          {message == "Please Allow Permissions in order to use this tool!" && (
+          {message == ERROR_MSG && (
             <p
               style={{
                 marginTop: "0.5rem",
@@ -70,7 +84,7 @@ export default () => {
                 justifyContent: "center"
               }}
             >
-              <img src={helpIMage} />
+              <img src={helpImage} />
             </p>
           )}
         </div>

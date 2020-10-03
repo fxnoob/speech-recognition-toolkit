@@ -113,7 +113,7 @@ class Main {
         onclick: async (info, tab) => {
           const { state } = await voice.permissionGranted();
           if (state != "granted") {
-            chromeService.openHelpPage("/#/permissions");
+            chromeService.openHelpPage();
           } else {
             let contextMenuTitle = "";
             const { isMicListening } = await db.get("isMicListening");
@@ -179,8 +179,8 @@ class Main {
             await this.startSR();
             const { startStopSRContextMenu } = contextMenus;
             const contextMenuTitle = alwaysOpen
-              ? "Stop Speech Recognition tool"
-              : "Start Speech Recognition tool";
+              ? "Stop Speech Recognition toolkit"
+              : "Start Speech Recognition toolkit";
             chrome.contextMenus.update(
               startStopSRContextMenu,
               {

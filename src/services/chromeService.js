@@ -225,7 +225,7 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   openHelpPage = (path = "/") => {
-    const helpUrl = chrome.runtime.getURL("option.html") + `${path}`;
+    const helpUrl = chrome.runtime.getURL("option.html");
     chrome.tabs.create({ url: helpUrl }, () => {});
   };
   /**
