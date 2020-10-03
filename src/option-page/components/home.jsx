@@ -1,7 +1,5 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import Fab from "@material-ui/core/Fab";
-import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 import Grid from "@material-ui/core/Grid";
 import Container from "@material-ui/core/Container";
 import SpeechRecognitionSettings from "./speechRecognitionsSetting";
@@ -46,9 +44,6 @@ class Home extends React.Component {
         <div style={{ textAlign: "center", marginTop: "3rem" }}>
           Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
         </div>
-        <Fab className={classes.fab} color="default">
-          <KeyboardVoiceIcon />
-        </Fab>
       </Container>
     );
   }
