@@ -179,8 +179,8 @@ class Main {
             await this.startSR();
             const { startStopSRContextMenu } = contextMenus;
             const contextMenuTitle = alwaysOpen
-              ? "Stop Speech Recognition tool"
-              : "Start Speech Recognition tool";
+              ? "Stop Speech Recognition toolkit"
+              : "Start Speech Recognition toolkit";
             chrome.contextMenus.update(
               startStopSRContextMenu,
               {
