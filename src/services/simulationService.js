@@ -75,9 +75,8 @@ export class Simulaiton {
         return true;
       else return false;
   }
-  keypress(array) {
+  keypress(array, el) {
     // Simulate a keypress
-    var el = document.activeElement;
     var keyCode,
       ctrl,
       alt,
@@ -236,6 +235,15 @@ export class Simulaiton {
           shiftKey: shift
         })
       );
+  }
+  keyPressForGoogleDocs(array) {
+    const iframeElement = document.querySelector(
+      ".docs-texteventtarget-iframe"
+    );
+    if (iframeElement) {
+      const el = iframeElement.contentDocument.activeElement;
+      this.keypress(array, el);
+    }
   }
 }
 

@@ -35,7 +35,11 @@ class Dom extends React.Component {
   speechToTextListener(text) {
     let strArray = text.split("");
     strArray.map(str_char => {
-      simulation.keypress(new String(str_char).charCodeAt(0));
+      simulation.keyPressForGoogleDocs(new String(str_char).charCodeAt(0)); // checks if iframe element exist first then trigger keypress event
+      simulation.keypress(
+        new String(str_char).charCodeAt(0),
+        document.activeElement
+      );
     });
     /** open snackbar with recognised text */
     this.handleClick(text)();
