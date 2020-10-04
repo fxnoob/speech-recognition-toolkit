@@ -7,6 +7,7 @@ import Typography from "@material-ui/core/Typography";
 import "balloon-css";
 import Settings from "./settings";
 import Faq from "./faq";
+import i18nService from "../../services/i18nService";
 
 function TabContainer({ children, dir }) {
   return (
@@ -43,8 +44,8 @@ class FullWidthTabs extends React.Component {
             textColor="primary"
             variant="fullWidth"
           >
-            <Tab label="Settings" />
-            <Tab label="Help" />
+            <Tab label={i18nService.getMessage("popup_settings_tab_str")} />
+            <Tab label={i18nService.getMessage("popup_help_tab_str")} />
           </Tabs>
         </AppBar>
         <SwipeableViews

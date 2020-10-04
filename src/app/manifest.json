@@ -10,6 +10,7 @@
     "<all_urls>",
     "tts"
   ],
+  "default_locale": "en",
   "background": {
     "scripts": ["background.bundle.js"]
   },
