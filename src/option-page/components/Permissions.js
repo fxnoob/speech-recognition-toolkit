@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Alert from "@material-ui/lab/Alert";
 import db from "../../services/db";
+import i18nService from "../../services/i18nService";
 import helpImage from "./helpImage.png";
 
 export default () => {
-  const SUCCESS_MSG =
-    "Now you can close this tab and use this tool to type on any website with your voice!";
-  const ERROR_MSG = "Please Allow Permissions in order to use this tool!";
+  const SUCCESS_MSG = i18nService.getMessage("option_permission_success_msg");
+  const ERROR_MSG = i18nService.getMessage("option_permission_error_msg");
   const [message, setMessage] = useState("");
   const allowPermissions = async () => {
     navigator.mediaDevices

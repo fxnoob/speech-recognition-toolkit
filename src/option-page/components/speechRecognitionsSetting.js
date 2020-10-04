@@ -13,6 +13,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FormControl from "@material-ui/core/FormControl";
+import i18nService from "../../services/i18nService";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -81,7 +82,7 @@ export default function() {
               />
             </TableCell>
             <TableCell align="right">
-              Start 'Speech Recognition' when Chrome starts
+              {i18nService.getMessage("option_onstart_setting_str")}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -109,7 +110,7 @@ export default function() {
               </FormControl>
             </TableCell>
             <TableCell align="right">
-              Change Speech Recognition Language
+              {i18nService.getMessage("option_default_lang_change_setting_str")}
             </TableCell>
           </TableRow>
         </TableBody>

@@ -263,6 +263,15 @@ class ChromeApi {
   stop() {
     chrome.tts.stop();
   }
+  /**
+   * I18n getMessage
+   *
+   * @method
+   * @memberof ChromeApi
+   */
+  getI18nMessage(key) {
+    return chrome.i18n.getMessage(key);
+  }
 }
 const chromeService = new ChromeApi();
 export default chromeService;
