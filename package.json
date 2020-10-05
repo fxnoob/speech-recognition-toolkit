@@ -6,8 +6,8 @@
   "scripts": {
     "build:css": "tailwindcss build src/styles/style.css -o dist/style.css",
     "watch:css": "yarn build:css && chokidar 'src/styles/*.css' -c 'yarn build:css'",
-    "watch:js": "webpack --watch --progress --colors --config webpack.config.js --mode=development",
-    "build:js": "webpack --progress --config webpack.config.js --mode=production",
+    "watch:js": "webpack --watch --config webpack.config.js --mode=development",
+    "build:js": "webpack  --config webpack.config.js --mode=production",
     "rm": "rm -rf dist/",
     "start": "yarn dev",
     "dev": "concurrently --kill-others 'yarn watch:css' 'yarn watch:js'",

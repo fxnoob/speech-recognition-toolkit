@@ -1,5 +1,5 @@
 const webpack = require("webpack");
-const { ESBuildPlugin } = require("esbuild-loader");
+const { ESBuildPlugin, ESBuildMinifyPlugin } = require("esbuild-loader");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv").config({ path: __dirname + "/.env" });
 const { manifestTransform } = require("./scripts/transform");
@@ -45,6 +45,10 @@ module.exports = (env, options) => {
           ]
         }
       ]
+    },
+    optimization: {
+      minimize: true,
+      minimizer: [new ESBuildMinifyPlugin()]
     },
     devtool: "inline-sourcemap",
     resolve: {
