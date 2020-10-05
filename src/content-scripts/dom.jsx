@@ -9,6 +9,7 @@ import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
 import messagePassing from "../services/messagePassing";
 import simulation from "../services/simulationService";
+import dom from "../services/dom";
 
 const styles = theme => ({
   close: {
@@ -39,11 +40,12 @@ class Dom extends React.Component {
       var charCode = new String(str_char).charCodeAt(0);
       simulation.simulateKeyPress(charCode);
     });
-    /** open snackbar with recognised text */
-    this.handleClick(text)();
+    /** open snackbar with recognised text if any element is not active */
+    if (!dom.inIframe()) {
+      this.handleClick(text)();
+    }
   }
   handleClick = message => () => {
-    console.log(message);
     this.queue.push({
       message,
       key: new Date().getTime()

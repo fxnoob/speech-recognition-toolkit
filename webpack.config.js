@@ -50,7 +50,6 @@ module.exports = (env, options) => {
       minimize: true,
       minimizer: [new ESBuildMinifyPlugin()]
     },
-    devtool: "inline-sourcemap",
     resolve: {
       extensions: ["*", ".js", ".jsx", ".json"]
     },

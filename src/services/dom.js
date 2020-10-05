@@ -55,6 +55,17 @@ class Dom {
     }
     return focusedElem;
   }
+  /**
+   * check if current page is in iframe.
+   * @return {*}
+   */
+  inIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
 }
 const dom = new Dom();
 export default dom;

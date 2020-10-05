@@ -1,0 +1,14 @@
+<html>
+  <style></style>
+  <body>
+    <div class="host_input">
+      <input id="iframe_input" placeholder="iframe input" />
+      <button>Button</button>
+    </div>
+    <script>
+      setInterval(() => {
+        console.log({ page: "iframe.html", hasFocus: document.hasFocus() });
+      }, 2000);
+    </script>
+  </body>
+</html>

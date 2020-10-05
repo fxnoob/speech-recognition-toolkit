@@ -77,6 +77,9 @@ export class Simulaiton {
         return true;
       else return false;
   }
+  isActiveElementInput(el = document.activeElement) {
+    return Simulaiton.isTextInput(el);
+  }
   keypress(array, el) {
     // Simulate a keypress
     var keyCode,
@@ -238,10 +241,10 @@ export class Simulaiton {
         })
       );
   }
-  simulateKeyPress(array, document = window.document) {
+  simulateKeyPress(array, el = document.activeElement) {
+    console.log({ el });
     // window.document
-    const activeElement = dom.findFocusedElem(document);
-    this.keypress(array, activeElement);
+    this.keypress(array, el);
   }
 }
 
