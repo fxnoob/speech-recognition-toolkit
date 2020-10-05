@@ -241,10 +241,9 @@ export class Simulaiton {
         })
       );
   }
-  simulateKeyPress(array, el = document.activeElement) {
-    console.log({ el });
-    // window.document
-    this.keypress(array, el);
+  simulateKeyPress(array, mountAckId, document = window.document) {
+    const activeElement = dom.findFocusedElem(document, mountAckId);
+    this.keypress(array, activeElement);
   }
 }
 

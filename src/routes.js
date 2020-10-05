@@ -75,6 +75,11 @@ const Routes = async (voice, contextMenus) => {
     const { defaultLanguage } = await db.get("defaultLanguage");
     voice.speak(text, { lang: defaultLanguage.code });
   });
+  // get mountAckId
+  MessagePassing.on("/get_cs_mountAck", async (req, res, options) => {
+    const { mountAckId } = await db.get("mountAckId");
+    res({ mountAckId });
+  });
 };
 
 export default Routes;

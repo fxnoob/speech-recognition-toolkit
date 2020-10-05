@@ -28,7 +28,7 @@ class Dom {
    * @param {*} document
    * @return {*}
    */
-  findFocusedElem(document) {
+  findFocusedElem(document, mountAckId) {
     let focusedElem = document.activeElement;
 
     // Tests if it's possible to access the iframe contentDocument without
@@ -40,8 +40,11 @@ class Dom {
     // If the focus is within an iframe, we'll have to drill down to get to the
     // actual element.
     while (focusedElem && focusedElem.contentDocument) {
+      const contentDoc = focusedElem.contentDocument;
+      if (contentDoc.getElementById("mountAckId")) {
+        return focusedElem;
+      }
       focusedElem = focusedElem.contentDocument.activeElement;
-
       if (!this.iframeAccessOkay(focusedElem)) {
         return null;
       }
@@ -54,6 +57,14 @@ class Dom {
       focusedElem = focusedElem.ownerDocument.body;
     }
     return focusedElem;
+  }
+  /**
+   * check whether a frame has focus
+   * recursively check if iframe has focus then its parent would not have focus
+   * @return boolean
+   */
+  hasFocus() {
+    return document.activeElement.tagName != "IFRAME";
   }
   /**
    * check if current page is in iframe.

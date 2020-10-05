@@ -9,7 +9,8 @@
       setInterval(() => {
         console.log({
           page: "page_with_iframe.html",
-          hasFocus: document.hasFocus()
+          hasFocus: document.hasFocus(),
+          activeElement: document.activeElement.tagName
         });
       }, 2000);
     </script>

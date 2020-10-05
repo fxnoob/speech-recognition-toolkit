@@ -16,6 +16,7 @@ const constants = {
       "-----END PUBLIC KEY-----\n"
   },
   contentScript: {
+    mountAckId: guid.generateGuid(), // <div id='${mountAckId}'/> for checking if content script is mounted in the frame
     mountId: guid.generateGuid()
   }
 };
