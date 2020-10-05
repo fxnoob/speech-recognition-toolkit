@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
 import SwipeableViews from "react-swipeable-views";
 import AppBar from "@material-ui/core/AppBar";
 import Tabs from "@material-ui/core/Tabs";
@@ -18,18 +16,6 @@ function TabContainer({ children, dir }) {
   );
 }
 
-TabContainer.propTypes = {
-  children: PropTypes.node.isRequired,
-  dir: PropTypes.string.isRequired
-};
-
-const styles = theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: 500
-  }
-});
-
 class FullWidthTabs extends React.Component {
   state = {
     value: 0
@@ -43,10 +29,12 @@ class FullWidthTabs extends React.Component {
   };
 
   render() {
-    const { classes, theme } = this.props;
-
     return (
-      <div className={classes.root}>
+      <div
+        style={{
+          width: "500px"
+        }}
+      >
         <AppBar position="static" color="default">
           <Tabs
             value={this.state.value}
@@ -60,14 +48,14 @@ class FullWidthTabs extends React.Component {
           </Tabs>
         </AppBar>
         <SwipeableViews
-          axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+          axis="x-reverse"
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>
+          <TabContainer dir="ltr">
             <Settings />
           </TabContainer>
-          <TabContainer dir={theme.direction}>
+          <TabContainer dir="ltr">
             <Faq />
           </TabContainer>
         </SwipeableViews>
@@ -76,8 +64,4 @@ class FullWidthTabs extends React.Component {
   }
 }
 
-FullWidthTabs.propTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
-};
-export default withStyles(styles, { withTheme: true })(FullWidthTabs);
+export default FullWidthTabs;

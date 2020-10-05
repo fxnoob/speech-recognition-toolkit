@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import db from "../../services/db";
-import voice from "../../services/voiceService";
-import messagePassing from "../../services/messagePassing";
+import db from "../services/db";
+import voice from "../services/voiceService";
+import messagePassing from "../services/messagePassing";
 import { makeStyles } from "@material-ui/core/styles";
 import Checkbox from "@material-ui/core/Checkbox";
 import MenuItem from "@material-ui/core/MenuItem";

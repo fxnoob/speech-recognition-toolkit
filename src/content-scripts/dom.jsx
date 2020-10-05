@@ -5,10 +5,10 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
-import IFrame from "./FrameMUI";
-import initialContent from "./initialFrame";
-import messagePassing from "../../services/messagePassing";
-import simulation from "../../services/simulationService";
+import IFrame from "../components/FrameMUI";
+import initialContent from "../components/initialFrame";
+import messagePassing from "../services/messagePassing";
+import simulation from "../services/simulationService";
 
 const styles = theme => ({
   close: {
@@ -129,7 +129,7 @@ class Dom extends React.Component {
                   this.handleCopy(messageInfo.message);
                 }}
               >
-                <FileCopy />
+                <FileCopy style={{ color: "white" }} />
               </IconButton>
             </IFrame>,
             <IFrame
@@ -146,7 +146,7 @@ class Dom extends React.Component {
                   this.handleSpeak(messageInfo.message);
                 }}
               >
-                <SpeakerIcon />
+                <SpeakerIcon style={{ color: "white" }} />
               </IconButton>
             </IFrame>,
             <IFrame
@@ -161,7 +161,7 @@ class Dom extends React.Component {
                 className={classes.close}
                 onClick={this.handleClose}
               >
-                <CloseIcon />
+                <CloseIcon style={{ color: "white" }} />
               </IconButton>
             </IFrame>
           ]}

@@ -6,10 +6,10 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Fab from "@material-ui/core/Fab";
 import GearIcon from "@material-ui/icons/Settings";
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
-import messagePassing from "../../services/messagePassing";
-import chromeService from "../../services/chromeService";
-import voice from "../../services/voiceService";
-import db from "../../services/db";
+import messagePassing from "../services/messagePassing";
+import chromeService from "../services/chromeService";
+import voice from "../services/voiceService";
+import db from "../services/db";
 
 class Settings extends React.Component {
   state = {
