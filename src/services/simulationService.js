@@ -1,3 +1,5 @@
+import dom from "./dom";
+
 export class Simulaiton {
   constructor() {}
   keypressInject(keyCode) {
@@ -236,14 +238,10 @@ export class Simulaiton {
         })
       );
   }
-  keyPressForGoogleDocs(array) {
-    const iframeElement = document.querySelector(
-      ".docs-texteventtarget-iframe"
-    );
-    if (iframeElement) {
-      const el = iframeElement.contentDocument.activeElement;
-      this.keypress(array, el);
-    }
+  simulateKeyPress(array, document = window.document) {
+    // window.document
+    const activeElement = dom.findFocusedElem(document);
+    this.keypress(array, activeElement);
   }
 }
 

@@ -34,12 +34,10 @@ class Dom extends React.Component {
   }
   speechToTextListener(text) {
     let strArray = text.split("");
+    simulation.simulateKeyPress(32); // add space
     strArray.map(str_char => {
-      simulation.keyPressForGoogleDocs(new String(str_char).charCodeAt(0)); // checks if iframe element exist first then trigger keypress event
-      simulation.keypress(
-        new String(str_char).charCodeAt(0),
-        document.activeElement
-      );
+      var charCode = new String(str_char).charCodeAt(0);
+      simulation.simulateKeyPress(charCode);
     });
     /** open snackbar with recognised text */
     this.handleClick(text)();
