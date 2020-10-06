@@ -1,0 +1,16 @@
+<html>
+  <head></head>
+  <body>
+    <div id="host"></div>
+    <input placeholder="dom input" />
+    <script type="text/javascript">
+      const host = document.getElementById("host");
+      const shadowRoot = host.attachShadow({ mode: "open" });
+      shadowRoot.innerHTML = `
+        <input placeholder='shadow dom input'/>
+    `;
+      // assign shadow dom active element (eg. input) some value
+      document.getElementById("host").shadowRoot.activeElement.value = "fdf";
+    </script>
+  </body>
+</html>

@@ -49,6 +49,15 @@ class Dom {
         return null;
       }
     }
+    // check if current is in shadow/nested shadow dom.
+    do {
+      if (focusedElem.shadowRoot) {
+        if (focusedElem.shadowRoot.getElementById(mountAckId)) {
+          return focusedElem;
+        }
+        focusedElem = focusedElem.shadowRoot.activeElement;
+      }
+    } while (focusedElem.shadowRoot);
 
     // There's a bug in Firefox/Thunderbird that we need to work around. For
     // details see https://github.com/adam-p/markdown-here/issues/31
@@ -56,7 +65,6 @@ class Dom {
     if (focusedElem instanceof document.defaultView.HTMLHtmlElement) {
       focusedElem = focusedElem.ownerDocument.body;
     }
-    console.log(focusedElem, mountAckId);
     return focusedElem;
   }
   getFocusedItem(document, mountAckId) {
