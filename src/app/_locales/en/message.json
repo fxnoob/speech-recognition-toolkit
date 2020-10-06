@@ -1,0 +1,54 @@
+{
+  "popup_allow_permission_btn_str": {
+    "message": "Allow Audio Permission",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "click here to Allow Audio Permission",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Settings",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Listening",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Help",
+    "description": "help tab string"
+  },
+  "popup_default_language_label_str": {
+    "message": "Default Language",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Click to change default language",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Click here to turn On/Off Speech Recognition",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Open Settings",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Start 'Speech Recognition' when Chrome starts",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Change Speech Recognition Language",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Now you can close this tab and use this tool to type on any website with your voice!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Please Allow Permissions in order to use this tool!",
+    "description": "error message when user rejects permission"
+  }
+}
