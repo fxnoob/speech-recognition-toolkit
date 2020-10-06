@@ -40,6 +40,7 @@ class Dom extends React.Component {
   mountAckDom = () => {
     messagePassing.sendMessage("/get_cs_mountAck", {}, async res => {
       const { mountAckId } = res;
+      console.log({ mountAckId });
       const div = document.createElement("div");
       div.id = mountAckId;
       document.body.appendChild(div);
@@ -48,13 +49,11 @@ class Dom extends React.Component {
   };
   speechToTextListenerCallback(text) {
     let strArray = text.split("");
-    if (dom.hasFocus()) {
-      simulation.simulateKeyPress(32); // add space
-      strArray.map(str_char => {
-        var charCode = new String(str_char).charCodeAt(0);
-        simulation.simulateKeyPress(charCode, this.mountAckId);
-      });
-    }
+    simulation.simulateKeyPress(32); // add space
+    strArray.map(str_char => {
+      var charCode = new String(str_char).charCodeAt(0);
+      simulation.simulateKeyPress(charCode, this.mountAckId);
+    });
     /** open snackbar with recognised text if any element is not active */
     if (!dom.inIframe()) {
       this.handleClick(text)();

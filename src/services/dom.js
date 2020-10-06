@@ -41,7 +41,7 @@ class Dom {
     // actual element.
     while (focusedElem && focusedElem.contentDocument) {
       const contentDoc = focusedElem.contentDocument;
-      if (contentDoc.getElementById("mountAckId")) {
+      if (contentDoc.getElementById(mountAckId)) {
         return focusedElem;
       }
       focusedElem = focusedElem.contentDocument.activeElement;
@@ -56,7 +56,19 @@ class Dom {
     if (focusedElem instanceof document.defaultView.HTMLHtmlElement) {
       focusedElem = focusedElem.ownerDocument.body;
     }
+    console.log(focusedElem, mountAckId);
     return focusedElem;
+  }
+  getFocusedItem(document, mountAckId) {
+    const res = {
+      document: document,
+      activeElement: document.activeElement
+    };
+    let activeElement = res.activeElement;
+    if (!this.iframeAccessOkay(res.activeElement)) {
+      return null;
+    } else {
+    }
   }
   /**
    * check whether a frame has focus
