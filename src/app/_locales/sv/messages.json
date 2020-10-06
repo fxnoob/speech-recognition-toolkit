@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Verktygslåda för taligenkänning",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Fyll i alla webbformulär med endast din röst!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Tillåt ljudtillstånd",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "klicka här för att tillåta ljudtillstånd",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "inställningar",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Lyssnande",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Hjälp",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Vi är här för att hjälpa",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Rapportera det om du har haft något problem",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "här", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Standardspråk",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Klicka för att ändra standardspråk",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Klicka här för att slå på / av taligenkänning",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Öppna Inställningar",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Starta 'Taligenkänning' när Chrome startar",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Ändra språkigenkänning",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Nu kan du stänga den här fliken och använda detta verktyg för att skriva på vilken webbplats som helst med din röst!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Tillåt behörigheter för att kunna använda detta verktyg!",
+    "description": "error message when user rejects permission"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Konuşma Tanıma Araç Seti",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Herhangi bir web formunu sadece sesinizi kullanarak doldurun!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Ses İznine İzin Ver",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "Ses İznine İzin Vermek için burayı tıklayın",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Ayarlar",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Dinleme",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Yardım",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Yardım etmek için buradayız",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Herhangi bir sorunla karşılaştıysanız lütfen bildirin",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "buraya", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Varsayılan dil",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Varsayılan dili değiştirmek için tıklayın",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Konuşma Tanıma'yı Açmak / Kapatmak için burayı tıklayın",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Ayarları aç",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome başladığında \"Konuşma Tanıma\" yı başlatın",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Konuşma Tanıma Dilini Değiştirin",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Artık bu sekmeyi kapatabilir ve bu aracı kullanarak herhangi bir web sitesine sesinizle yazı yazabilirsiniz!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Bu aracı kullanmak için lütfen İzinlere İzin Verin!",
+    "description": "error message when user rejects permission"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Zana ya Utambuzi wa Hotuba",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Jaza fomu yoyote ya wavuti kwa kutumia sauti yako tu!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Ruhusu Ruhusa ya Sauti",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "bonyeza hapa Ruhusu Ruhusa ya Sauti",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Mipangilio",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Kusikiliza",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Msaada",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Tuko hapa kusaidia",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Ikiwa umepata shida yoyote, tafadhali ripoti",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "hapa", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Lugha Mbadala",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Bonyeza kubadilisha lugha chaguomsingi",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Bonyeza hapa kuwasha / Kuzima Utambuzi wa Hotuba",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Fungua Mipangilio",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Anza 'Utambuzi wa Hotuba' wakati Chrome inapoanza",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Badilisha Lugha ya Utambuzi wa Hotuba",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Sasa unaweza kufunga kichupo hiki na utumie zana hii kuandika kwenye wavuti yoyote kwa sauti yako!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Tafadhali Ruhusu Ruhusa ili utumie zana hii!",
+    "description": "error message when user rejects permission"
+  }
+}

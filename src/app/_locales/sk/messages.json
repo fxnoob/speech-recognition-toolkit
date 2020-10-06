@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Sada nástrojov na rozpoznávanie reči",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Vyplňte akýkoľvek webový formulár iba pomocou svojho hlasu!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Povoliť zvukové povolenie",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "kliknutím sem povolíte povolenie zvuku",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "nastavenie",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Počúvanie",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Pomoc",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Sme tu, aby sme pomohli",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Ak ste narazili na akýkoľvek problém, nahláste to",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "tu", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Predvolený jazyk",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Kliknutím zmeníte predvolený jazyk",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Kliknutím sem zapnete / vypnete rozpoznávanie reči",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Otvorte Nastavenia",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Pri spustení prehliadača Chrome spustite program „Rozpoznávanie reči“",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Zmena jazyka rozpoznávania reči",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Teraz môžete zavrieť túto kartu a použiť tento nástroj na písanie na ľubovoľnom webe pomocou svojho hlasu!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Ak chcete používať tento nástroj, povolte povolenia.",
+    "description": "error message when user rejects permission"
+  }
+}

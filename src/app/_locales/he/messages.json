@@ -1,0 +1,68 @@
+{
+  "appName": { "message": "ערכת כלים לזיהוי דיבור", "description": "app name" },
+  "appDescription": {
+    "message": "מלא כל טופס אינטרנט באמצעות הקול שלך בלבד!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "אפשר הרשאת שמע",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "לחץ כאן כדי לאפשר הרשאת שמע",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "הגדרות",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "הַקשָׁבָה",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "עֶזרָה",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "אנחנו כאן כדי לעזור",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "אם נתקלת בבעיה כלשהי, אנא דווח עליה",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "כאן", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "שפת ברירת מחדל",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "לחץ כדי לשנות את שפת ברירת המחדל",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "לחץ כאן להפעלה או השבתה של זיהוי דיבור",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "פתח את ההגדרות",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "התחל 'זיהוי דיבור' כאשר Chrome מתחיל",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "שנה שפת זיהוי דיבור",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "עכשיו אתה יכול לסגור כרטיסייה זו ולהשתמש בכלי זה כדי להקליד בכל אתר עם הקול שלך!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "אנא אפשר הרשאות על מנת להשתמש בכלי זה!",
+    "description": "error message when user rejects permission"
+  }
+}

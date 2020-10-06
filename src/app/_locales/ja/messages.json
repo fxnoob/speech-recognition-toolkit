@@ -1,0 +1,68 @@
+{
+  "appName": { "message": "音声認識ツールキット", "description": "app name" },
+  "appDescription": {
+    "message": "あなたの声だけを使ってウェブフォームに記入してください！",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "音声許可を許可する",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "オーディオ許可を許可するには、ここをクリックしてください",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "設定",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "聞いている",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "助けて",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "私たちは助けるためにここにいます",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "問題が発生した場合は、報告してください",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "ここに", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "既定の言語",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "クリックしてデフォルトの言語を変更します",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "音声認識のオン/オフを切り替えるには、ここをクリックしてください",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "設定を開く",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chromeの起動時に「音声認識」を開始します",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "音声認識言語の変更",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "これで、このタブを閉じて、このツールを使用して、任意のWebサイトに自分の声で入力できます。",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "このツールを使用するには、権限を許可してください。",
+    "description": "error message when user rejects permission"
+  }
+}

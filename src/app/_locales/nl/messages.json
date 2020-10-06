@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Toolkit voor spraakherkenning",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Vul elk webformulier in door alleen uw stem te gebruiken!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Sta audiotoestemming toe",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "Klik hier om audiotoestemming toe te staan",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Instellingen",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Luisteren",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Helpen",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "We zijn hier om te helpen",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Als u een probleem heeft ondervonden, meld dit dan",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "hier", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Standaard taal",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Klik om de standaardtaal te wijzigen",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Klik hier om spraakherkenning in of uit te schakelen",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Open instellingen",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Start 'Spraakherkenning' wanneer Chrome start",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Wijzig de taal voor spraakherkenning",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Nu kunt u dit tabblad sluiten en deze tool gebruiken om met uw stem op elke website te typen!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Geef toestemming om deze tool te gebruiken!",
+    "description": "error message when user rejects permission"
+  }
+}

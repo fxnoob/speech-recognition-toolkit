@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Набір інструментів розпізнавання мови",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Заповніть будь-яку веб-форму, використовуючи лише свій голос!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Дозволити аудіодозвіл",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "натисніть тут, щоб дозволити аудіодозвіл",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Налаштування",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Слухання",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Допомога",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Ми тут, щоб допомогти",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Якщо у вас виникли проблеми, повідомте про це",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "тут", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Мова за замовчуванням",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Клацніть, щоб змінити мову за замовчуванням",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Клацніть тут, щоб увімкнути / вимкнути розпізнавання мови",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Відкрийте Налаштування",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Запустіть «Розпізнавання мови» під час запуску Chrome",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Змінити мову розпізнавання мови",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Тепер ви можете закрити цю вкладку та використовувати цей інструмент для друку на будь-якому веб-сайті своїм голосом!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Будь ласка, дозвольте дозволи, щоб використовувати цей інструмент!",
+    "description": "error message when user rejects permission"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "appName": { "message": "Puheentunnistustyökalu", "description": "app name" },
+  "appDescription": {
+    "message": "Täytä mikä tahansa verkkolomake käyttämällä vain ääntäsi!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Salli äänilupa",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "napsauta tätä, jos haluat sallia ääniluvan",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "asetukset",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Kuunteleminen",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": { "message": "auta", "description": "help tab string" },
+  "popup_help_heading_str": {
+    "message": "Olemme täällä auttamassa",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Jos sinulla on ongelmia, ilmoita siitä",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "tässä", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Oletuskieli",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Napsauta vaihtaaksesi oletuskieli",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Ota puheentunnistus käyttöön / pois käytöstä napsauttamalla tätä",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Avaa asetukset",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Käynnistä puheentunnistus, kun Chrome käynnistyy",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Vaihda puheentunnistuksen kieli",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Nyt voit sulkea tämän välilehden ja kirjoittaa tätä työkalua kirjoittamalla mihin tahansa verkkosivustoon äänelläsi!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Salli käyttöoikeudet käyttääksesi tätä työkalua!",
+    "description": "error message when user rejects permission"
+  }
+}

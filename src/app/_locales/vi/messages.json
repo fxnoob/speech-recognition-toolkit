@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Bộ công cụ nhận dạng giọng nói",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Điền vào bất kỳ biểu mẫu web nào bằng cách chỉ sử dụng giọng nói của bạn!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Cho phép quyền âm thanh",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "bấm vào đây để Cho phép Quyền âm thanh",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Cài đặt",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Lắng nghe",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Cứu giúp",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Chúng tôi ở đây để giúp đỡ",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Nếu bạn gặp bất kỳ vấn đề nào, vui lòng báo cáo nó",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "đây", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Ngôn ngữ mặc định",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Nhấp để thay đổi ngôn ngữ mặc định",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Nhấp vào đây để bật / tắt tính năng Nhận dạng giọng nói",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Mở cài đặt",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Bắt đầu 'Nhận dạng giọng nói' khi Chrome khởi động",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Thay đổi ngôn ngữ nhận dạng giọng nói",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Bây giờ bạn có thể đóng tab này và sử dụng công cụ này để gõ vào bất kỳ trang web nào bằng giọng nói của bạn!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Vui lòng cho phép Quyền để sử dụng công cụ này!",
+    "description": "error message when user rejects permission"
+  }
+}

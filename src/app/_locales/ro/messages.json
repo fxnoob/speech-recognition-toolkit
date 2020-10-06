@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Set de instrumente de recunoaștere a vorbirii",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Completați orice formular web utilizând doar vocea dvs.!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Permiteți permisiunea audio",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "faceți clic aici pentru a permite permisiunea audio",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Setări",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Ascultare",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Ajutor",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Suntem aici sa ajutam",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Dacă ați întâmpinat vreo problemă, vă rugăm să o raportați",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "aici", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Limba implicita",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Faceți clic pentru a schimba limba implicită",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Faceți clic aici pentru a activa / dezactiva recunoașterea vorbirii",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Deschide setările",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Porniți „Recunoaștere vorbire” când pornește Chrome",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Schimbați limba de recunoaștere a vorbirii",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Acum puteți închide această filă și puteți utiliza acest instrument pentru a tasta pe orice site web cu vocea dvs.!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Vă rugăm să permiteți permisiunile pentru a utiliza acest instrument!",
+    "description": "error message when user rejects permission"
+  }
+}

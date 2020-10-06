@@ -1,0 +1,68 @@
+{
+  "appName": { "message": "স্পিচ রিকগনিশন টুলকিট", "description": "app name" },
+  "appDescription": {
+    "message": "শুধুমাত্র আপনার ভয়েস ব্যবহার করে কোনও ওয়েব ফর্ম পূরণ করুন!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "অডিও অনুমতি অনুমতি দিন",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "অডিও অনুমতি অনুমতি দিতে এখানে ক্লিক করুন",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "সেটিংস",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "শুনছি",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "সহায়তা",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "আমরা এখানে সাহায্য করতে এসেছি",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "আপনি যদি কোনও সমস্যা সম্মুখীন হন তবে দয়া করে এটি রিপোর্ট করুন",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "এখানে", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "নির্ধারিত ভাষা",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "ডিফল্ট ভাষা পরিবর্তন করতে ক্লিক করুন",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "স্পিচ সনাক্তকরণ চালু / বন্ধ করতে এখানে ক্লিক করুন",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "ওপেন সেটিংস",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "ক্রোম শুরু হয়ে গেলে 'স্পিচ সনাক্তকরণ' শুরু করুন",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "স্পিচ স্বীকৃতি ভাষা পরিবর্তন করুন",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "এখন আপনি এই ট্যাবটি বন্ধ করতে পারেন এবং আপনার ভয়েস দিয়ে কোনও ওয়েবসাইটে টাইপ করতে এই সরঞ্জামটি ব্যবহার করতে পারেন!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "এই সরঞ্জামটি ব্যবহার করার জন্য দয়া করে অনুমতিগুলি মঞ্জুর করুন!",
+    "description": "error message when user rejects permission"
+  }
+}

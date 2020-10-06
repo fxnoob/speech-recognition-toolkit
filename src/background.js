@@ -34,9 +34,9 @@ class Main {
    * @memberof Main
    */
   initDb = async () => {
-    const res = await db.get("_loaded");
-    if (!res.hasOwnProperty("_loaded")) {
-      await db.set({ _loaded: true, ...schema.data });
+    const res = await db.get("___loaded");
+    if (!res.hasOwnProperty("___loaded")) {
+      await db.set({ ___loaded: true, ...schema.data });
     }
   };
   /**

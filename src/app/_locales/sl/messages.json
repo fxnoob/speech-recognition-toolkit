@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Nabor orodij za prepoznavanje govora",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Izpolnite kateri koli spletni obrazec samo z glasom!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Dovoli zvočno dovoljenje",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "kliknite tukaj, če želite dovoliti dovoljenje za zvok",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Nastavitve",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Poslušam",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Pomoč",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Tu smo, da vam pomagamo",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Če imate kakršno koli težavo, jo prijavite",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "tukaj", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Privzeti jezik",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Kliknite, če želite spremeniti privzeti jezik",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Kliknite tukaj, da vklopite / izklopite prepoznavanje govora",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Odprite Nastavitve",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Zaženite »Prepoznavanje govora«, ko se zažene Chrome",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Spremenite jezik za prepoznavanje govora",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Zdaj lahko zaprete ta zavihek in s tem orodjem tipkate na katero koli spletno mesto z glasom!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Dovolite dovoljenja za uporabo tega orodja!",
+    "description": "error message when user rejects permission"
+  }
+}

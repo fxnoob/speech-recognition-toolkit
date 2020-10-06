@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Spracherkennungs-Toolkit",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Füllen Sie jedes Webformular nur mit Ihrer Stimme aus!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Audio-Berechtigung zulassen",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "Klicken Sie hier, um die Audio-Berechtigung zuzulassen",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "die Einstellungen",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Hören",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Hilfe",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Wir sind hier um zu helfen",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Wenn Sie ein Problem haben, melden Sie es bitte",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "Hier", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Standardsprache",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Klicken Sie hier, um die Standardsprache zu ändern",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Klicken Sie hier, um die Spracherkennung ein- und auszuschalten",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Einstellungen öffnen",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Starten Sie \"Spracherkennung\", wenn Chrome gestartet wird",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Ändern Sie die Spracherkennungssprache",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Jetzt können Sie diese Registerkarte schließen und mit diesem Tool auf jeder Website mit Ihrer Stimme tippen!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Bitte erlauben Sie Berechtigungen, um dieses Tool zu verwenden!",
+    "description": "error message when user rejects permission"
+  }
+}

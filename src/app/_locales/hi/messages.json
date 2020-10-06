@@ -1,0 +1,65 @@
+{
+  "appName": { "message": "भाषण मान्यता टूलकिट", "description": "app name" },
+  "appDescription": {
+    "message": "केवल अपनी आवाज का उपयोग करके किसी भी वेब फॉर्म को भरें!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "ऑडियो अनुमति दें",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "ऑडियो अनुमति देने के लिए यहां क्लिक करें",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "समायोजन",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "सुनना",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": { "message": "मदद", "description": "help tab string" },
+  "popup_help_heading_str": {
+    "message": "हम यहाँ मदद करने के लिए हैं",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "यदि आपने कोई समस्या अनुभव की है, तो कृपया इसकी रिपोर्ट करें",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "यहाँ", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "डिफ़ॉल्ट भाषा",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "डिफ़ॉल्ट भाषा बदलने के लिए क्लिक करें",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "भाषण मान्यता को चालू / बंद करने के लिए यहां क्लिक करें",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "सेटिंग्स खोलें",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome प्रारंभ होने पर 'वाक् पहचान' प्रारंभ करें",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "वाक् पहचान भाषा बदलें",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "अब आप इस टैब को बंद कर सकते हैं और अपनी आवाज के साथ किसी भी वेबसाइट पर टाइप करने के लिए इस टूल का उपयोग कर सकते हैं!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "कृपया अनुमति दें अनुमतियाँ इस उपकरण का उपयोग करने के लिए!",
+    "description": "error message when user rejects permission"
+  }
+}

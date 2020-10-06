@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Toolkit di riconoscimento vocale",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Compila qualsiasi modulo web usando solo la tua voce!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Consenti autorizzazione audio",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "fare clic qui per consentire l'autorizzazione all'audio",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "impostazioni",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Ascoltando",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Aiuto",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Siamo qui per aiutare",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Se hai riscontrato problemi, segnalalo",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "Qui", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Lingua di default",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Fare clic per modificare la lingua predefinita",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Fare clic qui per attivare / disattivare il riconoscimento vocale",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Apri Impostazioni",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Avvia \"Riconoscimento vocale\" all'avvio di Chrome",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Cambia lingua di riconoscimento vocale",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Ora puoi chiudere questa scheda e utilizzare questo strumento per digitare su qualsiasi sito Web con la tua voce!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Consenti autorizzazioni per utilizzare questo strumento!",
+    "description": "error message when user rejects permission"
+  }
+}

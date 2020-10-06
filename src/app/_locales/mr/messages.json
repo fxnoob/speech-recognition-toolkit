@@ -1,0 +1,68 @@
+{
+  "appName": { "message": "स्पीच रिकग्निशन टूलकिट", "description": "app name" },
+  "appDescription": {
+    "message": "केवळ आपला आवाज वापरुन कोणताही वेब फॉर्म भरा!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "ऑडिओ परवानगीस परवानगी द्या",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "ऑडिओ परवानगीस परवानगी देण्यासाठी येथे क्लिक करा",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "सेटिंग्ज",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "ऐकत आहे",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "मदत करा",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "आम्ही मदतीसाठी येथे आहोत",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "आपणास कोणतीही समस्या असल्यास, कृपया त्याचा अहवाल द्या",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "येथे", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "डीफॉल्ट भाषा",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "डीफॉल्ट भाषा बदलण्यासाठी क्लिक करा",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "भाषण ओळख चालू / बंद करण्यासाठी येथे क्लिक करा",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "सेटिंग्ज उघडा",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "जेव्हा Chrome प्रारंभ होईल तेव्हा 'भाषण ओळख' प्रारंभ करा",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "उच्चार ओळख भाषा बदला",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "आता आपण हा टॅब बंद करू शकता आणि आपल्या डिव्हाइसवर कोणत्याही वेबसाइटवर टाइप करण्यासाठी हे साधन वापरू शकता!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "कृपया हे साधन वापरण्यासाठी परवानग्यांना अनुमती द्या!",
+    "description": "error message when user rejects permission"
+  }
+}
