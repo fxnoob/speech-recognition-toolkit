@@ -13,7 +13,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FormControl from "@material-ui/core/FormControl";
-import i18nService from "../../services/i18nService";
+import i18nService from "../services/i18nService";
 
 const useStyles = makeStyles(theme => ({
   root: {

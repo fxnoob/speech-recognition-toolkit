@@ -1,0 +1,68 @@
+{
+  "appName": { "message": "語音識別工具包", "description": "app name" },
+  "appDescription": {
+    "message": "僅使用您的聲音填寫任何網絡表格！",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "允許音頻權限",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "單擊此處以允許音頻權限",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "設定值",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "傾聽",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "幫幫我",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "我們在這里為您提供幫助",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "如果您遇到任何問題，請報告",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "這裡", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "預設語言",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "點擊更改默認語言",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "單擊此處打開/關閉語音識別",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "打開設置",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome啟動時啟動“語音識別”",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "更改語音識別語言",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "現在，您可以關閉此選項卡，並使用此工具在您的聲音中輸入任何網站！",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "請允許權限才能使用此工具！",
+    "description": "error message when user rejects permission"
+  }
+}

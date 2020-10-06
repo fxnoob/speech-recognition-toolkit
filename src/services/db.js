@@ -15,7 +15,7 @@ class Schema {
       alwaysOpen: false,
       defaultLanguage: {
         code: "en-US",
-        label: "English - United States"
+        label: "English (United States)"
       },
       mountAckId: constants.contentScript.mountAckId
     };

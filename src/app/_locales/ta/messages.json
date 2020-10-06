@@ -1,0 +1,68 @@
+{
+  "appName": {
+    "message": "பேச்சு அங்கீகார கருவித்தொகுதி",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "உங்கள் குரலை மட்டுமே பயன்படுத்தி எந்த வலை படிவத்தையும் நிரப்பவும்!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "ஆடியோ அனுமதியை அனுமதிக்கவும்",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "ஆடியோ அனுமதியை அனுமதிக்க இங்கே கிளிக் செய்க",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "அமைப்புகள்",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "கேட்பது",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": { "message": "உதவி", "description": "help tab string" },
+  "popup_help_heading_str": {
+    "message": "நாங்கள் உதவ இங்கே இருக்கிறோம்",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "நீங்கள் ஏதேனும் சிக்கலை சந்தித்திருந்தால், தயவுசெய்து அதைப் புகாரளிக்கவும்",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "இங்கே", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "இயல்புநிலை மொழி",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "இயல்புநிலை மொழியை மாற்ற கிளிக் செய்க",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "பேச்சு அங்கீகாரத்தை இயக்க / முடக்க இங்கே கிளிக் செய்க",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "அமைப்புகளைத் திறக்கவும்",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome தொடங்கும் போது 'பேச்சு அங்கீகாரம்' தொடங்கவும்",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "பேச்சு அங்கீகார மொழியை மாற்றவும்",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "இப்போது நீங்கள் இந்த தாவலை மூடி, இந்த கருவியைப் பயன்படுத்தி உங்கள் வலைத்தளத்துடன் எந்த வலைத்தளத்திலும் தட்டச்சு செய்யலாம்!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "இந்த கருவியைப் பயன்படுத்த தயவுசெய்து அனுமதிகளை அனுமதிக்கவும்!",
+    "description": "error message when user rejects permission"
+  }
+}

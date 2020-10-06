@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Приручник за препознавање говора",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Попуните било који веб образац само својим гласом!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Дозволи аудио дозволу",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "кликните овде да бисте дозволили дозволу за звук",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Подешавања",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Слушам",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Помоћ",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Овде смо да помогнемо",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Ако сте наишли на било који проблем, пријавите га",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "овде", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Подразумевани језик",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Кликните да бисте променили задати језик",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Кликните овде да бисте укључили / искључили препознавање говора",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Отворите Подешавања",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Покрените „Препознавање говора“ када се Цхроме покрене",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Промените језик за препознавање говора",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Сада можете да затворите ову картицу и помоћу ове алатке типкате на било којој веб локацији својим гласом!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Дозволите дозволе да бисте користили овај алат!",
+    "description": "error message when user rejects permission"
+  }
+}

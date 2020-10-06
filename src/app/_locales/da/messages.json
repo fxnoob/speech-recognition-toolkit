@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Værktøjskasse til talegenkendelse",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Udfyld enhver webformular ved kun at bruge din stemme!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Tillad lydtilladelse",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "Klik her for at tillade lydtilladelse",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Indstillinger",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Hører efter",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Hjælp",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Vi er her for at hjælpe",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Hvis du har oplevet et problem, bedes du rapportere det",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "her", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Standardsprog",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Klik for at ændre standardsprog",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Klik her for at aktivere / deaktivere talegenkendelse",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Åbn Indstillinger",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Start 'Talegenkendelse', når Chrome starter",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Skift sprog til talegenkendelse",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Nu kan du lukke denne fane og bruge dette værktøj til at skrive på ethvert websted med din stemme!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Tillad venligst tilladelser for at bruge dette værktøj!",
+    "description": "error message when user rejects permission"
+  }
+}

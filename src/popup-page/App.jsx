@@ -6,8 +6,8 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import "balloon-css";
 import Settings from "./settings";
-import Faq from "./faq";
-import i18nService from "../../services/i18nService";
+import Help from "./Help";
+import i18nService from "../services/i18nService";
 
 function TabContainer({ children, dir }) {
   return (
@@ -57,7 +57,7 @@ class FullWidthTabs extends React.Component {
             <Settings />
           </TabContainer>
           <TabContainer dir="ltr">
-            <Faq />
+            <Help />
           </TabContainer>
         </SwipeableViews>
       </div>

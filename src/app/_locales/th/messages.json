@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "ชุดเครื่องมือรู้จำเสียง",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "กรอกแบบฟอร์มบนเว็บใดก็ได้โดยใช้เพียงเสียงของคุณ!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "อนุญาตการอนุญาตเสียง",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "คลิกที่นี่เพื่ออนุญาตการอนุญาตเสียง",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "การตั้งค่า",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "การฟัง",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "ช่วยด้วย",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "เราพร้อมให้ความช่วยเหลือ",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "หากคุณประสบปัญหาใด ๆ โปรดรายงาน",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "ที่นี่", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "ภาษาเริ่มต้น",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "คลิกเพื่อเปลี่ยนภาษาเริ่มต้น",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "คลิกที่นี่เพื่อเปิด / ปิดการรู้จำเสียง",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "เปิดการตั้งค่า",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "เริ่ม 'การรู้จำเสียง' เมื่อ Chrome เริ่มทำงาน",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "เปลี่ยนภาษาการรู้จำเสียง",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "ตอนนี้คุณสามารถปิดแท็บนี้และใช้เครื่องมือนี้เพื่อพิมพ์บนเว็บไซต์ใดก็ได้ด้วยเสียงของคุณ!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "โปรดอนุญาตการอนุญาตเพื่อใช้เครื่องมือนี้!",
+    "description": "error message when user rejects permission"
+  }
+}

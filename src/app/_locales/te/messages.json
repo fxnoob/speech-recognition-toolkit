@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "స్పీచ్ రికగ్నిషన్ టూల్‌కిట్",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "మీ వాయిస్‌ని మాత్రమే ఉపయోగించడం ద్వారా ఏదైనా వెబ్ ఫారమ్‌ను పూరించండి!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "ఆడియో అనుమతిని అనుమతించండి",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "ఆడియో అనుమతిని అనుమతించడానికి ఇక్కడ క్లిక్ చేయండి",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "సెట్టింగులు",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "వింటూ",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "సహాయం",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "మేము సహాయం కోసం ఇక్కడ ఉన్నాము",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "మీరు ఏదైనా సమస్యను ఎదుర్కొన్నట్లయితే, దయచేసి దాన్ని నివేదించండి",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "ఇక్కడ", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "డిఫాల్ట్ భాష",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "డిఫాల్ట్ భాషను మార్చడానికి క్లిక్ చేయండి",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "స్పీచ్ రికగ్నిషన్ ఆన్ / ఆఫ్ చేయడానికి ఇక్కడ క్లిక్ చేయండి",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "సెట్టింగులను తెరవండి",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome ప్రారంభమైనప్పుడు 'స్పీచ్ రికగ్నిషన్' ప్రారంభించండి",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "స్పీచ్ రికగ్నిషన్ లాంగ్వేజ్ మార్చండి",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "ఇప్పుడు మీరు ఈ ట్యాబ్‌ను మూసివేసి, మీ వాయిస్‌తో ఏదైనా వెబ్‌సైట్‌లో టైప్ చేయడానికి ఈ సాధనాన్ని ఉపయోగించవచ్చు!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "దయచేసి ఈ సాధనాన్ని ఉపయోగించడానికి అనుమతులను అనుమతించండి!",
+    "description": "error message when user rejects permission"
+  }
+}

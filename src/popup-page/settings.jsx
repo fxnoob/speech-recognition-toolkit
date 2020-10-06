@@ -10,6 +10,7 @@ import messagePassing from "../services/messagePassing";
 import chromeService from "../services/chromeService";
 import voice from "../services/voiceService";
 import db from "../services/db";
+import i18nService from "../services/i18nService";
 
 class Settings extends React.Component {
   state = {
@@ -61,12 +62,16 @@ class Settings extends React.Component {
         <FormGroup style={{ flexDirection: "row" }}>
           {this.state.permissionGranted && (
             <div>
-              <FormLabel component="legend">Default Language</FormLabel>
+              <FormLabel component="legend">
+                {i18nService.getMessage("popup_default_language_label_str")}
+              </FormLabel>
               <div style={{ marginTop: "0.5rem" }}>
                 <a
-                  aria-label="Click to change default language"
+                  aria-label={i18nService.getMessage(
+                    "popup_default_language_tooltip_str"
+                  )}
                   data-balloon-pos="down"
-                  href={chrome.runtime.getURL("option.html") + "/#"}
+                  href={chrome.runtime.getURL("option.html")}
                   target="_blank"
                 >
                   <b>{this.state.language}</b>
@@ -78,7 +83,9 @@ class Settings extends React.Component {
             (this.state.permissionGranted ? (
               <div style={{ marginLeft: "2rem" }}>
                 <FormControlLabel
-                  aria-label="click here to turn on/off speech recognition"
+                  aria-label={i18nService.getMessage(
+                    "popup_mic_btn_tooltip_str"
+                  )}
                   data-balloon-pos="down"
                   control={
                     <Fab
@@ -107,7 +114,9 @@ class Settings extends React.Component {
               </div>
             ) : (
               <FormControlLabel
-                aria-label="click here to Allow Audio Permission"
+                aria-label={i18nService.getMessage(
+                  "popup_allow_permission_btn_tooltip_str"
+                )}
                 data-balloon-pos="down"
                 style={{ marginTop: "0.5rem" }}
                 control={
@@ -116,7 +125,7 @@ class Settings extends React.Component {
                     onClick={this.openOptionPermissionsPage}
                   >
                     <GearIcon />
-                    Allow Audio Permission
+                    {i18nService.getMessage("popup_allow_permission_btn_str")}
                   </Fab>
                 }
                 label=""

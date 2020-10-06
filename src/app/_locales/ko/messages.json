@@ -1,0 +1,65 @@
+{
+  "appName": { "message": "음성 인식 툴킷", "description": "app name" },
+  "appDescription": {
+    "message": "음성만으로 웹 양식을 작성하십시오!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "오디오 권한 허용",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "오디오 권한을 허용하려면 여기를 클릭하십시오.",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "설정",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "청취",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": { "message": "도움", "description": "help tab string" },
+  "popup_help_heading_str": {
+    "message": "저희가 도와 드리겠습니다",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "문제가 발생한 경우 신고 해주세요.",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "여기", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "기본 설정 언어",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "기본 언어를 변경하려면 클릭",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "음성 인식을 켜거나 끄려면 여기를 클릭하십시오.",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "설정 열기",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome이 시작되면 '음성 인식'시작",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "음성 인식 언어 변경",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "이제이 탭을 닫고이 도구를 사용하여 음성으로 웹 사이트에 입력 할 수 있습니다!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "이 도구를 사용하려면 권한을 허용하십시오!",
+    "description": "error message when user rejects permission"
+  }
+}

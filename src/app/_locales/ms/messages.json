@@ -1,0 +1,71 @@
+{
+  "appName": {
+    "message": "Kit Alat Pengecaman Ucapan",
+    "description": "app name"
+  },
+  "appDescription": {
+    "message": "Isi borang web dengan hanya menggunakan suara anda!",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "Benarkan Kebenaran Audio",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "klik di sini untuk Benarkan Kebenaran Audio",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "Tetapan",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "Mendengar",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "Tolonglah",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "Kami sedia membantu",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "Sekiranya anda mengalami masalah, laporkan",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "di sini", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "Bahasa Lalai",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "Klik untuk menukar bahasa lalai",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "Klik di sini untuk menghidupkan / mematikan Pengiktirafan Ucapan",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "Buka Tetapan",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Mulakan 'Speech Recognition' ketika Chrome bermula",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "Tukar Bahasa Pengenalan Ucapan",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "Sekarang anda boleh menutup tab ini dan menggunakan alat ini untuk menaip di mana-mana laman web dengan suara anda!",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "Harap Benarkan Kebenaran untuk menggunakan alat ini!",
+    "description": "error message when user rejects permission"
+  }
+}

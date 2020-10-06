@@ -1,6 +1,6 @@
 {
-  "name": "Speech Recognition Toolkit",
-  "description": "Fill out any form by using only your voice!",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDescription__",
   "version": "0.0.0",
   "permissions": [
     "contextMenus",
