@@ -1,7 +1,7 @@
 {
   "name": "Speech Recognition Toolkit",
   "description": "Fill out any form by using only your voice!",
-  "version": "3.0.4",
+  "version": "0.0.0",
   "permissions": [
     "contextMenus",
     "tabs",
@@ -27,6 +27,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
+      "all_frames": true,
       "js": ["content_script.bundle.js"],
       "run_at": "document_end"
     }

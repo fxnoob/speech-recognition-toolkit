@@ -1,0 +1,13 @@
+<html>
+  <body>
+    <iframe id="output_iframe"></iframe>
+    <input placeholder="host input" />
+    <script>
+      var html_string = `
+    <input placeholder="iframe input"/>
+  `;
+      document.getElementById("output_iframe").src =
+        "data:text/html;charset=utf-8," + escape(html_string);
+    </script>
+  </body>
+</html>

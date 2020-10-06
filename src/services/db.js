@@ -1,3 +1,4 @@
+import constants from "../../constants";
 /**
  * Schema class object
  *
@@ -15,7 +16,8 @@ class Schema {
       defaultLanguage: {
         code: "en-US",
         label: "English - United States"
-      }
+      },
+      mountAckId: constants.contentScript.mountAckId
     };
   }
 }

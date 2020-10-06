@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Alert from "@material-ui/lab/Alert";
-import db from "../../services/db";
+import db from "../services/db";
 import helpImage from "./helpImage.png";
 
 export default () => {

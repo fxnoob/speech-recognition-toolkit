@@ -1,5 +1,5 @@
 import React from "react";
-import PrivateRoute from "../../components/PrivateRoute";
+import PrivateRoute from "../components/PrivateRoute";
 import "balloon-css";
 import Permissions from "./Permissions";
 import NavBar from "./NavBar";

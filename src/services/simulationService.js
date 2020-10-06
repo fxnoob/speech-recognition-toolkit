@@ -1,3 +1,5 @@
+import dom from "./dom";
+
 export class Simulaiton {
   constructor() {}
   keypressInject(keyCode) {
@@ -75,9 +77,11 @@ export class Simulaiton {
         return true;
       else return false;
   }
-  keypress(array) {
+  isActiveElementInput(el = document.activeElement) {
+    return Simulaiton.isTextInput(el);
+  }
+  keypress(array, el) {
     // Simulate a keypress
-    var el = document.activeElement;
     var keyCode,
       ctrl,
       alt,
@@ -236,6 +240,10 @@ export class Simulaiton {
           shiftKey: shift
         })
       );
+  }
+  simulateKeyPress(array, mountAckId, document = window.document) {
+    const activeElement = dom.findFocusedElem(document, mountAckId);
+    this.keypress(array, activeElement);
   }
 }
 

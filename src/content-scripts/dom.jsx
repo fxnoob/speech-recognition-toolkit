@@ -5,10 +5,11 @@ import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
-import IFrame from "./FrameMUI";
-import initialContent from "./initialFrame";
-import messagePassing from "../../services/messagePassing";
-import simulation from "../../services/simulationService";
+import IFrame from "../components/FrameMUI";
+import initialContent from "../components/initialFrame";
+import messagePassing from "../services/messagePassing";
+import simulation from "../services/simulationService";
+import dom from "../services/dom";
 
 const styles = theme => ({
   close: {
@@ -16,12 +17,16 @@ const styles = theme => ({
   }
 });
 class Dom extends React.Component {
+  mountAckId = "";
   queue = [];
   state = {
     open: false,
-    messageInfo: {}
+    messageInfo: {},
+    mountAckId: ""
   };
   componentDidMount() {
+    // put mountAckId in dom
+    this.mountAckDom();
     /** Check for content script mount acknowledgement from background script */
     messagePassing.on("/cs_mounted", async (req, res, options) => {
       res({ mounted: true });
@@ -29,19 +34,32 @@ class Dom extends React.Component {
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async (req, res, options) => {
       const { text } = req;
-      this.speechToTextListener(text);
+      this.speechToTextListenerCallback(text);
     });
   }
-  speechToTextListener(text) {
-    let strArray = text.split("");
-    strArray.map(str_char => {
-      simulation.keypress(new String(str_char).charCodeAt(0));
+  mountAckDom = () => {
+    messagePassing.sendMessage("/get_cs_mountAck", {}, async res => {
+      const { mountAckId } = res;
+      console.log({ mountAckId });
+      const div = document.createElement("div");
+      div.id = mountAckId;
+      document.body.appendChild(div);
+      this.mountAckId = mountAckId;
     });
-    /** open snackbar with recognised text */
-    this.handleClick(text)();
+  };
+  speechToTextListenerCallback(text) {
+    let strArray = text.split("");
+    simulation.simulateKeyPress(32); // add space
+    strArray.map(str_char => {
+      var charCode = new String(str_char).charCodeAt(0);
+      simulation.simulateKeyPress(charCode, this.mountAckId);
+    });
+    /** open snackbar with recognised text if any element is not active */
+    if (!dom.inIframe()) {
+      this.handleClick(text)();
+    }
   }
   handleClick = message => () => {
-    console.log(message);
     this.queue.push({
       message,
       key: new Date().getTime()
@@ -127,7 +145,7 @@ class Dom extends React.Component {
                   this.handleCopy(messageInfo.message);
                 }}
               >
-                <FileCopy />
+                <FileCopy style={{ color: "white" }} />
               </IconButton>
             </IFrame>,
             <IFrame
@@ -144,7 +162,7 @@ class Dom extends React.Component {
                   this.handleSpeak(messageInfo.message);
                 }}
               >
-                <SpeakerIcon />
+                <SpeakerIcon style={{ color: "white" }} />
               </IconButton>
             </IFrame>,
             <IFrame
@@ -159,7 +177,7 @@ class Dom extends React.Component {
                 className={classes.close}
                 onClick={this.handleClose}
               >
-                <CloseIcon />
+                <CloseIcon style={{ color: "white" }} />
               </IconButton>
             </IFrame>
           ]}
