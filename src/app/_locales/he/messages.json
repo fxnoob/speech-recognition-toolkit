@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "אנא אפשר הרשאות על מנת להשתמש בכלי זה!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "אימוג'י",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "אימוג'י לא נמצא!",
+    "description": "message to when emoji is not found."
   }
 }

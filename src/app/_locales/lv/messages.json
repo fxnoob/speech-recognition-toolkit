@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Lūdzu, atļaujiet atļaujas, lai izmantotu šo rīku!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emocijzīmes",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emocijzīmes nav atrastas!",
+    "description": "message to when emoji is not found."
   }
 }

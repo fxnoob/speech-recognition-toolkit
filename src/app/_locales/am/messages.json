@@ -61,5 +61,13 @@
   "option_permission_error_msg": {
     "message": "እባክዎን ይህንን መሳሪያ ለመጠቀም ፈቃዶችን ይፍቀዱ!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ገላጭ ምስል",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ስሜት ገላጭ ምስል አልተገኘም!",
+    "description": "message to when emoji is not found."
   }
 }

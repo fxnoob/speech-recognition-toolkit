@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "இந்த கருவியைப் பயன்படுத்த தயவுசெய்து அனுமதிகளை அனுமதிக்கவும்!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ஈமோஜி",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ஈமோஜி கிடைக்கவில்லை!",
+    "description": "message to when emoji is not found."
   }
 }

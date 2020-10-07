@@ -25,7 +25,7 @@
   },
   "popup_help_tab_str": { "message": "Help", "description": "help tab string" },
   "popup_help_heading_str": {
-    "message": "We are here to help",
+    "message": "We are here to help!",
     "description": "popup help tab heading"
   },
   "popup_help_desc_str": {
@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "Please Allow Permissions in order to use this tool!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji not found!",
+    "description": "message to when emoji is not found."
   }
 }

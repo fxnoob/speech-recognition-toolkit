@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Vui lòng cho phép Quyền để sử dụng công cụ này!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "biểu tượng cảm xúc",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Không tìm thấy biểu tượng cảm xúc!",
+    "description": "message to when emoji is not found."
   }
 }

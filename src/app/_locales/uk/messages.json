@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Будь ласка, дозвольте дозволи, щоб використовувати цей інструмент!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "смайлики",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Смайли не знайдено!",
+    "description": "message to when emoji is not found."
   }
 }

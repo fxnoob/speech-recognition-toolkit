@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "このツールを使用するには、権限を許可してください。",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "絵文字",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "絵文字が見つかりません！",
+    "description": "message to when emoji is not found."
   }
 }

@@ -61,5 +61,13 @@
   "option_permission_error_msg": {
     "message": "이 도구를 사용하려면 권한을 허용하십시오!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "이모티콘",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "이모티콘을 찾을 수 없습니다!",
+    "description": "message to when emoji is not found."
   }
 }

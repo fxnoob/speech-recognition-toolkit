@@ -61,5 +61,13 @@
   "option_permission_error_msg": {
     "message": "Salli käyttöoikeudet käyttääksesi tätä työkalua!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emojia ei löydy!",
+    "description": "message to when emoji is not found."
   }
 }

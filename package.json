@@ -15,7 +15,8 @@
     "jsdoc": "jsdoc src -r",
     "deploy_jsdoc": "yarn jsdoc &&  gh-pages -d out",
     "test": "yarn build",
-    "generate:locale": "node scripts/translate_locales.js"
+    "generate:locale": "node scripts/translate_locales.js",
+    "generate:emoji": "node scripts/transform_emoji.js"
   },
   "husky": {
     "hooks": {
@@ -54,6 +55,7 @@
     "webpack": "^4.39.1",
     "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.6",
+    "node-google-translate-skidz": "^1.1.2",
     "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
@@ -65,9 +67,9 @@
     "@tailwindcss/ui": "^0.5.0",
     "annyang": "^2.6.1",
     "balloon-css": "^1.2.0",
+    "emoji-text": "^0.2.6",
     "jss": "^10.4.0",
     "jss-rtl": "^0.3.0",
-    "node-google-translate-skidz": "^1.1.2",
     "prop-types": "^15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

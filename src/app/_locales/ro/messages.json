@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Vă rugăm să permiteți permisiunile pentru a utiliza acest instrument!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji nu a fost găsit!",
+    "description": "message to when emoji is not found."
   }
 }

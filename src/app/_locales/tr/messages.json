@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Bu aracı kullanmak için lütfen İzinlere İzin Verin!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji bulunamadı!",
+    "description": "message to when emoji is not found."
   }
 }

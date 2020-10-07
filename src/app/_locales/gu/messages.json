@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "કૃપા કરીને આ સાધનનો ઉપયોગ કરવા માટે પરવાનગીની મંજૂરી આપો!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ઇમોજી",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ઇમોજી મળ્યાં નથી!",
+    "description": "message to when emoji is not found."
   }
 }

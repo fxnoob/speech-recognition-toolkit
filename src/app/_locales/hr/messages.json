@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Dopustite dozvole da biste koristili ovaj alat!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emojiji nisu pronađeni!",
+    "description": "message to when emoji is not found."
   }
 }

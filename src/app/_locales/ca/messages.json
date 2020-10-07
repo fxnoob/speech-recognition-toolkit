@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Permeteu permisos per utilitzar aquesta eina.",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "No s'ha trobat cap emoji.",
+    "description": "message to when emoji is not found."
   }
 }

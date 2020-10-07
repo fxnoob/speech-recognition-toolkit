@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Bitte erlauben Sie Berechtigungen, um dieses Tool zu verwenden!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "Emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji nicht gefunden!",
+    "description": "message to when emoji is not found."
   }
 }

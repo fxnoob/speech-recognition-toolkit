@@ -13,6 +13,7 @@ class Schema {
       isMicListening: false,
       audioAccess: false,
       alwaysOpen: false,
+      emojiEnabled: true,
       defaultLanguage: {
         code: "en-US",
         label: "English (United States)"

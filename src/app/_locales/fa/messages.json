@@ -61,5 +61,13 @@
   "option_permission_error_msg": {
     "message": "لطفاً برای استفاده از این ابزار اجازه ها را مجاز کنید!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "شکلک",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "شکلک پیدا نشد!",
+    "description": "message to when emoji is not found."
   }
 }

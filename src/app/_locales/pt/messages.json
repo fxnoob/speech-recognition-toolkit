@@ -1,68 +1,79 @@
 {
-  "appName": { "message": "语音识别工具包", "description": "app name" },
+  "appName": {
+    "message": "Toolkit de reconhecimento de voz",
+    "description": "app name"
+  },
   "appDescription": {
-    "message": "仅使用您的声音填写任何网络表格！",
+    "message": "Preencha qualquer formulário da web usando apenas sua voz!",
     "description": "app short description"
   },
   "popup_allow_permission_btn_str": {
-    "message": "允许音频权限",
+    "message": "Permitir permissão de áudio",
     "description": "String on the button on popup page that allows user to navigate to permissions page"
   },
   "popup_allow_permission_btn_tooltip_str": {
-    "message": "单击此处以允许音频权限",
+    "message": "clique aqui para permitir a permissão de áudio",
     "description": "allow permission button tooltip string"
   },
   "popup_settings_tab_str": {
-    "message": "设定值",
+    "message": "Configurações",
     "description": "setting tab string"
   },
   "popup_mic_listening_label": {
-    "message": "倾听",
+    "message": "Ouvindo",
     "description": "label when mic is listening"
   },
   "popup_help_tab_str": {
-    "message": "帮帮我",
+    "message": "Socorro",
     "description": "help tab string"
   },
   "popup_help_heading_str": {
-    "message": "我们在这里为您提供帮助",
+    "message": "Estamos aqui para ajudar",
     "description": "popup help tab heading"
   },
   "popup_help_desc_str": {
-    "message": "如果您遇到任何问题，请报告",
+    "message": "Se você teve algum problema, por favor, relate-o",
     "description": "popup help tab description"
   },
-  "here": { "message": "这里", "description": "word" },
+  "here": { "message": "aqui", "description": "word" },
   "popup_default_language_label_str": {
-    "message": "预设语言",
+    "message": "Idioma padrão",
     "description": "label for default language on popup"
   },
   "popup_default_language_tooltip_str": {
-    "message": "点击更改默认语言",
+    "message": "Clique para alterar o idioma padrão",
     "description": "popup page default language tooltip"
   },
   "popup_mic_btn_tooltip_str": {
-    "message": "单击此处打开/关闭语音识别",
+    "message": "Clique aqui para ligar / desligar o reconhecimento de fala",
     "description": "mic button tooltip on popup page"
   },
   "popup_gear_btn_tooltip_str": {
-    "message": "打开设置",
+    "message": "Abrir configurações",
     "description": "popup page gear button tooltip"
   },
   "option_onstart_setting_str": {
-    "message": "Chrome启动时启动“语音识别”",
+    "message": "Inicie o 'Reconhecimento de fala' quando o Chrome iniciar",
     "description": "onstart setting label"
   },
   "option_default_lang_change_setting_str": {
-    "message": "更改语音识别语言",
+    "message": "Alterar idioma de reconhecimento de fala",
     "description": "language change setting label"
   },
   "option_permission_success_msg": {
-    "message": "现在，您可以关闭此选项卡，并使用此工具在您的声音中输入任何网站！",
+    "message": "Agora você pode fechar esta guia e usar esta ferramenta para digitar em qualquer site com sua voz!",
     "description": "success message when user accepts permission"
   },
   "option_permission_error_msg": {
-    "message": "请允许权限才能使用此工具！",
+    "message": "Por favor, permita permissões para usar esta ferramenta!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji não encontrado!",
+    "description": "message to when emoji is not found."
   }
 }

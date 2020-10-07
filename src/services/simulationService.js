@@ -245,6 +245,13 @@ export class Simulaiton {
     const activeElement = dom.findFocusedElem(document, mountAckId);
     this.keypress(array, activeElement);
   }
+  simulateWordTyping(wordString, mountAckId) {
+    const charArray = wordString.split("");
+    charArray.map(char => {
+      const charCode = new String(char).charCodeAt(0);
+      this.simulateKeyPress(charCode, mountAckId);
+    });
+  }
 }
 
 const simulaiton = new Simulaiton();

@@ -9,6 +9,8 @@ import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
 import messagePassing from "../services/messagePassing";
 import simulation from "../services/simulationService";
+import translation from "../services/translationService";
+import emoji from "../services/emojiService";
 import dom from "../services/dom";
 
 const styles = theme => ({
@@ -16,6 +18,7 @@ const styles = theme => ({
     padding: theme.spacing.unit / 2
   }
 });
+
 class Dom extends React.Component {
   mountAckId = "";
   queue = [];
@@ -33,8 +36,8 @@ class Dom extends React.Component {
     });
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async (req, res, options) => {
-      const { text } = req;
-      this.speechToTextListenerCallback(text);
+      const { text, languageCode } = req;
+      this.speechToTextListenerCallback(text, languageCode);
     });
   }
   mountAckDom = () => {
@@ -47,16 +50,39 @@ class Dom extends React.Component {
       this.mountAckId = mountAckId;
     });
   };
-  speechToTextListenerCallback(text) {
-    let strArray = text.split("");
-    simulation.simulateKeyPress(32); // add space
-    strArray.map(str_char => {
-      var charCode = new String(str_char).charCodeAt(0);
-      simulation.simulateKeyPress(charCode, this.mountAckId);
-    });
+  speechToTextListenerCallback(text, languageCode) {
+    let alertText = "";
+    const emojiLabel = translation.getMessage(languageCode, "emoji").message;
+    if (text.startsWith(emojiLabel)) {
+      const emojiText = text.replace(emojiLabel, "").trim();
+      const emojiContent = emoji.getEmoji(
+        languageCode,
+        emojiText.toLowerCase()
+      );
+      if (emojiContent) {
+        console.log("emojiContent", emojiContent);
+        simulation.simulateKeyPress(32);
+        simulation.simulateWordTyping(emojiContent.replacement);
+        simulation.simulateKeyPress(32);
+      } else {
+        console.log(emojiText, emojiContent);
+      }
+      alertText = emojiContent
+        ? `${emojiLabel}:  ${emojiContent.replacement}`
+        : translation.getMessage(languageCode, "emoji_not_found").message;
+    } else {
+      let strArray = text.split("");
+      alertText = text;
+      simulation.simulateKeyPress(32); // add space
+      strArray.map(str_char => {
+        const charCode = new String(str_char).charCodeAt(0);
+        simulation.simulateKeyPress(charCode, this.mountAckId);
+      });
+    }
+    //simulate wink face
     /** open snackbar with recognised text if any element is not active */
     if (!dom.inIframe()) {
-      this.handleClick(text)();
+      this.handleClick(alertText)();
     }
   }
   handleClick = message => () => {

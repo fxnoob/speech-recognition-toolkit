@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Моля, позволете разрешения, за да използвате този инструмент!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "емоджи",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Не са намерени емоджи!",
+    "description": "message to when emoji is not found."
   }
 }

@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "Selle tööriista kasutamiseks lubage load!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emotikon",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emotikat ei leitud!",
+    "description": "message to when emoji is not found."
   }
 }

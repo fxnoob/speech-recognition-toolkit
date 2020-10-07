@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Επιτρέψτε τα δικαιώματα για να χρησιμοποιήσετε αυτό το εργαλείο!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Το Emoji δεν βρέθηκε!",
+    "description": "message to when emoji is not found."
   }
 }

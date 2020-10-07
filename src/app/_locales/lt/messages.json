@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Prašome leisti leidimus, kad galėtumėte naudoti šį įrankį!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "jaustukai",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Jaustukai nerasti!",
+    "description": "message to when emoji is not found."
   }
 }

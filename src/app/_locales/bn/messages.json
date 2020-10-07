@@ -64,5 +64,13 @@
   "option_permission_error_msg": {
     "message": "এই সরঞ্জামটি ব্যবহার করার জন্য দয়া করে অনুমতিগুলি মঞ্জুর করুন!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ইমোজি",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ইমোজি পাওয়া গেল না!",
+    "description": "message to when emoji is not found."
   }
 }

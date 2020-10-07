@@ -3,8 +3,13 @@ import MessagePassing from "./services/messagePassing";
 
 const Routes = async (voice, contextMenus) => {
   voice.addCommand({
-    "*text": text => {
-      MessagePassing.sendMessageToActiveTab("/sr_text", { text }, () => {});
+    "*text": async text => {
+      const { defaultLanguage } = await db.get("defaultLanguage");
+      const payload = {
+        text,
+        languageCode: defaultLanguage.code
+      };
+      MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
     }
   });
   // save selected text in storage instead writing it to clipboard

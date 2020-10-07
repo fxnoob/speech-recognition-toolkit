@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "Ak chcete používať tento nástroj, povolte povolenia.",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emodži",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emodži sa nenašli!",
+    "description": "message to when emoji is not found."
   }
 }

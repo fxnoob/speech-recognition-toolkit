@@ -67,5 +67,13 @@
   "option_permission_error_msg": {
     "message": "దయచేసి ఈ సాధనాన్ని ఉపయోగించడానికి అనుమతులను అనుమతించండి!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ఎమోజి",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ఎమోజి దొరకలేదు!",
+    "description": "message to when emoji is not found."
   }
 }
