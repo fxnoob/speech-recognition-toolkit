@@ -63,7 +63,7 @@ async function generateEmojiFiles() {
   );
   const newKeys = Object.keys(emojiJson);
   const targetDirRoot = path.join(__dirname, "../src/services/emoji_files");
-  for (let i = 25; i < locales.length; i++) {
+  for (let i = 0; i < locales.length; i++) {
     const locale = locales[i];
     const newEmojiFilePath = path.join(targetDirRoot, `${locale}.json`);
     const newEmojiFileContent = {};
