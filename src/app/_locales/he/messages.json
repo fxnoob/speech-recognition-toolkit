@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "אימוג'י לא נמצא!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "השתמש בתכתיב אימוג'י (יותר מ- 1800 אימוג'ים)",
+    "description": "emoji setting label on option page"
   }
 }

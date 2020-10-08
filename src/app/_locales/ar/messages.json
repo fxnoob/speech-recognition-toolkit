@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "لم يتم العثور على الرموز التعبيرية!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "استخدم إملاء الرموز التعبيرية (أكثر من 1800 رمز تعبيري)",
+    "description": "emoji setting label on option page"
   }
 }

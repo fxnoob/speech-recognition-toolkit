@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "找不到表情符号！",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "使用表情符号听写（超过1800个表情符号）",
+    "description": "emoji setting label on option page"
   }
 }

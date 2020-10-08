@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "Emotikat ei leitud!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Kasuta emotikonide dikteerimist (üle 1800 emotikoni)",
+    "description": "emoji setting label on option page"
   }
 }

@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emodži sa nenašli!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Použite diktát emodži (viac ako 1 800 emodži)",
+    "description": "emoji setting label on option page"
   }
 }

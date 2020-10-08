@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Эмодзи не найден!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Используйте смайлы под диктовку (более 1800 смайликов)",
+    "description": "emoji setting label on option page"
   }
 }

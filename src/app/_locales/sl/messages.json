@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emodžijev ni mogoče najti!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Uporabite narekovanje čustvenih simbolov (več kot 1800 čustvenih simbolov)",
+    "description": "emoji setting label on option page"
   }
 }

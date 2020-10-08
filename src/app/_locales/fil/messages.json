@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji hindi natagpuan!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Gumamit ng pagdidikta ng emoji (higit sa 1800 emojis)",
+    "description": "emoji setting label on option page"
   }
 }

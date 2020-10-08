@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "ઇમોજી મળ્યાં નથી!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ઇમોજી ડિક્ટેશનનો ઉપયોગ કરો (1800 થી વધુ ઇમોજીસ)",
+    "description": "emoji setting label on option page"
   }
 }

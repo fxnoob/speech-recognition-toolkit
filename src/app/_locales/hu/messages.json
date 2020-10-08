@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji nem található!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Emoji diktálás használata (több mint 1800 hangulatjel)",
+    "description": "emoji setting label on option page"
   }
 }

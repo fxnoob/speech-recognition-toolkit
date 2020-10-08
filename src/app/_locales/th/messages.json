@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "ไม่พบอีโมจิ!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ใช้การป้อนตามคำบอกอิโมจิ (อิโมจิมากกว่า 1,800 รายการ)",
+    "description": "emoji setting label on option page"
   }
 }

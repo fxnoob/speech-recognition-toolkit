@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Không tìm thấy biểu tượng cảm xúc!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Sử dụng chính tả biểu tượng cảm xúc (hơn 1800 biểu tượng cảm xúc)",
+    "description": "emoji setting label on option page"
   }
 }

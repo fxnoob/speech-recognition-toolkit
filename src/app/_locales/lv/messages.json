@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emocijzīmes nav atrastas!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Izmantojiet emocijzīmju diktēšanu (vairāk nekā 1800 emocijzīmes)",
+    "description": "emoji setting label on option page"
   }
 }

@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Jaustukai nerasti!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Naudoti jaustukų diktavimą (daugiau nei 1800 jaustukų)",
+    "description": "emoji setting label on option page"
   }
 }

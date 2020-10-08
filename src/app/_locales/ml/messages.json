@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "ഇമോജി കണ്ടെത്തിയില്ല!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ഇമോജി ഡിക്ടേഷൻ ഉപയോഗിക്കുക (1800 ൽ കൂടുതൽ ഇമോജികൾ)",
+    "description": "emoji setting label on option page"
   }
 }

@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "No s'ha trobat cap emoji.",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Utilitzeu el dictat d'emoji (més de 1800 emojis)",
+    "description": "emoji setting label on option page"
   }
 }

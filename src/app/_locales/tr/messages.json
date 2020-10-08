@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji bulunamadı!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Emoji dikte etme özelliğini kullanın (1800'den fazla emoji)",
+    "description": "emoji setting label on option page"
   }
 }

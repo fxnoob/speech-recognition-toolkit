@@ -69,5 +69,9 @@
   "emoji_not_found": {
     "message": "ስሜት ገላጭ ምስል አልተገኘም!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ስሜት ገላጭ አጻጻፍ ይጠቀሙ (ከ 1800 በላይ ገላጭ ምስሎች)",
+    "description": "emoji setting label on option page"
   }
 }

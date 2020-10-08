@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji nu a fost găsit!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Utilizați dictarea emoji (mai mult de 1800 de emoji)",
+    "description": "emoji setting label on option page"
   }
 }

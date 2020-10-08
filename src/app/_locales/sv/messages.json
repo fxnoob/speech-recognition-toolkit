@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji hittades inte!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Använd emoji-diktering (mer än 1800 emojis)",
+    "description": "emoji setting label on option page"
   }
 }

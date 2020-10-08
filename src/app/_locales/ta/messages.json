@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "ஈமோஜி கிடைக்கவில்லை!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ஈமோஜி டிக்டேஷனைப் பயன்படுத்தவும் (1800 க்கும் மேற்பட்ட ஈமோஜிகள்)",
+    "description": "emoji setting label on option page"
   }
 }

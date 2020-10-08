@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "ಎಮೋಜಿ ಕಂಡುಬಂದಿಲ್ಲ!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ಎಮೋಜಿ ಡಿಕ್ಟೇಷನ್ ಬಳಸಿ (1800 ಕ್ಕೂ ಹೆಚ್ಚು ಎಮೋಜಿಗಳು)",
+    "description": "emoji setting label on option page"
   }
 }

@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji niet gevonden!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Gebruik emoji-dictaat (meer dan 1800 emoji's)",
+    "description": "emoji setting label on option page"
   }
 }

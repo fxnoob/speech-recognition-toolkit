@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Το Emoji δεν βρέθηκε!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Χρήση υπαγόρευσης emoji (περισσότερα από 1800 emoji)",
+    "description": "emoji setting label on option page"
   }
 }

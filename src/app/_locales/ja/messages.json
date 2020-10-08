@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "絵文字が見つかりません！",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "絵文字ディクテーションを使用する（1800以上の絵文字）",
+    "description": "emoji setting label on option page"
   }
 }

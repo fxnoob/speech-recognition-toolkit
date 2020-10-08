@@ -72,5 +72,9 @@
   "emoji_not_found": {
     "message": "ইমোজি পাওয়া গেল না!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ইমোজি ডিক্টেশন ব্যবহার করুন (1800 এর বেশি ইমোজি)",
+    "description": "emoji setting label on option page"
   }
 }

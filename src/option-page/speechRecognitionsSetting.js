@@ -14,39 +14,37 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FormControl from "@material-ui/core/FormControl";
 import i18nService from "../services/i18nService";
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%"
   }
 }));
-
 export default function() {
   const [onBootStart, setOnBootStart] = useState(false);
   const [languageSelectOptionOpen, setLanguageSelectOptionOpen] = useState(
     false
   );
+  const [isEmojiEnabled, setEmojiEnabled] = useState(true);
   const [lang, setLang] = useState("");
   useEffect(() => {
     init();
   });
   const init = async () => {
-    const { defaultLanguage, alwaysOpen } = await db.get(
+    const { defaultLanguage, alwaysOpen, emojiEnabled } = await db.get(
       "defaultLanguage",
-      "alwaysOpen"
+      "alwaysOpen",
+      "emojiEnabled"
     );
     setLang(defaultLanguage.label);
+    setEmojiEnabled(emojiEnabled);
     setOnBootStart(alwaysOpen);
   };
   const classes = useStyles();
-  const [checked, setChecked] = React.useState([0]);
-
   const closeLanguageSelectOption = () => {
     setLanguageSelectOptionOpen(false);
   };
   const changeLanguage = async event => {
     setLang(event.target.value);
-    console.log(event.target);
     await db.set({
       defaultLanguage: {
         code: voice.supportedLanguages[event.target.value],
@@ -60,31 +58,15 @@ export default function() {
     setOnBootStart(!onBootStart);
     await db.set({ alwaysOpen });
   };
-
+  const toggleEmojiSetting = async event => {
+    const emojiEnabled = !isEmojiEnabled;
+    setEmojiEnabled(emojiEnabled);
+    await db.set({ emojiEnabled });
+  };
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableBody>
-          <TableRow>
-            <TableCell
-              style={{
-                paddding: "1rem",
-                display: "flex",
-                justifyContent: "center"
-              }}
-            >
-              <Checkbox
-                edge="start"
-                checked={onBootStart}
-                tabIndex={-1}
-                onChange={toggleOnBootSetting}
-                inputProps={{ "aria-labelledby": "aria" }}
-              />
-            </TableCell>
-            <TableCell align="right">
-              {i18nService.getMessage("option_onstart_setting_str")}
-            </TableCell>
-          </TableRow>
           <TableRow>
             <TableCell>
               <FormControl variant="outlined" style={{ maxWidth: "205px" }}>
@@ -111,6 +93,46 @@ export default function() {
             </TableCell>
             <TableCell align="right">
               {i18nService.getMessage("option_default_lang_change_setting_str")}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell
+              style={{
+                paddding: "1rem",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <Checkbox
+                edge="start"
+                checked={isEmojiEnabled}
+                tabIndex={-1}
+                onChange={toggleEmojiSetting}
+                inputProps={{ "aria-labelledby": "aria" }}
+              />
+            </TableCell>
+            <TableCell align="right">
+              {i18nService.getMessage("option_emoji_setting_str")}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell
+              style={{
+                paddding: "1rem",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <Checkbox
+                edge="start"
+                checked={onBootStart}
+                tabIndex={-1}
+                onChange={toggleOnBootSetting}
+                inputProps={{ "aria-labelledby": "aria" }}
+              />
+            </TableCell>
+            <TableCell align="right">
+              {i18nService.getMessage("option_onstart_setting_str")}
             </TableCell>
           </TableRow>
         </TableBody>

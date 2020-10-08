@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "ఎమోజి దొరకలేదు!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ఎమోజి డిక్టేషన్ ఉపయోగించండి (1800 కంటే ఎక్కువ ఎమోజీలు)",
+    "description": "emoji setting label on option page"
   }
 }

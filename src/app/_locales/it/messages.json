@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji non trovato!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Usa la dettatura emoji (più di 1800 emoji)",
+    "description": "emoji setting label on option page"
   }
 }

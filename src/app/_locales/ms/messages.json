@@ -75,5 +75,9 @@
   "emoji_not_found": {
     "message": "Emoji tidak dijumpai!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Gunakan imlak emoji (lebih daripada 1800 emoji)",
+    "description": "emoji setting label on option page"
   }
 }

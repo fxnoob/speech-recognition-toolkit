@@ -69,5 +69,9 @@
   "emoji_not_found": {
     "message": "شکلک پیدا نشد!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "از شکلک emoji استفاده کنید (بیش از 1800 شکلک)",
+    "description": "emoji setting label on option page"
   }
 }

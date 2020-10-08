@@ -69,5 +69,9 @@
   "emoji_not_found": {
     "message": "Emojia ei löydy!",
     "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Käytä emoji-sanelua (yli 1800 emojia)",
+    "description": "emoji setting label on option page"
   }
 }

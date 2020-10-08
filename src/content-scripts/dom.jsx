@@ -50,10 +50,11 @@ class Dom extends React.Component {
       this.mountAckId = mountAckId;
     });
   };
-  speechToTextListenerCallback(text, languageCode) {
+  async speechToTextListenerCallback(text, languageCode) {
     let alertText = "";
+    const { emojiEnabled } = await db.get("emojiEnabled");
     const emojiLabel = translation.getMessage(languageCode, "emoji").message;
-    if (text.startsWith(emojiLabel)) {
+    if (emojiEnabled && text.startsWith(emojiLabel)) {
       const emojiText = text.replace(emojiLabel, "").trim();
       const emojiContent = emoji.getEmoji(
         languageCode,
@@ -69,7 +70,9 @@ class Dom extends React.Component {
       }
       alertText = emojiContent
         ? `${emojiLabel}:  ${emojiContent.replacement}`
-        : translation.getMessage(languageCode, "emoji_not_found").message;
+        : translation.getMessage(languageCode, "emoji_not_found").message +
+          " :" +
+          emojiText;
     } else {
       let strArray = text.split("");
       alertText = text;
