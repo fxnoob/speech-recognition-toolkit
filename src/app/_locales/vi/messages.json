@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Sử dụng chính tả biểu tượng cảm xúc (hơn 1800 biểu tượng cảm xúc)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Tìm kiếm biểu tượng cảm xúc có âm thanh gần nhất",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Làm thế nào để sử dụng công cụ này?",
+    "description": "How to use this tool ? string"
   }
 }

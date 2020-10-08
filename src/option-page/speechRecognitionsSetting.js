@@ -25,23 +25,38 @@ export default function() {
     false
   );
   const [isEmojiEnabled, setEmojiEnabled] = useState(true);
+  const [isclosestMatchingEmojiEnabled, setClosestMatchingEmoji] = useState(
+    true
+  );
   const [lang, setLang] = useState("");
   useEffect(() => {
     init();
   });
   const init = async () => {
-    const { defaultLanguage, alwaysOpen, emojiEnabled } = await db.get(
+    const {
+      defaultLanguage,
+      alwaysOpen,
+      emojiEnabled,
+      closestMatchingEmoji
+    } = await db.get(
       "defaultLanguage",
       "alwaysOpen",
-      "emojiEnabled"
+      "emojiEnabled",
+      "closestMatchingEmoji"
     );
     setLang(defaultLanguage.label);
     setEmojiEnabled(emojiEnabled);
     setOnBootStart(alwaysOpen);
+    setClosestMatchingEmoji(closestMatchingEmoji);
   };
   const classes = useStyles();
   const closeLanguageSelectOption = () => {
     setLanguageSelectOptionOpen(false);
+  };
+  const toggleClosestEmojiSetting = async () => {
+    const newSetting = !isclosestMatchingEmojiEnabled;
+    await db.set({ closestMatchingEmoji: newSetting });
+    setClosestMatchingEmoji(newSetting);
   };
   const changeLanguage = async event => {
     setLang(event.target.value);
@@ -91,7 +106,7 @@ export default function() {
                 </Select>
               </FormControl>
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
               {i18nService.getMessage("option_default_lang_change_setting_str")}
             </TableCell>
           </TableRow>
@@ -111,8 +126,30 @@ export default function() {
                 inputProps={{ "aria-labelledby": "aria" }}
               />
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
               {i18nService.getMessage("option_emoji_setting_str")}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell
+              style={{
+                paddding: "1rem",
+                display: "flex",
+                justifyContent: "center"
+              }}
+            >
+              <Checkbox
+                edge="start"
+                checked={isclosestMatchingEmojiEnabled}
+                tabIndex={-1}
+                onChange={toggleClosestEmojiSetting}
+                inputProps={{ "aria-labelledby": "aria" }}
+              />
+            </TableCell>
+            <TableCell align="left">
+              {i18nService.getMessage(
+                "option_emoji_closest_matching_setting_str"
+              )}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -131,7 +168,7 @@ export default function() {
                 inputProps={{ "aria-labelledby": "aria" }}
               />
             </TableCell>
-            <TableCell align="right">
+            <TableCell align="left">
               {i18nService.getMessage("option_onstart_setting_str")}
             </TableCell>
           </TableRow>

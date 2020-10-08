@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "השתמש בתכתיב אימוג'י (יותר מ- 1800 אימוג'ים)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "חפש אמוג'י שנשמע הכי קרוב",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "כיצד להשתמש בכלי זה?",
+    "description": "How to use this tool ? string"
   }
 }

@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Tumia agizo la emoji (zaidi ya emojis 1800)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Tafuta emoji ya sauti ya karibu zaidi",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Jinsi ya kutumia zana hii?",
+    "description": "How to use this tool ? string"
   }
 }

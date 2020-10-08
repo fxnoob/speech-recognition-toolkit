@@ -73,5 +73,13 @@
   "option_emoji_setting_str": {
     "message": "이모티콘 받아쓰기 사용 (1,800 개 이상의 이모티콘)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "가장 가깝게 들리는 이모티콘 검색",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "이 도구를 사용하는 방법?",
+    "description": "How to use this tool ? string"
   }
 }

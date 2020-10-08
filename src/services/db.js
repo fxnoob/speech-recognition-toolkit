@@ -14,6 +14,7 @@ class Schema {
       audioAccess: false,
       alwaysOpen: false,
       emojiEnabled: true,
+      closestMatchingEmoji: true,
       defaultLanguage: {
         code: "en-US",
         label: "English (United States)"

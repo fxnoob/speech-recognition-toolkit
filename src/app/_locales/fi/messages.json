@@ -73,5 +73,13 @@
   "option_emoji_setting_str": {
     "message": "Käytä emoji-sanelua (yli 1800 emojia)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Etsi lähinnä kuulostava emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kuinka käyttää tätä työkalua?",
+    "description": "How to use this tool ? string"
   }
 }

@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "使用表情符号听写（超过1800个表情符号）",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "搜索最接近的表情符号",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "如何使用这个工具？",
+    "description": "How to use this tool ? string"
   }
 }

@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Použite diktát emodži (viac ako 1 800 emodži)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Vyhľadajte najbližšie znejúce emodži",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Ako používať tento nástroj?",
+    "description": "How to use this tool ? string"
   }
 }

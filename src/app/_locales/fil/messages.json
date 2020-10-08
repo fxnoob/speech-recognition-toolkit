@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Gumamit ng pagdidikta ng emoji (higit sa 1800 emojis)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Maghanap para sa pinakamalapit na tunog na emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Paano magagamit ang tool na ito?",
+    "description": "How to use this tool ? string"
   }
 }

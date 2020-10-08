@@ -73,5 +73,13 @@
   "option_emoji_setting_str": {
     "message": "از شکلک emoji استفاده کنید (بیش از 1800 شکلک)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Emoji برای نزدیکترین صدا را جستجو کنید",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "چگونه از این ابزار استفاده کنیم؟",
+    "description": "How to use this tool ? string"
   }
 }

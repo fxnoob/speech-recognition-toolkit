@@ -73,5 +73,13 @@
   "option_emoji_setting_str": {
     "message": "ስሜት ገላጭ አጻጻፍ ይጠቀሙ (ከ 1800 በላይ ገላጭ ምስሎች)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "በጣም ቅርብ የሆነ የድምፅ ስሜት ገላጭ ምስል ይፈልጉ",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "ይህንን መሳሪያ እንዴት መጠቀም እንደሚቻል?",
+    "description": "How to use this tool ? string"
   }
 }

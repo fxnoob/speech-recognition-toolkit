@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Используйте смайлы под диктовку (более 1800 смайликов)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Найдите самые близкие по звучанию смайлы",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Как пользоваться этим инструментом?",
+    "description": "How to use this tool ? string"
   }
 }

@@ -73,5 +73,13 @@
   "option_emoji_setting_str": {
     "message": "इमोजी डिक्टेशन (1800 से अधिक इमोजी) का उपयोग करें",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "निकटतम ध्वनि वाले इमोजी की खोज करें",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "इस उपकरण का उपयोग कैसे करें?",
+    "description": "How to use this tool ? string"
   }
 }

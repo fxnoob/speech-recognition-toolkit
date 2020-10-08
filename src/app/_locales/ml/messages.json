@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "ഇമോജി ഡിക്ടേഷൻ ഉപയോഗിക്കുക (1800 ൽ കൂടുതൽ ഇമോജികൾ)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "ഏറ്റവും ശബ്‌ദമുള്ള ഇമോജികൾക്കായി തിരയുക",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "ഈ ഉപകരണം എങ്ങനെ ഉപയോഗിക്കാം?",
+    "description": "How to use this tool ? string"
   }
 }

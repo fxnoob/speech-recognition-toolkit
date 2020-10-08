@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Користите диктат емоџија (више од 1800 емоџија)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Потражите емоџије који најближе звуче",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Како се користи овај алат?",
+    "description": "How to use this tool ? string"
   }
 }

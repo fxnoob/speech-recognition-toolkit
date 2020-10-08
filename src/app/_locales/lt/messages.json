@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Naudoti jaustukų diktavimą (daugiau nei 1800 jaustukų)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Ieškokite artimiausių skambančių jaustukų",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kaip naudotis šiuo įrankiu?",
+    "description": "How to use this tool ? string"
   }
 }

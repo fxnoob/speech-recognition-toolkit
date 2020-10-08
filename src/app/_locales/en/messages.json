@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "Use emoji dictation (more than 1800 emojis)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Search for closest sounding emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "How to use this tool?",
+    "description": "How to use this tool ? string"
   }
 }

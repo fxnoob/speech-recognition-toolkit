@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "Kasuta emotikonide dikteerimist (üle 1800 emotikoni)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Otsige lähimaid emotikone",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kuidas seda tööriista kasutada?",
+    "description": "How to use this tool ? string"
   }
 }

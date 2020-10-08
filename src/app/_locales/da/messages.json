@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Brug emoji-diktat (mere end 1800 emojier)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Søg efter tættest lydende emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Hvordan bruges dette værktøj?",
+    "description": "How to use this tool ? string"
   }
 }

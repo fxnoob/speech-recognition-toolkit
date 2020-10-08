@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "ইমোজি ডিক্টেশন ব্যবহার করুন (1800 এর বেশি ইমোজি)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "নিকটতম শোনার ইমোজি অনুসন্ধান করুন",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "এই সরঞ্জামটি কীভাবে ব্যবহার করবেন?",
+    "description": "How to use this tool ? string"
   }
 }

@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "ஈமோஜி டிக்டேஷனைப் பயன்படுத்தவும் (1800 க்கும் மேற்பட்ட ஈமோஜிகள்)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "மிக நெருக்கமான ஒலி ஈமோஜிகளைத் தேடுங்கள்",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "இந்த கருவியை எவ்வாறு பயன்படுத்துவது?",
+    "description": "How to use this tool ? string"
   }
 }

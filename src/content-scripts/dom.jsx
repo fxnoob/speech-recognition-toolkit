@@ -11,6 +11,7 @@ import messagePassing from "../services/messagePassing";
 import simulation from "../services/simulationService";
 import translation from "../services/translationService";
 import emoji from "../services/emojiService";
+import db from "../services/db";
 import dom from "../services/dom";
 
 const styles = theme => ({
@@ -56,7 +57,7 @@ class Dom extends React.Component {
     const emojiLabel = translation.getMessage(languageCode, "emoji").message;
     if (emojiEnabled && text.startsWith(emojiLabel)) {
       const emojiText = text.replace(emojiLabel, "").trim();
-      const emojiContent = emoji.getEmoji(
+      const emojiContent = emoji.getSomeWhatSimilarEmoji(
         languageCode,
         emojiText.toLowerCase()
       );

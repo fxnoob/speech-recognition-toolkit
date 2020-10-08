@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "Uporabite narekovanje čustvenih simbolov (več kot 1800 čustvenih simbolov)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Poiščite najbližji emodži",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kako uporabljati to orodje?",
+    "description": "How to use this tool ? string"
   }
 }

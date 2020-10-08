@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "ಎಮೋಜಿ ಡಿಕ್ಟೇಷನ್ ಬಳಸಿ (1800 ಕ್ಕೂ ಹೆಚ್ಚು ಎಮೋಜಿಗಳು)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "ಹತ್ತಿರದ ಧ್ವನಿ ಎಮೋಜಿಗಳಿಗಾಗಿ ಹುಡುಕಿ",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "ಈ ಉಪಕರಣವನ್ನು ಹೇಗೆ ಬಳಸುವುದು?",
+    "description": "How to use this tool ? string"
   }
 }

@@ -79,5 +79,13 @@
   "option_emoji_setting_str": {
     "message": "استخدم إملاء الرموز التعبيرية (أكثر من 1800 رمز تعبيري)",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "ابحث عن أقرب الرموز التعبيرية",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "كيفية استخدام هذه الأداة؟",
+    "description": "How to use this tool ? string"
   }
 }

@@ -76,5 +76,13 @@
   "option_emoji_setting_str": {
     "message": "絵文字ディクテーションを使用する（1800以上の絵文字）",
     "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "最も近い音の絵文字を検索する",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "このツールの使い方は？",
+    "description": "How to use this tool ? string"
   }
 }

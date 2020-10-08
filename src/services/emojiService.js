@@ -1,3 +1,4 @@
+const stringSimilarity = require("string-similarity");
 const ar = require("./emoji_files/ar.json");
 const am = require("./emoji_files/am.json");
 const bg = require("./emoji_files/bg.json");
@@ -104,6 +105,21 @@ class Emoji {
   getEmoji(langId, emojiName) {
     const locale = langId.split("-");
     return this.languages[locale[0]][emojiName];
+  }
+  getSomeWhatSimilarEmoji(langId, emojiName) {
+    const locale = langId.split("-")[0];
+    let emojiRes = null;
+    const res = this.languages[locale][emojiName];
+    if (res) {
+      emojiRes = res;
+    } else {
+      const matches = stringSimilarity.findBestMatch(
+        emojiName,
+        Object.keys(this.languages[locale])
+      );
+      emojiRes = this.languages[locale][matches.bestMatch.target];
+    }
+    return emojiRes;
   }
 }
 const emoji = new Emoji();
