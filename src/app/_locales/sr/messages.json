@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Како се користи овај алат?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Опозови", "description": "undo command label" },
+  "label_redo": { "message": "Понови", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "тачка",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "Нова линија",
+    "description": "new line (.) label"
   }
 }

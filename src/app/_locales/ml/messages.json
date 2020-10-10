@@ -87,5 +87,21 @@
   "popup_help_how_to_use_str": {
     "message": "ഈ ഉപകരണം എങ്ങനെ ഉപയോഗിക്കാം?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "പഴയപടിയാക്കുക",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "വീണ്ടും ചെയ്യുക",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "പൂർണ്ണ സ്റ്റോപ്പ്",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "പുതിയ വര",
+    "description": "new line (.) label"
   }
 }

@@ -87,5 +87,18 @@
   "popup_help_how_to_use_str": {
     "message": "ఈ సాధనాన్ని ఎలా ఉపయోగించాలి?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "చర్యరద్దు చేయండి",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "పునరావృతం", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "ఫుల్ స్టాప్",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "కొత్త వాక్యం",
+    "description": "new line (.) label"
   }
 }

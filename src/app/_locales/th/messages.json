@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "วิธีการใช้เครื่องมือนี้?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "เลิกทำ", "description": "undo command label" },
+  "label_redo": { "message": "ทำซ้ำ", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "หยุดเต็ม",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "บรรทัดใหม่",
+    "description": "new line (.) label"
   }
 }

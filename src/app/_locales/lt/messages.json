@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Kaip naudotis šiuo įrankiu?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Atšaukti", "description": "undo command label" },
+  "label_redo": { "message": "Perdaryti", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "pilnas sustojimas",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nauja linija",
+    "description": "new line (.) label"
   }
 }

@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Làm thế nào để sử dụng công cụ này?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Hoàn tác", "description": "undo command label" },
+  "label_redo": { "message": "Làm lại", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "Dấu chấm",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "dòng mới",
+    "description": "new line (.) label"
   }
 }

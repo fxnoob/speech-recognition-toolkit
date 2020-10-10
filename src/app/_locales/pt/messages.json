@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Como usar esta ferramenta?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Desfazer", "description": "undo command label" },
+  "label_redo": { "message": "Refazer", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "ponto final",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nova linha",
+    "description": "new line (.) label"
   }
 }

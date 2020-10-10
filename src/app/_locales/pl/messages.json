@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Jak używać tego narzędzia?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Cofnij", "description": "undo command label" },
+  "label_redo": { "message": "Przerobić", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "kropka",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "Nowa linia",
+    "description": "new line (.) label"
   }
 }

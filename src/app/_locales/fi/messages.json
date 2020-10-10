@@ -81,5 +81,18 @@
   "popup_help_how_to_use_str": {
     "message": "Kuinka käyttää tätä työkalua?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Kumoa", "description": "undo command label" },
+  "label_redo": {
+    "message": "Tee uudelleen",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "täysi pysähdys",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "uusi rivi",
+    "description": "new line (.) label"
   }
 }

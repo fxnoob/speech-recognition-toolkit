@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Jak používat tento nástroj?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "vrátit", "description": "undo command label" },
+  "label_redo": { "message": "Předělat", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "tečka",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nový řádek",
+    "description": "new line (.) label"
   }
 }

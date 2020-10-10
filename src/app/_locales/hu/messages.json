@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Hogyan kell használni ezt az eszközt?",
     "description": "How to use this tool ? string"
-  }
+  },
+  "label_undo": {
+    "message": "Visszavonás",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "Újra", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "pont",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": { "message": "új sor", "description": "new line (.) label" }
 }

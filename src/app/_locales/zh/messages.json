@@ -84,5 +84,12 @@
   "popup_help_how_to_use_str": {
     "message": "如何使用这个工具？",
     "description": "How to use this tool ? string"
-  }
+  },
+  "label_undo": { "message": "撤消", "description": "undo command label" },
+  "label_redo": { "message": "重做", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "句号",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": { "message": "新队", "description": "new line (.) label" }
 }

@@ -81,5 +81,15 @@
   "popup_help_how_to_use_str": {
     "message": "ይህንን መሳሪያ እንዴት መጠቀም እንደሚቻል?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "ቀልብስ", "description": "undo command label" },
+  "label_redo": { "message": "ድገም", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "አራት ነጥብ",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "አዲስ መስመር",
+    "description": "new line (.) label"
   }
 }

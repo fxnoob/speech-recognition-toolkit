@@ -87,5 +87,18 @@
   "popup_help_how_to_use_str": {
     "message": "Hvordan bruges dette værktøj?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Fortryd", "description": "undo command label" },
+  "label_redo": {
+    "message": "Gentag igen",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "fuldt stop",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "ny linje",
+    "description": "new line (.) label"
   }
 }

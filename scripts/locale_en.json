@@ -90,5 +90,21 @@
   "popup_help_how_to_use_str": {
     "message": "How to use this tool?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Undo",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "Redo",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "full stop",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "new line",
+    "description": "new line (.) label"
   }
 }

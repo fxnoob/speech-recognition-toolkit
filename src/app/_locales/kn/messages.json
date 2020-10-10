@@ -84,5 +84,18 @@
   "popup_help_how_to_use_str": {
     "message": "ಈ ಉಪಕರಣವನ್ನು ಹೇಗೆ ಬಳಸುವುದು?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "ರದ್ದುಗೊಳಿಸಿ",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "ಮತ್ತೆಮಾಡು", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "ಪೂರ್ಣ ವಿರಾಮ",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "ಹೊಸ ಗೆರೆ",
+    "description": "new line (.) label"
   }
 }

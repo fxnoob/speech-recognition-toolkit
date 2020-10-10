@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Cum se folosește acest instrument?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Anula", "description": "undo command label" },
+  "label_redo": { "message": "A reface", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "punct",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "linie nouă",
+    "description": "new line (.) label"
   }
 }

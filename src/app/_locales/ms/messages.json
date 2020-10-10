@@ -87,5 +87,18 @@
   "popup_help_how_to_use_str": {
     "message": "Bagaimana menggunakan alat ini?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Buat asal", "description": "undo command label" },
+  "label_redo": {
+    "message": "Buat semula",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "noktah",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "baris baru",
+    "description": "new line (.) label"
   }
 }

@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Hur använder jag det här verktyget?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Ångra", "description": "undo command label" },
+  "label_redo": { "message": "Göra om", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "punkt",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "ny linje",
+    "description": "new line (.) label"
   }
 }

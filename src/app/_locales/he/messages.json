@@ -84,5 +84,18 @@
   "popup_help_how_to_use_str": {
     "message": "כיצד להשתמש בכלי זה?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "לבטל", "description": "undo command label" },
+  "label_redo": {
+    "message": "לַעֲשׂוֹת שׁוּב",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "עצירה מוחלטת",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "שורה חדשה",
+    "description": "new line (.) label"
   }
 }

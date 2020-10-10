@@ -81,5 +81,21 @@
   "popup_help_how_to_use_str": {
     "message": "इस उपकरण का उपयोग कैसे करें?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "पूर्ववत करें",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "फिर से करें",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "पूर्ण विराम",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "नई पंक्ति",
+    "description": "new line (.) label"
   }
 }

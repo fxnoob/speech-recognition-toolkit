@@ -84,5 +84,12 @@
   "popup_help_how_to_use_str": {
     "message": "このツールの使い方は？",
     "description": "How to use this tool ? string"
-  }
+  },
+  "label_undo": { "message": "元に戻す", "description": "undo command label" },
+  "label_redo": { "message": "やり直し", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "終止符",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": { "message": "改行", "description": "new line (.) label" }
 }

@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Как пользоваться этим инструментом?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Отменить", "description": "undo command label" },
+  "label_redo": { "message": "Повторить", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "полная остановка",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "новая линия",
+    "description": "new line (.) label"
   }
 }

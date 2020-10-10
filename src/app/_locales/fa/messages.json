@@ -81,5 +81,18 @@
   "popup_help_how_to_use_str": {
     "message": "چگونه از این ابزار استفاده کنیم؟",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "واگرد", "description": "undo command label" },
+  "label_redo": {
+    "message": "دوباره انجام دهید",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "توقف کامل",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "خط جدید",
+    "description": "new line (.) label"
   }
 }

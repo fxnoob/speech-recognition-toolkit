@@ -84,5 +84,18 @@
   "popup_help_how_to_use_str": {
     "message": "এই সরঞ্জামটি কীভাবে ব্যবহার করবেন?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "পূর্বাবস্থায় ফেরা",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "আবার করুন", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "দাড়ি",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "নতুন লাইন",
+    "description": "new line (.) label"
   }
 }

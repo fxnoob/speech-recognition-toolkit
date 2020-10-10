@@ -87,5 +87,15 @@
   "popup_help_how_to_use_str": {
     "message": "Πώς να χρησιμοποιήσετε αυτό το εργαλείο;",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Ξεκάνω", "description": "undo command label" },
+  "label_redo": { "message": "Ξανακάνω", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "τελεία",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "νέα γραμμή",
+    "description": "new line (.) label"
   }
 }

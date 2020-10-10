@@ -84,5 +84,21 @@
   "popup_help_how_to_use_str": {
     "message": "இந்த கருவியை எவ்வாறு பயன்படுத்துவது?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "செயல்தவிர்",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "மீண்டும் செய்",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "முற்றுப்புள்ளி",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "புதிய கோடு",
+    "description": "new line (.) label"
   }
 }

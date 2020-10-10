@@ -81,5 +81,12 @@
   "popup_help_how_to_use_str": {
     "message": "이 도구를 사용하는 방법?",
     "description": "How to use this tool ? string"
-  }
+  },
+  "label_undo": { "message": "실행 취소", "description": "undo command label" },
+  "label_redo": { "message": "다시 하다", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "마침표",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": { "message": "새 줄", "description": "new line (.) label" }
 }

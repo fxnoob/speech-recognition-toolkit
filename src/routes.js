@@ -7,7 +7,7 @@ const Routes = async (voice, contextMenus) => {
       const { defaultLanguage } = await db.get("defaultLanguage");
       const payload = {
         text,
-        languageCode: defaultLanguage.code
+        langId: defaultLanguage.code
       };
       MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
     }

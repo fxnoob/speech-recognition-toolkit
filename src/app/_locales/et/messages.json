@@ -84,5 +84,21 @@
   "popup_help_how_to_use_str": {
     "message": "Kuidas seda tööriista kasutada?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Võta tagasi",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "Tee uuesti",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "punkt",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "uus rida",
+    "description": "new line (.) label"
   }
 }

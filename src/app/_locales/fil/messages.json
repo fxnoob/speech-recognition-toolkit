@@ -87,5 +87,21 @@
   "popup_help_how_to_use_str": {
     "message": "Paano magagamit ang tool na ito?",
     "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Pawalang-bisa",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "Gawing muli",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "lubusang paghinto",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "bagong linya",
+    "description": "new line (.) label"
   }
 }
