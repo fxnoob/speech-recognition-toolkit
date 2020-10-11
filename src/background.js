@@ -2,6 +2,7 @@ import "@babel/polyfill";
 import db, { schema } from "./services/db";
 import voice from "./services/voiceService";
 import chromeService from "./services/chromeService";
+import messagePassing from "./services/messagePassing";
 import Routes from "./routes";
 
 class Main {
@@ -17,8 +18,7 @@ class Main {
    */
   init = async () => {
     await this.initDb();
-    this.mountCSOnActiveTabOnlyOnce();
-    this.onTabChangeInit();
+    this.mountCSOnPreviouslyOpenedTabsOnlyOnce();
     await this.initContextMenu();
     await Routes(voice, {
       startStopSRContextMenu: this.startStopSRContextMenu
@@ -62,37 +62,38 @@ class Main {
     await db.set({ isMicListening: false });
   };
   /**
-   * mount content script on active tab
+   * mount content script on previously opened tabs
    *
    * @method
    * @memberof Main
    */
-  mountCSOnActiveTabIfNotMountedAlready = async () => {
+  mountCSOnPreviouslyOpenedTabsOnlyOnce = async () => {
     /***
      * load content script if not laoded already
      */
-    chromeService.sendMessageToActiveTab({ path: "/cs_mounted" }, async res => {
-      if (!(res && res.mounted)) {
-        const activeTab = await chromeService.getActiveTab();
-        chrome.tabs.executeScript(activeTab.id, {
-          file: "content_script.bundle.js"
-        });
-      }
-    });
-  };
-  /**
-   * mount content script on active tab only once
-   *
-   * @method
-   * @memberof Main
-   */
-  mountCSOnActiveTabOnlyOnce = async () => {
-    const { mountedCSOnActiveTabOnlyOnce } = await db.get(
-      "mountedCSOnActiveTabOnlyOnce"
+    const { mountedCsOnPreviouslyOpenedTabs } = await db.get(
+      " mountedCsOnPreviouslyOpenedTabs"
     );
-    if (!mountedCSOnActiveTabOnlyOnce) {
-      this.mountCSOnActiveTabIfNotMountedAlready();
-      await db.set({ mountedCSOnActiveTabOnlyOnce: true });
+
+    if (mountedCsOnPreviouslyOpenedTabs) {
+      chrome.tabs.query({}, result => {
+        result.map(tabInfo => {
+          console.log(tabInfo);
+          messagePassing.sendMessageToTab(
+            "/cs_mounted",
+            tabInfo.id,
+            {},
+            async res => {
+              if (!res) {
+                chrome.tabs.executeScript(tabInfo.id, {
+                  file: "content_script.bundle.js"
+                });
+              }
+            }
+          );
+        });
+      });
+      db.set({ mountedCsOnPreviouslyOpenedTabs: true });
     }
   };
   /**
@@ -135,19 +136,6 @@ class Main {
         }
       });
     }
-  };
-  /**
-   * Listens for tab change
-   * helpful for checking if content script was mounted or not
-   * mount content script if not mounted already
-   *
-   * @method
-   * @memberof Main
-   */
-  onTabChangeInit = () => {
-    chrome.tabs.onActivated.addListener(activeInfo => {
-      this.mountCSOnActiveTabIfNotMountedAlready();
-    });
   };
   /**
    * Chrome startup initializations

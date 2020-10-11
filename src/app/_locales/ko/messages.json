@@ -88,5 +88,61 @@
     "message": "마침표",
     "description": "full stop (.) label"
   },
-  "new_line_label": { "message": "새 줄", "description": "new line (.) label" }
+  "new_line_label": { "message": "새 줄", "description": "new line (.) label" },
+  "popup_show_commands_tooltip_str": {
+    "message": "음성 명령을 보려면 클릭하세요.",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "명령 표시",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "언어에 대한 명령 목록",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "사령부 이름",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "명령 설명",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 개의 이모 지 목록에서 다소 유사한 이모지를 삽입하려면 '이모 지 이모 지 이름'이라고 말하세요. 설정 페이지에서 이모티콘의 전체 목록을 확인하십시오.",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "'.'를 입력하려면 마침표를 말하세요.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "'.'를 입력하려면 새 줄을 말하세요.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Enter 키를 눌러 'Enter'키를 누르십시오. 양식 제출에 유용",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "변경 사항을 다시 실행하려면 다시 실행이라고 말합니다.",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "변경 사항을 취소하려면 실행 취소라고 말하세요.",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "언어에 대한 이모티콘 목록",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "이모티콘의 이름",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "새 줄을 얻으려면 새 줄을 말하십시오.",
+    "description": "command newline desc"
+  }
 }

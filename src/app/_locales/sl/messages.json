@@ -100,5 +100,61 @@
   "new_line_label": {
     "message": "nova vrstica",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Kliknite, če si želite ogledati glasovne ukaze",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Prikaži ukaze",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Seznam ukazov za jezik",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Ime ukaza",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Opis ukaza",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Izgovorite »ime čustvenega simbola«, če želite vstaviti nekaj podobnih znakov s seznama 1800 znakov. preveri celoten seznam emodžijev na strani z nastavitvami",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Izgovorite točko, da vnesete '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Izgovorite novo vrstico, da vtipkate '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Recimo, da pritisnete enter, da pritisnete tipko 'Enter'. Uporabno za oddajo obrazcev",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Recite redo, da ponovite spremembe",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Recite razveljavi, če želite razveljaviti spremembe",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Seznam znakov za jezik",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Ime emojija",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Izgovorite novo vrstico, če želite dobiti novo vrstico.",
+    "description": "command newline desc"
   }
 }

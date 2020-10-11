@@ -6,6 +6,10 @@ export default langId => {
   console.log({ commandAlias });
   return {
     name: commandAlias,
+    description: translationService.getMessage(
+      langId,
+      "command_redo_description"
+    ).message,
     match: "exact",
     exec: async (text, options, callback) => {
       const { dom } = options;

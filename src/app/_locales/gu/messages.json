@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "નવી લાઇન",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "વ voiceઇસ આદેશો જોવા માટે ક્લિક કરો",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "આદેશો બતાવો",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "ભાષા માટે આદેશોની સૂચિ",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "આદેશનું નામ",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "આદેશનું વર્ણન",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ઇમોજીસની સૂચિમાંથી કંઈક સમાન ઇમોજી શામેલ કરવા માટે 'ઇમોજી ઇમોજીનું નામ' કહો. સેટિંગ પૃષ્ઠમાં ઇમોજીઝની સંપૂર્ણ સૂચિને ચેકઆઉટ કરો",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "ટાઈપ કરવા માટે ફુલ સ્ટોપ કહો. '",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "ટાઈપ કરવા માટે નવી લાઇન બોલો.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'Enter' કી દબાવવા માટે enter દબાવો. ફોર્મ સબમિટ કરવા માટે ઉપયોગી",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "ફેરફારો ફરીથી કરવા માટે ફરીથી કરો કહો",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "ફેરફારોને પૂર્વવત્ કરવા માટે પૂર્વવત્ કરો",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "ભાષા માટે ઇમોજીની સૂચિ",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ઇમોજીનું નામ",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "નવી લાઇન મેળવવા માટે નવી લાઇન કહો.",
+    "description": "command newline desc"
   }
 }

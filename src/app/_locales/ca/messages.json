@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "nova línia",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Feu clic per veure les ordres de veu",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Mostra els comandaments",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Llista d'ordres per a l'idioma",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nom de l'ordre",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Descripció de l'ordre",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Digueu \"nom d'emoji d'emoji\" per inserir emoji una mica semblants de la llista de 1800 emojis. consulta la llista completa d'emojis a la pàgina de configuració",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Digueu fullstop per escriure '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Digueu una línia nova per escriure '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Digueu que premeu Retorn per prémer la tecla \"Retorn\". Útil per enviar formularis",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Digueu Refés per refer els canvis",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Digueu desfer per desfer els canvis",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Llista d'emoji per a l'idioma",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "El nom dels Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Digueu una línia nova per obtenir una línia nova.",
+    "description": "command newline desc"
   }
 }

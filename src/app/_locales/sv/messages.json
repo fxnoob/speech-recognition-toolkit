@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "ny linje",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Klicka för att se röstkommandon",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Visa kommandon",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Kommandolista för språk",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Kommandos namn",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Kommandos beskrivning",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Säg 'emoji emoji's name' för att infoga något liknande emoji från listan över 1800 emojis. kassan fullständig lista över emojis på inställningssidan",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Säg fullstopp för att skriva '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Säg ny rad för att skriva '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Säg tryck på Enter för att trycka på 'Enter'. Användbar för att skicka formulär",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Säg om för att göra om ändringarna",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Säg ångra för att ångra ändringarna",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emojis lista för språk",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emojis namn",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Säg ny rad för att få en ny rad.",
+    "description": "command newline desc"
   }
 }

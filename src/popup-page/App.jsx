@@ -5,7 +5,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import "balloon-css";
-import Settings from "./settings";
+import Settings from "./Settings";
 import Help from "./Help";
 import i18nService from "../services/i18nService";
 

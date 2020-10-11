@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "নতুন লাইন",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "ভয়েস কমান্ড দেখতে ক্লিক করুন",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "কমান্ডগুলি প্রদর্শন করুন",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "ভাষার জন্য কমান্ড তালিকা",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "কমান্ডের নাম",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "কমান্ডের বিবরণ",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ইমোজিদের তালিকা থেকে কিছুটা অনুরূপ ইমোজি sertোকাতে 'ইমোজি ইমোজিটির নাম' বলুন। পৃষ্ঠা নির্ধারণে ইমোজির পুরো তালিকা চেকআউট করুন",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "টাইপ করতে ফুলস্টপ বলুন। '",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "টাইপ করতে নতুন লাইনটি বলুন।",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'এন্টার' চাপুন এন্টার টিপুন Say ফর্ম জমা দেওয়ার জন্য দরকারী",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "পুনরায় পরিবর্তনগুলি আবার করতে বলুন",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "পরিবর্তনগুলি পূর্বাবস্থায় ফিরতে পূর্বাবস্থায় ফিরে বলুন",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "ভাষার জন্য ইমোজিগুলির তালিকা",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ইমোজি নাম",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "নতুন লাইন পেতে নতুন লাইন বলুন।",
+    "description": "command newline desc"
   }
 }

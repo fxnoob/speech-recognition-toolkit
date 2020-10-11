@@ -91,5 +91,61 @@
     "message": "句号",
     "description": "full stop (.) label"
   },
-  "new_line_label": { "message": "新队", "description": "new line (.) label" }
+  "new_line_label": { "message": "新队", "description": "new line (.) label" },
+  "popup_show_commands_tooltip_str": {
+    "message": "点击查看语音命令",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "显示命令",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "语言命令列表",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "指令名称",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "命令说明",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "说出“表情符号表情符号的名称”，即可插入1800个表情符号列表中类似的表情符号。在设置页面中查看表情符号的完整列表",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "说句号输入“。”",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "说新行以输入“。”。",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "说按Enter键，然后按“ Enter”键。对提交表格很有用",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "说重做以重做更改",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "说撤消即可撤消更改",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "表情符号语言列表",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "表情符号的名字",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "说新线以获得新线。",
+    "description": "command newline desc"
+  }
 }

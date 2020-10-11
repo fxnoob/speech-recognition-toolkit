@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "linie nouă",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Faceți clic pentru a vedea comenzile vocale",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Afișați comenzile",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Lista de comenzi pentru limbă",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Numele comenzii",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Descrierea comenzii",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Spuneți „numele emoji emoji” pentru a insera emoji oarecum asemănător din lista de 1800 de emoji. Verificați lista completă a emoji-urilor în pagina de setare",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Spuneți fullstop pentru a tasta „.”",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Spuneți o linie nouă pentru a tasta „.”",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Spuneți apăsați Enter pentru a apăsa tasta „Enter”. Util pentru trimiterea formularelor",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Spuneți refaceți pentru a reface modificările",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Spuneți anulare pentru a anula modificările",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Lista Emoji pentru limbă",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Numele Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Spuneți o nouă linie pentru a obține o nouă linie.",
+    "description": "command newline desc"
   }
 }

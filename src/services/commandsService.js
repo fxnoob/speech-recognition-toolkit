@@ -14,12 +14,18 @@ class Commands {
   }
   getCommands(langId) {
     const Commands = [];
-    Commands.push(emojiCommand(langId));
-    Commands.push(undoCommand(langId));
-    Commands.push(redoCommand(langId));
-    Commands.push(newLineCommand(langId));
-    Commands.push(pressEnterCommand(langId));
+    try {
+      Commands.push(emojiCommand(langId));
+      Commands.push(undoCommand(langId));
+      Commands.push(redoCommand(langId));
+      Commands.push(newLineCommand(langId));
+      Commands.push(pressEnterCommand(langId));
+    } catch (e) {
+      console.log({ e });
+    }
+    console.log(Commands);
     this.commands = Commands;
+
     return Commands;
   }
 }

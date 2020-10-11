@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "Нова линија",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Кликните да бисте видели гласовне команде",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Прикажи команде",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Листа наредби за језик",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Командно име",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Опис команде",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Изговорите „име емоји емоји-ја“ да бисте убацили нешто сличне емоји-е са листе од 1800 емоји-а. погледајте целу листу емоџија на страници за подешавање",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Реците тачка да бисте уписали „.“",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Реците нови ред да бисте откуцали „.“",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Рецимо притисните ентер да притиснете тастер 'Ентер'. Корисно за подношење образаца",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Реците редо да поновите промене",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Реците поништи да бисте опозвали промене",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Списак емоџија за језик",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Име емоџија",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Реците нову линију да бисте добили нову линију.",
+    "description": "command newline desc"
   }
 }

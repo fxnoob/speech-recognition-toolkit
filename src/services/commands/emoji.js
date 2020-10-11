@@ -5,6 +5,10 @@ export default langId => {
   const commandAlias = translationService.getMessage(langId, "emoji").message;
   return {
     name: commandAlias,
+    description: translationService.getMessage(
+      langId,
+      "command_emoji_description"
+    ).message,
     match: "startsWith",
     exec: async (text, options, callback) => {
       const { dom } = options;
@@ -15,9 +19,7 @@ export default langId => {
         emojiText.toLowerCase()
       );
       if (emojiContent) {
-        dom.simulateKeyPress(32);
-        dom.simulateWordTyping(emojiContent.replacement);
-        dom.simulateKeyPress(32);
+        dom.simulateWordTyping(` ${emojiContent.replacement} `);
       }
       alertText = emojiContent
         ? `${commandAlias}:  ${emojiContent.replacement}`

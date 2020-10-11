@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "новая линия",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Нажмите, чтобы увидеть голосовые команды",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Показать команды",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Список команд для языка",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Имя команды",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Описание команды",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Произнесите «имя смайлика смайлика», чтобы вставить несколько похожих смайлов из списка 1800 смайлов. проверить полный список смайликов на странице настроек",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Произнесите полную остановку, чтобы набрать \".\"",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Произнесите новую строку для ввода \".\"",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Скажем, нажмите Enter, чтобы нажать клавишу «Ввод». Полезно для отправки форм",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Скажите \"Повторить\", чтобы повторить изменения",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Скажите \"Отменить\", чтобы отменить изменения",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Список эмодзи для языка",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Имя эмодзи",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Произнесите новую строку, чтобы получить новую строку.",
+    "description": "command newline desc"
   }
 }

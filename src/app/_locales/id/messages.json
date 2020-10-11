@@ -100,5 +100,61 @@
   "new_line_label": {
     "message": "garis baru",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Klik untuk melihat perintah suara",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Tunjukkan Perintah",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Daftar Perintah untuk bahasa",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nama Perintah",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Deskripsi Perintah",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Ucapkan 'nama emoji emoji' untuk memasukkan emoji yang agak mirip dari daftar 1800 emoji. checkout daftar lengkap emoji di halaman pengaturan",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Ucapkan fullstop untuk mengetik '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Ucapkan baris baru untuk mengetik '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Ucapkan tekan enter untuk Tekan tombol 'Enter'. Berguna untuk mengirimkan formulir",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Ucapkan redo untuk mengulangi perubahan",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Ucapkan undo untuk membatalkan perubahan",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Daftar Emoji untuk bahasa",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Nama Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Ucapkan baris baru untuk mendapatkan baris baru.",
+    "description": "command newline desc"
   }
 }

@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "laini mpya",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Bonyeza kuona amri za sauti",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Onyesha Amri",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Orodha ya Amri kwa lugha",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Jina la Amri",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Maelezo ya Amri",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Sema 'jina la emoji emoji' ili uweke emoji inayofanana kutoka orodha ya emoji 1800. orodha kamili ya emojis katika ukurasa wa kuweka",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Sema kituo kamili ili kuchapa '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Sema laini mpya ya kuchapa '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Sema waandishi wa habari kuingia ili bonyeza kitufe cha 'Ingiza'. Muhimu kwa kuwasilisha fomu",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Sema fanya upya ili ufanye upya mabadiliko",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Sema tendua kutendua mabadiliko",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Orodha ya Emoji kwa lugha",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Jina la Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Sema laini mpya kupata laini mpya.",
+    "description": "command newline desc"
   }
 }

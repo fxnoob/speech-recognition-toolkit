@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "nova linija",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Kliknite za prikaz glasovnih naredbi",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Prikaži naredbe",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Popis naredbi za jezik",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Ime naredbe",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Opis naredbe",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Recite \"ime emoji emojija\" da biste umetnuli nešto slične emojije s popisa od 1800 emojija. checkout cjelovit popis emojija na stranici s postavkama",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Recite točka da biste upisali '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Recite novi redak da biste upisali '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Recimo pritisnite enter da biste pritisnuli tipku 'Enter'. Korisno za slanje obrazaca",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Recite redo za ponavljanje promjena",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Recite poništi da biste poništili promjene",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Popis emoji-jezika za jezik",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Ime emojija",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Recite novi redak da biste dobili novi redak.",
+    "description": "command newline desc"
   }
 }

@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "nouvelle ligne",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Cliquez pour voir les commandes vocales",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Afficher les commandes",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Liste des commandes pour la langue",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nom de la commande",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Description de la commande",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Dites `` nom de l'emoji emoji '' pour insérer un emoji un peu similaire à partir de la liste de 1800 emojis. checkout liste complète des emojis dans la page de configuration",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Dites un arrêt complet pour taper \".\"",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Dites une nouvelle ligne pour taper \".\"",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Dites appuyez sur Entrée pour Appuyez sur la touche «Entrée». Utile pour soumettre des formulaires",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Dites refaire pour refaire les changements",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Dites annuler pour annuler les modifications",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Liste des emojis pour la langue",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Nom de l'emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Dites nouvelle ligne pour obtenir une nouvelle ligne.",
+    "description": "command newline desc"
   }
 }

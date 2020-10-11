@@ -5,13 +5,7 @@ import constants from "../../constants";
 export default () => {
   return (
     <div>
-      <div
-        style={{
-          lineHeight: "normal"
-        }}
-      >
-        {i18nService.getMessage("popup_help_heading_str")}{" "}
-      </div>
+      <h3>{i18nService.getMessage("popup_help_heading_str")} </h3>
       <div style={{ marginTop: "0.3rem" }}>
         <a target="_blank" href={constants.support.howtoVideoLink}>
           {i18nService.getMessage("popup_help_how_to_use_str")}{" "}

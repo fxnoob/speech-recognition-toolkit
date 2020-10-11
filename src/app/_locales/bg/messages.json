@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "нова линия",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Щракнете, за да видите гласови команди",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Показване на команди",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Списък на командите за език",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Име на командата",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Описание на командата",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Кажете „името на емотиконите на емотиконите“, за да вмъкнете донякъде подобни емоджи от списъка с 1800 емотикони. вижте пълния списък с емотикони в страницата за настройка",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Кажете пълна спирка, за да напишете „.“",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Кажете нов ред, за да напишете „.“",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Кажете, че натиснете enter, за да натиснете клавиша „Enter“. Полезно за изпращане на формуляри",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Кажете redo, за да повторите промените",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Кажете отмяна, за да отмените промените",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Списък на емоджи за език",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Името на емоджи",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Кажете нов ред, за да получите нов ред.",
+    "description": "command newline desc"
   }
 }

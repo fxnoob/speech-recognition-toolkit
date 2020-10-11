@@ -1,7 +1,7 @@
-import translation from "./translationService";
 class Dom {
   constructor() {
     this.lastFocusedElementDocument = null;
+    this.lastTypedWord = null;
   }
   /**
    * If the focus is in an iframe with a different origin, then attempting to
@@ -42,7 +42,7 @@ class Dom {
    * @param {*} document
    * @return {*}
    */
-  findFocusedElem(document, mountAckId) {
+  findFocusedElem(document, mountAckId = "ghjfgfghf") {
     this.lastFocusedElementDocument = document;
     let focusedElem = document.activeElement;
 
@@ -60,10 +60,10 @@ class Dom {
         return focusedElem;
       }
       focusedElem = focusedElem.contentDocument.activeElement;
-      this.lastFocusedElementDocument = focusedElem.contentDocument;
       if (!this.iframeAccessOkay(focusedElem)) {
         return null;
       }
+      this.lastFocusedElementDocument = focusedElem.contentDocument;
     }
     // check if current is in shadow/nested shadow dom.
     do {
@@ -84,17 +84,6 @@ class Dom {
       this.lastFocusedElementDocument = focusedElem.ownerDocument;
     }
     return focusedElem;
-  }
-  getFocusedItem(document, mountAckId) {
-    const res = {
-      document: document,
-      activeElement: document.activeElement
-    };
-    let activeElement = res.activeElement;
-    if (!this.iframeAccessOkay(res.activeElement)) {
-      return null;
-    } else {
-    }
   }
   /**
    * check whether a frame has focus
@@ -130,6 +119,151 @@ class Dom {
         // used to have el.readOnly != true &&
         return true;
       else return false;
+  }
+  keyPress(keyInfo, element) {
+    const { keyCode, ctrl, alt, shift, meta } = keyInfo;
+    const key = String.fromCharCode(keyCode);
+    const code = "Key" + key.toUpperCase();
+    let keyCodeLowerCase = keyCode;
+    if (keyCode >= 97 && keyCode <= 122) {
+      keyCodeLowerCase = keyCode - 32;
+    }
+    console.log({ keyCode, key, code, keyCodeLowerCase });
+    const keyObj = {
+      key: key,
+      which: keyCodeLowerCase,
+      keyCode: keyCodeLowerCase,
+      charCode: 0,
+      bubbles: true,
+      cancelable: true,
+      code: code,
+      composed: true,
+      isTrusted: true,
+      ctrlKey: ctrl,
+      altKey: alt,
+      shiftKey: shift
+    };
+    const keypressObj = {
+      key: key,
+      which: keyCode,
+      keyCode: keyCode,
+      charCode: keyCode,
+      bubbles: true,
+      cancelable: true,
+      code: code,
+      composed: true,
+      isTrusted: true,
+      ctrlKey: ctrl,
+      altKey: alt,
+      shiftKey: shift
+    };
+    if (ctrl) {
+      element.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "Control",
+          code: "ControlLeft",
+          keyCode: 17,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    }
+    if (alt) {
+      element.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "Alt",
+          code: "AltLeft",
+          keyCode: 18,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    }
+    if (shift) {
+      element.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "Shift",
+          code: "ShiftLeft",
+          keyCode: 16,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    }
+    if (meta) {
+      element.dispatchEvent(
+        new KeyboardEvent("keydown", {
+          key: "Meta",
+          code: "MetaLeft",
+          keyCode: 91,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    }
+    element.dispatchEvent(new KeyboardEvent("keydown", keyObj));
+    element.dispatchEvent(new KeyboardEvent("keypress", keypressObj));
+    if (
+      (element.isContentEditable || Dom.isTextInput(element)) &&
+      !ctrl &&
+      !alt
+    ) {
+      const textEvent = document.createEvent("TextEvent");
+      textEvent.initTextEvent("textInput", true, true, null, key, 9, "en-US");
+      element.dispatchEvent(textEvent);
+      document.execCommand("InsertText", false, key);
+    }
+    element.dispatchEvent(new KeyboardEvent("keyup", keyObj));
+    if (ctrl)
+      element.dispatchEvent(
+        new KeyboardEvent("keyup", {
+          key: "Control",
+          code: "ControlLeft",
+          keyCode: 17,
+          ctrlKey: false,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    if (alt)
+      element.dispatchEvent(
+        new KeyboardEvent("keyup", {
+          key: "Alt",
+          code: "AltLeft",
+          keyCode: 18,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    if (shift)
+      element.dispatchEvent(
+        new KeyboardEvent("keyup", {
+          key: "Shift",
+          code: "ShiftLeft",
+          keyCode: 16,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    if (meta) {
+      console.log("meta");
+      element.dispatchEvent(
+        new KeyboardEvent("keyup", {
+          key: "Meta",
+          code: "MetaLeft",
+          keyCode: 91,
+          ctrlKey: ctrl,
+          altKey: alt,
+          shiftKey: shift
+        })
+      );
+    }
   }
   keypress(array, el) {
     // Simulate a keypress
@@ -297,8 +431,8 @@ class Dom {
     this.keypress(array, activeElement);
   }
   simulateWordTyping(wordString, mountAckId, document = window.document) {
+    this.lastTypedWord = wordString;
     const activeElement = this.findFocusedElem(document, mountAckId);
-    this.lastFocusedElement = activeElement;
     const charArray = wordString.split("");
     charArray.map(char => {
       const charCode = new String(char).charCodeAt(0);

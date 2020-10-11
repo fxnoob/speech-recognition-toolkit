@@ -136,6 +136,15 @@ class ChromeApi {
     return true;
   };
 
+  sendMessageToTab = async (id, payload, callback) => {
+    try {
+      chrome.tabs.sendMessage(id, payload, callback);
+    } catch (e) {
+      console.log(e);
+    }
+    return true;
+  };
+
   traverseTabs = callback => {
     chrome.tabs.query({}, tabs => {
       callback(tabs);
@@ -224,8 +233,8 @@ class ChromeApi {
    * @method
    * @memberof ChromeApi
    */
-  openHelpPage = (path = "/") => {
-    const helpUrl = chrome.runtime.getURL("option.html");
+  openHelpPage = (path = "home") => {
+    const helpUrl = `${chrome.runtime.getURL("option.html")}?path=${path}`;
     chrome.tabs.create({ url: helpUrl }, () => {});
   };
   /**

@@ -106,6 +106,10 @@ class Emoji {
     const locale = langId.split("-");
     return this.languages[locale[0]][emojiName];
   }
+  getEmojiList(langId) {
+    const locale = langId.split("-");
+    return this.languages[locale[0]];
+  }
   getSomeWhatSimilarEmoji(langId, emojiName) {
     const locale = langId.split("-")[0];
     let emojiRes = null;

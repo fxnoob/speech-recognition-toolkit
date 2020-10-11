@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "ಹೊಸ ಗೆರೆ",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "ಧ್ವನಿ ಆಜ್ಞೆಗಳನ್ನು ನೋಡಲು ಕ್ಲಿಕ್ ಮಾಡಿ",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "ಆಜ್ಞೆಗಳನ್ನು ತೋರಿಸಿ",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "ಭಾಷೆಗಾಗಿ ಆಜ್ಞೆಗಳ ಪಟ್ಟಿ",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "ಆಜ್ಞೆಯ ಹೆಸರು",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "ಆಜ್ಞೆಯ ವಿವರಣೆ",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ಎಮೋಜಿಗಳ ಪಟ್ಟಿಯಿಂದ ಸ್ವಲ್ಪಮಟ್ಟಿಗೆ ಹೋಲುವ ಎಮೋಜಿಗಳನ್ನು ಸೇರಿಸಲು 'ಎಮೋಜಿ ಎಮೋಜಿಯ ಹೆಸರು' ಎಂದು ಹೇಳಿ. ಪುಟವನ್ನು ಹೊಂದಿಸುವಲ್ಲಿ ಎಮೋಜಿಗಳ ಪೂರ್ಣ ಪಟ್ಟಿಯನ್ನು ಪರಿಶೀಲಿಸಿ",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "'ಎಂದು ಟೈಪ್ ಮಾಡಲು ಫುಲ್‌ಸ್ಟಾಪ್ ಹೇಳಿ.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "'ಟೈಪ್ ಮಾಡಲು ಹೊಸ ಸಾಲನ್ನು ಹೇಳಿ.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'Enter' ಕೀಲಿಯನ್ನು ಒತ್ತಿ ಎಂದು ನಮೂದಿಸಿ ಎಂದು ಹೇಳಿ. ಫಾರ್ಮ್‌ಗಳನ್ನು ಸಲ್ಲಿಸಲು ಉಪಯುಕ್ತವಾಗಿದೆ",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "ಬದಲಾವಣೆಗಳನ್ನು ಮತ್ತೆಮಾಡಲು ಮತ್ತೆ ಹೇಳಿ",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "ಬದಲಾವಣೆಗಳನ್ನು ರದ್ದುಗೊಳಿಸಲು ರದ್ದುಗೊಳಿಸಿ ಎಂದು ಹೇಳಿ",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "ಭಾಷೆಗಾಗಿ ಎಮೋಜಿಗಳ ಪಟ್ಟಿ",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ಎಮೋಜಿಯ ಹೆಸರು",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "ಹೊಸ ಸಾಲನ್ನು ಪಡೆಯಲು ಹೊಸ ಸಾಲನ್ನು ಹೇಳಿ.",
+    "description": "command newline desc"
   }
 }

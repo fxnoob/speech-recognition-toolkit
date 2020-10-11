@@ -7,6 +7,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
 import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
+import CommandsList from "../option-page/CommandsList";
 import messagePassing from "../services/messagePassing";
 import dom from "../services/dom";
 import cmd from "../services/commandsService";
@@ -64,11 +65,8 @@ class Dom extends React.Component {
       const commandToApply = commands[commandIndex];
       commandToApply.exec(text, { dom }, () => {});
     } else {
-      console.log(".");
-      if (text != ".") {
-        dom.simulateKeyPress(32, this.mountAckId); // add space
-      }
-      dom.simulateWordTyping(text, this.mountAckId);
+      const indentedText = text != "." ? ` ${text}` : text;
+      dom.simulateWordTyping(indentedText, this.mountAckId);
     }
   }
   handleClick = message => () => {

@@ -100,5 +100,61 @@
   "new_line_label": {
     "message": "خط جديد",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "انقر لرؤية الأوامر الصوتية",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "عرض الأوامر",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "قائمة الأوامر للغة",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "اسم القيادة",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "وصف الأمر",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "قل \"اسم emoji emoji's\" لإدراج رمز تعبيري مشابه إلى حد ما من قائمة 1800 emojis. الخروج من القائمة الكاملة للرموز التعبيرية في صفحة الإعداد",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "قل fullstop لكتابة \".\"",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "قل سطرًا جديدًا لكتابة \".\"",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "قل اضغط Enter للضغط على مفتاح \"Enter\". مفيد لتقديم النماذج",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "قل إعادة لإعادة التغييرات",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "قل تراجع للتراجع عن التغييرات",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "قائمة الرموز التعبيرية للغة",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "اسم Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "قل سطرًا جديدًا للحصول على سطر جديد.",
+    "description": "command newline desc"
   }
 }

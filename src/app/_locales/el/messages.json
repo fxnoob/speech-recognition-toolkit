@@ -97,5 +97,61 @@
   "new_line_label": {
     "message": "νέα γραμμή",
     "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Κάντε κλικ για να δείτε φωνητικές εντολές",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Εμφάνιση εντολών",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Λίστα εντολών για γλώσσα",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Όνομα εντολής",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Περιγραφή της εντολής",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Πείτε \"emoji emoji's name\" για να εισαγάγετε κάπως παρόμοια emoji από τη λίστα των 1800 emoji. ολοκλήρωση της λίστας των emoji στη σελίδα ρυθμίσεων",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Πείτε το πλήρες στοπ για να πληκτρολογήσετε \".\"",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Πείτε νέα γραμμή για να πληκτρολογήσετε \".\"",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Ας πούμε πατήστε enter για να πατήσετε το πλήκτρο 'Enter'. Χρήσιμο για την υποβολή φορμών",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Πείτε επανάληψη για επανάληψη των αλλαγών",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Πείτε αναίρεση για αναίρεση των αλλαγών",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Λίστα Emoji για γλώσσα",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Το όνομα του Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Πείτε νέα γραμμή για να λάβετε μια νέα γραμμή.",
+    "description": "command newline desc"
   }
 }

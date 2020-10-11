@@ -9,7 +9,7 @@ class Schema {
   constructor() {
     this.data = {
       //check if content script was mounted on load time only once
-      mountedCSOnActiveTabOnlyOnce: false,
+      mountedCsOnPreviouslyOpenedTabs: false,
       isMicListening: false,
       audioAccess: false,
       alwaysOpen: false,

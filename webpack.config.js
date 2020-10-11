@@ -59,7 +59,7 @@ module.exports = (env, options) => {
       publicPath: "/",
       filename: "[name].bundle.js"
     },
-    // devtool: "inline-sourcemap",
+    devtool: "inline-sourcemap",
     plugins: [
       new ESBuildPlugin(),
       new CopyWebpackPlugin(
