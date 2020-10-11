@@ -67,5 +67,97 @@
   "option_permission_error_msg": {
     "message": "Bitte erlauben Sie Berechtigungen, um dieses Tool zu verwenden!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "Emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji nicht gefunden!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Verwenden Sie das Emoji-Diktat (mehr als 1800 Emojis)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Suchen Sie nach dem am nächsten klingenden Emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Wie benutze ich dieses Tool?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Rückgängig machen",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "Wiederholen",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "Punkt",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "Neue Zeile",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Klicken Sie hier, um Sprachbefehle anzuzeigen",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Befehle anzeigen",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Befehlsliste für Sprache",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Befehlsname",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Beschreibung des Befehls",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Sagen Sie 'emoji emojis Name', um ein ähnliches Emoji aus der Liste der 1800 Emojis einzufügen. Kasse vollständige Liste der Emojis auf der Einstellungsseite",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Sagen Sie Punkt, um '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Sagen Sie eine neue Zeile, um '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Sagen Sie, drücken Sie die Eingabetaste, um die Eingabetaste zu drücken. Nützlich zum Einreichen von Formularen",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Sagen Sie \"Wiederholen\", um die Änderungen zu wiederholen",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Sagen Sie Rückgängig, um die Änderungen rückgängig zu machen",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emojis Liste für Sprache",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emojis Name",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Sagen Sie eine neue Zeile, um eine neue Zeile zu erhalten.",
+    "description": "command newline desc"
   }
 }

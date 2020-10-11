@@ -64,5 +64,88 @@
   "option_permission_error_msg": {
     "message": "このツールを使用するには、権限を許可してください。",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "絵文字",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "絵文字が見つかりません！",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "絵文字ディクテーションを使用する（1800以上の絵文字）",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "最も近い音の絵文字を検索する",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "このツールの使い方は？",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "元に戻す", "description": "undo command label" },
+  "label_redo": { "message": "やり直し", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "終止符",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": { "message": "改行", "description": "new line (.) label" },
+  "popup_show_commands_tooltip_str": {
+    "message": "クリックして音声コマンドを表示",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "コマンドを表示",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "言語のコマンドリスト",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "コマンドの名前",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "コマンドの説明",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "「絵文字絵文字の名前」と言うと、1800個の絵文字のリストから似たような絵文字が挿入されます。設定ページで絵文字の完全なリストをチェックアウトする",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "終止符を入力して「。」と入力します。",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "「。」と入力するために改行を言います。",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Enterキーを押して、「Enter」キーを押します。フォームの送信に便利",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "変更をやり直すにはやり直しを言ってください",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "変更を元に戻すには、元に戻すと言います",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "言語の絵文字リスト",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "絵文字の名前",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "新しい行を取得するには、新しい行を言います。",
+    "description": "command newline desc"
   }
 }

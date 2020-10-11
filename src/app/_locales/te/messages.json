@@ -67,5 +67,94 @@
   "option_permission_error_msg": {
     "message": "దయచేసి ఈ సాధనాన్ని ఉపయోగించడానికి అనుమతులను అనుమతించండి!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ఎమోజి",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ఎమోజి దొరకలేదు!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ఎమోజి డిక్టేషన్ ఉపయోగించండి (1800 కంటే ఎక్కువ ఎమోజీలు)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "దగ్గరి ధ్వనించే ఎమోజి కోసం శోధించండి",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "ఈ సాధనాన్ని ఎలా ఉపయోగించాలి?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "చర్యరద్దు చేయండి",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "పునరావృతం", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "ఫుల్ స్టాప్",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "కొత్త వాక్యం",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "వాయిస్ ఆదేశాలను చూడటానికి క్లిక్ చేయండి",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "ఆదేశాలను చూపించు",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "భాష కోసం ఆదేశాల జాబితా",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "కమాండ్ పేరు",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "కమాండ్ యొక్క వివరణ",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ఎమోజీల జాబితా నుండి కొంతవరకు సమానమైన ఎమోజీలను చేర్చడానికి 'ఎమోజి ఎమోజి పేరు' అని చెప్పండి. సెట్టింగ్ పేజీలో ఎమోజీల పూర్తి జాబితాను తనిఖీ చేయండి",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "'టైప్ చేయడానికి ఫుల్‌స్టాప్ చెప్పండి.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "'టైప్ చేయడానికి కొత్త పంక్తిని చెప్పండి.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'ఎంటర్' కీని నొక్కండి ఎంటర్ నొక్కండి. ఫారమ్‌లను సమర్పించడానికి ఉపయోగపడుతుంది",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "మార్పులను పునరావృతం చేయడానికి పునరావృతం చెప్పండి",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "మార్పులను చర్యరద్దు చేయడానికి చర్యరద్దు చేయండి",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "భాష కోసం ఎమోజి జాబితా",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ఎమోజి పేరు",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "క్రొత్త పంక్తిని పొందడానికి కొత్త పంక్తిని చెప్పండి.",
+    "description": "command newline desc"
   }
 }

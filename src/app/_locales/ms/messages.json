@@ -67,5 +67,94 @@
   "option_permission_error_msg": {
     "message": "Harap Benarkan Kebenaran untuk menggunakan alat ini!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji tidak dijumpai!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Gunakan imlak emoji (lebih daripada 1800 emoji)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Cari emoji berbunyi yang paling dekat",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Bagaimana menggunakan alat ini?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Buat asal", "description": "undo command label" },
+  "label_redo": {
+    "message": "Buat semula",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "noktah",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "baris baru",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Klik untuk melihat arahan suara",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Tunjukkan Perintah",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Senarai Perintah untuk bahasa",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nama Perintah",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Huraian Perintah",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Katakan 'emoji emoji's name' untuk memasukkan emoji yang agak serupa dari senarai 1800 emoji. daftar penuh emoji di halaman tetapan",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Katakan berhenti penuh untuk menaip '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Katakan baris baru untuk menaip '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Katakan tekan enter untuk Tekan kekunci 'Enter'. Berguna untuk menghantar borang",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Katakan buat semula untuk membuat perubahan",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Katakan batal untuk membuat asal perubahan",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Senarai Emoji untuk bahasa",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Nama Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Katakan baris baru untuk mendapatkan baris baru.",
+    "description": "command newline desc"
   }
 }

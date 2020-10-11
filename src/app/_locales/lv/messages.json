@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "Lūdzu, atļaujiet atļaujas, lai izmantotu šo rīku!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emocijzīmes",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emocijzīmes nav atrastas!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Izmantojiet emocijzīmju diktēšanu (vairāk nekā 1800 emocijzīmes)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Meklējiet tuvākos emocijzīmes",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kā izmantot šo rīku?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Atsaukt", "description": "undo command label" },
+  "label_redo": { "message": "Pārtaisīt", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "punkts",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "jauna līnija",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Noklikšķiniet, lai redzētu balss komandas",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Rādīt komandas",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Komandu saraksts valodai",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Komandas nosaukums",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Komandas apraksts",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Sakiet “emocijzīmju emocijzīmju nosaukums”, lai ievietotu nedaudz līdzīgus emocijzīmes no 1800 emocijzīmju saraksta. izrakstīšanās iestatījumu lapā pilns emocijzīmju saraksts",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Sakiet fullstop, lai ierakstītu '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Sakiet jaunu rindu, lai ierakstītu '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Sakiet, nospiediet taustiņu Enter, lai nospiediet taustiņu Enter Noderīgi veidlapu iesniegšanai",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Sakiet atsaukšanu, lai veiktu izmaiņas",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Sakiet Atsaukt, lai atsauktu izmaiņas",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emociju valodas saraksts",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emocijzīmes nosaukums",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Sakiet jaunu rindu, lai iegūtu jaunu rindu.",
+    "description": "command newline desc"
   }
 }

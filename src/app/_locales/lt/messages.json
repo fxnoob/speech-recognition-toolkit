@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "Prašome leisti leidimus, kad galėtumėte naudoti šį įrankį!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "jaustukai",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Jaustukai nerasti!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Naudoti jaustukų diktavimą (daugiau nei 1800 jaustukų)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Ieškokite artimiausių skambančių jaustukų",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kaip naudotis šiuo įrankiu?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Atšaukti", "description": "undo command label" },
+  "label_redo": { "message": "Perdaryti", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "pilnas sustojimas",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nauja linija",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Spustelėkite norėdami pamatyti balso komandas",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Rodyti komandas",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Komandų sąrašas kalbai",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Komandos vardas",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Komandos aprašas",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Pasakykite „jaustukų jaustukų pavadinimas“, kad iš 1800 jaustukų sąrašo įterptumėte šiek tiek panašių jaustukų. kasos nustatymų puslapyje pateiktas visas jaustukų sąrašas",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Pasakykite „fullstop“, norėdami įvesti „.“",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Pasakykite naują eilutę įvesti „.“",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Pasakykite paspauskite „Enter“, kad paspaustumėte „Enter“ klavišą. Naudinga pateikti formas",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Pasakykite, kad perdarytumėte pakeitimus",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Pasakykite „Anuliuoti“, kad anuliuotumėte pakeitimus",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "„Emoji“ kalbos sąrašas",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Jaustuko vardas",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Pasakykite naują eilutę, kad gautumėte naują eilutę.",
+    "description": "command newline desc"
   }
 }

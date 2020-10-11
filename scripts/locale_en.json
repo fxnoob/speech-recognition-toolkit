@@ -55,6 +55,14 @@
     "message": "Open Settings",
     "description": "popup page gear button tooltip"
   },
+  "popup_show_commands_tooltip_str": {
+    "message": "Click to see voice commands",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Show Commands",
+    "description": "voice commands control label "
+  },
   "option_onstart_setting_str": {
     "message": "Start 'Speech Recognition' when Chrome starts",
     "description": "onstart setting label"
@@ -70,5 +78,85 @@
   "option_permission_error_msg": {
     "message": "Please Allow Permissions in order to use this tool!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji not found!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Use emoji dictation (more than 1800 emojis)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Search for closest sounding emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "How to use this tool?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Undo",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "Redo",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "full stop",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "new line",
+    "description": "new line (.) label"
+  },
+  "commands_list_label": {
+    "message": "Commands List for language",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Command's Name",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Command's Description",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Say 'emoji emoji's name' to insert somewhat similar emoji from list of 1800 emojis. checkout full list of emojis in setting page",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Say fullstop to type '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description_new": {
+    "message": "Say new line to get a new line.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Say press enter to Press 'Enter' key. Useful for submitting forms",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Say redo to redo the changes",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Say undo to undo the changes",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emoji's List for language",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emoji's name",
+    "description": "emoji name label"
   }
 }

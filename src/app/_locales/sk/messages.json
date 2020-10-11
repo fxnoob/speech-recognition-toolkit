@@ -67,5 +67,94 @@
   "option_permission_error_msg": {
     "message": "Ak chcete používať tento nástroj, povolte povolenia.",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emodži",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emodži sa nenašli!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Použite diktát emodži (viac ako 1 800 emodži)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Vyhľadajte najbližšie znejúce emodži",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Ako používať tento nástroj?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Vrátenie späť",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "Znova", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "bodka",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "Nový riadok",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Kliknutím zobrazíte hlasové príkazy",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Zobraziť príkazy",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Zoznam príkazov pre jazyk",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Meno príkazu",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Popis príkazu",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Povedzte „názov emodži emodži“ a vložte trochu podobné emodži zo zoznamu 1 800 emodži. pozrite si úplný zoznam emodži na stránke nastavenia",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Vyslovením úplnej zarážky napíšete „.“",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Povedzte nový riadok a zadajte „.“",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Povedzte stlačte kláves Enter a stlačte kláves „Enter“. Užitočné na odosielanie formulárov",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Ak chcete zmeny zopakovať, povedzte znova",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Ak chcete zmeny vrátiť späť, povedzte Späť",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Zoznam emodži pre jazyk",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Meno emodži",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Povedzte nový riadok a získate nový riadok.",
+    "description": "command newline desc"
   }
 }

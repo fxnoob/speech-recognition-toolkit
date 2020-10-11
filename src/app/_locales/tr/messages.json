@@ -67,5 +67,94 @@
   "option_permission_error_msg": {
     "message": "Bu aracı kullanmak için lütfen İzinlere İzin Verin!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji bulunamadı!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Emoji dikte etme özelliğini kullanın (1800'den fazla emoji)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "En yakın sesli emojiyi arayın",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Bu araç nasıl kullanılır?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Geri alma", "description": "undo command label" },
+  "label_redo": {
+    "message": "Yeniden yap",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "tam durak",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "Yeni hat",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Sesli komutları görmek için tıklayın",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Komutları Göster",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Dil için Komut Listesi",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Komutun Adı",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Komutun Açıklaması",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 emoji listesinden biraz benzer emoji eklemek için 'emoji emojisinin adını' söyleyin. ayar sayfasında emojilerin tam listesini kontrol edin",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "\"\" Yazmak için fullstop deyin.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "\"Yazmak için yeni satır\" deyin.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "\"Enter\" tuşuna basmak için enter tuşuna basın. Form göndermek için kullanışlıdır",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Değişiklikleri yeniden yapmak için yeniden yap deyin",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Değişiklikleri geri almak için geri al deyin",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emoji'nin Dil Listesi",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emoji'nin adı",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Yeni bir satır almak için yeni satır söyleyin.",
+    "description": "command newline desc"
   }
 }

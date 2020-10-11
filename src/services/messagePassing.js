@@ -30,6 +30,11 @@ class MessagePassing {
     data.path = path;
     await chromeService.sendMessageToActiveTab(data, callback);
   }
+  async sendMessageToTab(path, id, payload, callback) {
+    const data = payload;
+    data.path = path;
+    await chromeService.sendMessageToTab(id, data, callback);
+  }
 }
 
 const mp = new MessagePassing();

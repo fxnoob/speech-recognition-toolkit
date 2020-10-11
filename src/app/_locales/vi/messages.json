@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "Vui lòng cho phép Quyền để sử dụng công cụ này!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "biểu tượng cảm xúc",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Không tìm thấy biểu tượng cảm xúc!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Sử dụng chính tả biểu tượng cảm xúc (hơn 1800 biểu tượng cảm xúc)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Tìm kiếm biểu tượng cảm xúc có âm thanh gần nhất",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Làm thế nào để sử dụng công cụ này?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Hoàn tác", "description": "undo command label" },
+  "label_redo": { "message": "Làm lại", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "Dấu chấm",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "dòng mới",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Nhấp để xem lệnh thoại",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Hiển thị lệnh",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Danh sách lệnh cho ngôn ngữ",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Tên lệnh",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Mô tả của Lệnh",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Nói 'tên biểu tượng cảm xúc biểu tượng cảm xúc' để chèn biểu tượng cảm xúc tương tự từ danh sách 1800 biểu tượng cảm xúc. kiểm tra danh sách đầy đủ các biểu tượng cảm xúc trong trang cài đặt",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Nói fullstop để nhập '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Nói dòng mới để nhập '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Nói nhấn enter để nhấn phím 'Enter'. Hữu ích cho việc gửi biểu mẫu",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Nói redo để thực hiện lại các thay đổi",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Nói hoàn tác để hoàn tác các thay đổi",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Danh sách biểu tượng cảm xúc cho ngôn ngữ",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Tên biểu tượng cảm xúc",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Nói dòng mới để nhận dòng mới.",
+    "description": "command newline desc"
   }
 }

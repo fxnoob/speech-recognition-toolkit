@@ -67,5 +67,97 @@
   "option_permission_error_msg": {
     "message": "ഈ ഉപകരണം ഉപയോഗിക്കുന്നതിന് ദയവായി അനുമതികൾ അനുവദിക്കുക!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ഇമോജി",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ഇമോജി കണ്ടെത്തിയില്ല!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ഇമോജി ഡിക്ടേഷൻ ഉപയോഗിക്കുക (1800 ൽ കൂടുതൽ ഇമോജികൾ)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "ഏറ്റവും ശബ്‌ദമുള്ള ഇമോജികൾക്കായി തിരയുക",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "ഈ ഉപകരണം എങ്ങനെ ഉപയോഗിക്കാം?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "പഴയപടിയാക്കുക",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "വീണ്ടും ചെയ്യുക",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "പൂർണ്ണ സ്റ്റോപ്പ്",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "പുതിയ വര",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "വോയ്‌സ് കമാൻഡുകൾ കാണാൻ ക്ലിക്കുചെയ്യുക",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "കമാൻഡുകൾ കാണിക്കുക",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "ഭാഷയ്ക്കുള്ള കമാൻഡുകളുടെ പട്ടിക",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "കമാൻഡിന്റെ പേര്",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "കമാൻഡിന്റെ വിവരണം",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ഇമോജികളുടെ പട്ടികയിൽ‌ നിന്നും സമാനമായ ഇമോജികൾ‌ ചേർ‌ക്കുന്നതിന് 'ഇമോജി ഇമോജിയുടെ പേര്' എന്ന് പറയുക. ക്രമീകരണ പേജിലെ ഇമോജികളുടെ പൂർണ്ണ പട്ടിക പരിശോധിക്കുക",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "'' എന്ന് ടൈപ്പുചെയ്യാൻ ഫുൾസ്റ്റോപ്പ് പറയുക.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "'' എന്ന് ടൈപ്പുചെയ്യാൻ പുതിയ വരി പറയുക.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'Enter' കീ അമർത്താൻ എന്റർ അമർത്തുക. ഫോമുകൾ സമർപ്പിക്കാൻ ഉപയോഗപ്രദമാണ്",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "മാറ്റങ്ങൾ വീണ്ടും ചെയ്യാൻ വീണ്ടും ചെയ്യുക എന്ന് പറയുക",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "മാറ്റങ്ങൾ പഴയപടിയാക്കാൻ പഴയപടിയാക്കുക എന്ന് പറയുക",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "ഭാഷയ്‌ക്കായുള്ള ഇമോജിയുടെ പട്ടിക",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ഇമോജിയുടെ പേര്",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "ഒരു പുതിയ ലൈൻ ലഭിക്കാൻ പുതിയ ലൈൻ പറയുക.",
+    "description": "command newline desc"
   }
 }

@@ -18,6 +18,12 @@ const constants = {
   contentScript: {
     mountAckId: guid.generateGuid(), // <div id='${mountAckId}'/> for checking if content script is mounted in the frame
     mountId: guid.generateGuid()
+  },
+  support: {
+    googleFormLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLSdTB0tFZHTnRe5_L64lYCbJvQm4XD5zGoSubYYYqBEOYXkIGA/viewform?usp=sf_link",
+    howtoVideoLink:
+      "https://www.youtube.com/watch?v=YdESohE6ESQ&ab_channel=fxnoob"
   }
 };
 

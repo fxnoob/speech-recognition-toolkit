@@ -61,5 +61,94 @@
   "option_permission_error_msg": {
     "message": "Salli käyttöoikeudet käyttääksesi tätä työkalua!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emojia ei löydy!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Käytä emoji-sanelua (yli 1800 emojia)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Etsi lähinnä kuulostava emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Kuinka käyttää tätä työkalua?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Kumoa", "description": "undo command label" },
+  "label_redo": {
+    "message": "Tee uudelleen",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "täysi pysähdys",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "uusi rivi",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Napsauta nähdäksesi äänikomennot",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Näytä komennot",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Komennoluettelo kielelle",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Komennon nimi",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Komennon kuvaus",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Sano 'emoji emoji's name' lisätäksesi samanlaisen emojin 1800 emojin luettelosta. kassalla täydellinen luettelo emojista asetussivulla",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Sano fullstop kirjoittamaan '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Sano uusi rivi kirjoittamaan '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Sano painamalla Enter ja paina Enter-näppäintä. Hyödyllinen lomakkeiden lähettämiseen",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Tee muutokset uudelleen tekemällä sana",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Kumoa muutokset sanomalla Kumoa",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emojien luettelo kielestä",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emojin nimi",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Sano uusi rivi saadaksesi uuden rivin.",
+    "description": "command newline desc"
   }
 }

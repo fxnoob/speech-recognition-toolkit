@@ -67,5 +67,97 @@
   "option_permission_error_msg": {
     "message": "Geef toestemming om deze tool te gebruiken!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji niet gevonden!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Gebruik emoji-dictaat (meer dan 1800 emoji's)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Zoek naar emoji die het best klinken",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Hoe gebruik je deze tool?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "Ongedaan maken",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "Opnieuw doen",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "punt",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nieuwe lijn",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Klik om spraakopdrachten te zien",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Toon opdrachten",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Opdrachtenlijst voor taal",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Commando's naam",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Command's Beschrijving",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Zeg 'naam emoji-emoji' om enigszins vergelijkbare emoji's uit de lijst met 1800 emoji's in te voegen. Bekijk de volledige lijst met emoji's op de instellingenpagina",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Zeg punt om '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Zeg een nieuwe regel om '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Zeg druk op enter om op 'Enter' te drukken. Handig voor het indienen van formulieren",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Zeg redo om de wijzigingen opnieuw uit te voeren",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Zeg ongedaan maken om de wijzigingen ongedaan te maken",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emoji's List voor taal",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emoji's naam",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Zeg een nieuwe regel om een ​​nieuwe regel te krijgen.",
+    "description": "command newline desc"
   }
 }

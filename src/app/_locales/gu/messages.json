@@ -64,5 +64,94 @@
   "option_permission_error_msg": {
     "message": "કૃપા કરીને આ સાધનનો ઉપયોગ કરવા માટે પરવાનગીની મંજૂરી આપો!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ઇમોજી",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ઇમોજી મળ્યાં નથી!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ઇમોજી ડિક્ટેશનનો ઉપયોગ કરો (1800 થી વધુ ઇમોજીસ)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "નજીકના અવાજવાળા ઇમોજી માટે શોધ કરો",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "આ સાધનનો ઉપયોગ કેવી રીતે કરવો?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "પૂર્વવત્ કરો",
+    "description": "undo command label"
+  },
+  "label_redo": { "message": "ફરી કરો", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "પૂર્ણ વિરામ",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "નવી લાઇન",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "વ voiceઇસ આદેશો જોવા માટે ક્લિક કરો",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "આદેશો બતાવો",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "ભાષા માટે આદેશોની સૂચિ",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "આદેશનું નામ",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "આદેશનું વર્ણન",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ઇમોજીસની સૂચિમાંથી કંઈક સમાન ઇમોજી શામેલ કરવા માટે 'ઇમોજી ઇમોજીનું નામ' કહો. સેટિંગ પૃષ્ઠમાં ઇમોજીઝની સંપૂર્ણ સૂચિને ચેકઆઉટ કરો",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "ટાઈપ કરવા માટે ફુલ સ્ટોપ કહો. '",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "ટાઈપ કરવા માટે નવી લાઇન બોલો.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'Enter' કી દબાવવા માટે enter દબાવો. ફોર્મ સબમિટ કરવા માટે ઉપયોગી",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "ફેરફારો ફરીથી કરવા માટે ફરીથી કરો કહો",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "ફેરફારોને પૂર્વવત્ કરવા માટે પૂર્વવત્ કરો",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "ભાષા માટે ઇમોજીની સૂચિ",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ઇમોજીનું નામ",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "નવી લાઇન મેળવવા માટે નવી લાઇન કહો.",
+    "description": "command newline desc"
   }
 }

@@ -67,5 +67,94 @@
   "option_permission_error_msg": {
     "message": "Tillad venligst tilladelser for at bruge dette værktøj!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji ikke fundet!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Brug emoji-diktat (mere end 1800 emojier)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Søg efter tættest lydende emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Hvordan bruges dette værktøj?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Fortryd", "description": "undo command label" },
+  "label_redo": {
+    "message": "Gentag igen",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "fuldt stop",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "ny linje",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Klik for at se stemmekommandoer",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Vis kommandoer",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Kommandoliste til sprog",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Kommandos navn",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Kommandos beskrivelse",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Sig 'emoji-emojis navn' for at indsætte noget lignende emoji fra listen over 1800 emojier. checkout fuld liste over emojier på indstillingssiden",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Sig fullstop for at skrive '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Sig en ny linje for at skrive '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Sig, tryk på Enter for at trykke på 'Enter' -tasten. Nyttig til indsendelse af formularer",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Sig gentag for at gentage ændringerne",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Sig fortryd for at fortryde ændringerne",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Emojis liste til sprog",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Emoji's navn",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Sig ny linje for at få en ny linje.",
+    "description": "command newline desc"
   }
 }

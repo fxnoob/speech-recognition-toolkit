@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "Zezwól na uprawnienia, aby korzystać z tego narzędzia!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Nie znaleziono emotikonów!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Użyj dyktowania emotikonów (ponad 1800 emotikonów)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Wyszukaj najbliżej brzmiące emoji",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Jak używać tego narzędzia?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Cofnij", "description": "undo command label" },
+  "label_redo": { "message": "Przerobić", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "kropka",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "Nowa linia",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Kliknij, aby zobaczyć polecenia głosowe",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Pokaż polecenia",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Lista poleceń dla języka",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nazwa polecenia",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Opis polecenia",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Powiedz „nazwa emoji emoji”, aby wstawić nieco podobne emoji z listy 1800 emoji. sprawdź pełną listę emotikonów na stronie ustawień",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Powiedz kropkę, aby wpisać „”.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Powiedz nowy wiersz, aby wpisać „”.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Powiedz, naciśnij enter, aby nacisnąć klawisz „Enter”. Przydatne do przesyłania formularzy",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Powiedz ponownie, aby powtórzyć zmiany",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Powiedz cofnij, aby cofnąć zmiany",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Lista emotikonów dla języka",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Nazwa emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Powiedz nowy wiersz, aby uzyskać nowy wiersz.",
+    "description": "command newline desc"
   }
 }

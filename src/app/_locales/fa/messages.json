@@ -61,5 +61,94 @@
   "option_permission_error_msg": {
     "message": "لطفاً برای استفاده از این ابزار اجازه ها را مجاز کنید!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "شکلک",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "شکلک پیدا نشد!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "از شکلک emoji استفاده کنید (بیش از 1800 شکلک)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Emoji برای نزدیکترین صدا را جستجو کنید",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "چگونه از این ابزار استفاده کنیم؟",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "واگرد", "description": "undo command label" },
+  "label_redo": {
+    "message": "دوباره انجام دهید",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "توقف کامل",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "خط جدید",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "برای دیدن دستورات صوتی کلیک کنید",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "نمایش دستورات",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "لیست دستورات برای زبان",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "نام فرماندهی",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "شرح فرمان",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "برای درج شکلک مشابه از لیست 1800 شکلک ، \"emoji emoji name\" بگویید. لیست کامل شکلک ها را در صفحه تنظیم کنید",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "برای تایپ \"fullstop\" را بگویید.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "برای تایپ کردن خط جدید بگویید.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "بگویید enter را فشار دهید تا کلید \"Enter\" را فشار دهید. برای ارسال فرم ها مفید است",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "برای انجام مجدد تغییرات ، تکرار را بگویید",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "برای لغو تغییرات بگویید واگرد",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "فهرست زبان Emoji",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "نام ایموجی",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "خط جدید بگویید تا خط جدیدی بدست آورید.",
+    "description": "command newline desc"
   }
 }

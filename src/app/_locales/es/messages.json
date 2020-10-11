@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "¡Permita permisos para utilizar esta herramienta!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "¡Emoji no encontrado!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Utilice el dictado de emoji (más de 1800 emojis)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Buscar el emoji que suene más cercano",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Cómo utilizar esta herramienta?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Deshacer", "description": "undo command label" },
+  "label_redo": { "message": "Rehacer", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "parada completa",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nueva línea",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Haga clic para ver los comandos de voz",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Mostrar comandos",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Lista de comandos para el idioma",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nombre del comando",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Descripción del comando",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Diga 'nombre de emoji emoji' para insertar un emoji similar de la lista de 1800 emojis. consultar la lista completa de emojis en la página de configuración",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Diga tope para escribir '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Di una nueva línea para escribir '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Diga presione enter para presionar la tecla 'Enter'. Útil para enviar formularios",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Di rehacer para rehacer los cambios.",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Di deshacer para deshacer los cambios",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Lista de emojis por idioma",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Nombre de emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Di nueva línea para obtener una nueva línea.",
+    "description": "command newline desc"
   }
 }

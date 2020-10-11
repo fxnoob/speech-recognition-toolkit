@@ -61,5 +61,97 @@
   "option_permission_error_msg": {
     "message": "कृपया अनुमति दें अनुमतियाँ इस उपकरण का उपयोग करने के लिए!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "इमोजी",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "इमोजी नहीं मिला!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "इमोजी डिक्टेशन (1800 से अधिक इमोजी) का उपयोग करें",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "निकटतम ध्वनि वाले इमोजी की खोज करें",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "इस उपकरण का उपयोग कैसे करें?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "पूर्ववत करें",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "फिर से करें",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "पूर्ण विराम",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "नई पंक्ति",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "वॉइस कमांड देखने के लिए क्लिक करें",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "कमांड दिखाएँ",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "भाषा के लिए कमांड सूची",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "कमांड का नाम",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "कमांड का विवरण",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 इमोजी की सूची से कुछ समान इमोजी सम्मिलित करने के लिए 'इमोजी इमोजी का नाम' कहें। पेज सेट करने में इमोजीस की पूरी सूची चेकआउट करें",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "टाइप करने के लिए फुलस्टॉप कहें '।'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "टाइप करने के लिए नई लाइन कहें '।'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "प्रेस को प्रेस 'एंटर' कुंजी दर्ज करें। फॉर्म जमा करने के लिए उपयोगी",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "परिवर्तन को फिर से करने के लिए फिर से कहें",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "परिवर्तनों को पूर्ववत करने के लिए पूर्ववत कहें",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "भाषा के लिए इमोजी की सूची",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "इमोजी का नाम",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "नई लाइन कहें नई लाइन पाने के लिए।",
+    "description": "command newline desc"
   }
 }

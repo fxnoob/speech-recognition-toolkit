@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "โปรดอนุญาตการอนุญาตเพื่อใช้เครื่องมือนี้!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "อีโมจิ",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ไม่พบอีโมจิ!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ใช้การป้อนตามคำบอกอิโมจิ (อิโมจิมากกว่า 1,800 รายการ)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "ค้นหาอีโมจิที่ทำให้เกิดเสียงที่ใกล้เคียงที่สุด",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "วิธีการใช้เครื่องมือนี้?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "เลิกทำ", "description": "undo command label" },
+  "label_redo": { "message": "ทำซ้ำ", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "หยุดเต็ม",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "บรรทัดใหม่",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "คลิกเพื่อดูคำสั่งเสียง",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "แสดงคำสั่ง",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "รายการคำสั่งสำหรับภาษา",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "ชื่อคำสั่ง",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "คำอธิบายของคำสั่ง",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "พูดว่า \"ชื่ออิโมจิอิโมจิ\" เพื่อแทรกอิโมจิที่คล้ายกันจากรายการอิโมจิ 1,800 รายการ ชำระเงินรายการอิโมจิทั้งหมดในหน้าการตั้งค่า",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "พูดเต็มสต็อปเพื่อพิมพ์ \".\"",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "พูดบรรทัดใหม่เพื่อพิมพ์ \".\"",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "พูดว่ากด Enter เพื่อกดปุ่ม \"Enter\" มีประโยชน์สำหรับการส่งแบบฟอร์ม",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "พูดว่าทำซ้ำเพื่อทำซ้ำการเปลี่ยนแปลง",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "พูดว่าเลิกทำเพื่อเลิกทำการเปลี่ยนแปลง",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "รายการภาษาของ Emoji",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ชื่อของ Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "ทักไลน์ใหม่เพื่อขึ้นบรรทัดใหม่",
+    "description": "command newline desc"
   }
 }

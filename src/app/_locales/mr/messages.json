@@ -64,5 +64,97 @@
   "option_permission_error_msg": {
     "message": "कृपया हे साधन वापरण्यासाठी परवानग्यांना अनुमती द्या!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "इमोजी",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "इमोजी सापडला नाही!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "इमोजी डिक्टेशन वापरा (1800 पेक्षा जास्त इमोजी)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "जवळच्या आवाजात इमोजी शोधा",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "हे साधन कसे वापरावे?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "पूर्ववत करा",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "पुन्हा करा",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "पूर्णविराम",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "नवीन ओळ",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "व्हॉईस आज्ञा पाहण्यासाठी क्लिक करा",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "आज्ञा दाखवा",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "भाषेसाठी आदेश सूची",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "कमांडचे नाव",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "आदेशाचे वर्णन",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 इमोजींच्या सूचीतून काहीसे समान इमोजी घालण्यासाठी 'इमोजी इमोजीचे नाव' म्हणा. सेटिंग पृष्ठावर इमोजीची संपूर्ण यादी चेकआऊट करा",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "टाइप करण्यासाठी फुलस्टॉप म्हणा.",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "टाइप करण्यासाठी नवीन ओळ म्हणा.",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "एंटर दाबा, एंटर दाबा. फॉर्म सबमिट करण्यासाठी उपयुक्त",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "पुन्हा करा पुन्हा करा म्हणा",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "बदल पूर्ववत करण्यासाठी Undo म्हणा",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "भाषेसाठी इमोजीची यादी",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "इमोजीचे नाव",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "नवीन ओळ मिळविण्यासाठी नवीन ओळ म्हणा.",
+    "description": "command newline desc"
   }
 }

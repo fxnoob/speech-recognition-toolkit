@@ -64,5 +64,97 @@
   "option_permission_error_msg": {
     "message": "இந்த கருவியைப் பயன்படுத்த தயவுசெய்து அனுமதிகளை அனுமதிக்கவும்!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ஈமோஜி",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ஈமோஜி கிடைக்கவில்லை!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ஈமோஜி டிக்டேஷனைப் பயன்படுத்தவும் (1800 க்கும் மேற்பட்ட ஈமோஜிகள்)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "மிக நெருக்கமான ஒலி ஈமோஜிகளைத் தேடுங்கள்",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "இந்த கருவியை எவ்வாறு பயன்படுத்துவது?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": {
+    "message": "செயல்தவிர்",
+    "description": "undo command label"
+  },
+  "label_redo": {
+    "message": "மீண்டும் செய்",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "முற்றுப்புள்ளி",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "புதிய கோடு",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "குரல் கட்டளைகளைக் காண கிளிக் செய்க",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "கட்டளைகளைக் காட்டு",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "மொழிக்கான கட்டளைகள் பட்டியல்",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "கட்டளையின் பெயர்",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "கட்டளையின் விளக்கம்",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "1800 ஈமோஜிகளின் பட்டியலிலிருந்து சற்றே ஒத்த ஈமோஜிகளைச் செருக 'ஈமோஜி ஈமோஜியின் பெயர்' என்று சொல்லுங்கள். பக்கத்தை அமைப்பதில் ஈமோஜிகளின் முழு பட்டியலையும் புதுப்பிக்கவும்",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "தட்டச்சு செய்ய ஃபுல்ஸ்டாப் சொல்லுங்கள். '",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "தட்டச்சு செய்ய புதிய வரியைச் சொல்லுங்கள். '",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "'Enter' விசையை அழுத்தவும் என்டர் அழுத்தவும். படிவங்களை சமர்ப்பிக்க பயனுள்ளதாக இருக்கும்",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "மாற்றங்களை மீண்டும் செய்ய மீண்டும் செய் என்று சொல்லுங்கள்",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "மாற்றங்களைச் செயல்தவிர்க்க செயல்தவிர் என்று சொல்லுங்கள்",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "மொழிக்கான ஈமோஜியின் பட்டியல்",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "ஈமோஜியின் பெயர்",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "புதிய வரியைப் பெற புதிய வரியைச் சொல்லுங்கள்.",
+    "description": "command newline desc"
   }
 }

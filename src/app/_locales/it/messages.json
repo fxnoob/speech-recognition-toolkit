@@ -67,5 +67,91 @@
   "option_permission_error_msg": {
     "message": "Consenti autorizzazioni per utilizzare questo strumento!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "emoji",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "Emoji non trovato!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "Usa la dettatura emoji (più di 1800 emoji)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "Cerca le emoji che suonano più vicine",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "Come utilizzare questo strumento?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "Disfare", "description": "undo command label" },
+  "label_redo": { "message": "Rifare", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "punto",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "nuova linea",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "Fare clic per visualizzare i comandi vocali",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "Mostra comandi",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "Elenco dei comandi per la lingua",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "Nome del comando",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "Descrizione del comando",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "Pronuncia \"nome emoji emoji\" per inserire emoji in qualche modo simili dall'elenco di 1800 emoji. controlla l'elenco completo degli emoji nella pagina delle impostazioni",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "Pronuncia fullstop per digitare \".\"",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "Pronuncia una nuova riga per digitare \".\"",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "Dire premere Invio per premere il tasto \"Invio\". Utile per inviare moduli",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "Dì ripeti per ripetere le modifiche",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "Pronuncia annulla per annullare le modifiche",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "Elenco delle Emoji per la lingua",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "Il nome di Emoji",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "Pronuncia una nuova riga per ottenere una nuova riga.",
+    "description": "command newline desc"
   }
 }

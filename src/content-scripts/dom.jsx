@@ -7,15 +7,17 @@ import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
 import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
+import CommandsList from "../option-page/CommandsList";
 import messagePassing from "../services/messagePassing";
-import simulation from "../services/simulationService";
 import dom from "../services/dom";
+import cmd from "../services/commandsService";
 
 const styles = theme => ({
   close: {
     padding: theme.spacing.unit / 2
   }
 });
+
 class Dom extends React.Component {
   mountAckId = "";
   queue = [];
@@ -33,8 +35,8 @@ class Dom extends React.Component {
     });
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async (req, res, options) => {
-      const { text } = req;
-      this.speechToTextListenerCallback(text);
+      const { text, langId } = req;
+      this.speechToTextListenerCallback(text, langId);
     });
   }
   mountAckDom = () => {
@@ -47,16 +49,24 @@ class Dom extends React.Component {
       this.mountAckId = mountAckId;
     });
   };
-  speechToTextListenerCallback(text) {
-    let strArray = text.split("");
-    simulation.simulateKeyPress(32); // add space
-    strArray.map(str_char => {
-      var charCode = new String(str_char).charCodeAt(0);
-      simulation.simulateKeyPress(charCode, this.mountAckId);
-    });
+  async speechToTextListenerCallback(text, langId) {
     /** open snackbar with recognised text if any element is not active */
     if (!dom.inIframe()) {
       this.handleClick(text)();
+    }
+    text = text.toLowerCase();
+    const commands = cmd.getCommands(langId);
+    const commandIndex = commands.findIndex(
+      p =>
+        (p.match == "startsWith" && text.startsWith(p.name)) ||
+        (p.match == "exact" && text == p.name.toLowerCase())
+    );
+    if (commandIndex != -1) {
+      const commandToApply = commands[commandIndex];
+      commandToApply.exec(text, { dom }, () => {});
+    } else {
+      const indentedText = text != "." ? ` ${text}` : text;
+      dom.simulateWordTyping(indentedText, this.mountAckId);
     }
   }
   handleClick = message => () => {

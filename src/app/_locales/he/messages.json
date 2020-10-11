@@ -64,5 +64,94 @@
   "option_permission_error_msg": {
     "message": "אנא אפשר הרשאות על מנת להשתמש בכלי זה!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "אימוג'י",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "אימוג'י לא נמצא!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "השתמש בתכתיב אימוג'י (יותר מ- 1800 אימוג'ים)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "חפש אמוג'י שנשמע הכי קרוב",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "כיצד להשתמש בכלי זה?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "לבטל", "description": "undo command label" },
+  "label_redo": {
+    "message": "לַעֲשׂוֹת שׁוּב",
+    "description": "redo command label"
+  },
+  "full_stop_label": {
+    "message": "עצירה מוחלטת",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "שורה חדשה",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "לחץ כדי לראות פקודות קוליות",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "הצג פקודות",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "רשימת פקודות לשפה",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "שם הפקודה",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "תיאור הפיקוד",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "אמור 'שם האימוג'י של האימוג'י' כדי להוסיף אימוג'ים דומים במקצת מרשימת 1800 האימוג'ים. קופה הרשימה המלאה של אמוג'ים בעמוד ההגדרה",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "אמור נקודה עצירה כדי להקליד '.'",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "אמור שורה חדשה להקליד '.'",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "אמור לחץ על Enter כדי לחץ על מקש 'Enter'. שימושי להגשת טפסים",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "אמור לעשות מחדש כדי לבצע מחדש את השינויים",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "אמור בטל כדי לבטל את השינויים",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "רשימת האימוג'י לשפה",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "שמו של אימוג'י",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "אמור שורה חדשה כדי לקבל קו חדש.",
+    "description": "command newline desc"
   }
 }

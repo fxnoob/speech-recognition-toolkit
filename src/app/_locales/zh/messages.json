@@ -1,0 +1,151 @@
+{
+  "appName": { "message": "语音识别工具包", "description": "app name" },
+  "appDescription": {
+    "message": "仅使用您的声音填写任何网络表格！",
+    "description": "app short description"
+  },
+  "popup_allow_permission_btn_str": {
+    "message": "允许音频权限",
+    "description": "String on the button on popup page that allows user to navigate to permissions page"
+  },
+  "popup_allow_permission_btn_tooltip_str": {
+    "message": "单击此处以允许音频权限",
+    "description": "allow permission button tooltip string"
+  },
+  "popup_settings_tab_str": {
+    "message": "设定值",
+    "description": "setting tab string"
+  },
+  "popup_mic_listening_label": {
+    "message": "倾听",
+    "description": "label when mic is listening"
+  },
+  "popup_help_tab_str": {
+    "message": "帮帮我",
+    "description": "help tab string"
+  },
+  "popup_help_heading_str": {
+    "message": "我们在这里为您提供帮助",
+    "description": "popup help tab heading"
+  },
+  "popup_help_desc_str": {
+    "message": "如果您遇到任何问题，请报告",
+    "description": "popup help tab description"
+  },
+  "here": { "message": "这里", "description": "word" },
+  "popup_default_language_label_str": {
+    "message": "预设语言",
+    "description": "label for default language on popup"
+  },
+  "popup_default_language_tooltip_str": {
+    "message": "点击更改默认语言",
+    "description": "popup page default language tooltip"
+  },
+  "popup_mic_btn_tooltip_str": {
+    "message": "单击此处打开/关闭语音识别",
+    "description": "mic button tooltip on popup page"
+  },
+  "popup_gear_btn_tooltip_str": {
+    "message": "打开设置",
+    "description": "popup page gear button tooltip"
+  },
+  "option_onstart_setting_str": {
+    "message": "Chrome启动时启动“语音识别”",
+    "description": "onstart setting label"
+  },
+  "option_default_lang_change_setting_str": {
+    "message": "更改语音识别语言",
+    "description": "language change setting label"
+  },
+  "option_permission_success_msg": {
+    "message": "现在，您可以关闭此选项卡，并使用此工具在您的声音中输入任何网站！",
+    "description": "success message when user accepts permission"
+  },
+  "option_permission_error_msg": {
+    "message": "请允许权限才能使用此工具！",
+    "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "表情符号",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "找不到表情符号！",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "使用表情符号听写（超过1800个表情符号）",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "搜索最接近的表情符号",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "如何使用这个工具？",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "撤消", "description": "undo command label" },
+  "label_redo": { "message": "重做", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "句号",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": { "message": "新队", "description": "new line (.) label" },
+  "popup_show_commands_tooltip_str": {
+    "message": "点击查看语音命令",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "显示命令",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "语言命令列表",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "指令名称",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "命令说明",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "说出“表情符号表情符号的名称”，即可插入1800个表情符号列表中类似的表情符号。在设置页面中查看表情符号的完整列表",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "说句号输入“。”",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "说新行以输入“。”。",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "说按Enter键，然后按“ Enter”键。对提交表格很有用",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "说重做以重做更改",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "说撤消即可撤消更改",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "表情符号语言列表",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "表情符号的名字",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "说新线以获得新线。",
+    "description": "command newline desc"
+  }
+}

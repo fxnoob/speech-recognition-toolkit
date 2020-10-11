@@ -61,5 +61,91 @@
   "option_permission_error_msg": {
     "message": "እባክዎን ይህንን መሳሪያ ለመጠቀም ፈቃዶችን ይፍቀዱ!",
     "description": "error message when user rejects permission"
+  },
+  "emoji": {
+    "message": "ገላጭ ምስል",
+    "description": "phrase for invoking emoji script"
+  },
+  "emoji_not_found": {
+    "message": "ስሜት ገላጭ ምስል አልተገኘም!",
+    "description": "message to when emoji is not found."
+  },
+  "option_emoji_setting_str": {
+    "message": "ስሜት ገላጭ አጻጻፍ ይጠቀሙ (ከ 1800 በላይ ገላጭ ምስሎች)",
+    "description": "emoji setting label on option page"
+  },
+  "option_emoji_closest_matching_setting_str": {
+    "message": "በጣም ቅርብ የሆነ የድምፅ ስሜት ገላጭ ምስል ይፈልጉ",
+    "description": "closest sounding emoji setting."
+  },
+  "popup_help_how_to_use_str": {
+    "message": "ይህንን መሳሪያ እንዴት መጠቀም እንደሚቻል?",
+    "description": "How to use this tool ? string"
+  },
+  "label_undo": { "message": "ቀልብስ", "description": "undo command label" },
+  "label_redo": { "message": "ድገም", "description": "redo command label" },
+  "full_stop_label": {
+    "message": "አራት ነጥብ",
+    "description": "full stop (.) label"
+  },
+  "new_line_label": {
+    "message": "አዲስ መስመር",
+    "description": "new line (.) label"
+  },
+  "popup_show_commands_tooltip_str": {
+    "message": "የድምፅ ትዕዛዞችን ለማየት ጠቅ ያድርጉ",
+    "description": "voice commands control label "
+  },
+  "popup_show_commands_label": {
+    "message": "ትዕዛዞችን አሳይ",
+    "description": "voice commands control label "
+  },
+  "commands_list_label": {
+    "message": "የትእዛዝ ዝርዝር ለቋንቋ",
+    "description": "Commands List for language label"
+  },
+  "command_name_label": {
+    "message": "የትእዛዝ ስም",
+    "description": "Command's Name label"
+  },
+  "command_description_label": {
+    "message": "የትእዛዝ መግለጫ",
+    "description": "Command's Description label"
+  },
+  "command_emoji_description": {
+    "message": "ከ 1800 ስሜት ገላጭ ምስሎች ዝርዝር ጋር በተወሰነ መልኩ ተመሳሳይ ስሜት ገላጭ ምስል ለማስገባት ‹የስሜት ገላጭ ምስል ስሜት› ይበሉ ፡፡ በቅንብር ገጽ ውስጥ የሙሉ ስሜት ገላጭ ምስሎች ዝርዝር ይሙሉ",
+    "description": "command emoji desc"
+  },
+  "command_fullstop_description": {
+    "message": "ለመተየብ ሙሉ ማቆሚያ ይበሉ ፡፡",
+    "description": "command emoji desc"
+  },
+  "command_newline_description": {
+    "message": "ለመተየብ አዲስ መስመር ይበሉ። '",
+    "description": "command newline desc"
+  },
+  "command_press_enter_description": {
+    "message": "‘Enter’ ቁልፍን ለመጫን Enter ን ይጫኑ ይበሉ ፡፡ ቅጾችን ለማስረከብ ጠቃሚ ነው",
+    "description": "command press_enter desc"
+  },
+  "command_redo_description": {
+    "message": "ለውጦቹን እንደገና ለመድገም ድጋሜ ይበሉ",
+    "description": "command redo desc"
+  },
+  "command_undo_description": {
+    "message": "ለውጦቹን ለመቀልበስ መቀልበስ ይበሉ",
+    "description": "command undo desc"
+  },
+  "emoji_list_for_lang_label": {
+    "message": "ለቋንቋ ስሜት ገላጭ ምስል ዝርዝር",
+    "description": "emoji list label"
+  },
+  "emoji_name_label": {
+    "message": "የስሜት ገላጭ ምስል ስም",
+    "description": "emoji name label"
+  },
+  "command_newline_description_new": {
+    "message": "አዲስ መስመር ለማግኘት አዲስ መስመር ይበሉ ፡፡",
+    "description": "command newline desc"
   }
 }
