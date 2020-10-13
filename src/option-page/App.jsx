@@ -5,6 +5,7 @@ import Permissions from "./Permissions";
 import NavBar from "./NavBar";
 import Home from "./home";
 import CommandsList from "./CommandsList";
+import EmojiList from "./EmojisList";
 
 const queryString = require("query-string");
 const parsed = queryString.parse(location.search);
@@ -20,6 +21,9 @@ const GetView = ({ path }) => {
       break;
     case "commands":
       view = <CommandsList />;
+      break;
+    case "emojis":
+      view = <EmojiList />;
       break;
     default:
       view = (

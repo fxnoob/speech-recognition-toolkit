@@ -123,7 +123,8 @@ function getSomeWhatSimilarEmoji(langId, emojiName) {
 function getEmojiList(langId) {
   console.log("getEmojiList", { langId });
   const locale = langId.split("-")[0];
-  return languages[locale];
+  const lang = languages[locale];
+  return lang ? lang : languages["en"];
 }
 
 // listens for command from emoji service

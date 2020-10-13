@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "ทักไลน์ใหม่เพื่อขึ้นบรรทัดใหม่",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "ตรวจสอบที่นี่",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "ตรวจสอบที่นี่",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "รายการคำสั่ง",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "รายการอิโมจิ",
+    "description": "imoji list label"
   }
 }

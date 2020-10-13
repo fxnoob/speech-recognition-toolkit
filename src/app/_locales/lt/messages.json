@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Pasakykite naują eilutę, kad gautumėte naują eilutę.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Patikrinkite čia",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Patikrinkite čia",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Komandų sąrašas",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Jaustukų sąrašas",
+    "description": "imoji list label"
   }
 }

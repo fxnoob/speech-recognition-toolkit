@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "नवीन ओळ मिळविण्यासाठी नवीन ओळ म्हणा.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "येथे तपासा",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "येथे तपासा",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "आदेश यादी",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "इमोजी यादी",
+    "description": "imoji list label"
   }
 }

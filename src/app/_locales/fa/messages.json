@@ -150,5 +150,21 @@
   "command_newline_description_new": {
     "message": "خط جدید بگویید تا خط جدیدی بدست آورید.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "اینجا را بررسی کنید",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "اینجا را بررسی کنید",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "لیست فرمان",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "لیست شکلک",
+    "description": "imoji list label"
   }
 }

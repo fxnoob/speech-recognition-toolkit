@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "নতুন লাইন পেতে নতুন লাইন বলুন।",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "এখানে চেক করুন",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "এখানে চেক করুন",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "কমান্ড তালিকা",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "ইমোজি তালিকা",
+    "description": "imoji list label"
   }
 }

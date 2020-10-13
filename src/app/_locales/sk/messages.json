@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Povedzte nový riadok a získate nový riadok.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Skontrolujte tu",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Skontrolujte tu",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Zoznam príkazov",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Zoznam emodži",
+    "description": "imoji list label"
   }
 }

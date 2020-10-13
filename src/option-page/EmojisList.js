@@ -3,15 +3,18 @@ import Container from "@material-ui/core/Container";
 import MUIDataTable from "mui-datatables";
 import i18n from "../services/i18nService";
 import emojiService from "../services/emojiService";
+import db from "../services/db";
 
 export default props => {
   const [data, seData] = useState([]);
-  const language = props.language;
+  const [language, setLanguage] = useState("");
   useEffect(() => {
-    init(language.code).catch(e => {});
+    init().catch(e => {});
   }, []);
   const init = async code => {
-    const res = await emojiService.getEmojiList(code);
+    const { defaultLanguage } = await db.get("defaultLanguage");
+    setLanguage(defaultLanguage.label);
+    const res = await emojiService.getEmojiList(defaultLanguage.code);
     seData(res);
   };
   const columns = [
@@ -25,9 +28,7 @@ export default props => {
   return (
     <Container>
       <MUIDataTable
-        title={`${i18n.getMessage("emoji_list_for_lang_label")}: ${
-          language.label
-        }`}
+        title={`${i18n.getMessage("emoji_list_for_lang_label")}: ${language}`}
         data={data}
         columns={columns}
         options={options}

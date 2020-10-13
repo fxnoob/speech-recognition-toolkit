@@ -150,5 +150,21 @@
   "command_newline_description_new": {
     "message": "Sano uusi rivi saadaksesi uuden rivin.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Tarkista täältä",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Tarkista täältä",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Komentoluettelo",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji-luettelo",
+    "description": "imoji list label"
   }
 }

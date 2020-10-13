@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Ucapkan baris baru untuk mendapatkan baris baru.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Cek disini",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Cek disini",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Daftar Perintah",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Daftar Emoji",
+    "description": "imoji list label"
   }
 }

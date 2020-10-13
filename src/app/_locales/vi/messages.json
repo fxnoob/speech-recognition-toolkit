@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Nói dòng mới để nhận dòng mới.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Kiểm tra tại đây",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Kiểm tra tại đây",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Danh sách lệnh",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Danh sách biểu tượng cảm xúc",
+    "description": "imoji list label"
   }
 }

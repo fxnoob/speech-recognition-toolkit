@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Di nueva línea para obtener una nueva línea.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Chequea aquí",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Chequea aquí",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Lista de comandos",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Lista de emojis",
+    "description": "imoji list label"
   }
 }

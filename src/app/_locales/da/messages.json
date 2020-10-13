@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Sig ny linje for at få en ny linje.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Tjek her",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Tjek her",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Kommandoliste",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji-liste",
+    "description": "imoji list label"
   }
 }

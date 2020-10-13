@@ -100,7 +100,8 @@ languages["zh"] = zh;
 
 function getMessage(langId, key) {
   const locale = langId.split("-");
-  return languages[locale[0]][key];
+  const lang = languages[locale[0]];
+  return lang ? lang[key] : languages["en"][key];
 }
 
 // listens for command from translation service

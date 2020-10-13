@@ -147,5 +147,21 @@
   "command_newline_description_new": {
     "message": "说新线以获得新线。",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "在这里检查",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "在这里检查",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "命令清单",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "表情符号列表",
+    "description": "imoji list label"
   }
 }

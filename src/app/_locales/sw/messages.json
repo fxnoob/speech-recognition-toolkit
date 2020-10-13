@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Sema laini mpya kupata laini mpya.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Angalia hapa",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Angalia hapa",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Orodha ya Amri",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Orodha ya Emoji",
+    "description": "imoji list label"
   }
 }

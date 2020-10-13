@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Mondjon új sort, hogy új sort kapjon.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Ellenőrizze itt",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Ellenőrizze itt",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Parancslista",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji List",
+    "description": "imoji list label"
   }
 }

@@ -14,7 +14,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FormControl from "@material-ui/core/FormControl";
 import i18nService from "../services/i18nService";
-import EmojiList from "./EmojisList";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%"
@@ -61,11 +60,6 @@ export default function() {
   const closeLanguageSelectOption = () => {
     setLanguageSelectOptionOpen(false);
   };
-  const toggleClosestEmojiSetting = async () => {
-    const newSetting = !isclosestMatchingEmojiEnabled;
-    await db.set({ closestMatchingEmoji: newSetting });
-    setClosestMatchingEmoji(newSetting);
-  };
   const changeLanguage = async event => {
     setLang(event.target.value);
     await db.set({
@@ -80,11 +74,6 @@ export default function() {
     const alwaysOpen = !onBootStart;
     setOnBootStart(!onBootStart);
     await db.set({ alwaysOpen });
-  };
-  const toggleEmojiSetting = async event => {
-    const emojiEnabled = !isEmojiEnabled;
-    setEmojiEnabled(emojiEnabled);
-    await db.set({ emojiEnabled });
   };
   return (
     <>
@@ -131,48 +120,6 @@ export default function() {
               >
                 <Checkbox
                   edge="start"
-                  checked={isEmojiEnabled}
-                  tabIndex={-1}
-                  onChange={toggleEmojiSetting}
-                  inputProps={{ "aria-labelledby": "aria" }}
-                />
-              </TableCell>
-              <TableCell align="left">
-                {i18nService.getMessage("option_emoji_setting_str")}
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                style={{
-                  paddding: "1rem",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <Checkbox
-                  edge="start"
-                  checked={isclosestMatchingEmojiEnabled}
-                  tabIndex={-1}
-                  onChange={toggleClosestEmojiSetting}
-                  inputProps={{ "aria-labelledby": "aria" }}
-                />
-              </TableCell>
-              <TableCell align="left">
-                {i18nService.getMessage(
-                  "option_emoji_closest_matching_setting_str"
-                )}
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                style={{
-                  paddding: "1rem",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <Checkbox
-                  edge="start"
                   checked={onBootStart}
                   tabIndex={-1}
                   onChange={toggleOnBootSetting}
@@ -183,19 +130,47 @@ export default function() {
                 {i18nService.getMessage("option_onstart_setting_str")}
               </TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("imoji_list_label_new")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=emojis"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("command_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=commands"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
-      <h3
-        style={{
-          marginTop: "1rem",
-          marginBottom: "1rem",
-          fontSize: "2rem"
-        }}
-      >
-        {i18nService.getMessage("emoji")}
-      </h3>
-      {!loading && <EmojiList language={defaultLangObj} />}
     </>
   );
 }
