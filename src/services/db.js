@@ -105,7 +105,7 @@ class Db {
   remove(keyStr) {
     return new Promise((resolve, reject) => {
       try {
-        chrome.storage.local.remove(keyStr, res => {
+        chrome.storage.local.remove(keyStr, () => {
           resolve(keyStr);
         });
       } catch (e) {

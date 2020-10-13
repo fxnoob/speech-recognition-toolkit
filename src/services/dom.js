@@ -28,16 +28,6 @@ class Dom {
 
     return true;
   }
-  /* method to find and replace specified term with replacement string */
-  replaceAll(str, term, replacement) {
-    /* a method for escaping user input to be treated as
-    a literal string within a regular expression */
-    const escapeRegExp = string => {
-      console.log(string, typeof string);
-      return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    };
-    return str.replace(new RegExp(escapeRegExp(term), "g"), replacement);
-  }
   /**
    * @param {*} document
    * @return {*}
@@ -86,14 +76,6 @@ class Dom {
     return focusedElem;
   }
   /**
-   * check whether a frame has focus
-   * recursively check if iframe has focus then its parent would not have focus
-   * @return boolean
-   */
-  hasFocus() {
-    return document.activeElement.tagName != "IFRAME";
-  }
-  /**
    * check if current page is in iframe.
    * @return {*}
    */
@@ -110,160 +92,15 @@ class Dom {
       not readOnly or disabled */
     if (
       el.nodeName == "TEXTAREA" ||
-      (el.nodeName == "INPUT" &&
+      el.nodeName == "INPUT" &&
         !el.type.match(
           /^(radio|checkbox|submit|reset|button|color|hidden|image)$/i
-        ))
+        )
     )
       if (el.disabled != true)
         // used to have el.readOnly != true &&
         return true;
       else return false;
-  }
-  keyPress(keyInfo, element) {
-    const { keyCode, ctrl, alt, shift, meta } = keyInfo;
-    const key = String.fromCharCode(keyCode);
-    const code = "Key" + key.toUpperCase();
-    let keyCodeLowerCase = keyCode;
-    if (keyCode >= 97 && keyCode <= 122) {
-      keyCodeLowerCase = keyCode - 32;
-    }
-    console.log({ keyCode, key, code, keyCodeLowerCase });
-    const keyObj = {
-      key: key,
-      which: keyCodeLowerCase,
-      keyCode: keyCodeLowerCase,
-      charCode: 0,
-      bubbles: true,
-      cancelable: true,
-      code: code,
-      composed: true,
-      isTrusted: true,
-      ctrlKey: ctrl,
-      altKey: alt,
-      shiftKey: shift
-    };
-    const keypressObj = {
-      key: key,
-      which: keyCode,
-      keyCode: keyCode,
-      charCode: keyCode,
-      bubbles: true,
-      cancelable: true,
-      code: code,
-      composed: true,
-      isTrusted: true,
-      ctrlKey: ctrl,
-      altKey: alt,
-      shiftKey: shift
-    };
-    if (ctrl) {
-      element.dispatchEvent(
-        new KeyboardEvent("keydown", {
-          key: "Control",
-          code: "ControlLeft",
-          keyCode: 17,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    }
-    if (alt) {
-      element.dispatchEvent(
-        new KeyboardEvent("keydown", {
-          key: "Alt",
-          code: "AltLeft",
-          keyCode: 18,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    }
-    if (shift) {
-      element.dispatchEvent(
-        new KeyboardEvent("keydown", {
-          key: "Shift",
-          code: "ShiftLeft",
-          keyCode: 16,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    }
-    if (meta) {
-      element.dispatchEvent(
-        new KeyboardEvent("keydown", {
-          key: "Meta",
-          code: "MetaLeft",
-          keyCode: 91,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    }
-    element.dispatchEvent(new KeyboardEvent("keydown", keyObj));
-    element.dispatchEvent(new KeyboardEvent("keypress", keypressObj));
-    if (
-      (element.isContentEditable || Dom.isTextInput(element)) &&
-      !ctrl &&
-      !alt
-    ) {
-      const textEvent = document.createEvent("TextEvent");
-      textEvent.initTextEvent("textInput", true, true, null, key, 9, "en-US");
-      element.dispatchEvent(textEvent);
-      document.execCommand("InsertText", false, key);
-    }
-    element.dispatchEvent(new KeyboardEvent("keyup", keyObj));
-    if (ctrl)
-      element.dispatchEvent(
-        new KeyboardEvent("keyup", {
-          key: "Control",
-          code: "ControlLeft",
-          keyCode: 17,
-          ctrlKey: false,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    if (alt)
-      element.dispatchEvent(
-        new KeyboardEvent("keyup", {
-          key: "Alt",
-          code: "AltLeft",
-          keyCode: 18,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    if (shift)
-      element.dispatchEvent(
-        new KeyboardEvent("keyup", {
-          key: "Shift",
-          code: "ShiftLeft",
-          keyCode: 16,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    if (meta) {
-      console.log("meta");
-      element.dispatchEvent(
-        new KeyboardEvent("keyup", {
-          key: "Meta",
-          code: "MetaLeft",
-          keyCode: 91,
-          ctrlKey: ctrl,
-          altKey: alt,
-          shiftKey: shift
-        })
-      );
-    }
   }
   keypress(array, el) {
     // Simulate a keypress
@@ -387,9 +224,16 @@ class Dom {
       !alt
     ) {
       var textEvent = document.createEvent("TextEvent");
-      textEvent.initTextEvent("textInput", true, true, null, key, 9, "en-US");
-      el.dispatchEvent(textEvent); // Version 1.0.4 - Needed for messenger.com to display first character. Not needed for enter(13) in messenger or google hangouts
-      document.execCommand("InsertText", false, key); // Messes up messenger.com and facebook.com chat box
+      textEvent.initTextEvent(
+        "textInput",
+        true,
+        true,
+        null, key, 9, "en-US");
+      el.dispatchEvent(textEvent);
+      document.execCommand(
+        "InsertText",
+        false,
+        key);
     }
     el.dispatchEvent(new KeyboardEvent("keyup", keyObj));
     if (ctrl)
@@ -425,10 +269,6 @@ class Dom {
           shiftKey: shift
         })
       );
-  }
-  simulateKeyPress(array, mountAckId, document = window.document) {
-    const activeElement = this.findFocusedElem(document, mountAckId);
-    this.keypress(array, activeElement);
   }
   simulateWordTyping(wordString, mountAckId, document = window.document) {
     this.lastTypedWord = wordString;

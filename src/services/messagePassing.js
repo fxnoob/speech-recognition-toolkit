@@ -16,7 +16,11 @@ class MessagePassing {
     chrome.runtime.onMessage.addListener((req, sender, res) => {
       try {
         this.routes[req.path](req, res, this.options);
-      } catch (e) {}
+      } catch (e) {
+        /* eslint-disable no-console */
+        console.log(e);
+        /* eslint-enable no-console */
+      }
       return true;
     });
   }

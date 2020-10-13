@@ -9,6 +9,7 @@ import Settings from "./Settings";
 import Help from "./Help";
 import i18nService from "../services/i18nService";
 
+// eslint-disable-next-line react/prop-types
 function TabContainer({ children, dir }) {
   return (
     <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>

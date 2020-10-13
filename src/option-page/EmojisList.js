@@ -5,13 +5,13 @@ import i18n from "../services/i18nService";
 import emojiService from "../services/emojiService";
 import db from "../services/db";
 
-export default props => {
+const EmojiList = () => {
   const [data, seData] = useState([]);
   const [language, setLanguage] = useState("");
   useEffect(() => {
-    init().catch(e => {});
+    init().catch(() => {});
   }, []);
-  const init = async code => {
+  const init = async () => {
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
     const res = await emojiService.getEmojiList(defaultLanguage.code);
@@ -36,3 +36,4 @@ export default props => {
     </Container>
   );
 };
+export default EmojiList;

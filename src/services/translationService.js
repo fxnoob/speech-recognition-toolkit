@@ -3,7 +3,7 @@ import MessagePassing from "./messagePassing";
 class Translation {
   constructor() {}
   getMessage(langId, key) {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       MessagePassing.sendMessage(
         "/get_translated_message",
         { langId, key },

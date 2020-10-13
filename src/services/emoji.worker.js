@@ -99,10 +99,6 @@ languages["uk"] = uk;
 languages["vi"] = vi;
 languages["zh"] = zh;
 
-function getEmojiList(langId) {
-  const locale = langId.split("-");
-  return languages[locale[0]];
-}
 
 function getSomeWhatSimilarEmoji(langId, emojiName) {
   const locale = langId.split("-")[0];
@@ -121,7 +117,6 @@ function getSomeWhatSimilarEmoji(langId, emojiName) {
 }
 
 function getEmojiList(langId) {
-  console.log("getEmojiList", { langId });
   const locale = langId.split("-")[0];
   const lang = languages[locale];
   return lang ? lang : languages["en"];
@@ -131,7 +126,6 @@ function getEmojiList(langId) {
 self.addEventListener(
   "message",
   evt => {
-    console.log(evt);
     const { langId, emojiName, uid, action } = evt.data;
     if (action == "emoji") {
       const emoji = getSomeWhatSimilarEmoji(langId, emojiName);

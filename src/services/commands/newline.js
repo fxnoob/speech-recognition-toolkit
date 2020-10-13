@@ -16,6 +16,7 @@ export default async langId => {
     exec: async (text, options, callback) => {
       const { dom } = options;
       dom.simulateWordTyping("\n\r");
+      callback();
     }
   };
 };

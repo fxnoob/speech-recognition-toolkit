@@ -19,10 +19,10 @@ export default async langId => {
       try {
         if (lastFocusedElementDocument) {
           lastFocusedElementDocument.execCommand("undo", false, null);
-        } else {
-          console.log("nothing was typed recently");
         }
+        callback();
       } catch (e) {
+        // eslint-disable-next-line
         console.log(e);
       }
     }

@@ -14,47 +14,28 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FormControl from "@material-ui/core/FormControl";
 import i18nService from "../services/i18nService";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%"
   }
 }));
-export default function() {
-  const [loading, setLoading] = useState(true);
-  const [defaultLangObj, setDefaultLangObj] = useState({
-    code: "",
-    label: ""
-  });
+export default function SRS() {
   const [onBootStart, setOnBootStart] = useState(false);
   const [languageSelectOptionOpen, setLanguageSelectOptionOpen] = useState(
     false
   );
-  const [isEmojiEnabled, setEmojiEnabled] = useState(true);
-  const [isclosestMatchingEmojiEnabled, setClosestMatchingEmoji] = useState(
-    true
-  );
+
   const [lang, setLang] = useState("");
   useEffect(() => {
     init();
   });
   const init = async () => {
-    const {
-      defaultLanguage,
-      alwaysOpen,
-      emojiEnabled,
-      closestMatchingEmoji
-    } = await db.get(
+    const { defaultLanguage, alwaysOpen } = await db.get(
       "defaultLanguage",
-      "alwaysOpen",
-      "emojiEnabled",
-      "closestMatchingEmoji"
+      "alwaysOpen"
     );
-    setDefaultLangObj(defaultLanguage);
     setLang(defaultLanguage.label);
-    setEmojiEnabled(emojiEnabled);
     setOnBootStart(alwaysOpen);
-    setClosestMatchingEmoji(closestMatchingEmoji);
-    setLoading(false);
   };
   const classes = useStyles();
   const closeLanguageSelectOption = () => {
@@ -70,7 +51,7 @@ export default function() {
     });
     messagePassing.sendMessage("/restart_sr", {}, () => {});
   };
-  const toggleOnBootSetting = async event => {
+  const toggleOnBootSetting = async () => {
     const alwaysOpen = !onBootStart;
     setOnBootStart(!onBootStart);
     await db.set({ alwaysOpen });
@@ -96,11 +77,11 @@ export default function() {
                       id: "open-select"
                     }}
                   >
-                    {Object.keys(voice.supportedLanguages).map(name => (
+                    {Object.keys(voice.supportedLanguages).map(name =>
                       <MenuItem key={name} value={name}>
                         {name}
                       </MenuItem>
-                    ))}
+                    )}
                   </Select>
                 </FormControl>
               </TableCell>

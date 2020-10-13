@@ -19,13 +19,12 @@ export default async langId => {
         langId,
         emojiText.toLowerCase()
       );
-      console.log({ emojiContent });
       if (emojiContent) {
         dom.simulateWordTyping(` ${emojiContent.replacement} `);
       }
       alertText = emojiContent
         ? `${commandAlias}:  ${emojiContent.replacement}`
-        : (await translationService.getMessage(langId, "emoji_not_found")) +
+        : await translationService.getMessage(langId, "emoji_not_found") +
           " :" +
           emojiText;
       callback(alertText);

@@ -28,7 +28,8 @@ module.exports = (env, options) => {
                 loader: "jsx",
                 target: "es2015"
               }
-            }
+            },
+            "eslint-loader"
           ]
         },
         {

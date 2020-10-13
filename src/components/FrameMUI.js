@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { create } from "jss";
 import { useTheme, jssPreset, StylesProvider } from "@material-ui/core/styles";
@@ -47,11 +48,11 @@ function FrameComponent(props) {
         {...other}
       >
         <div id="demo-frame-jss" />
-        {state.ready ? (
+        {state.ready ?
           <StylesProvider jss={state.jss} sheetsManager={state.sheetsManager}>
             {children}
           </StylesProvider>
-        ) : null}
+          : null}
       </IFrame>
     </NoSsr>
   );

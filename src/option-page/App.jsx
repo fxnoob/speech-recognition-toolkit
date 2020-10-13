@@ -14,30 +14,30 @@ const path = decodeURIComponent(parsed.path ? parsed.path : "home");
 const GetView = ({ path }) => {
   let view;
   switch (path) {
-    case "home":
-      view = (
+  case "home":
+    view =
         <PrivateRoute component={Home} permissionComponent={Permissions} />
-      );
-      break;
-    case "commands":
-      view = <CommandsList />;
-      break;
-    case "emojis":
-      view = <EmojiList />;
-      break;
-    default:
-      view = (
+    ;
+    break;
+  case "commands":
+    view = <CommandsList />;
+    break;
+  case "emojis":
+    view = <EmojiList />;
+    break;
+  default:
+    view =
         <PrivateRoute component={Home} permissionComponent={Permissions} />
-      );
+    ;
   }
   return view;
 };
 
-export default () => {
+export default function App() {
   return (
     <>
       <NavBar />
       <GetView path={path} />
     </>
   );
-};
+}

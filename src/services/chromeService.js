@@ -47,7 +47,7 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   createIncognitoWindow = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       chrome.windows.create({ focused: true, incognito: true }, win => {
         resolve(win);
       });
@@ -62,7 +62,7 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   getWindow = winId => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       chrome.windows.get(winId, info => {
         resolve(info);
       });
@@ -119,7 +119,7 @@ class ChromeApi {
     if (winId) {
       config.windowId = winId;
     }
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       chrome.tabs.query(config, tabs => {
         resolve(tabs[0]);
       });
@@ -131,6 +131,7 @@ class ChromeApi {
       const tab = await this.getActiveTab();
       chrome.tabs.sendMessage(tab.id, payload, callback);
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
     }
     return true;
@@ -140,6 +141,7 @@ class ChromeApi {
     try {
       chrome.tabs.sendMessage(id, payload, callback);
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e);
     }
     return true;
@@ -153,7 +155,6 @@ class ChromeApi {
 
   shiftToLeftTab = () => {
     this.traverseTabs(tabs => {
-      console.log(tabs, tabs.length, "tabs info");
       let activeTabIndex = -1;
       for (let i = 0; i < tabs.length; i++) {
         if (tabs[i].active) {
@@ -202,10 +203,7 @@ class ChromeApi {
 
   closeActiveTab = callback => {
     chrome.tabs.query({ active: true }, tabs => {
-      console.log({ tabs });
-      var url = tabs[0].url;
       const tabId = tabs[0].id;
-      //console.log("URL from main.js", url);
       chrome.tabs.remove(tabId, callback);
     });
   };

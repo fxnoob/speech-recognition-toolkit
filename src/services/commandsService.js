@@ -21,9 +21,9 @@ class Commands {
       Commands.push(await newLineCommand(langId));
       Commands.push(await pressEnterCommand(langId));
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log({ e });
     }
-    console.log(Commands);
     this.commands = Commands;
 
     return Commands;
