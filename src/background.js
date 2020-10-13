@@ -78,7 +78,6 @@ class Main {
     if (mountedCsOnPreviouslyOpenedTabs) {
       chrome.tabs.query({}, result => {
         result.map(tabInfo => {
-          console.log(tabInfo);
           messagePassing.sendMessageToTab(
             "/cs_mounted",
             tabInfo.id,
@@ -111,7 +110,7 @@ class Main {
       this.startStopSRContextMenu = chromeService.createContextMenu({
         title: contextMenuTitle,
         contexts: ["all"],
-        onclick: async (info, tab) => {
+        onclick: async () => {
           const { state } = await voice.permissionGranted();
           if (state != "granted") {
             chromeService.openHelpPage();
@@ -146,7 +145,6 @@ class Main {
   startUpInit(contextMenus) {
     /** event fires when chrome starts */
     chrome.runtime.onStartup.addListener(async () => {
-      console.log("onStartup called");
       /** open option page to listen to speech commands if option is enabled */
       const { alwaysOpen } = await db.get("alwaysOpen");
       if (alwaysOpen) {
@@ -162,7 +160,6 @@ class Main {
             "alwaysOpen",
             "isMicListening"
           );
-          console.log(alwaysOpen, isMicListening);
           if (alwaysOpen) {
             await this.startSR();
             const { startStopSRContextMenu } = contextMenus;

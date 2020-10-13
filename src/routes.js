@@ -1,7 +1,14 @@
 import db from "./services/db";
 import MessagePassing from "./services/messagePassing";
+import guid from "./services/guid";
+import EmojiWorker from "./services/emoji.worker";
+import TranslationWorker from "./services/translation.worker";
+
+const emojiWorker = new EmojiWorker();
+const translationWorker = new TranslationWorker();
 
 const Routes = async (voice, contextMenus) => {
+  MessagePassing.setOptions({ emojiWorker, translationWorker });
   voice.addCommand({
     "*text": async text => {
       const { defaultLanguage } = await db.get("defaultLanguage");
@@ -13,17 +20,17 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   // save selected text in storage instead writing it to clipboard
-  MessagePassing.on("/set_selected_text", async (req, res, options) => {
+  MessagePassing.on("/set_selected_text", async (req) => {
     const { data } = req;
     await db.set({ data: data });
   });
   //retrieve stored data
-  MessagePassing.on("/get_data", async (req, res, options) => {
+  MessagePassing.on("/get_data", async (req, res) => {
     const data = await db.get("data");
     res(data);
   });
   //send speech recognition data
-  MessagePassing.on("/start_speech_recognition", async (req, res, options) => {
+  MessagePassing.on("/start_speech_recognition", async () => {
     const { state } = await voice.permissionGranted();
     if (state == "granted") {
       const { defaultLanguage } = await db.get("defaultLanguage");
@@ -34,14 +41,13 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   //stop speech recognition
-  MessagePassing.on("/stop_speech_recognition", async (req, res, options) => {
+  MessagePassing.on("/stop_speech_recognition", async () => {
     voice.stop();
   });
   //toggle speech recognition
-  MessagePassing.on("/toggle_sr", async (req, res, options) => {
+  MessagePassing.on("/toggle_sr", async (req, res) => {
     let contextMenuTitle = "";
     const { startStopSRContextMenu } = contextMenus;
-    console.log({ startStopSRContextMenu });
     const { isMicListening } = await db.get("isMicListening");
     if (isMicListening) {
       voice.stop();
@@ -63,7 +69,7 @@ const Routes = async (voice, contextMenus) => {
     res({ isMicListening: !isMicListening });
   });
   //restart speech recognition
-  MessagePassing.on("/restart_sr", async (req, res, options) => {
+  MessagePassing.on("/restart_sr", async () => {
     const { defaultLanguage, isMicListening } = await db.get(
       "defaultLanguage",
       "isMicListening"
@@ -75,15 +81,54 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   //speak sr sound
-  MessagePassing.on("/speak_sr", async (req, res, options) => {
+  MessagePassing.on("/speak_sr", async (req) => {
     const { text } = req;
     const { defaultLanguage } = await db.get("defaultLanguage");
     voice.speak(text, { lang: defaultLanguage.code });
   });
   // get mountAckId
-  MessagePassing.on("/get_cs_mountAck", async (req, res, options) => {
+  MessagePassing.on("/get_cs_mountAck", async (req, res) => {
     const { mountAckId } = await db.get("mountAckId");
     res({ mountAckId });
+  });
+  // process emoji in web worker and return data to cs request
+  MessagePassing.on("/get_emoji", async (req, res, options) => {
+    const { langId, emojiName } = req;
+    const { emojiWorker } = options;
+    const uid = guid.generateGuid();
+    emojiWorker.postMessage({ langId, emojiName, uid, action: "emoji" });
+    emojiWorker.addEventListener("message", emojiRes => {
+      const { emoji, uid: resUid } = emojiRes.data;
+      if (uid == resUid) {
+        res(emoji);
+      }
+    });
+  });
+  // process emoji list in web worker and return data to cs request
+  MessagePassing.on("/get_emoji_list", async (req, res, options) => {
+    const { langId } = req;
+    const { emojiWorker } = options;
+    const uid = guid.generateGuid();
+    emojiWorker.postMessage({ langId, uid, action: "emoji_list" });
+    emojiWorker.addEventListener("message", emojiRes => {
+      const { emojiList, uid: resUid } = emojiRes.data;
+      if (uid == resUid) {
+        res(emojiList);
+      }
+    });
+  });
+  // get translated key
+  MessagePassing.on("/get_translated_message", async (req, res, options) => {
+    const { langId, key } = req;
+    const { translationWorker } = options;
+    const uid = guid.generateGuid();
+    translationWorker.postMessage({ langId, key, uid, action: "getMessage" });
+    translationWorker.addEventListener("message", emojiRes => {
+      const { message, uid: resUid } = emojiRes.data;
+      if (uid == resUid) {
+        res(message);
+      }
+    });
   });
 };
 

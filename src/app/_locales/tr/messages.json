@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Yeni bir satır almak için yeni satır söyleyin.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Burayı kontrol et",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Burayı kontrol et",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Komut Listesi",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji Listesi",
+    "description": "imoji list label"
   }
 }

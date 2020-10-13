@@ -147,5 +147,21 @@
   "command_newline_description_new": {
     "message": "新しい行を取得するには、新しい行を言います。",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "こちらをチェック",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "こちらをチェック",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "コマンドリスト",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "絵文字リスト",
+    "description": "imoji list label"
   }
 }

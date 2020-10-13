@@ -12,18 +12,18 @@ class Commands {
   setOptions(options) {
     this.options = options;
   }
-  getCommands(langId) {
+  async getCommands(langId) {
     const Commands = [];
     try {
-      Commands.push(emojiCommand(langId));
-      Commands.push(undoCommand(langId));
-      Commands.push(redoCommand(langId));
-      Commands.push(newLineCommand(langId));
-      Commands.push(pressEnterCommand(langId));
+      Commands.push(await emojiCommand(langId));
+      Commands.push(await undoCommand(langId));
+      Commands.push(await redoCommand(langId));
+      Commands.push(await newLineCommand(langId));
+      Commands.push(await pressEnterCommand(langId));
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log({ e });
     }
-    console.log(Commands);
     this.commands = Commands;
 
     return Commands;

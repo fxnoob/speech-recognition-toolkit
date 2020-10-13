@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Izgovorite novo vrstico, če želite dobiti novo vrstico.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Preverite tukaj",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Preverite tukaj",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Seznam ukazov",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Seznam emodžijev",
+    "description": "imoji list label"
   }
 }

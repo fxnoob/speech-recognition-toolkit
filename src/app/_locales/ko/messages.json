@@ -144,5 +144,21 @@
   "command_newline_description_new": {
     "message": "새 줄을 얻으려면 새 줄을 말하십시오.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "여기에서 확인",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "여기에서 확인",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "명령 목록",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "이모티콘 목록",
+    "description": "imoji list label"
   }
 }

@@ -159,5 +159,21 @@
   "command_newline_description_new": {
     "message": "Zeg een nieuwe regel om een ​​nieuwe regel te krijgen.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Kijk hier",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Kijk hier",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Commando lijst",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji-lijst",
+    "description": "imoji list label"
   }
 }

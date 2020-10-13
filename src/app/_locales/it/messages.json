@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Pronuncia una nuova riga per ottenere una nuova riga.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Controlla qui",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Controlla qui",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Elenco dei comandi",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Elenco Emoji",
+    "description": "imoji list label"
   }
 }

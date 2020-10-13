@@ -3,7 +3,7 @@ import Alert from "@material-ui/lab/Alert";
 import db from "../services/db";
 import helpImage from "./helpImage.png";
 
-export default () => {
+const Permissions = () => {
   const SUCCESS_MSG =
     "Now you can close this tab and use this tool to type on any website with your voice!";
   const ERROR_MSG = "Please Allow Permissions in order to use this tool!";
@@ -18,9 +18,8 @@ export default () => {
           track.stop();
         });
       })
-      .catch(async err => {
+      .catch(async () => {
         await db.set({ audioAccess: false });
-        console.log(err);
         setMessage(ERROR_MSG);
       });
   };
@@ -39,6 +38,7 @@ export default () => {
     <div>
       <div className="bg-white align-center" style={{ textAlign: "center" }}>
         <div className="max-w-screen-xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+          {/* eslint-disable-next-line max-len */}
           <h2 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
             Please Click on the button below
             <br />
@@ -76,7 +76,7 @@ export default () => {
             <br />
             corner of search bar of this tab
           </p>
-          {message == ERROR_MSG && (
+          {message == ERROR_MSG &&
             <p
               style={{
                 marginTop: "0.5rem",
@@ -86,9 +86,10 @@ export default () => {
             >
               <img src={helpImage} />
             </p>
-          )}
+          }
         </div>
       </div>
     </div>
   );
 };
+export default Permissions;

@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Chcete-li získat nový řádek, řekněte nový řádek.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Zkontrolujte zde",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Zkontrolujte zde",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Seznam příkazů",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Seznam emodži",
+    "description": "imoji list label"
   }
 }

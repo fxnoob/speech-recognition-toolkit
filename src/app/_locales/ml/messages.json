@@ -159,5 +159,21 @@
   "command_newline_description_new": {
     "message": "ഒരു പുതിയ ലൈൻ ലഭിക്കാൻ പുതിയ ലൈൻ പറയുക.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "ഇവിടെ പരിശോധിക്കുക",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "ഇവിടെ പരിശോധിക്കുക",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "കമാൻഡ് ലിസ്റ്റ്",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "ഇമോജി പട്ടിക",
+    "description": "imoji list label"
   }
 }

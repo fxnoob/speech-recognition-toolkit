@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Säg ny rad för att få en ny rad.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Kolla här",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Kolla här",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Kommandolista",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji-lista",
+    "description": "imoji list label"
   }
 }

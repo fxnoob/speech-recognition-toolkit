@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Реците нову линију да бисте добили нову линију.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Проверите овде",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Проверите овде",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Листа наредби",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Листа емоји",
+    "description": "imoji list label"
   }
 }

@@ -1,15 +1,17 @@
 import translationService from "../translationService";
 
-export default langId => {
-  const commandAlias = translationService.getMessage(langId, "label_redo")
-    .message;
-  console.log({ commandAlias });
+export default async langId => {
+  const commandAlias = await translationService.getMessage(
+    langId,
+    "label_redo"
+  );
+  const description = await translationService.getMessage(
+    langId,
+    "command_redo_description"
+  );
   return {
     name: commandAlias,
-    description: translationService.getMessage(
-      langId,
-      "command_redo_description"
-    ).message,
+    description: description,
     match: "exact",
     exec: async (text, options, callback) => {
       const { dom } = options;
@@ -17,10 +19,10 @@ export default langId => {
       try {
         if (lastFocusedElementDocument) {
           lastFocusedElementDocument.execCommand("redo", false, null);
-        } else {
-          console.log("nothing was typed recently");
         }
+        callback();
       } catch (e) {
+        // eslint-disable-next-line no-console
         console.log(e);
       }
     }

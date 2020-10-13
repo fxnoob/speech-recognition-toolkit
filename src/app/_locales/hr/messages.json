@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Recite novi redak da biste dobili novi redak.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Provjerite ovdje",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Provjerite ovdje",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Popis naredbi",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Popis emojija",
+    "description": "imoji list label"
   }
 }

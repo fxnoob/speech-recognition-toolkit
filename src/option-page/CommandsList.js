@@ -5,7 +5,7 @@ import db from "../services/db";
 import i18n from "../services/i18nService";
 import commandService from "../services/commandsService";
 
-export default () => {
+const CommandList = () => {
   const columns = [
     i18n.getMessage("command_name_label"),
     i18n.getMessage("command_description_label")
@@ -13,20 +13,15 @@ export default () => {
   const [language, setLanguage] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
-    init().catch(e => {
-      console.log(e);
-    });
+    init().catch(() => {});
   }, []);
   const init = async () => {
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
-    const commandsList = commandService
-      .getCommands(defaultLanguage.code)
-      .map(command => {
-        return [command.name, command.description];
-      });
-    console.log({ defaultLanguage, commandsList });
-
+    const commandsJson = await commandService.getCommands(defaultLanguage.code);
+    const commandsList = commandsJson.map(command => {
+      return [command.name, command.description];
+    });
     setData(commandsList);
   };
   const options = {
@@ -43,3 +38,4 @@ export default () => {
     </Container>
   );
 };
+export default CommandList;

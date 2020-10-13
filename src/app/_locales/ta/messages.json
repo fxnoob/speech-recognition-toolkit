@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "புதிய வரியைப் பெற புதிய வரியைச் சொல்லுங்கள்.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "இங்கே பாருங்கள்",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "இங்கே பாருங்கள்",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "கட்டளை பட்டியல்",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "ஈமோஜி பட்டியல்",
+    "description": "imoji list label"
   }
 }

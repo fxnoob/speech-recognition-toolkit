@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "క్రొత్త పంక్తిని పొందడానికి కొత్త పంక్తిని చెప్పండి.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "ఇక్కడ తనిఖీ చేయండి",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "ఇక్కడ తనిఖీ చేయండి",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "కమాండ్ జాబితా",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "ఎమోజి జాబితా",
+    "description": "imoji list label"
   }
 }

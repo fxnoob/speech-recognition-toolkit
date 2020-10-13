@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Powiedz nowy wiersz, aby uzyskać nowy wiersz.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Sprawdź tutaj",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Sprawdź tutaj",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Lista poleceń",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Lista emotikonów",
+    "description": "imoji list label"
   }
 }

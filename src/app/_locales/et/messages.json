@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "Öelge uue rea saamiseks uus rida.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Kontrollige siin",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Kontrollige siin",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Käsuloend",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emotikonide loend",
+    "description": "imoji list label"
   }
 }

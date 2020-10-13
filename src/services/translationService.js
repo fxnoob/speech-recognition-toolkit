@@ -1,109 +1,17 @@
-const ar = require("../app/_locales/ar/messages.json");
-const am = require("../app/_locales/am/messages.json");
-const bg = require("../app/_locales/bg/messages.json");
-const bn = require("../app/_locales/bn/messages.json");
-const ca = require("../app/_locales/ca/messages.json");
-const cs = require("../app/_locales/cs/messages.json");
-const da = require("../app/_locales/da/messages.json");
-const de = require("../app/_locales/de/messages.json");
-const el = require("../app/_locales/el/messages.json");
-const en = require("../app/_locales/en/messages.json");
-const es = require("../app/_locales/es/messages.json");
-const et = require("../app/_locales/et/messages.json");
-const fa = require("../app/_locales/fa/messages.json");
-const fi = require("../app/_locales/fi/messages.json");
-const fil = require("../app/_locales/fil/messages.json");
-const fr = require("../app/_locales/fr/messages.json");
-const gu = require("../app/_locales/gu/messages.json");
-const he = require("../app/_locales/he/messages.json");
-const hi = require("../app/_locales/hi/messages.json");
-const hr = require("../app/_locales/hr/messages.json");
-const hu = require("../app/_locales/hu/messages.json");
-const id = require("../app/_locales/id/messages.json");
-const it = require("../app/_locales/it/messages.json");
-const ja = require("../app/_locales/ja/messages.json");
-const kn = require("../app/_locales/kn/messages.json");
-const ko = require("../app/_locales/ko/messages.json");
-const lt = require("../app/_locales/lt/messages.json");
-const lv = require("../app/_locales/lv/messages.json");
-const ml = require("../app/_locales/ml/messages.json");
-const mr = require("../app/_locales/mr/messages.json");
-const ms = require("../app/_locales/ms/messages.json");
-const nl = require("../app/_locales/nl/messages.json");
-const no = require("../app/_locales/no/messages.json");
-const pl = require("../app/_locales/pl/messages.json");
-const pt = require("../app/_locales/pt/messages.json");
-const ro = require("../app/_locales/ro/messages.json");
-const ru = require("../app/_locales/ru/messages.json");
-const sk = require("../app/_locales/sk/messages.json");
-const sl = require("../app/_locales/sl/messages.json");
-const sr = require("../app/_locales/sr/messages.json");
-const sv = require("../app/_locales/sv/messages.json");
-const sw = require("../app/_locales/sw/messages.json");
-const ta = require("../app/_locales/ta/messages.json");
-const te = require("../app/_locales/te/messages.json");
-const th = require("../app/_locales/th/messages.json");
-const tr = require("../app/_locales/tr/messages.json");
-const uk = require("../app/_locales/uk/messages.json");
-const vi = require("../app/_locales/vi/messages.json");
-const zh = require("../app/_locales/zh/messages.json");
+import MessagePassing from "./messagePassing";
 
 class Translation {
-  constructor() {
-    this.languages = {};
-    this.languages["ar"] = ar;
-    this.languages["am"] = am;
-    this.languages["bg"] = bg;
-    this.languages["bn"] = bn;
-    this.languages["ca"] = ca;
-    this.languages["cs"] = cs;
-    this.languages["da"] = da;
-    this.languages["de"] = de;
-    this.languages["el"] = el;
-    this.languages["en"] = en;
-    this.languages["es"] = es;
-    this.languages["et"] = et;
-    this.languages["fa"] = fa;
-    this.languages["fi"] = fi;
-    this.languages["fil"] = fil;
-    this.languages["fr"] = fr;
-    this.languages["gu"] = gu;
-    this.languages["he"] = he;
-    this.languages["hi"] = hi;
-    this.languages["hr"] = hr;
-    this.languages["hu"] = hu;
-    this.languages["id"] = id;
-    this.languages["it"] = it;
-    this.languages["ja"] = ja;
-    this.languages["kn"] = kn;
-    this.languages["ko"] = ko;
-    this.languages["lt"] = lt;
-    this.languages["lv"] = lv;
-    this.languages["ml"] = ml;
-    this.languages["mr"] = mr;
-    this.languages["ms"] = ms;
-    this.languages["nl"] = nl;
-    this.languages["no"] = no;
-    this.languages["pl"] = pl;
-    this.languages["pt"] = pt;
-    this.languages["ro"] = ro;
-    this.languages["ru"] = ru;
-    this.languages["sk"] = sk;
-    this.languages["sl"] = sl;
-    this.languages["sr"] = sr;
-    this.languages["sv"] = sv;
-    this.languages["sw"] = sw;
-    this.languages["ta"] = ta;
-    this.languages["te"] = te;
-    this.languages["th"] = th;
-    this.languages["tr"] = tr;
-    this.languages["uk"] = uk;
-    this.languages["vi"] = vi;
-    this.languages["zh"] = zh;
-  }
+  constructor() {}
   getMessage(langId, key) {
-    const locale = langId.split("-");
-    return this.languages[locale[0]][key];
+    return new Promise(resolve => {
+      MessagePassing.sendMessage(
+        "/get_translated_message",
+        { langId, key },
+        res => {
+          resolve(res.message);
+        }
+      );
+    });
   }
 }
 const translationService = new Translation();

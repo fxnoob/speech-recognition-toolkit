@@ -159,5 +159,21 @@
   "command_newline_description_new": {
     "message": "Sagen Sie eine neue Zeile, um eine neue Zeile zu erhalten.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Überprüfe hier",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Überprüfe hier",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Befehlsliste",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emoji-Liste",
+    "description": "imoji list label"
   }
 }

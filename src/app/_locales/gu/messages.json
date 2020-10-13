@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "નવી લાઇન મેળવવા માટે નવી લાઇન કહો.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "અહીં તપાસો",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "અહીં તપાસો",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "આદેશ યાદી",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "ઇમોજી સૂચિ",
+    "description": "imoji list label"
   }
 }

@@ -156,5 +156,21 @@
   "command_newline_description_new": {
     "message": "قل سطرًا جديدًا للحصول على سطر جديد.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "تحقق هنا",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "تحقق هنا",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "قائمة الأوامر",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "قائمة الرموز التعبيرية",
+    "description": "imoji list label"
   }
 }

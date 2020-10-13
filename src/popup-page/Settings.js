@@ -62,7 +62,7 @@ class Settings extends React.Component {
   render() {
     return (
       <>
-        {this.state.permissionGranted && (
+        {this.state.permissionGranted &&
           <div style={{ display: "flex", alignItems: "center" }}>
             <div className="language-label">
               {i18nService.getMessage("popup_default_language_label_str")}:
@@ -74,15 +74,16 @@ class Settings extends React.Component {
                 )}
                 data-balloon-pos="down"
                 href={chrome.runtime.getURL("option.html")}
+                rel="noreferrer"
                 target="_blank"
               >
                 <b>{this.state.language}</b>
               </a>
             </div>
           </div>
-        )}
+        }
         {this.state.loaded &&
-          (this.state.permissionGranted ? (
+          (this.state.permissionGranted ?
             <div style={{ marginTop: "1rem" }}>
               <FormControlLabel
                 aria-label={i18nService.getMessage("popup_mic_btn_tooltip_str")}
@@ -129,7 +130,7 @@ class Settings extends React.Component {
                 <b>{i18nService.getMessage("popup_show_commands_label")}</b>
               </button>
             </div>
-          ) : (
+            :
             <FormControlLabel
               aria-label={i18nService.getMessage(
                 "popup_allow_permission_btn_tooltip_str"
@@ -147,7 +148,7 @@ class Settings extends React.Component {
               }
               label=""
             />
-          ))}
+          )}
       </>
     );
   }

@@ -1,3 +1,5 @@
 import React from "react";
 import Dom from "./dom";
-export default () => <Dom />;
+export default function App() {
+  return <Dom/>;
+}

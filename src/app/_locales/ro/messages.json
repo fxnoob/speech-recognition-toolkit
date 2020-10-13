@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Spuneți o nouă linie pentru a obține o nouă linie.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Verifică aici",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Verifică aici",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Lista de comenzi",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Lista Emoji",
+    "description": "imoji list label"
   }
 }

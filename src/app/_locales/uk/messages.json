@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Скажіть новий рядок, щоб отримати новий рядок.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Перевірте тут",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Перевірте тут",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Список команд",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Список смайлів",
+    "description": "imoji list label"
   }
 }

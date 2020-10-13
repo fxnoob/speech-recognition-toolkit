@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Произнесите новую строку, чтобы получить новую строку.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Проверить здесь",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Проверить здесь",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Список команд",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Список эмодзи",
+    "description": "imoji list label"
   }
 }

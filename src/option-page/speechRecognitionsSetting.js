@@ -14,57 +14,32 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import FormControl from "@material-ui/core/FormControl";
 import i18nService from "../services/i18nService";
-import EmojiList from "./EmojisList";
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   root: {
     width: "100%"
   }
 }));
-export default function() {
-  const [loading, setLoading] = useState(true);
-  const [defaultLangObj, setDefaultLangObj] = useState({
-    code: "",
-    label: ""
-  });
+export default function SRS() {
   const [onBootStart, setOnBootStart] = useState(false);
   const [languageSelectOptionOpen, setLanguageSelectOptionOpen] = useState(
     false
   );
-  const [isEmojiEnabled, setEmojiEnabled] = useState(true);
-  const [isclosestMatchingEmojiEnabled, setClosestMatchingEmoji] = useState(
-    true
-  );
+
   const [lang, setLang] = useState("");
   useEffect(() => {
     init();
   });
   const init = async () => {
-    const {
-      defaultLanguage,
-      alwaysOpen,
-      emojiEnabled,
-      closestMatchingEmoji
-    } = await db.get(
+    const { defaultLanguage, alwaysOpen } = await db.get(
       "defaultLanguage",
-      "alwaysOpen",
-      "emojiEnabled",
-      "closestMatchingEmoji"
+      "alwaysOpen"
     );
-    setDefaultLangObj(defaultLanguage);
     setLang(defaultLanguage.label);
-    setEmojiEnabled(emojiEnabled);
     setOnBootStart(alwaysOpen);
-    setClosestMatchingEmoji(closestMatchingEmoji);
-    setLoading(false);
   };
   const classes = useStyles();
   const closeLanguageSelectOption = () => {
     setLanguageSelectOptionOpen(false);
-  };
-  const toggleClosestEmojiSetting = async () => {
-    const newSetting = !isclosestMatchingEmojiEnabled;
-    await db.set({ closestMatchingEmoji: newSetting });
-    setClosestMatchingEmoji(newSetting);
   };
   const changeLanguage = async event => {
     setLang(event.target.value);
@@ -76,15 +51,10 @@ export default function() {
     });
     messagePassing.sendMessage("/restart_sr", {}, () => {});
   };
-  const toggleOnBootSetting = async event => {
+  const toggleOnBootSetting = async () => {
     const alwaysOpen = !onBootStart;
     setOnBootStart(!onBootStart);
     await db.set({ alwaysOpen });
-  };
-  const toggleEmojiSetting = async event => {
-    const emojiEnabled = !isEmojiEnabled;
-    setEmojiEnabled(emojiEnabled);
-    await db.set({ emojiEnabled });
   };
   return (
     <>
@@ -107,59 +77,17 @@ export default function() {
                       id: "open-select"
                     }}
                   >
-                    {Object.keys(voice.supportedLanguages).map(name => (
+                    {Object.keys(voice.supportedLanguages).map(name =>
                       <MenuItem key={name} value={name}>
                         {name}
                       </MenuItem>
-                    ))}
+                    )}
                   </Select>
                 </FormControl>
               </TableCell>
               <TableCell align="left">
                 {i18nService.getMessage(
                   "option_default_lang_change_setting_str"
-                )}
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                style={{
-                  paddding: "1rem",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <Checkbox
-                  edge="start"
-                  checked={isEmojiEnabled}
-                  tabIndex={-1}
-                  onChange={toggleEmojiSetting}
-                  inputProps={{ "aria-labelledby": "aria" }}
-                />
-              </TableCell>
-              <TableCell align="left">
-                {i18nService.getMessage("option_emoji_setting_str")}
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                style={{
-                  paddding: "1rem",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <Checkbox
-                  edge="start"
-                  checked={isclosestMatchingEmojiEnabled}
-                  tabIndex={-1}
-                  onChange={toggleClosestEmojiSetting}
-                  inputProps={{ "aria-labelledby": "aria" }}
-                />
-              </TableCell>
-              <TableCell align="left">
-                {i18nService.getMessage(
-                  "option_emoji_closest_matching_setting_str"
                 )}
               </TableCell>
             </TableRow>
@@ -183,19 +111,47 @@ export default function() {
                 {i18nService.getMessage("option_onstart_setting_str")}
               </TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("imoji_list_label_new")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=emojis"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("command_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=commands"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>
-      <h3
-        style={{
-          marginTop: "1rem",
-          marginBottom: "1rem",
-          fontSize: "2rem"
-        }}
-      >
-        {i18nService.getMessage("emoji")}
-      </h3>
-      {!loading && <EmojiList language={defaultLangObj} />}
     </>
   );
 }

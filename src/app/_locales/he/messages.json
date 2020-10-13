@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "אמור שורה חדשה כדי לקבל קו חדש.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "תבדוק פה",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "תבדוק פה",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "רשימת פקודות",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "רשימת אמוג'י",
+    "description": "imoji list label"
   }
 }

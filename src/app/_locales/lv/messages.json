@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "Sakiet jaunu rindu, lai iegūtu jaunu rindu.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "Pārbaudiet šeit",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "Pārbaudiet šeit",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "Komandu saraksts",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "Emociju saraksts",
+    "description": "imoji list label"
   }
 }

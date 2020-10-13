@@ -153,5 +153,21 @@
   "command_newline_description_new": {
     "message": "ಹೊಸ ಸಾಲನ್ನು ಪಡೆಯಲು ಹೊಸ ಸಾಲನ್ನು ಹೇಳಿ.",
     "description": "command newline desc"
+  },
+  "check_here_label": {
+    "message": "ಇಲ್ಲಿ ಪರಿಶೀಲಿಸಿ",
+    "description": "Check here label"
+  },
+  "imoji_list_label": {
+    "message": "ಇಲ್ಲಿ ಪರಿಶೀಲಿಸಿ",
+    "description": "Check here label"
+  },
+  "command_list_label": {
+    "message": "ಆಜ್ಞಾ ಪಟ್ಟಿ",
+    "description": "Command List label"
+  },
+  "imoji_list_label_new": {
+    "message": "ಎಮೋಜಿ ಪಟ್ಟಿ",
+    "description": "imoji list label"
   }
 }
