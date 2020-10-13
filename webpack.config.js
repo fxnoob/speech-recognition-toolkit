@@ -3,7 +3,6 @@ const { ESBuildPlugin, ESBuildMinifyPlugin } = require("esbuild-loader");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const dotenv = require("dotenv").config({ path: __dirname + "/.env" });
 const { manifestTransform } = require("./scripts/transform");
-//var Visualizer = require('webpack-visualizer-plugin');
 
 module.exports = (env, options) => {
   return {
@@ -15,6 +14,10 @@ module.exports = (env, options) => {
     },
     module: {
       rules: [
+        {
+          test: /\.worker\.js$/,
+          use: { loader: "worker-loader" }
+        },
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,
@@ -83,7 +86,6 @@ module.exports = (env, options) => {
         }
       ]),
       new webpack.HotModuleReplacementPlugin()
-      // new Visualizer()
     ],
     devServer: {
       contentBase: "./dist",

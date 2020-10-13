@@ -1,7 +1,14 @@
 import db from "./services/db";
 import MessagePassing from "./services/messagePassing";
+import guid from "./services/guid";
+import EmojiWorker from "./services/emoji.worker";
+import TranslationWorker from "./services/translation.worker";
+
+const emojiWorker = new EmojiWorker();
+const translationWorker = new TranslationWorker();
 
 const Routes = async (voice, contextMenus) => {
+  MessagePassing.setOptions({ emojiWorker, translationWorker });
   voice.addCommand({
     "*text": async text => {
       const { defaultLanguage } = await db.get("defaultLanguage");
@@ -84,6 +91,47 @@ const Routes = async (voice, contextMenus) => {
   MessagePassing.on("/get_cs_mountAck", async (req, res, options) => {
     const { mountAckId } = await db.get("mountAckId");
     res({ mountAckId });
+  });
+  // process emoji in web worker and return data to cs request
+  MessagePassing.on("/get_emoji", async (req, res, options) => {
+    const { langId, emojiName } = req;
+    const { emojiWorker } = options;
+    const uid = guid.generateGuid();
+    emojiWorker.postMessage({ langId, emojiName, uid, action: "emoji" });
+    emojiWorker.addEventListener("message", emojiRes => {
+      const { emoji, uid: resUid } = emojiRes.data;
+      console.log({ emoji, resUid });
+
+      if (uid == resUid) {
+        res(emoji);
+      }
+    });
+  });
+  // process emoji list in web worker and return data to cs request
+  MessagePassing.on("/get_emoji_list", async (req, res, options) => {
+    const { langId } = req;
+    const { emojiWorker } = options;
+    const uid = guid.generateGuid();
+    emojiWorker.postMessage({ langId, uid, action: "emoji_list" });
+    emojiWorker.addEventListener("message", emojiRes => {
+      const { emojiList, uid: resUid } = emojiRes.data;
+      if (uid == resUid) {
+        res(emojiList);
+      }
+    });
+  });
+  // get translated key
+  MessagePassing.on("/get_translated_message", async (req, res, options) => {
+    const { langId, key } = req;
+    const { translationWorker } = options;
+    const uid = guid.generateGuid();
+    translationWorker.postMessage({ langId, key, uid, action: "getMessage" });
+    translationWorker.addEventListener("message", emojiRes => {
+      const { message, uid: resUid } = emojiRes.data;
+      if (uid == resUid) {
+        res(message);
+      }
+    });
   });
 };
 

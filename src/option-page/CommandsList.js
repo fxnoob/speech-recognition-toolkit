@@ -20,13 +20,11 @@ export default () => {
   const init = async () => {
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
-    const commandsList = commandService
-      .getCommands(defaultLanguage.code)
-      .map(command => {
-        return [command.name, command.description];
-      });
+    const commandsJson = await commandService.getCommands(defaultLanguage.code);
+    const commandsList = commandsJson.map(command => {
+      return [command.name, command.description];
+    });
     console.log({ defaultLanguage, commandsList });
-
     setData(commandsList);
   };
   const options = {

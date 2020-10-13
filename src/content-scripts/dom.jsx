@@ -7,7 +7,6 @@ import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
 import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
-import CommandsList from "../option-page/CommandsList";
 import messagePassing from "../services/messagePassing";
 import dom from "../services/dom";
 import cmd from "../services/commandsService";
@@ -55,7 +54,7 @@ class Dom extends React.Component {
       this.handleClick(text)();
     }
     text = text.toLowerCase();
-    const commands = cmd.getCommands(langId);
+    const commands = await cmd.getCommands(langId);
     const commandIndex = commands.findIndex(
       p =>
         (p.match == "startsWith" && text.startsWith(p.name)) ||

@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import MUIDataTable from "mui-datatables";
 import i18n from "../services/i18nService";
 import emojiService from "../services/emojiService";
 
 export default props => {
+  const [data, seData] = useState([]);
   const language = props.language;
+  useEffect(() => {
+    init(language.code).catch(e => {});
+  }, []);
+  const init = async code => {
+    const res = await emojiService.getEmojiList(code);
+    seData(res);
+  };
   const columns = [
     i18n.getMessage("emoji_name_label"),
     i18n.getMessage("emoji")
@@ -13,10 +21,6 @@ export default props => {
   const options = {
     filterType: "checkbox"
   };
-  const emojiJson = emojiService.getEmojiList(language.code);
-  const data = Object.keys(emojiJson).map(key => {
-    return [key, emojiJson[key].replacement];
-  });
 
   return (
     <Container>

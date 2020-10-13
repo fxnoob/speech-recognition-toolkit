@@ -1,15 +1,17 @@
 import translationService from "../translationService";
 
-export default langId => {
-  const commandAlias = translationService.getMessage(langId, "label_undo")
-    .message;
-  console.log({ commandAlias });
+export default async langId => {
+  const commandAlias = await translationService.getMessage(
+    langId,
+    "label_undo"
+  );
+  const description = await translationService.getMessage(
+    langId,
+    "command_undo_description"
+  );
   return {
     name: commandAlias,
-    description: translationService.getMessage(
-      langId,
-      "command_undo_description"
-    ).message,
+    description: description,
     match: "exact",
     exec: async (text, options, callback) => {
       const { dom } = options;

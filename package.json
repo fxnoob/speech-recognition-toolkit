@@ -58,7 +58,7 @@
     "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.7.2",
-    "webpack-visualizer-plugin": "^0.1.11"
+    "worker-loader": "^3.0.4"
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
