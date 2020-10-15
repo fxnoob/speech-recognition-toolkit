@@ -115,7 +115,7 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   getActiveTab = winId => {
-    const config = { active: true };
+    const config = { active: true , currentWindow: true, };
     if (winId) {
       config.windowId = winId;
     }
