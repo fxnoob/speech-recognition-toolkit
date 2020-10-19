@@ -18,7 +18,11 @@ export default async langId => {
         divides: "/",
         divide: "/",
         "divides by": "/",
-        "divide by": "/"
+        "divide by": "/",
+        inches: "inch",
+        centimeter: "cm",
+        centimeters: "cm",
+        degree: "deg"
       };
       let commandContent = text
         .replace(commandAlias, "")
@@ -32,7 +36,7 @@ export default async langId => {
         const res = math.evaluate(commandContent);
         dom.simulateWordTyping(` ${res}`);
       } catch (e) {
-        dom.simulateWordTyping(text);
+        dom.simulateWordTyping(` ${text}`);
       }
     }
   };
