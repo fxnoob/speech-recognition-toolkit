@@ -170,5 +170,9 @@
   "command_list_label": {
     "message": "Command List",
     "description": "Command List label"
+  },
+  "symbol_list_label": {
+    "message": "Mathematical Symbols list",
+    "description": "Mathematical Symbols list label"
   }
 }

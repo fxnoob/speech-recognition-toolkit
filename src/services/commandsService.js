@@ -3,6 +3,8 @@ import undoCommand from "./commands/undo";
 import redoCommand from "./commands/redo";
 import newLineCommand from "./commands/newline";
 import pressEnterCommand from "./commands/press_enter";
+import calculateCommand from "./commands/calculate";
+import mathSymbolCommand from "./commands/math_symbol";
 
 class Commands {
   constructor() {
@@ -20,6 +22,8 @@ class Commands {
       Commands.push(await redoCommand(langId));
       Commands.push(await newLineCommand(langId));
       Commands.push(await pressEnterCommand(langId));
+      Commands.push(await calculateCommand(langId));
+      Commands.push(await mathSymbolCommand(langId));
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log({ e });
