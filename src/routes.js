@@ -3,12 +3,14 @@ import MessagePassing from "./services/messagePassing";
 import guid from "./services/guid";
 import EmojiWorker from "./services/emoji.worker";
 import TranslationWorker from "./services/translation.worker";
+import QuotesWorker from "./services/quote.worker";
 
 const emojiWorker = new EmojiWorker();
 const translationWorker = new TranslationWorker();
+const quotesWorker = new QuotesWorker();
 
 const Routes = async (voice, contextMenus) => {
-  MessagePassing.setOptions({ emojiWorker, translationWorker });
+  MessagePassing.setOptions({ emojiWorker, translationWorker, quotesWorker });
   voice.addCommand({
     "*text": async text => {
       const { defaultLanguage } = await db.get("defaultLanguage");
@@ -20,7 +22,7 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   // save selected text in storage instead writing it to clipboard
-  MessagePassing.on("/set_selected_text", async (req) => {
+  MessagePassing.on("/set_selected_text", async req => {
     const { data } = req;
     await db.set({ data: data });
   });
@@ -81,7 +83,7 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   //speak sr sound
-  MessagePassing.on("/speak_sr", async (req) => {
+  MessagePassing.on("/speak_sr", async req => {
     const { text } = req;
     const { defaultLanguage } = await db.get("defaultLanguage");
     voice.speak(text, { lang: defaultLanguage.code });
@@ -129,6 +131,19 @@ const Routes = async (voice, contextMenus) => {
         res(message);
       }
     });
+  });
+  // get quote
+  MessagePassing.on("/get_quote", async (req, res, options) => {
+    const { quotesWorker } = options;
+    const uid = guid.generateGuid();
+    quotesWorker.postMessage({ uid, action: "getQuote" });
+    quotesWorker.addEventListener("message", quoteRes => {
+      const { quote, uid: resUid } = quoteRes.data;
+      if (uid == resUid) {
+        res(quote);
+      }
+    });
+
   });
 };
 
