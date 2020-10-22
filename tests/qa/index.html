@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Load TensorFlow.js. This is required to use the qna model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"> </script>
+    <!-- Load the qna model. -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/qna"> </script>
+
+</head>
+<body>
+<textarea id="passage"></textarea>
+<div>
+    <input id="q">
+    <button id="ask">Ask</button>
+</div>
+<!-- Place your code in the script tag below. You can also use an external .js file -->
+<script>
+  // Notice there is no 'import' statement. 'qna' and 'tf' is
+  // available on the index-page because of the script tag above.
+
+  function getAnswer(question, passage) {
+    // Load the model.
+    qna.load().then(model => {
+      console.log("model loaded");
+      // Find the answers
+      model.findAnswers(question, passage).then(answers => {
+        console.log('Answers: ', answers);
+      });
+    });
+  }
+  document.getElementById('ask').addEventListener('click', () => {
+    const q = document.getElementById('q').value;
+    const passage = document.getElementById('passage').value;
+    console.log('asking', q, passage);
+    getAnswer(q, passage);
+  })
+</script>
+</body>
+</html>

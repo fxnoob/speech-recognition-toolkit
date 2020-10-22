@@ -73,6 +73,7 @@
     "@material-ui/icons": "^4.2.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@tailwindcss/ui": "^0.5.0",
+    "@tensorflow-models/qna": "^1.0.0",
     "annyang": "^2.6.1",
     "balloon-css": "^1.2.0",
     "emoji-text": "^0.2.6",
