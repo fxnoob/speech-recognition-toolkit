@@ -7,6 +7,26 @@
     "message": "Fill out any web form by using only your voice!",
     "description": "app short description"
   },
+  "audio_permission_todo_label": {
+    "message": "Please Click on the button below to allow audio permissions in order to use this tool.",
+    "description": "audio permission page instruction content"
+  },
+  "audio_permission_error_msg": {
+    "message": "Please Allow Permissions in order to use this tool!",
+    "description": "audio permission error message"
+  },
+  "audio_permission_success_msg": {
+    "message": "Now you can close this tab and use this tool to type on any website with your voice!",
+    "description": "audio permission success message"
+  },
+  "audio_permission_notice_info": {
+    "message": "Note: If you have accidentally disallowed permissions, then you can allow them from clicking top left corner of search bar of this tab",
+    "description": "audio permission extra info"
+  },
+  "allow_permission_label": {
+    "message": "Allow permission",
+    "description": "Allow audio permission label"
+  },
   "popup_allow_permission_btn_str": {
     "message": "Allow Audio Permission",
     "description": "String on the button on popup page that allows user to navigate to permissions page"
@@ -126,6 +146,30 @@
   "command_description_label": {
     "message": "Command's Description",
     "description": "Command's Description label"
+  },
+  "scroll_up_label": {
+    "message": "scroll up",
+    "description": "scroll up command"
+  },
+  "command_scroll_up_description": {
+    "message": "Say 'scroll up' to scroll up the current page",
+    "description": "command scroll up desc"
+  },
+  "scroll_down_label": {
+    "message": "scroll down",
+    "description": "scroll down command"
+  },
+  "command_scroll_down_description": {
+    "message": "Say 'scroll down' to scroll up the current page",
+    "description": "command scroll down desc"
+  },
+  "mindfulness_label" : {
+    "message": "Mindfulness",
+    "description": "Mindfulness command"
+  },
+  "command_mindfulness_description": {
+    "message": "Say 'mindfulness' to insert a random mindfulness thought in the text box",
+    "description": "command mindfulness desc"
   },
   "command_emoji_description": {
     "message": "Say 'emoji emoji's name' to insert somewhat similar emoji from list of 1800 emojis. checkout full list of emojis in setting page",
