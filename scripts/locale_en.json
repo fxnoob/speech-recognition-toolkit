@@ -27,6 +27,10 @@
     "message": "Allow permission",
     "description": "Allow audio permission label"
   },
+  "popup_mic_listening_note": {
+    "message": "* Now click on any input and speak",
+    "description": "note to user when mic starts listening"
+  },
   "popup_allow_permission_btn_str": {
     "message": "Allow Audio Permission",
     "description": "String on the button on popup page that allows user to navigate to permissions page"

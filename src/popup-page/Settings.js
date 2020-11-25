@@ -149,6 +149,9 @@ class Settings extends React.Component {
               label=""
             />
           )}
+        {this.state.loaded && this.state.isMicListening && <div>
+          <p>{i18nService.getMessage('popup_mic_listening_note')}</p>
+        </div>}
       </>
     );
   }
