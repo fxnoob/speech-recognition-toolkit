@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Alert from "@material-ui/lab/Alert";
 import db from "../services/db";
 import helpImage from "./helpImage.png";
+import i18nService from "../services/i18nService";
 
 const Permissions = () => {
-  const SUCCESS_MSG =
-    "Now you can close this tab and use this tool to type on any website with your voice!";
-  const ERROR_MSG = "Please Allow Permissions in order to use this tool!";
+  const SUCCESS_MSG = i18nService.getMessage('audio_permission_success_msg');
+  const ERROR_MSG = i18nService.getMessage('audio_permission_error_msg');
   const [message, setMessage] = useState("");
   const allowPermissions = async () => {
     navigator.mediaDevices
@@ -37,14 +37,10 @@ const Permissions = () => {
   return (
     <div>
       <div className="bg-white align-center" style={{ textAlign: "center" }}>
-        <div className="max-w-screen-xl mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div style={{ maxWidth: '40rem' }} className=" mx-auto text-center py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
           {/* eslint-disable-next-line max-len */}
           <h2 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-            Please Click on the button below
-            <br />
-            to allow audio permissions
-            <br />
-            in order to use this tool.
+            {i18nService.getMessage('audio_permission_todo_label')}
           </h2>
           <div className="mt-8 flex justify-center">
             <div className="ml-3 inline-flex">
@@ -54,27 +50,18 @@ const Permissions = () => {
                 onClick={allowPermissions}
                 className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out btn"
               >
-                Allow Permissions
+                {i18nService.getMessage('allow_permission_label')}
               </button>
             </div>
           </div>
           <p
             className="mt-8 text-2xl"
-            style={{
-              paddingLeft: "30%",
-              paddingRight: "30%"
-            }}
           >
             <GetMessage message={message} />
           </p>
+          <hr/>
           <p className="mt-8 text-2xl">
-            <hr />
-            <br />
-            <b>Note: </b> If you have accidentally disallowed permissions,
-            <br />
-            then you can allow them from clicking top left
-            <br />
-            corner of search bar of this tab
+            {i18nService.getMessage('audio_permission_notice_info')}
           </p>
           {message == ERROR_MSG &&
             <p
