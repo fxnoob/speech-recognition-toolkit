@@ -76,6 +76,7 @@
     "annyang": "^2.6.1",
     "balloon-css": "^1.2.0",
     "emoji-text": "^0.2.6",
+    "jquery": "^3.5.1",
     "jss": "^10.4.0",
     "jss-rtl": "^0.3.0",
     "mathjs": "^7.5.1",

@@ -1,22 +1,21 @@
 import translationService from "../translationService";
+import tabNavigation from '../tabNavigationService';
 
 export default async langId => {
   const commandAlias = await translationService.getMessage(
     langId,
-    "full_stop_label"
+    "label_next"
   );
   const description = await translationService.getMessage(
     langId,
-    "command_fullstop_description"
+    "command_next_description"
   );
   return {
     name: commandAlias,
     description: description,
     match: "exact",
-    exec: async (text, options, callback) => {
-      const { dom } = options;
-      dom.simulateWordTyping(".");
-      callback();
+    exec: async () => {
+      tabNavigation.navigate('Right');
     }
   };
 };
