@@ -25,7 +25,8 @@ const CommandList = () => {
     setData(commandsList);
   };
   const options = {
-    filterType: "checkbox"
+    filterType: "checkbox",
+    rowsPerPage: 12,
   };
   return (
     <Container>

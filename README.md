@@ -24,6 +24,7 @@ Features:
  - To insert math symbol, just say 'math symbol symbol_name' eg. 'math 
      symbol sigma' to insert sigma symbol. more than 125 maths symbol 
      available.
+ - Tab Navigation using your voice.    
  - Supports always listen mode.
  - Free to use
  
@@ -45,6 +46,10 @@ Features:
 
 `Mindfulness`: Say 'mindfulness' to insert a random mindfulness thought in the text box.
 
-`scroll down`: Say 'scroll down' to scroll up the current page.
+`scroll down`: Say 'scroll down' to scroll down the current page.
 
 `scroll up`: Say 'scroll up' to scroll up the current page.
+
+`next`: Say 'next' to navigate to next element(mimics tab navigation).
+
+`previous`: Say 'previous' to navigate to previous element (mimics tab navigation).
