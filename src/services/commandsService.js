@@ -5,9 +5,11 @@ import newLineCommand from "./commands/newline";
 import pressEnterCommand from "./commands/press_enter";
 import calculateCommand from "./commands/calculate";
 import mathSymbolCommand from "./commands/math_symbol";
-import mindfulnessCommand from './commands/mindfulness';
-import scrollDownCommand from './commands/scroll_down';
-import scrollUpCommand from './commands/scroll_up';
+import mindfulnessCommand from "./commands/mindfulness";
+import scrollDownCommand from "./commands/scroll_down";
+import scrollUpCommand from "./commands/scroll_up";
+import tabNavigationNextCommand from "./commands/tab_navigation_next";
+import tabNavigationPreviousCommand from "./commands/tab_navigation_previous";
 
 class Commands {
   constructor() {
@@ -30,6 +32,8 @@ class Commands {
       Commands.push(await mindfulnessCommand(langId));
       Commands.push(await scrollDownCommand(langId));
       Commands.push(await scrollUpCommand(langId));
+      Commands.push(await tabNavigationNextCommand(langId));
+      Commands.push(await tabNavigationPreviousCommand(langId));
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log({ e });

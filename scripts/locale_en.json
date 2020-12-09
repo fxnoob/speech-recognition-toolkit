@@ -199,6 +199,22 @@
     "message": "Say undo to undo the changes",
     "description": "command undo desc"
   },
+  "command_next_description": {
+    "message": "Say 'next' to navigate to the next input field.",
+    "description": "command next desc"
+  },
+  "label_next": {
+    "message": "next",
+    "description": "next command label"
+  },
+  "command_previous_description": {
+    "message": "Say 'previous' to navigate to the previous input field.",
+    "description": "command previous desc"
+  },
+  "label_previous": {
+    "message": "previous",
+    "description": "previous command label"
+  },
   "emoji_list_for_lang_label": {
     "message": "Emoji's List for language",
     "description": "emoji list label"
