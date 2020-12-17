@@ -24,7 +24,8 @@ Features:
  - To insert math symbol, just say 'math symbol symbol_name' eg. 'math 
      symbol sigma' to insert sigma symbol. more than 125 maths symbol 
      available.
- - Tab Navigation using your voice.    
+ - Tab Navigation using your voice. 
+ - Convert your speech to morse code.   
  - Supports always listen mode.
  - Free to use
  

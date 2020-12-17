@@ -168,6 +168,25 @@ export default function SRS() {
                 </a>
               </TableCell>
             </TableRow>
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("create_mcode_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=mcode"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
           </TableBody>
         </Table>
       </TableContainer>

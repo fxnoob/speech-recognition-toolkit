@@ -238,5 +238,9 @@
   "symbol_list_label": {
     "message": "Mathematical Symbols list",
     "description": "Mathematical Symbols list label"
+  },
+  "create_mcode_label": {
+    "message": "Create Morse Code",
+    "description": "cmc label"
   }
 }
