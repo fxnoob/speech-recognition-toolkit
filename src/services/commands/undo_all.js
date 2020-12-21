@@ -3,14 +3,14 @@ import translationService from "../translationService";
 export default async langId => {
   const commandAlias = await translationService.getMessage(
     langId,
-    "label_undo"
+    "cmd_label_undo_all"
   );
   const description = await translationService.getMessage(
     langId,
-    "command_undo_description"
+    "command_undo_all_description"
   );
   return {
-    id: '9703B37A-11D7-BAB8-3FE9-E70D637BB49A',
+    id: '4D743502-F987-405E-D163-E57E8DD201AE',
     name: commandAlias,
     description: description,
     match: "exact",
@@ -19,7 +19,9 @@ export default async langId => {
       const { lastFocusedElementDocument } = dom;
       try {
         if (lastFocusedElementDocument) {
-          lastFocusedElementDocument.execCommand("undo", false, null);
+          for(let i = 0; i < 20; i++) {
+            lastFocusedElementDocument.execCommand("undo", false, null);
+          }
         }
         callback();
       } catch (e) {

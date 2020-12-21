@@ -10,6 +10,7 @@ export default async langId => {
     "command_redo_description"
   );
   return {
+    id: '35702128-F219-F734-0867-1364887AF2B2',
     name: commandAlias,
     description: description,
     match: "exact",

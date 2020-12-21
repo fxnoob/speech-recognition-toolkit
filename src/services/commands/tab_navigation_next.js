@@ -11,6 +11,7 @@ export default async langId => {
     "command_next_description"
   );
   return {
+    id: 'F109FA3D-F491-B974-7830-0E8BD62CC65B',
     name: commandAlias,
     description: description,
     match: "exact",

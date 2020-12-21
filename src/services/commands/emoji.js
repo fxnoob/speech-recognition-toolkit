@@ -8,6 +8,7 @@ export default async langId => {
     "command_emoji_description"
   );
   return {
+    id: '4DBE9DD0-E8A2-225B-6F61-DD00381B528D',
     name: commandAlias,
     description: description,
     match: "startsWith",

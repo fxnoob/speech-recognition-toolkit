@@ -10,6 +10,7 @@ export default async langId => {
     "command_fullstop_description"
   );
   return {
+    id: 'BAC548F8-69DB-07DE-2AA6-E687AEF889CC',
     name: commandAlias,
     description: description,
     match: "exact",

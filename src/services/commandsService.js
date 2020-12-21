@@ -10,6 +10,7 @@ import scrollDownCommand from "./commands/scroll_down";
 import scrollUpCommand from "./commands/scroll_up";
 import tabNavigationNextCommand from "./commands/tab_navigation_next";
 import tabNavigationPreviousCommand from "./commands/tab_navigation_previous";
+import undoAllCommand from "./commands/undo_all";
 
 class Commands {
   constructor() {
@@ -34,6 +35,7 @@ class Commands {
       Commands.push(await scrollUpCommand(langId));
       Commands.push(await tabNavigationNextCommand(langId));
       Commands.push(await tabNavigationPreviousCommand(langId));
+      Commands.push(await undoAllCommand(langId));
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log({ e });

@@ -8,6 +8,7 @@ export default async langId => {
     "command_mindfulness_description"
   );
   return {
+    id: 'EFFFCB45-86C9-AABC-CF9B-DF6490AC0462',
     name: commandAlias,
     description: description,
     match: "exact",

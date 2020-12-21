@@ -19,6 +19,7 @@ class Schema {
         code: "en-US",
         label: "English (United States)"
       },
+      commandsConfig: constants.commands, // commands enabled/disabled list
       mountAckId: constants.contentScript.mountAckId
     };
   }
