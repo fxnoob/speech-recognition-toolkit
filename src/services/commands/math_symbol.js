@@ -4,6 +4,7 @@ export default async langId => {
   const commandAlias = "math symbol";
   const description = "say 'math symbol square root' to type √a (math symbol). checkout whole list of symbols from link given on homepage";
   return {
+    id: '3EC8A2EA-07B2-2612-A677-3FB0F5298D1D',
     name: commandAlias,
     description: description,
     match: "startsWith",

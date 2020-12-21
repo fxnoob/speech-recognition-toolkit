@@ -7,6 +7,7 @@ export default async langId => {
     "command_press_enter_description"
   );
   return {
+    id: '2C813AB6-109C-7BBE-50A5-B54CE1C30BD8',
     name: commandAlias,
     description: description,
     match: "exact",

@@ -11,6 +11,7 @@ import initialContent from "../components/initialFrame";
 import messagePassing from "../services/messagePassing";
 import dom from "../services/dom";
 import cmd from "../services/commandsService";
+import db from "../services/db";
 
 const styles = theme => ({
   close: {
@@ -34,7 +35,7 @@ class Dom extends React.Component {
       res({ mounted: true });
     });
     /** Listening to message sentfrom popup page, option page or background script to content script */
-    messagePassing.on("/sr_text", async (req) => {
+    messagePassing.on("/sr_text", async req => {
       const { text, langId } = req;
       this.speechToTextListenerCallback(text, langId);
     });
@@ -54,11 +55,13 @@ class Dom extends React.Component {
       this.handleClick(text)();
     }
     text = text.toLowerCase();
+    const { commandsConfig } = await db.get("commandsConfig") || {};
     const commands = await cmd.getCommands(langId);
     const commandIndex = commands.findIndex(
       p =>
-        p.match == "startsWith" && text.startsWith(p.name) ||
-        p.match == "exact" && text == p.name.toLowerCase()
+        commandsConfig[p.id] &&
+        (p.match == "startsWith" && text.startsWith(p.name) ||
+          p.match == "exact" && text == p.name.toLowerCase())
     );
     if (commandIndex != -1) {
       const commandToApply = commands[commandIndex];

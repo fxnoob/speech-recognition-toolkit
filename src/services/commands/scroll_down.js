@@ -6,6 +6,7 @@ export default async langId => {
     "command_scroll_down_description"
   );
   return {
+    id: '0C52F324-0B39-8EC0-178E-7A2A16F6A629',
     name: commandAlias,
     description: description,
     match: "exact",

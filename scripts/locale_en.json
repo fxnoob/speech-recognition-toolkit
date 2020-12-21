@@ -242,5 +242,17 @@
   "create_mcode_label": {
     "message": "Create Morse Code",
     "description": "cmc label"
+  },
+  "command_enable_disable_label": {
+    "message": "Enable/Disable",
+    "description": "enable or disable command label"
+  },
+  "cmd_label_undo_all": {
+    "message": "undo all",
+    "description": "undo all command"
+  },
+  "command_undo_all_description": {
+    "message": "Say 'Undo All' to clear text box.",
+    "description": "command undo all description"
   }
 }
