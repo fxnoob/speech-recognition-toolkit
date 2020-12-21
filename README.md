@@ -25,7 +25,8 @@ Features:
      symbol sigma' to insert sigma symbol. more than 125 maths symbol 
      available.
  - Tab Navigation using your voice. 
- - Convert your speech to morse code.   
+ - Convert your speech to morse code.
+ - Toggle any command.  
  - Supports always listen mode.
  - Free to use
  
@@ -54,3 +55,8 @@ Features:
 `next`: Say 'next' to navigate to next element(mimics tab navigation).
 
 `previous`: Say 'previous' to navigate to previous element (mimics tab navigation).
+
+`undo all`: Say 'undo all' to undo everything on current page upto 20 depth.
+
+#### Note: 
+Commands name changes according to the selected language.
