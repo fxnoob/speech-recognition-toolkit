@@ -13,9 +13,9 @@ export default async langId => {
     description: description,
     match: "exact",
     exec: async (text, options) => {
-      const { dom } = options;
+      const { dom, ackId } = options;
       const randomTip = tips[Math.floor(Math.random() * tips.length)];
-      dom.simulateWordTyping(` ${randomTip}`);
+      dom.simulateWordTyping(` ${randomTip}`, ackId);
     }
   };
 };

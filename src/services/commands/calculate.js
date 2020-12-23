@@ -32,12 +32,12 @@ export default async langId => {
       Object.keys(symbols).map(key => {
         commandContent = commandContent.replace(key, symbols[key]);
       });
-      const { dom } = options;
+      const { dom, ackId } = options;
       try {
         const res = math.evaluate(commandContent);
-        dom.simulateWordTyping(` ${res}`);
+        dom.simulateWordTyping(` ${res}`, ackId);
       } catch (e) {
-        dom.simulateWordTyping(` ${text}`);
+        dom.simulateWordTyping(` ${text}`, ackId);
       }
     }
   };
