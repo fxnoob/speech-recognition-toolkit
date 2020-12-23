@@ -65,7 +65,7 @@ class Dom extends React.Component {
     );
     if (commandIndex != -1) {
       const commandToApply = commands[commandIndex];
-      commandToApply.exec(text, { dom }, () => {});
+      commandToApply.exec(text, { dom, ackId: this.mountAckId }, () => {});
     } else {
       const indentedText = text != "." ? ` ${text}` : text;
       dom.simulateWordTyping(indentedText, this.mountAckId);
@@ -134,7 +134,7 @@ class Dom extends React.Component {
             vertical: "bottom",
             horizontal: "left"
           }}
-          style={{ zIndex: 4444444444444444444 }}
+          style={{ zIndex: 4444444444444444444, width: '200px', height: '3rem' }}
           open={this.state.open}
           autoHideDuration={6000}
           onClose={this.handleClose}

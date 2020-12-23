@@ -13,12 +13,12 @@ export default async langId => {
         .replace(commandAlias, "")
         .toLowerCase()
         .trim();
-      const { dom } = options;
+      const { dom, ackId } = options;
       const symbolRes = symbols[commandContent];
       if (symbolRes) {
-        dom.simulateWordTyping(` ${symbolRes}`);
+        dom.simulateWordTyping(` ${symbolRes}`, ackId);
       } else {
-        dom.simulateWordTyping(text);
+        dom.simulateWordTyping(text, ackId);
       }
     }
   };
