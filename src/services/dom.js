@@ -270,6 +270,22 @@ class Dom {
         })
       );
   }
+  /**
+   * Simulate key press on a webpage
+   * @param array array[keyCode, ctrl, alt, shift]
+   * @param mountAckId random id
+   * @param document active document
+   */
+  simulateKeyPress(array, mountAckId, document = window.document) {
+    const activeElement = this.findFocusedElem(document, mountAckId);
+    this.keypress(array, activeElement);
+  }
+  /**
+   * Simulate word typing on a webpage
+   * @param wordString string
+   * @param mountAckId random id
+   * @param document active document
+   */
   simulateWordTyping(wordString, mountAckId, document = window.document) {
     this.lastTypedWord = wordString;
     const activeElement = this.findFocusedElem(document, mountAckId);

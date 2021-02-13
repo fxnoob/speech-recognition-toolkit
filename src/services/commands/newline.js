@@ -16,6 +16,7 @@ export default async langId => {
     match: "exact",
     exec: async (text, options, callback) => {
       const { dom, ackId } = options;
+      dom.simulateWordTyping("\n", ackId);
       dom.simulateWordTyping("\n\r", ackId);
       callback();
     }
