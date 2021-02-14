@@ -12,7 +12,8 @@ Greatest feature of all, is that it works on all the websites. :)
 Features: 
 
  - Type with your voice on any website in more than 100 languages.
- - Supports On Start Feature.
+ - Play game with your voice.
+ - Open your favorite website with your voice in new tab
  - TTS (Text to Speech) and copy on single click for recognized text.
  - Comes with voices commands such as  
   * emoji - to search from more then 1800 emoji in your language to type a 
@@ -27,6 +28,7 @@ Features:
  - Tab Navigation using your voice. 
  - Convert your speech to morse code.
  - Toggle any command.  
+ - Supports On Start Feature.
  - Supports always listen mode.
  - Free to use
  
@@ -57,6 +59,10 @@ Features:
 `previous`: Say 'previous' to navigate to previous element (mimics tab navigation).
 
 `undo all`: Say 'undo all' to undo everything on current page upto 20 depth.
+
+`Arrow`: Say 'Arrow left' to type left arrow key. (play 2048 game with your voice on https://play2048.co/ by saying arrow left , arrow right, arrow up, arrow down).
+
+`Go to`: Say 'Go to facebook.com' to open new tab for facebook.com 
 
 #### Note: 
 Commands name changes according to the selected language.

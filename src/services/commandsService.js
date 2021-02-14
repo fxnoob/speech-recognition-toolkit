@@ -11,6 +11,9 @@ import scrollUpCommand from "./commands/scroll_up";
 import tabNavigationNextCommand from "./commands/tab_navigation_next";
 import tabNavigationPreviousCommand from "./commands/tab_navigation_previous";
 import undoAllCommand from "./commands/undo_all";
+import arrowCommand from "./commands/arrow";
+import goToCommand from "./commands/go_to";
+import remindMeCommand from "./commands/remind_me";
 
 class Commands {
   constructor() {
@@ -21,28 +24,30 @@ class Commands {
     this.options = options;
   }
   async getCommands(langId) {
-    const Commands = [];
+    const cmd = [];
     try {
-      Commands.push(await emojiCommand(langId));
-      Commands.push(await undoCommand(langId));
-      Commands.push(await redoCommand(langId));
-      Commands.push(await newLineCommand(langId));
-      Commands.push(await pressEnterCommand(langId));
-      Commands.push(await calculateCommand(langId));
-      Commands.push(await mathSymbolCommand(langId));
-      Commands.push(await mindfulnessCommand(langId));
-      Commands.push(await scrollDownCommand(langId));
-      Commands.push(await scrollUpCommand(langId));
-      Commands.push(await tabNavigationNextCommand(langId));
-      Commands.push(await tabNavigationPreviousCommand(langId));
-      Commands.push(await undoAllCommand(langId));
+      cmd.push(await emojiCommand(langId));
+      cmd.push(await undoCommand(langId));
+      cmd.push(await redoCommand(langId));
+      cmd.push(await newLineCommand(langId));
+      cmd.push(await pressEnterCommand(langId));
+      cmd.push(await calculateCommand(langId));
+      cmd.push(await mathSymbolCommand(langId));
+      cmd.push(await mindfulnessCommand(langId));
+      cmd.push(await scrollDownCommand(langId));
+      cmd.push(await scrollUpCommand(langId));
+      cmd.push(await tabNavigationNextCommand(langId));
+      cmd.push(await tabNavigationPreviousCommand(langId));
+      cmd.push(await undoAllCommand(langId));
+      cmd.push(await arrowCommand(langId));
+      cmd.push(await goToCommand(langId));
+      cmd.push(await remindMeCommand(langId));
     } catch (e) {
       // eslint-disable-next-line no-console
       console.log({ e });
     }
-    this.commands = Commands;
-
-    return Commands;
+    this.commands = cmd;
+    return cmd;
   }
 }
 const command = new Commands();

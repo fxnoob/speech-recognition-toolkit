@@ -27,7 +27,17 @@ class Dom extends React.Component {
     messageInfo: {},
     mountAckId: ""
   };
+  commands = [];
+  langId = "";
+
   componentDidMount() {
+    this.init();
+  }
+  init = async () => {
+    // fetch commands for default language
+    const { defaultLanguage } = await db.get("defaultLanguage");
+    this.commands = await cmd.getCommands(defaultLanguage.code);
+    this.langId = defaultLanguage.code;
     // put mountAckId in dom
     this.mountAckDom();
     /** Check for content script mount acknowledgement from background script */
@@ -39,7 +49,7 @@ class Dom extends React.Component {
       const { text, langId } = req;
       this.speechToTextListenerCallback(text, langId);
     });
-  }
+  };
   mountAckDom = () => {
     messagePassing.sendMessage("/get_cs_mountAck", {}, async res => {
       const { mountAckId } = res;
@@ -56,15 +66,18 @@ class Dom extends React.Component {
     }
     text = text.toLowerCase();
     const { commandsConfig } = await db.get("commandsConfig") || {};
-    const commands = await cmd.getCommands(langId);
-    const commandIndex = commands.findIndex(
+    if (langId != this.langId) {
+      this.langId = langId;
+      this.commands = await cmd.getCommands(this.langId);
+    }
+    const commandIndex = this.commands.findIndex(
       p =>
         commandsConfig[p.id] &&
-        (p.match == "startsWith" && text.startsWith(p.name) ||
+        (p.match == "startsWith" && text.startsWith(p.name.toLowerCase()) ||
           p.match == "exact" && text == p.name.toLowerCase())
     );
     if (commandIndex != -1) {
-      const commandToApply = commands[commandIndex];
+      const commandToApply = this.commands[commandIndex];
       commandToApply.exec(text, { dom, ackId: this.mountAckId }, () => {});
     } else {
       const indentedText = text != "." ? ` ${text}` : text;
@@ -134,7 +147,11 @@ class Dom extends React.Component {
             vertical: "bottom",
             horizontal: "left"
           }}
-          style={{ zIndex: 4444444444444444444, width: '200px', height: '3rem' }}
+          style={{
+            zIndex: 4444444444444444444,
+            width: "200px",
+            height: "3rem"
+          }}
           open={this.state.open}
           autoHideDuration={6000}
           onClose={this.handleClose}

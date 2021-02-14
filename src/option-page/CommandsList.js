@@ -37,7 +37,7 @@ const CommandList = () => {
     setData(commandsList);
   };
   const options = {
-    rowsPerPage: 13,
+    rowsPerPage: 15,
     customToolbarSelect: () => {},
     selectableRows: false
   };

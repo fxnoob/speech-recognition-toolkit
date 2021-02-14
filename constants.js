@@ -3,7 +3,7 @@ const guid = require("./src/services/guid");
 const constants = {
   appConfig: {
     appName: "Speech Recognition Toolkit",
-    // put extension key here if required which would only be used development mode
+    // put extension key here if required which would only be used in development mode
     "key ":
       "-----BEGIN PUBLIC KEY-----\n" +
       "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3VymTQvpTgWpVbYeveQV\n" +
@@ -30,6 +30,9 @@ const constants = {
     "DF6E48B2-3372-3A06-C801-E964B7F73AD3": false,// tab_navigation_previous
     "9703B37A-11D7-BAB8-3FE9-E70D637BB49A": true,// undo
     "4D743502-F987-405E-D163-E57E8DD201AE": false, // undo_all
+    "D7F4AFA8-8EA1-BC0F-6E19-D608FEBFAE6F": true, // arrow - up | down | left | right
+    "59A7532E-805F-8882-A6F1-6BF822E96612": false, // go_to url
+    "CB056517-63D9-B551-8511-11E80088C8EF": false, // remind_me
   },
   contentScript: {
     mountAckId: guid.generateGuid(), // <div id='${mountAckId}'/> for checking if content script is mounted in the frame
@@ -39,7 +42,7 @@ const constants = {
     googleFormLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdTB0tFZHTnRe5_L64lYCbJvQm4XD5zGoSubYYYqBEOYXkIGA/viewform?usp=sf_link",
     howtoVideoLink:
-      "https://www.youtube.com/watch?v=YdESohE6ESQ&ab_channel=fxnoob"
+      "https://www.youtube.com/watch?v=YdESohE6ESQ"
   }
 };
 

@@ -167,6 +167,38 @@
     "message": "Say 'scroll down' to scroll up the current page",
     "description": "command scroll down desc"
   },
+  "command_arrow_label": {
+    "message": "arrow",
+    "description": "command arrow label"
+  },
+  "command_arrow_description": {
+    "message": "Say 'arrow left' to type left arrow key. possible commands: arrow left | right | top | down",
+    "description": "command arrow desc"
+  },
+  "left_label": {
+    "message": "left",
+    "description": "left label"
+  },
+  "right_label": {
+    "message": "right",
+    "description": "right label"
+  },
+  "up_label": {
+    "message": "up",
+    "description": "up label"
+  },
+  "down_label": {
+    "message": "down",
+    "description": "down label"
+  },
+  "command_go_to_label": {
+    "message": "go to",
+    "description": "command go to label"
+  },
+  "command_go_to_description": {
+    "message": "Say 'go to facebook.com to open new tab for facebook.com",
+    "description": "command go to description"
+  },
   "mindfulness_label" : {
     "message": "Mindfulness",
     "description": "Mindfulness command"
