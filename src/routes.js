@@ -3,6 +3,7 @@ import MessagePassing from "./services/messagePassing";
 import guid from "./services/guid";
 import EmojiWorker from "./services/emoji.worker";
 import TranslationWorker from "./services/translation.worker";
+import chromeService from "./services/chromeService";
 
 const emojiWorker = new EmojiWorker();
 const translationWorker = new TranslationWorker();
@@ -129,6 +130,17 @@ const Routes = async (voice, contextMenus) => {
         res(message);
       }
     });
+  });
+  // listen for 'go to' command
+  let gotoCommandLock = false;
+  MessagePassing.on('/go_to', async (req) => {
+    if (gotoCommandLock) return;
+    gotoCommandLock = true;
+    const { url } = req;
+    chromeService.openUrl(`http://${url}`);
+    setTimeout(() => {
+      gotoCommandLock = false;
+    }, 3000);
   });
 };
 

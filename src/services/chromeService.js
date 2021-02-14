@@ -226,6 +226,15 @@ class ChromeApi {
     chrome.browserAction.setBadgeBackgroundColor({ color });
   }
   /**
+   *Open url in new tab
+   * @method
+   * @param url string
+   * @memberOf ChromeApi
+   */
+  openUrl = url => {
+    chrome.tabs.create({ url: url }, () => {});
+  }
+  /**
    * Open help page
    *
    * @method
