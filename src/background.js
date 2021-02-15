@@ -20,6 +20,7 @@ class Main {
     await this.initDb();
     this.mountCSOnPreviouslyOpenedTabsOnlyOnce();
     await this.initContextMenu();
+    this.setUpAlarmsListener();
     await Routes(voice, {
       startStopSRContextMenu: this.startStopSRContextMenu
     });
@@ -178,6 +179,26 @@ class Main {
           }
         }
       });
+    });
+  }
+  /**
+   * Setup Alarms listener
+   *
+   * @method
+   * @memberof Main
+   */
+  setUpAlarmsListener() {
+    chrome.alarms.onAlarm.addListener(alarm => {
+      chrome.notifications.create(
+        alarm.name,
+        {
+          type: "basic",
+          iconUrl: "images/icon.png",
+          title: "Timer from Speech Recognition Toolkit",
+          message: "Time up"
+        },
+        function() {}
+      );
     });
   }
 }

@@ -8,7 +8,9 @@
     "storage",
     "activeTab",
     "<all_urls>",
-    "tts"
+    "tts",
+    "alarms",
+    "notifications"
   ],
   "default_locale": "en",
   "background": {

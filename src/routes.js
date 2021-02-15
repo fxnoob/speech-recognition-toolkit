@@ -21,7 +21,7 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   // save selected text in storage instead writing it to clipboard
-  MessagePassing.on("/set_selected_text", async (req) => {
+  MessagePassing.on("/set_selected_text", async req => {
     const { data } = req;
     await db.set({ data: data });
   });
@@ -82,7 +82,7 @@ const Routes = async (voice, contextMenus) => {
     }
   });
   //speak sr sound
-  MessagePassing.on("/speak_sr", async (req) => {
+  MessagePassing.on("/speak_sr", async req => {
     const { text } = req;
     const { defaultLanguage } = await db.get("defaultLanguage");
     voice.speak(text, { lang: defaultLanguage.code });
@@ -133,13 +133,27 @@ const Routes = async (voice, contextMenus) => {
   });
   // listen for 'go to' command
   let gotoCommandLock = false;
-  MessagePassing.on('/go_to', async (req) => {
+  MessagePassing.on("/go_to", async req => {
     if (gotoCommandLock) return;
     gotoCommandLock = true;
     const { url } = req;
     chromeService.openUrl(`http://${url}`);
     setTimeout(() => {
       gotoCommandLock = false;
+    }, 3000);
+  });
+  // listen for 'set_alarm'
+  let remindMeCommandLock = false;
+  MessagePassing.on("/set_alarm", async req => {
+    if (remindMeCommandLock) return;
+    remindMeCommandLock = true;
+    const { timeStamp } = req;
+    const alarmName = guid.generateGuid();
+    chrome.alarms.create(alarmName, {
+      when: timeStamp
+    });
+    setTimeout(() => {
+      remindMeCommandLock = false;
     }, 3000);
   });
 };

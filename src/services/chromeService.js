@@ -5,6 +5,8 @@
  * @class ChromeApi
  */
 class ChromeApi {
+  // chrome notification api
+  notification = chrome.notifications;
   constructor() {}
 
   /**
