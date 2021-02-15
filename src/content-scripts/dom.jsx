@@ -78,7 +78,11 @@ class Dom extends React.Component {
     );
     if (commandIndex != -1) {
       const commandToApply = this.commands[commandIndex];
-      commandToApply.exec(text, { dom, ackId: this.mountAckId }, () => {});
+      commandToApply.exec(text, { dom, ackId: this.mountAckId }, message => {
+        if (message) {
+          this.handleClick(message)();
+        }
+      });
     } else {
       const indentedText = text != "." ? ` ${text}` : text;
       dom.simulateWordTyping(indentedText, this.mountAckId);

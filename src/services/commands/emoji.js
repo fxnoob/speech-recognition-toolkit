@@ -12,9 +12,8 @@ export default async langId => {
     name: commandAlias,
     description: description,
     match: "startsWith",
-    exec: async (text, options, callback) => {
+    exec: async (text, options) => {
       const { dom, ackId } = options;
-      let alertText;
       const emojiText = text.replace(commandAlias, "").trim();
       const emojiContent = await emoji.getSomeWHatSimilarEmoji(
         langId,
@@ -23,12 +22,6 @@ export default async langId => {
       if (emojiContent) {
         dom.simulateWordTyping(` ${emojiContent.replacement} `, ackId);
       }
-      alertText = emojiContent
-        ? `${commandAlias}:  ${emojiContent.replacement}`
-        : await translationService.getMessage(langId, "emoji_not_found") +
-          " :" +
-          emojiText;
-      callback(alertText);
     }
   };
 };
