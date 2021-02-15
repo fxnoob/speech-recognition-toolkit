@@ -1,6 +1,7 @@
-import translationService from "../translationService";
 /* eslint-disable no-unused-vars */
+import translationService from "../translationService";
 import MessagePassing from "../messagePassing";
+import WebsiteNames from "../popular_websites_files/en";
 export default async langId => {
   const commandAlias = await translationService.getMessage(langId, "command_go_to_label");
   const description = await translationService.getMessage(
@@ -17,7 +18,8 @@ export default async langId => {
         .replace(commandAlias, "")
         .toLowerCase()
         .trim();
-      MessagePassing.sendMessage("/go_to", { url: commandContent });
+      const url = WebsiteNames[commandContent] ? WebsiteNames[commandContent] : commandContent;
+      MessagePassing.sendMessage("/go_to", { url });
       callback();
     }
   };
