@@ -64,5 +64,7 @@ Features:
 
 `Go to`: Say 'Go to facebook.com' to open new tab for facebook.com 
 
+`Remind me`: Say 'Remind me in 9 minutes' to set a reminder for 10 minutes.
+
 #### Note: 
 Commands name changes according to the selected language.
