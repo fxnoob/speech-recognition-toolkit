@@ -7,9 +7,11 @@ export default async langId => {
   );
   return {
     id: '0C52F324-0B39-8EC0-178E-7A2A16F6A629',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "exact",
+    condition: "exact",
+    match: [commandAlias],
     exec: async () => {
       window.scrollBy(0, 100);
     }

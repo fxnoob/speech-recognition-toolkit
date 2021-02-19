@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types,react/jsx-key */
+/* eslint-disable react/prop-types */
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import FileCopy from "@material-ui/icons/FileCopy";
@@ -10,12 +10,13 @@ import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
 import messagePassing from "../services/messagePassing";
 import dom from "../services/dom";
-import cmd from "../services/commandsService";
+import commandService from "../services/commandsService";
 import db from "../services/db";
+import guid from "../services/guid";
 
 const styles = theme => ({
   close: {
-    padding: theme.spacing.unit / 2
+    padding: theme.spacing(0.5)
   }
 });
 
@@ -36,7 +37,7 @@ class Dom extends React.Component {
   init = async () => {
     // fetch commands for default language
     const { defaultLanguage } = await db.get("defaultLanguage");
-    this.commands = await cmd.getCommands(defaultLanguage.code);
+    this.commands = await commandService.getCommands(defaultLanguage.code);
     this.langId = defaultLanguage.code;
     // put mountAckId in dom
     this.mountAckDom();
@@ -48,6 +49,11 @@ class Dom extends React.Component {
     messagePassing.on("/sr_text", async req => {
       const { text, langId } = req;
       this.speechToTextListenerCallback(text, langId);
+    });
+    /** listen to any backend command message */
+    messagePassing.on("/message", async req => {
+      const { message } = req;
+      this.handleClick(message)();
     });
   };
   mountAckDom = () => {
@@ -61,37 +67,30 @@ class Dom extends React.Component {
   };
   async speechToTextListenerCallback(text, langId) {
     /** open snackbar with recognised text if any element is not active */
-    if (!dom.inIframe()) {
-      this.handleClick(text)();
-    }
+    this.handleClick(text)();
     text = text.toLowerCase();
-    const { commandsConfig } = await db.get("commandsConfig") || {};
     if (langId != this.langId) {
       this.langId = langId;
-      this.commands = await cmd.getCommands(this.langId);
+      this.commands = await commandService.getCommands(this.langId);
     }
-    const commandIndex = this.commands.findIndex(
-      p =>
-        commandsConfig[p.id] &&
-        (p.match == "startsWith" && text.startsWith(p.name.toLowerCase()) ||
-          p.match == "exact" && text == p.name.toLowerCase())
-    );
-    if (commandIndex != -1) {
-      const commandToApply = this.commands[commandIndex];
-      commandToApply.exec(text, { dom, ackId: this.mountAckId }, message => {
-        if (message) {
-          this.handleClick(message)();
-        }
-      });
-    } else {
-      const indentedText = text != "." ? ` ${text}` : text;
-      dom.simulateWordTyping(indentedText, this.mountAckId);
-    }
+    await commandService.getMatchingCommand(this.commands,text, (command, commandContent) => {
+      if (command) {
+        command.exec(commandContent, { dom, ackId: this.mountAckId }, message => {
+          if (message) {
+            this.handleClick(message)();
+          }
+        });
+      } else {
+        const indentedText = text != "." ? ` ${text}` : text;
+        dom.simulateWordTyping(indentedText, this.mountAckId);
+      }
+    });
   }
   handleClick = message => () => {
+    if (dom.inIframe()) return;
     this.queue.push({
       message,
-      key: new Date().getTime()
+      key: guid.generateGuid(),
     });
     if (this.state.open) {
       // immediately begin dismissing current message
@@ -184,6 +183,7 @@ class Dom extends React.Component {
               </IconButton>
             </IFrame>,
             <IFrame
+              key="iframe-1"
               initialContent={initialContent()}
               className="default-iframe"
               style={{ border: "none", height: "50px", width: "50px" }}
@@ -201,6 +201,7 @@ class Dom extends React.Component {
               </IconButton>
             </IFrame>,
             <IFrame
+              key="iframe-2"
               initialContent={initialContent()}
               className="default-iframe"
               style={{ border: "none", height: "50px", width: "50px" }}

@@ -9,9 +9,11 @@ export default async langId => {
   );
   return {
     id: 'EFFFCB45-86C9-AABC-CF9B-DF6490AC0462',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "exact",
+    condition: "exact",
+    match: [commandAlias],
     exec: async (text, options) => {
       const { dom, ackId } = options;
       const randomTip = tips[Math.floor(Math.random() * tips.length)];

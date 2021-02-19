@@ -12,24 +12,22 @@ export default async langId => {
   const strDown = await translationService.getMessage(langId, 'down_label');
   return {
     id: "D7F4AFA8-8EA1-BC0F-6E19-D608FEBFAE6F",
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "startsWith",
+    condition: "startsWith",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
       const { dom, ackId } = options;
-      let commandContent = text
-        .replace(commandAlias, "")
-        .toLowerCase()
-        .trim();
       const keyMapping = {
         [strLeft]: 37,
         [strRight]: 39,
         [strUp]: 38,
         [strDown]: 40
       };
-      if (keyMapping[commandContent]) {
+      if (keyMapping[text]) {
         dom.simulateKeyPress(
-          [keyMapping[commandContent], false, false, false],
+          [keyMapping[text], false, false, false],
           ackId
         );
       }

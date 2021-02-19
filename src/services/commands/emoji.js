@@ -9,19 +9,20 @@ export default async langId => {
   );
   return {
     id: '4DBE9DD0-E8A2-225B-6F61-DD00381B528D',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "startsWith",
+    condition: "startsWith",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
       const { dom, ackId } = options;
-      const emojiText = text.replace(commandAlias, "").trim();
       const emojiContent = await emoji.getSomeWHatSimilarEmoji(
         langId,
-        emojiText.toLowerCase()
+        text.toLowerCase()
       );
       if (emojiContent) {
         dom.simulateWordTyping(` ${emojiContent.replacement} `, ackId);
-        callback(`closest emoji to string ${emojiText} = ${emojiContent}`);
+        callback(`closest emoji to string ${text} = ${emojiContent.replacement}`);
       }
     }
   };

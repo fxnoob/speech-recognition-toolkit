@@ -11,9 +11,11 @@ export default async langId => {
   );
   return {
     id: '35702128-F219-F734-0867-1364887AF2B2',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "exact",
+    condition: "exact",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
       const { dom } = options;
       const { lastFocusedElementDocument } = dom;

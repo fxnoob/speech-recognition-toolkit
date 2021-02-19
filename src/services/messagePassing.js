@@ -4,7 +4,11 @@ class MessagePassing {
   constructor() {
     this.routes = {};
     this.options = {};
+    this.listenerMode = true;
     this.addListener();
+  }
+  setListenerMode(mode) {
+    this.listenerMode = mode;
   }
   setOptions(options) {
     this.options = options;
@@ -14,11 +18,13 @@ class MessagePassing {
   }
   addListener() {
     chrome.runtime.onMessage.addListener((req, sender, res) => {
+      if (!this.listenerMode) return;
       try {
         this.routes[req.path](req, res, this.options);
       } catch (e) {
         /* eslint-disable no-console */
         console.log(e);
+        console.log({ path: req.path });
         /* eslint-enable no-console */
       }
       return true;
