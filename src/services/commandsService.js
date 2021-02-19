@@ -15,6 +15,7 @@ import undoAllCommand from "./commands/undo_all";
 import arrowCommand from "./commands/arrow";
 import goToCommand from "./commands/go_to";
 import remindMeCommand from "./commands/remind_me";
+import searchGoogleCommand from "./commands/search";
 
 /**
  *
@@ -69,6 +70,7 @@ class Commands {
       } else if (type == "backend") {
         cmd.push(await goToCommand(langId));
         cmd.push(await remindMeCommand(langId));
+        cmd.push(await searchGoogleCommand(langId));
       }
     } catch (e) {
       // eslint-disable-next-line no-console

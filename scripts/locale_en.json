@@ -203,6 +203,18 @@
     "message": "open",
     "description": "command go to label 3"
   },
+  "command_search_label": {
+    "message": "search",
+    "description": "command search label"
+  },
+  "command_search_label2": {
+    "message": "google",
+    "description": "command search label 2"
+  },
+  "command_search_description": {
+    "message": "Say search cat or google cat to search cat on google.com",
+    "description": "command search desc"
+  },
   "command_go_to_description": {
     "message": "Say 'go to facebook.com to open new tab for facebook.com",
     "description": "command go to description"

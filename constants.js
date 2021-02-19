@@ -31,8 +31,9 @@ const constants = {
     "9703B37A-11D7-BAB8-3FE9-E70D637BB49A": true,// undo
     "4D743502-F987-405E-D163-E57E8DD201AE": false, // undo_all
     "D7F4AFA8-8EA1-BC0F-6E19-D608FEBFAE6F": true, // arrow - up | down | left | right
-    "59A7532E-805F-8882-A6F1-6BF822E96612": false, // go_to url
+    "59A7532E-805F-8882-A6F1-6BF822E96612": false, // go_to, open, visit url
     "CB056517-63D9-B551-8511-11E80088C8EF": false, // remind_me
+    "2B6A9F64-1300-3A56-69AE-7BA38AFA06A8": true, // search, google
   },
   contentScript: {
     mountAckId: guid.generateGuid(), // <div id='${mountAckId}'/> for checking if content script is mounted in the frame
