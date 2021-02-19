@@ -2,12 +2,20 @@
 import translationService from "../translationService";
 import WebsiteNames from "../popular_websites_files/en";
 import chromeService from "../chromeService";
-const parseDomain = require("parse-domain");
+import { parseDomain } from "parse-domain";
 export default async langId => {
   const commandAlias = await translationService.getMessage(
     langId,
     "command_go_to_label"
-  );
+  ); // go to
+  const commandAlias2 = await translationService.getMessage(
+    langId,
+    "command_go_to_label2"
+  ); // visit
+  const commandAlias3 = await translationService.getMessage(
+    langId,
+    "command_go_to_label3"
+  ); // open
   const description = await translationService.getMessage(
     langId,
     "command_go_to_description"
@@ -18,17 +26,15 @@ export default async langId => {
     name: commandAlias,
     description: description,
     condition: "startsWith",
-    match: [commandAlias, "visit", "open"],
+    match: [commandAlias, commandAlias2, commandAlias3],
     exec: async (text, options, callback) => {
       let url;
-      const key = parseDomain(text, {
-        customTlds: ["local", ".local"]
-      });
-      if (key) {
+      const { type } = parseDomain(text);
+      if (type != "NOT_LISTED") {
         url = text;
       } else {
         url = WebsiteNames[text]
-          ? WebsiteNames[text]
+          ? `https://${WebsiteNames[text]}`
           : `https://www.google.com/search?q=${text}`;
       }
       chromeService.openUrl(url);

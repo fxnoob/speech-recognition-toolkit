@@ -195,6 +195,14 @@
     "message": "go to",
     "description": "command go to label"
   },
+  "command_go_to_label2": {
+    "message": "visit",
+    "description": "command go to label 2"
+  },
+  "command_go_to_label3": {
+    "message": "open",
+    "description": "command go to label 3"
+  },
   "command_go_to_description": {
     "message": "Say 'go to facebook.com to open new tab for facebook.com",
     "description": "command go to description"
