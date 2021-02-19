@@ -60,7 +60,7 @@ Features:
 
 `undo all`: Say 'undo all' to undo everything on current page upto 20 depth.
 
-`Arrow`: Say 'Arrow left' to type left arrow key. (play 2048 game with your voice on https://play2048.co/ by saying arrow left , arrow right, arrow up, arrow down).
+    `Arrow`: Say 'Arrow left' to type left arrow key. (play 2048 game with your voice on https://play2048.co/ by saying arrow left , arrow right, arrow up, arrow down).
 
 `Go to`: Say 'Go to facebook.com' to open new tab for facebook.com 
 

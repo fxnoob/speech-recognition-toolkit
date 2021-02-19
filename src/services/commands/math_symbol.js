@@ -5,20 +5,18 @@ export default async langId => {
   const description = "say 'math symbol square root' to type √a (math symbol). checkout whole list of symbols from link given on homepage";
   return {
     id: '3EC8A2EA-07B2-2612-A677-3FB0F5298D1D',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "startsWith",
+    condition: "startsWith",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
-      let commandContent = text
-        .replace(commandAlias, "")
-        .toLowerCase()
-        .trim();
       const { dom, ackId } = options;
-      const symbolRes = symbols[commandContent];
+      const symbolRes = symbols[text];
       if (symbolRes) {
         dom.simulateWordTyping(` ${symbolRes}`, ackId);
       } else {
-        dom.simulateWordTyping(text, ackId);
+        dom.simulateWordTyping(` ${commandAlias} ${text}`, ackId);
       }
     }
   };

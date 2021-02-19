@@ -8,9 +8,11 @@ export default async langId => {
   );
   return {
     id: '2C813AB6-109C-7BBE-50A5-B54CE1C30BD8',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "exact",
+    condition: "exact",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
       const { dom, ackId } = options;
       dom.simulateWordTyping("\n\r", ackId);

@@ -49,7 +49,7 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   createIncognitoWindow = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       chrome.windows.create({ focused: true, incognito: true }, win => {
         resolve(win);
       });
@@ -64,7 +64,7 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   getWindow = winId => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       chrome.windows.get(winId, info => {
         resolve(info);
       });
@@ -117,11 +117,11 @@ class ChromeApi {
    * @memberof ChromeApi
    */
   getActiveTab = winId => {
-    const config = { active: true , currentWindow: true, };
+    const config = { active: true, currentWindow: true };
     if (winId) {
       config.windowId = winId;
     }
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       chrome.tabs.query(config, tabs => {
         resolve(tabs[0]);
       });
@@ -235,7 +235,7 @@ class ChromeApi {
    */
   openUrl = url => {
     chrome.tabs.create({ url: url }, () => {});
-  }
+  };
   /**
    * Open help page
    *
@@ -289,6 +289,38 @@ class ChromeApi {
    */
   getI18nMessage(key) {
     return chrome.i18n.getMessage(key);
+  }
+  /**
+   * Check whether script is running on background page or as content script
+   *
+   * @method
+   * @memberof ChromeApi
+   */
+  getScriptContext() {
+    let context = "";
+    if (location.protocol == "chrome-extension:") {
+      if (location.pathname == "/_generated_background_page.html") {
+        context = "background";
+      } else {
+        context = "content";
+      }
+    } else {
+      context = "content";
+    }
+    return context;
+  }
+  /**
+   * send message to background page
+   * @param path namespace(route) string
+   * @param payload data object
+   * @param callback function callback
+   * @memberOf ChromeApi
+   * @method
+   * */
+  sendMessage(path, payload, callback) {
+    const data = payload;
+    data.path = path;
+    chrome.runtime.sendMessage(data, callback);
   }
 }
 const chromeService = new ChromeApi();

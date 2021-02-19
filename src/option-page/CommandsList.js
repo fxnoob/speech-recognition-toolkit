@@ -26,9 +26,9 @@ const CommandList = () => {
     const { commandsConfig } = await db.get("commandsConfig") || {};
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
-    const commandsJson = await commandService.getCommands(defaultLanguage.code);
+    const commandsJson = await commandService.getAllCommands(defaultLanguage.code);
     const commandsList = commandsJson.map(command => {
-      return [command.name, command.description, <Checkbox key={command.id}
+      return [command.match.join(', '), command.description, <Checkbox key={command.id}
         checked={commandsConfig[command.id]}
         onChange={handleChange(command.id, commandsConfig)}
         inputProps={{ 'aria-label': 'enable/disable command' }}
@@ -37,9 +37,9 @@ const CommandList = () => {
     setData(commandsList);
   };
   const options = {
-    rowsPerPage: 15,
+    rowsPerPage: 20,
     customToolbarSelect: () => {},
-    selectableRows: false
+    selectableRows: 'none'
   };
   return (
     <Container>

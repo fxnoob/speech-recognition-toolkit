@@ -1,25 +1,37 @@
 /* eslint-disable no-unused-vars */
 import translationService from "../translationService";
-import MessagePassing from "../messagePassing";
 import WebsiteNames from "../popular_websites_files/en";
+import chromeService from "../chromeService";
+const parseDomain = require("parse-domain");
 export default async langId => {
-  const commandAlias = await translationService.getMessage(langId, "command_go_to_label");
+  const commandAlias = await translationService.getMessage(
+    langId,
+    "command_go_to_label"
+  );
   const description = await translationService.getMessage(
     langId,
     "command_go_to_description"
   );
   return {
     id: "59A7532E-805F-8882-A6F1-6BF822E96612",
+    type: "backend",
     name: commandAlias,
     description: description,
-    match: "startsWith",
+    condition: "startsWith",
+    match: [commandAlias, "visit", "open"],
     exec: async (text, options, callback) => {
-      let commandContent = text
-        .replace(commandAlias, "")
-        .toLowerCase()
-        .trim();
-      const url = WebsiteNames[commandContent] ? WebsiteNames[commandContent] : commandContent;
-      MessagePassing.sendMessage("/go_to", { url });
+      let url;
+      const key = parseDomain(text, {
+        customTlds: ["local", ".local"]
+      });
+      if (key) {
+        url = text;
+      } else {
+        url = WebsiteNames[text]
+          ? WebsiteNames[text]
+          : `https://www.google.com/search?q=${text}`;
+      }
+      chromeService.openUrl(url);
       callback();
     }
   };

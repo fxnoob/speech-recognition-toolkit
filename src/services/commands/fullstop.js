@@ -1,5 +1,4 @@
 import translationService from "../translationService";
-
 export default async langId => {
   const commandAlias = await translationService.getMessage(
     langId,
@@ -11,9 +10,11 @@ export default async langId => {
   );
   return {
     id: 'BAC548F8-69DB-07DE-2AA6-E687AEF889CC',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "exact",
+    condition: "exact",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
       const { dom, ackId } = options;
       dom.simulateWordTyping(".", ackId);

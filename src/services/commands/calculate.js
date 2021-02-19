@@ -69,41 +69,20 @@ export default async langId => {
   const description = "say `calculate five times 15` to calculate 5 * 15";
   return {
     id: '20850A52-2A46-42A2-BED5-35F9E9B55344',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "startsWith",
+    condition: "startsWith",
+    match: [commandAlias],
     exec: async (text, options, callback) => {
-      const symbols = {
-        x: "*",
-        multiplies: "*",
-        multiply: "*",
-        times: "*",
-        plus: "+",
-        minus: "-",
-        divides: "/",
-        divide: "/",
-        "divides by": "/",
-        "divide by": "/",
-        inches: "inch",
-        centimeter: "cm",
-        centimeters: "cm",
-        degree: "deg"
-      };
-      let commandContent = text
-        .replace(commandAlias, "")
-        .toLowerCase()
-        .trim();
-      Object.keys(symbols).map(key => {
-        commandContent = commandContent.replace(key, symbols[key]);
-      });
       const { dom, ackId } = options;
       try {
-        const res = parse(commandContent);
+        const res = parse(text);
         dom.simulateWordTyping(` ${res}`, ackId);
-        const responseText = `${commandContent} = ${res}`;
+        const responseText = `${text} = ${res}`;
         callback(responseText);
       } catch (e) {
-        dom.simulateWordTyping(` ${text}`, ackId);
+        dom.simulateWordTyping(` ${commandAlias} ${text}`, ackId);
       }
     }
   };

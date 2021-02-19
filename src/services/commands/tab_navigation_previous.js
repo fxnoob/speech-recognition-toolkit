@@ -12,9 +12,11 @@ export default async langId => {
   );
   return {
     id: 'DF6E48B2-3372-3A06-C801-E964B7F73AD3',
+    type: 'frontend',
     name: commandAlias,
     description: description,
-    match: "exact",
+    condition: "exact",
+    match: [commandAlias],
     exec: async () => {
       tabNavigation.navigate('Left');
     }

@@ -3,21 +3,39 @@ import MessagePassing from "./services/messagePassing";
 import guid from "./services/guid";
 import EmojiWorker from "./services/emoji.worker";
 import TranslationWorker from "./services/translation.worker";
-import chromeService from "./services/chromeService";
+import commandService from "./services/commandsService";
 
 const emojiWorker = new EmojiWorker();
 const translationWorker = new TranslationWorker();
 
 const Routes = async (voice, contextMenus) => {
+  let commands;
   MessagePassing.setOptions({ emojiWorker, translationWorker });
+  const { defaultLanguage } = await db.get("defaultLanguage");
+  // fetch backend commands
+  commands = await commandService.getCommands(defaultLanguage.code, "backend");
   voice.addCommand({
     "*text": async text => {
-      const { defaultLanguage } = await db.get("defaultLanguage");
-      const payload = {
-        text,
-        langId: defaultLanguage.code
-      };
-      MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
+      await commandService.getMatchingCommand(commands, text, (command, commandContent) => {
+        if (command) {
+          command.exec(commandContent, {}, message => {
+            if (message) {
+              //send backend command message to active tab if any
+              MessagePassing.sendMessageToActiveTab(
+                "/message",
+                { message },
+                () => {}
+              );
+            }
+          });
+        } else {
+          const payload = {
+            text,
+            langId: defaultLanguage.code
+          };
+          MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
+        }
+      });
     }
   });
   // save selected text in storage instead writing it to clipboard
@@ -75,6 +93,11 @@ const Routes = async (voice, contextMenus) => {
       "defaultLanguage",
       "isMicListening"
     );
+    // fetch backend commands
+    commands = await commandService.getCommands(
+      defaultLanguage.code,
+      "backend"
+    );
     if (isMicListening) {
       voice.stop();
       voice.setLanguage(defaultLanguage.code);
@@ -130,31 +153,6 @@ const Routes = async (voice, contextMenus) => {
         res(message);
       }
     });
-  });
-  // listen for 'go to' command
-  let gotoCommandLock = false;
-  MessagePassing.on("/go_to", async req => {
-    if (gotoCommandLock) return;
-    gotoCommandLock = true;
-    const { url } = req;
-    chromeService.openUrl(`http://${url}`);
-    setTimeout(() => {
-      gotoCommandLock = false;
-    }, 3000);
-  });
-  // listen for 'set_alarm'
-  let remindMeCommandLock = false;
-  MessagePassing.on("/set_alarm", async req => {
-    if (remindMeCommandLock) return;
-    remindMeCommandLock = true;
-    const { timeStamp } = req;
-    const alarmName = guid.generateGuid();
-    chrome.alarms.create(alarmName, {
-      when: timeStamp
-    });
-    setTimeout(() => {
-      remindMeCommandLock = false;
-    }, 3000);
   });
 };
 
