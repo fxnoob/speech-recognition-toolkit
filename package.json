@@ -16,7 +16,9 @@
     "deploy_jsdoc": "yarn jsdoc &&  gh-pages -d out",
     "test": "yarn build",
     "generate:locale": "node scripts/translate_locales.js",
-    "generate:emoji": "node scripts/transform_emoji.js"
+    "generate:emoji": "node scripts/transform_emoji.js",
+    "generate:guid": "node scripts/random.js",
+    "generate:command": ""
   },
   "husky": {
     "hooks": {

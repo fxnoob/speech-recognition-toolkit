@@ -26,6 +26,8 @@ export default async langId => {
       const url = activeTab ? activeTab.url : null;
       if (url.match(/.*\.youtube\.com/)) {
         chrome.tabs.update({ url: `https://www.youtube.com/results?search_query=${text}` });
+      } else if(url.match(/.*\.wikipedia\.com/)) {
+        chrome.tabs.update({ url: `https://wikipedia.org/w/index.php?search==${text}` });
       } else {
         chromeService.openUrl(`https://www.google.com/search?q=${text}`);
       }

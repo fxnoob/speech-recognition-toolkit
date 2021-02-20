@@ -73,9 +73,10 @@ class Dom extends React.Component {
       this.langId = langId;
       this.commands = await commandService.getCommands(this.langId);
     }
-    await commandService.getMatchingCommand(this.commands,text, (command, commandContent) => {
+    await commandService.getMatchingCommand(this.commands,text, (command, args) => {
       if (command) {
-        command.exec(commandContent, { dom, ackId: this.mountAckId }, message => {
+        const { originalText, commandContent } = args;
+        command.exec(commandContent, { dom, ackId: this.mountAckId, originalText }, message => {
           if (message) {
             this.handleClick(message)();
           }

@@ -135,7 +135,7 @@ class ChromeApi {
    *@param {Number}
    * @memberof ChromeApi
    */
-  tryGetActiveTab = async (winId) => {
+  tryGetActiveTab = async winId => {
     return asyncTryCatch(this.getActiveTab, winId);
   };
 
@@ -333,6 +333,60 @@ class ChromeApi {
     data.path = path;
     chrome.runtime.sendMessage(data, callback);
   }
+  /**
+   * request for permission access
+   * @param permissions string array
+   * @memberOf ChromeApi
+   * @method
+   * */
+  async requestPermission(...permissions) {
+    return new Promise((resolve) => {
+      chrome.permissions.request(
+        {
+          permissions: permissions
+        },
+        granted => {
+          if (granted) {
+            resolve(true);
+          } else {
+            resolve(false);
+          }
+        }
+      );
+    });
+  }
+  /**
+   * Bookmarks namespace
+   * @class bookmark
+   * @property
+   *@memberOf ChromeApi
+   * */
+  bookmark = {
+    create: async () => {
+      const activeTab = await this.tryGetActiveTab();
+      if (activeTab) {
+        chrome.bookmarks.create({
+          title: activeTab.title,
+          url: activeTab.url
+        });
+      }
+    },
+    remove: async() => {
+      const activeTab = await this.tryGetActiveTab();
+      if (activeTab) {
+        chrome.bookmarks.search(
+          {
+            url: activeTab.url
+          },
+          results => {
+            if (results.length > 0) {
+              chrome.bookmarks.remove(results[0].id);
+            }
+          }
+        );
+      }
+    }
+  };
 }
 const chromeService = new ChromeApi();
 export default chromeService;

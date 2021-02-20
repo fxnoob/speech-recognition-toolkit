@@ -10,7 +10,8 @@
     "<all_urls>",
     "tts",
     "alarms",
-    "notifications"
+    "notifications",
+    "bookmarks"
   ],
   "default_locale": "en",
   "background": {
