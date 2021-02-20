@@ -215,6 +215,34 @@
     "message": "Say search cat or google cat to search cat on google.com",
     "description": "command search desc"
   },
+  "command_bookmark_label": {
+    "message": "bookmark",
+    "description": "command bookmark label"
+  },
+  "command_bookmark_label_bookmark_this_page": {
+    "message": "bookmark this page",
+    "description": "command bookmark label 2"
+  },
+  "command_bookmark_label_remove_bookmark": {
+    "message": "remove bookmark",
+    "description": "command bookmark label 3"
+  },
+  "command_bookmark_label__remove_this_bookmark": {
+    "message": "remove this bookmark",
+    "description": "command bookmark label 4"
+  },
+  "command_bookmark_description": {
+    "message": " Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark",
+    "description": "command bookmark desc"
+  },
+  "command_bookmark_add_callback_label": {
+    "message": "Added this page to bookmarks!",
+    "description": "command bookmark add callback"
+  },
+  "command_bookmark_remove_callback_label": {
+    "message": "Removed this page from bookmarks!",
+    "description": "command bookmark remove callback"
+  },
   "command_go_to_description": {
     "message": "Say 'go to facebook.com to open new tab for facebook.com",
     "description": "command go to description"

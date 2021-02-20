@@ -60,11 +60,15 @@ Features:
 
 `undo all`: Say 'undo all' to undo everything on current page upto 20 depth.
 
-    `Arrow`: Say 'Arrow left' to type left arrow key. (play 2048 game with your voice on https://play2048.co/ by saying arrow left , arrow right, arrow up, arrow down).
+`Arrow`: Say 'Arrow left' to type left arrow key. (play 2048 game with your voice on https://play2048.co/ by saying arrow left , arrow right, arrow up, arrow down).
 
 `Go to`: Say 'Go to facebook.com' to open new tab for facebook.com 
 
 `Remind me`: Say 'Remind me in 9 minutes' to set a reminder for 10 minutes.
+
+`search`: Say 'search cat' to search cat on google or on youtube
+
+`bookmark` Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark
 
 #### Note: 
 Commands name changes according to the selected language.

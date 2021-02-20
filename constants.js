@@ -34,6 +34,7 @@ const constants = {
     "59A7532E-805F-8882-A6F1-6BF822E96612": false, // go_to, open, visit url
     "CB056517-63D9-B551-8511-11E80088C8EF": false, // remind_me
     "2B6A9F64-1300-3A56-69AE-7BA38AFA06A8": true, // search, google
+    "448838E8-1E72-75AD-101E-C129E2FD5DF0": false, // bookmark this page or, remove bookmark
   },
   contentScript: {
     mountAckId: guid.generateGuid(), // <div id='${mountAckId}'/> for checking if content script is mounted in the frame

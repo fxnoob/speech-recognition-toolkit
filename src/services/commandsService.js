@@ -16,6 +16,7 @@ import arrowCommand from "./commands/arrow";
 import goToCommand from "./commands/go_to";
 import remindMeCommand from "./commands/remind_me";
 import searchGoogleCommand from "./commands/search";
+import bookmarkCommand from "./commands/bookmark";
 
 /**
  *
@@ -27,7 +28,8 @@ class Commands {
     this.options = {};
     this.commands = {};
     this.conditions = {
-      startsWith: (alias, text) => text.toLowerCase().startsWith(alias.toLowerCase()),
+      startsWith: (alias, text) =>
+        text.toLowerCase().startsWith(alias.toLowerCase()),
       exact: (alias, text) => text.toLowerCase() == alias.toLowerCase()
     };
   }
@@ -71,6 +73,7 @@ class Commands {
         cmd.push(await goToCommand(langId));
         cmd.push(await remindMeCommand(langId));
         cmd.push(await searchGoogleCommand(langId));
+        cmd.push(await bookmarkCommand(langId));
       }
     } catch (e) {
       // eslint-disable-next-line no-console
@@ -111,11 +114,12 @@ class Commands {
         this.conditions[commandToApply.condition](al, text)
       );
       const alias = commandToApply.match[aliasIndex];
+      const originalText = text;
       const commandContent = text
         .replace(alias, "")
         .toLowerCase()
         .trim();
-      callback(commandToApply, commandContent);
+      callback(commandToApply, { originalText, commandContent });
     } else {
       callback();
     }

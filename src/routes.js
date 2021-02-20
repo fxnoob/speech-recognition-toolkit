@@ -16,9 +16,12 @@ const Routes = async (voice, contextMenus) => {
   commands = await commandService.getCommands(defaultLanguage.code, "backend");
   voice.addCommand({
     "*text": async text => {
-      await commandService.getMatchingCommand(commands, text, (command, commandContent) => {
+      // eslint-disable-next-line no-console
+      console.log("recognised text:", text);
+      await commandService.getMatchingCommand(commands, text, (command, args) => {
         if (command) {
-          command.exec(commandContent, {}, message => {
+          const { originalText, commandContent } = args;
+          command.exec(commandContent, { originalText }, message => {
             if (message) {
               //send backend command message to active tab if any
               MessagePassing.sendMessageToActiveTab(
