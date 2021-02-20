@@ -1,3 +1,4 @@
+import { asyncTryCatch } from "./helper";
 /**
  * Abstraction class to interact with the chrome extension API
  *
@@ -126,6 +127,16 @@ class ChromeApi {
         resolve(tabs[0]);
       });
     });
+  };
+  /**
+   * try catch get active tab
+   *
+   * @method
+   *@param {Number}
+   * @memberof ChromeApi
+   */
+  tryGetActiveTab = async (winId) => {
+    return asyncTryCatch(this.getActiveTab, winId);
   };
 
   sendMessageToActiveTab = async (payload, callback) => {

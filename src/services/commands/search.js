@@ -15,14 +15,20 @@ export default async langId => {
     "command_search_description"
   );
   return {
-    id: "59A7532E-805F-8882-A6F1-6BF822E96612",
+    id: "2B6A9F64-1300-3A56-69AE-7BA38AFA06A8",
     type: "backend",
     name: commandAlias,
     description: description,
     condition: "startsWith",
     match: [commandAlias, commandAlias2],
     exec: async (text, options, callback) => {
-      chromeService.openUrl(`https://www.google.com/search?q=${text}`);
+      const activeTab = await chromeService.tryGetActiveTab();
+      const url = activeTab ? activeTab.url : null;
+      if (url.match(/.*\.youtube\.com/)) {
+        chrome.tabs.update({ url: `https://www.youtube.com/results?search_query=${text}` });
+      } else {
+        chromeService.openUrl(`https://www.google.com/search?q=${text}`);
+      }
       callback();
     }
   };

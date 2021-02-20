@@ -27,8 +27,8 @@ class Commands {
     this.options = {};
     this.commands = {};
     this.conditions = {
-      startsWith: (alias, text) => text.startsWith(alias.toLowerCase()),
-      exact: (alias, text) => text == alias.toLowerCase()
+      startsWith: (alias, text) => text.toLowerCase().startsWith(alias.toLowerCase()),
+      exact: (alias, text) => text.toLowerCase() == alias.toLowerCase()
     };
   }
   /***
