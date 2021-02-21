@@ -79,6 +79,15 @@ function updateCommandsConfig(commandId, commandStatus) {
   commandsConfigJson[commandId] = commandStatus;
   jsonfile.writeFileSync(filePath, commandsConfigJson, { flag: "w" });
 }
+function registerCommandInFile(filename, callback) {
+  const name = filename.split('.')[0];
+  const _registryFilePath = path.join(__dirname, "../src/services/commands/_registry.js");
+  const importStatement = `export { default as ${name}Command } from "./${name}";`;
+  fs.readFile(_registryFilePath, { encoding: 'utf8' }, (err, code) => {
+    const newCode = code + importStatement + '\n';
+    fs.writeFile(_registryFilePath, newCode, 'utf8', callback);
+  });
+}
 async function updateLocales(locales) {
   /** first read locale file json and then update */
   const localeFilePath = path.join(__dirname, "locale_en.json");
@@ -244,7 +253,8 @@ export async function cli(args) {
     /** update locales */
     await updateLocales(props.locales);
   }
-  console.log(chalk.blue(`your command template has been created here: ${commandFilePath}`));
-  const commandServiceFilePath = path.join(__dirname, "../src/services/commandsService.js");
-  console.log(chalk.green(`Import ${commandFilePath} in ${commandServiceFilePath}`));
+  /** update command in registry */
+  registerCommandInFile(options.filename, ()=>{
+    console.log(chalk.cyan(`your command template has been created here: ${commandFilePath}`));
+  });
 }

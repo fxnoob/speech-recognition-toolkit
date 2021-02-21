@@ -1,22 +1,5 @@
 import db from "./db";
-import emojiCommand from "./commands/emoji";
-import undoCommand from "./commands/undo";
-import redoCommand from "./commands/redo";
-import newLineCommand from "./commands/newline";
-import pressEnterCommand from "./commands/press_enter";
-import calculateCommand from "./commands/calculate";
-import mathSymbolCommand from "./commands/math_symbol";
-import mindfulnessCommand from "./commands/mindfulness";
-import scrollDownCommand from "./commands/scroll_down";
-import scrollUpCommand from "./commands/scroll_up";
-import tabNavigationNextCommand from "./commands/tab_navigation_next";
-import tabNavigationPreviousCommand from "./commands/tab_navigation_previous";
-import undoAllCommand from "./commands/undo_all";
-import arrowCommand from "./commands/arrow";
-import goToCommand from "./commands/go_to";
-import remindMeCommand from "./commands/remind_me";
-import searchGoogleCommand from "./commands/search";
-import bookmarkCommand from "./commands/bookmark";
+import * as cmds from "./commands/_registry";
 
 /**
  *
@@ -54,26 +37,11 @@ class Commands {
   async getCommands(langId, type = "frontend") {
     const cmd = [];
     try {
-      if (type == "frontend") {
-        cmd.push(await emojiCommand(langId));
-        cmd.push(await undoCommand(langId));
-        cmd.push(await redoCommand(langId));
-        cmd.push(await newLineCommand(langId));
-        cmd.push(await pressEnterCommand(langId));
-        cmd.push(await calculateCommand(langId));
-        cmd.push(await mathSymbolCommand(langId));
-        cmd.push(await mindfulnessCommand(langId));
-        cmd.push(await scrollDownCommand(langId));
-        cmd.push(await scrollUpCommand(langId));
-        cmd.push(await tabNavigationNextCommand(langId));
-        cmd.push(await tabNavigationPreviousCommand(langId));
-        cmd.push(await undoAllCommand(langId));
-        cmd.push(await arrowCommand(langId));
-      } else if (type == "backend") {
-        cmd.push(await goToCommand(langId));
-        cmd.push(await remindMeCommand(langId));
-        cmd.push(await searchGoogleCommand(langId));
-        cmd.push(await bookmarkCommand(langId));
+      for (const commandName in cmds) {
+        const commandInstance = await cmds[commandName](langId);
+        if (commandInstance.type == type) {
+          cmd.push(commandInstance);
+        }
       }
     } catch (e) {
       // eslint-disable-next-line no-console
