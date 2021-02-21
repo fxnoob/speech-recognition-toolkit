@@ -6,7 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import guid from "../src/services/guid";
 import { translateLocales } from "./translate_locales";
-import execa from 'execa';
+var execSh = require("exec-sh").promise;
 const jsonfile = require("jsonfile");
 
 function generateIdNamesMatchDescription(options) {
@@ -71,10 +71,8 @@ const description = await translationService.getMessage(langId, "${cmdDescLocale
   }
 }
 async function prettifyCodeInFiles() {
-  const result = await execa('npm', [`run fix:prettier`], {
-    cwd: __dirname,
-  });
-  return !result.failed;
+  const result = await execSh('npm run fix:prettier', true);
+  return result;
 }
 function updateCommandsConfig(commandId, commandStatus) {
   const filePath = path.join(__dirname,"../commandsConfig.json");
