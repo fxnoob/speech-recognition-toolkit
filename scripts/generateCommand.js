@@ -54,10 +54,9 @@ const description = "${options.description}"; // ${options.description}
 const description = await translationService.getMessage(langId, "${cmdDescLocaleKey}"); // ${options.description}
     `;
     locales.push({
-      [cmdDescLocaleKey]: {
-        message: options.description,
-        description: `command ${options.description} alias`
-      }
+      key: cmdDescLocaleKey,
+      message: options.description,
+      description: `command ${options.description} alias`
     });
     return {
       id: id,
