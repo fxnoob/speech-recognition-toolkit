@@ -70,8 +70,8 @@ const description = await translationService.getMessage(langId, "${cmdDescLocale
     };
   }
 }
-async function prettifyCodeInFile(filepath) {
-  const result = await execa('npm', [`run fix:prettier -- ${filepath}`], {
+async function prettifyCodeInFiles() {
+  const result = await execa('npm', [`run fix:prettier`], {
     cwd: __dirname,
   });
   return !result.failed;
@@ -240,7 +240,7 @@ export async function cli(args) {
   /** save template in the file */
   const commandFilePath = path.join(__dirname, `../src/services/commands/${options.filename}`);
   fs.writeFileSync(commandFilePath, template);
-  await prettifyCodeInFile(commandFilePath);
+  await prettifyCodeInFiles();
   /** update commandsConfig.json with new command's id and status */
   updateCommandsConfig(props.id, options.enabled);
   if (options.multilingual) {
@@ -248,4 +248,6 @@ export async function cli(args) {
     await updateLocales(props.locales);
   }
   console.log(chalk.blue(`your command template has been created here: ${commandFilePath}`));
+  const commandServiceFilePath = path.join(__dirname, "../src/services/commandsService.js");
+  console.log(chalk.green(`Import ${commandFilePath} in ${commandServiceFilePath}`));
 }

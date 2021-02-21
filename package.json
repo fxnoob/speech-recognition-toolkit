@@ -18,7 +18,7 @@
     "generate:locale": "node scripts/translate_locales.js",
     "generate:emoji": "node scripts/transform_emoji.js",
     "generate:command": "node scripts/generate-command",
-    "fix:prettier": "prettier --write"
+    "fix:prettier": "prettier --write $(git ls-files --others --exclude-standard)"
   },
   "husky": {
     "hooks": {
@@ -104,6 +104,7 @@
     "react-swipeable-views": "^0.13.1",
     "string-similarity": "^4.0.2",
     "tailwindcss": "^1.8.3",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "execa": "latest"
   }
 }
