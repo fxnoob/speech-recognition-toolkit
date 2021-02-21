@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import guid from "../src/services/guid";
 const jsonfile = require("jsonfile");
+import { translateLocales } from "./translate_locales";
 
 function generateIdNamesMatchDescription(options) {
   const id = guid.generateGuid();
@@ -86,6 +87,8 @@ async function updateLocales(locales) {
     };
   });
   jsonfile.writeFileSync(localeFilePath, localesJson, { flag: "w" });
+  /** translate locales*/
+  await translateLocales();
 }
 const getCommandTemplate = options => {
   const stuff = generateIdNamesMatchDescription(options);
@@ -154,6 +157,22 @@ async function promptForMissingOptions(options) {
       message: "Please type filename for command:"
     });
   }
+  if (isNull(options.names)) {
+    questions.push({
+      type: "input",
+      name: "names",
+      message: "type name(s) for command(separated by ,):"
+    });
+  }
+  if (isNull(options.condition)) {
+    questions.push({
+      type: "list",
+      name: "condition",
+      default: "exact",
+      choices: ['startsWith', 'exact'],
+      message: "Select Match condition for command?"
+    });
+  }
   if (isNull(options.multilingual)) {
     questions.push({
       type: "confirm",
@@ -162,19 +181,12 @@ async function promptForMissingOptions(options) {
       message: "Is this command available for all the languages ?"
     });
   }
-  if (isNull(options.names)) {
-    questions.push({
-      type: "input",
-      name: "names",
-      message: "type name(s) for command(separated by ,):"
-    });
-  }
   if (isNull(options.enabled)) {
     questions.push({
       type: "confirm",
       name: "enabled",
       default: false,
-      message: "Should it be enabled on first load?"
+      message: "Should it be enabled by default?"
     });
   }
   if (isNull(options.description)) {
@@ -184,18 +196,11 @@ async function promptForMissingOptions(options) {
       message: "Type description of the command:"
     });
   }
-  if (isNull(options.condition)) {
-    questions.push({
-      type: "list",
-      name: "condition",
-      choices: ['startsWith', 'exact'],
-      message: "Select Match condition for command?"
-    });
-  }
   if (isNull(options.type)) {
     questions.push({
       type: "list",
       name: "type",
+      default: "background",
       choices: ['frontend', 'backend'],
       message: "Select type of the command?"
     });
@@ -235,7 +240,5 @@ export async function cli(args) {
     /** update locales */
     await updateLocales(props.locales);
   }
-  console.log(props);
   console.log(chalk.blue(`your command template has been created here: ${commandFilePath}`));
-  // console.log(options, getCommandTemplate(options));
 }
