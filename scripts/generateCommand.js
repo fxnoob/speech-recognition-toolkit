@@ -5,8 +5,9 @@ import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
 import guid from "../src/services/guid";
-const jsonfile = require("jsonfile");
 import { translateLocales } from "./translate_locales";
+import execa from 'execa';
+const jsonfile = require("jsonfile");
 
 function generateIdNamesMatchDescription(options) {
   const id = guid.generateGuid();
@@ -69,12 +70,17 @@ const description = await translationService.getMessage(langId, "${cmdDescLocale
     };
   }
 }
+async function prettifyCodeInFile(filepath) {
+  const result = await execa('npm', [`run fix:prettier -- ${filepath}`], {
+    cwd: __dirname,
+  });
+  return !result.failed;
+}
 function updateCommandsConfig(commandId, commandStatus) {
   const filePath = path.join(__dirname,"../commandsConfig.json");
   const commandsConfigJson = jsonfile.readFileSync(filePath);
   commandsConfigJson[commandId] = commandStatus;
   jsonfile.writeFileSync(filePath, commandsConfigJson, { flag: "w" });
-  console.log(commandsConfigJson);
 }
 async function updateLocales(locales) {
   /** first read locale file json and then update */
@@ -234,6 +240,7 @@ export async function cli(args) {
   /** save template in the file */
   const commandFilePath = path.join(__dirname, `../src/services/commands/${options.filename}`);
   fs.writeFileSync(commandFilePath, template);
+  await prettifyCodeInFile(commandFilePath);
   /** update commandsConfig.json with new command's id and status */
   updateCommandsConfig(props.id, options.enabled);
   if (options.multilingual) {

@@ -17,7 +17,8 @@
     "test": "yarn build",
     "generate:locale": "node scripts/translate_locales.js",
     "generate:emoji": "node scripts/transform_emoji.js",
-    "generate:command": "node scripts/generate-command"
+    "generate:command": "node scripts/generate-command",
+    "fix:prettier": "prettier --write"
   },
   "husky": {
     "hooks": {
