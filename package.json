@@ -58,6 +58,7 @@
     "gh-pages": "^2.1.1",
     "husky": "^3.0.9",
     "image-webpack-loader": "^5.0.0",
+    "is-var-name": "^2.0.0",
     "jsdoc": "^3.6.3",
     "jsonfile": "^6.0.1",
     "node-google-translate-skidz": "^1.1.2",

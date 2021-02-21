@@ -4,10 +4,13 @@ import inquirer from "inquirer";
 import chalk from 'chalk';
 import fs from 'fs';
 import path from 'path';
+import isVarName from 'is-var-name';
 import guid from "../src/services/guid";
 import { translateLocales } from "./translate_locales";
-var execSh = require("exec-sh").promise;
+const execSh = require("exec-sh").promise;
 const jsonfile = require("jsonfile");
+const inquirerUI = new inquirer.ui.BottomBar();
+const commandsDirectoryPath = path.join(__dirname, "../src/services/commands/");
 
 function generateIdNamesMatchDescription(options) {
   const id = guid.generateGuid();
@@ -161,12 +164,44 @@ function isNull(val) {
   return val == null;
 }
 async function promptForMissingOptions(options) {
+  const validateInput = propName => (value) => {
+    if (value == '') return `${propName} can't be Empty!`;
+    if (propName == 'filename') {
+      return new Promise((resolve, reject) => {
+        if (!isVarName(value)) {
+          reject("Please Choose filename as proper variable name in ES6");
+        }
+        let filenameAvail = true;
+        fs.readdirSync(commandsDirectoryPath).forEach(fileName => {
+          if(`${value}.js` == fileName){
+            filenameAvail = false;
+          }
+        });
+        filenameAvail ? resolve(true) : reject("Already Exist! Please Choose different filename!");
+      });
+    } else if (propName == 'names') {
+      let correctNames = true;
+      value.split(',').map(v => {
+        if (v.trim() == '') {
+          correctNames = false;
+        }
+      });
+      if (!correctNames) {
+        return "Name(s) can't be empty!";
+      } else {
+        return true;
+      }
+    } else {
+      return true;
+    }
+  };
   const questions = [];
   if (isNull(options.filename)) {
     questions.push({
       type: "input",
       name: "filename",
-      message: "Please type filename for command:"
+      validate: validateInput('filename'),
+      message: "Please type filename for command (without extension):"
     });
   }
   if (isNull(options.names)) {
@@ -244,7 +279,7 @@ export async function cli(args) {
   if (!options.install) return;
   const { props, template } = getCommandTemplate(options);
   /** save template in the file */
-  const commandFilePath = path.join(__dirname, `../src/services/commands/${options.filename}`);
+  const commandFilePath = path.join(__dirname, `../src/services/commands/${options.filename}.js`);
   fs.writeFileSync(commandFilePath, template);
   await prettifyCodeInFiles();
   /** update commandsConfig.json with new command's id and status */
