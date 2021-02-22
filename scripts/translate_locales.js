@@ -31,8 +31,6 @@ async function translateLocales() {
           description: updatedLocaleEn[newKey].description
         };
         console.log("updating key ->", newKey, "  ->  ", oldJsonFile[newKey]);
-      } else {
-        console.log("key already available ->", newKey);
       }
     }
     jsonfile.writeFileSync(oldJsonFilePath, oldJsonFile, { flag: "w" });
