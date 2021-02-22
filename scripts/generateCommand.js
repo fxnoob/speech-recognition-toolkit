@@ -9,7 +9,6 @@ import guid from "../src/services/guid";
 import { translateLocales } from "./translate_locales";
 const execSh = require("exec-sh").promise;
 const jsonfile = require("jsonfile");
-const inquirerUI = new inquirer.ui.BottomBar();
 const commandsDirectoryPath = path.join(__dirname, "../src/services/commands/");
 
 function generateIdNamesMatchDescription(options) {
@@ -207,6 +206,7 @@ async function promptForMissingOptions(options) {
   if (isNull(options.names)) {
     questions.push({
       type: "input",
+      validate: validateInput('names'),
       name: "names",
       message: "type name(s) for command(separated by ,):"
     });
@@ -240,6 +240,7 @@ async function promptForMissingOptions(options) {
     questions.push({
       type: "input",
       name: "description",
+      validate: validateInput('description'),
       message: "Type description of the command:"
     });
   }

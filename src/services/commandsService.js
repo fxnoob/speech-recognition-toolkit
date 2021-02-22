@@ -1,4 +1,5 @@
 import db from "./db";
+import commandsDefaultConfig from "../../commandsConfig";
 import * as cmds from "./commands/_registry";
 
 /**
@@ -14,6 +15,11 @@ class Commands {
       startsWith: (alias, text) =>
         text.toLowerCase().startsWith(alias.toLowerCase()),
       exact: (alias, text) => text.toLowerCase() == alias.toLowerCase()
+    };
+    this.isCommandEnabled = (commandIDObj, id) => {
+      return commandIDObj.hasOwnProperty(id)
+        ? commandIDObj[id]
+        : commandsDefaultConfig[id];
     };
   }
   /***
@@ -72,7 +78,7 @@ class Commands {
     const { commandsConfig } = await db.get("commandsConfig") || {};
     const commandIndex = commands.findIndex(
       cmd =>
-        commandsConfig[cmd.id] &&
+        this.isCommandEnabled(commandsConfig, cmd.id) &&
         cmd.match.findIndex(al => this.conditions[cmd.condition](al, text)) !==
           -1
     );
