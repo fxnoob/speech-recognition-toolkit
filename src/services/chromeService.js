@@ -1,4 +1,5 @@
 import { asyncTryCatch } from "./helper";
+var chrome = chrome || {};
 /**
  * Abstraction class to interact with the chrome extension API
  *

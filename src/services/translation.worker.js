@@ -98,6 +98,10 @@ languages["uk"] = uk;
 languages["vi"] = vi;
 languages["zh"] = zh;
 
+var self = self || {
+  addEventListener: ()=>{}
+};
+
 function getMessage(langId, key) {
   const locale = langId.split("-");
   const lang = languages[locale[0]];
