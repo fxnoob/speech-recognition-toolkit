@@ -96,9 +96,8 @@ async function getCommandContent(options) {
   mockery.registerMock(`chromeService`, {});
   mockery.registerMock(`translation.worker`, {});
   mockery.registerMock(`./helper`, { asyncTryCatch: () => {} });
-  mockery.registerMock("chrome", {
-    chrome: {}
-  });
+  mockery.registerMock('chrome', {});
+  mockery.registerMock('webextension-polyfill', {});
   // Enable mockery and tell it to use a clean cache. By using a clean cache,
   // Node will reload 'intermediary', causing it in turn to re-require its
   // 'fake_module' dependency, at which point mockery will provide our mock.

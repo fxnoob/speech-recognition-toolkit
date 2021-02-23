@@ -98,25 +98,22 @@ languages["uk"] = uk;
 languages["vi"] = vi;
 languages["zh"] = zh;
 
-var self = self || {
-  addEventListener: ()=>{}
-};
-
 function getMessage(langId, key) {
   const locale = langId.split("-");
   const lang = languages[locale[0]];
   return lang ? lang[key] : languages["en"][key];
 }
-
+if (typeof self != 'undefined') {
 // listens for command from translation service
-self.addEventListener(
-  "message",
-  evt => {
-    const { langId, key, uid, action } = evt.data;
-    if (action == "getMessage") {
-      const message = getMessage(langId, key);
-      self.postMessage({ langId, key, uid, action, message });
-    }
-  },
-  false
-);
+  self.addEventListener(
+    "message",
+    evt => {
+      const { langId, key, uid, action } = evt.data;
+      if (action == "getMessage") {
+        const message = getMessage(langId, key);
+        self.postMessage({ langId, key, uid, action, message });
+      }
+    },
+    false
+  );
+}

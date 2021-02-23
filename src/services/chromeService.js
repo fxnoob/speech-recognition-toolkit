@@ -1,11 +1,11 @@
-import { asyncTryCatch } from "./helper";
-var chrome = chrome || {};
+import { asyncTryCatch, getNamespace } from "./helper";
 /**
  * Abstraction class to interact with the chrome extension API
  *
  * @export
  * @class ChromeApi
  */
+const chrome = getNamespace();
 class ChromeApi {
   // chrome notification api
   notification = chrome.notifications;
