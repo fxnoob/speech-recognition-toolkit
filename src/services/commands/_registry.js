@@ -21,3 +21,4 @@ export { default as goToCommand } from "./go_to";
 export { default as remindMeCommand } from "./remind_me";
 export { default as searchGoogleCommand } from "./search";
 export { default as bookmarkCommand } from "./bookmark";
+export { default as newtabCommand } from "./newtab";

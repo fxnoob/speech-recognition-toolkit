@@ -29,7 +29,7 @@ const CommandList = () => {
     const commandsJson = await commandService.getAllCommands(defaultLanguage.code);
     const commandsList = commandsJson.map(command => {
       return [command.match.join(', '), command.description, <Checkbox key={command.id}
-        checked={commandsConfig[command.id]}
+        checked={commandService.isCommandEnabled(commandsConfig, command.id)}
         onChange={handleChange(command.id, commandsConfig)}
         inputProps={{ 'aria-label': 'enable/disable command' }}
       />];

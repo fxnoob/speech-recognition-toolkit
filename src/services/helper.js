@@ -8,7 +8,10 @@ async function asyncTryCatch(func, ...args) {
   }
   return data;
 }
-
+function getNamespace() {
+  return typeof chrome == 'undefined'? {} : chrome;
+}
 export {
-  asyncTryCatch
+  asyncTryCatch,
+  getNamespace
 };
