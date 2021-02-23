@@ -109,6 +109,7 @@
     "react-swipeable-views": "^0.13.1",
     "string-similarity": "^4.0.2",
     "tailwindcss": "^1.8.3",
-    "yarn": "^1.22.10"
+    "yarn": "^1.22.10",
+    "youtube-search": "^1.1.6"
   }
 }

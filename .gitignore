@@ -5,3 +5,4 @@ dist/js
 tmp/
 dist
 .idea/
+.env

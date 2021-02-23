@@ -1,7 +1,7 @@
 /**
 * This is Auto generated file.
 * Don't edit this manually.
-* Use only yarn generate:command
+* Use only yarn generate:command or yarn delete:command
 * */
 export { default as emojiCommand } from "./emoji";
 export { default as undoCommand } from "./undo";
@@ -22,3 +22,4 @@ export { default as remindMeCommand } from "./remind_me";
 export { default as searchGoogleCommand } from "./search";
 export { default as bookmarkCommand } from "./bookmark";
 export { default as newtabCommand } from "./newtab";
+export { default as playCommand } from "./play";
