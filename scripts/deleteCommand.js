@@ -32,7 +32,7 @@ async function promptForMissingOptions(options) {
     if (value == "") return `${propName} can't be Empty!`;
     if (propName == "filename") {
       return new Promise((resolve, reject) => {
-        if (!isVarName(value) || value == '_registry') {
+        if (!isVarName(value) || value == "_registry") {
           reject("File name is not Allowed");
         } else {
           const commandFilePath = path.join(
@@ -95,9 +95,14 @@ async function getCommandContent(options) {
   mockery.registerMock(`../translationService`, fakeTranslationService);
   mockery.registerMock(`chromeService`, {});
   mockery.registerMock(`translation.worker`, {});
-  mockery.registerMock(`./helper`, { asyncTryCatch: () => {} });
-  mockery.registerMock('chrome', {});
-  mockery.registerMock('webextension-polyfill', {});
+  mockery.registerMock(`./helper`, {
+    asyncTryCatch: () => {},
+    getNamespace: () => {
+      return {};
+    }
+  });
+  mockery.registerMock("chrome", {});
+  mockery.registerMock("webextension-polyfill", {});
   // Enable mockery and tell it to use a clean cache. By using a clean cache,
   // Node will reload 'intermediary', causing it in turn to re-require its
   // 'fake_module' dependency, at which point mockery will provide our mock.
@@ -131,12 +136,39 @@ function deleteCommandsConfig(commandId) {
   jsonfile.writeFileSync(filePath, commandsConfigJson, { flag: "w" });
 }
 function updateBaseLocaleEnJsonFile(locales) {
-  const BaseLocaleEnJsonFilePath = path.join(__dirname, 'locale_en.json');
+  const BaseLocaleEnJsonFilePath = path.join(__dirname, "locale_en.json");
   const baseLocaleJson = jsonfile.readFileSync(BaseLocaleEnJsonFilePath);
   for (const loc of locales) {
     delete baseLocaleJson[loc.key];
   }
-  jsonfile.writeFileSync(BaseLocaleEnJsonFilePath, baseLocaleJson, { flag: "w" });
+  jsonfile.writeFileSync(BaseLocaleEnJsonFilePath, baseLocaleJson, {
+    flag: "w"
+  });
+}
+function updateCommandRegistry(cmdFileName) {
+  const _registryFilePath = path.join(
+    __dirname,
+    "../src/services/commands/_registry.js"
+  );
+  const registryCodeData = fs.readFileSync(_registryFilePath, {
+    encoding: "utf8",
+    flag: "r"
+  });
+  let dataArray = registryCodeData.split('\n');
+  const searchKeyword = cmdFileName;
+  let lastIndex = -1; // let say, we have not found the keyword
+  for (let index=0; index<dataArray.length; index++) {
+    if (dataArray[index].includes(searchKeyword)) {
+      lastIndex = index;
+      break;
+    }
+  }
+  dataArray.splice(lastIndex, 1);
+  const updatedData = dataArray.join('\n');
+  fs.writeFile(_registryFilePath, updatedData, (err) => {
+    if (err) throw err;
+    console.log ('Successfully updated the file data');
+  });
 }
 async function deleteCommand(options) {
   const { locales, cmd } = await getCommandContent(options);
@@ -148,6 +180,14 @@ async function deleteCommand(options) {
     updateBaseLocaleEnJsonFile(locales); // update locale_en.json file
     deleteLocales(locales); // update other locale json files in app/_locales dir
   }
+  /** update registry */
+  updateCommandRegistry(options.filename);
+  /** at the end delete command file */
+  const commandFilePath = path.join(
+    __dirname,
+    `../src/services/commands/${options.filename}.js`
+  );
+  fs.unlinkSync(commandFilePath);
 }
 export async function cli(args) {
   let options = parseArgsIntoOptions(args);
