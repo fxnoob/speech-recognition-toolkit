@@ -68,7 +68,9 @@ Features:
 
 `search`: Say 'search cat' to search cat on google or on youtube
 
-`bookmark` Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark
+`bookmark`: Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark
+
+`Play`: Say 'Play despacito' to play the song from youtube.
 
 #### Note: 
 Commands name changes according to the selected language.
