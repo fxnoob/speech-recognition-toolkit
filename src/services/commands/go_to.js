@@ -2,7 +2,7 @@
 import translationService from "../translationService";
 import WebsiteNames from "../popular_websites_files/en";
 import chromeService from "../chromeService";
-import { parseDomain } from "parse-domain";
+import { validURL } from "../helper";
 export default async langId => {
   const commandAlias = await translationService.getMessage(
     langId,
@@ -29,9 +29,11 @@ export default async langId => {
     match: [commandAlias, commandAlias2, commandAlias3],
     exec: async (text, options, callback) => {
       let url;
-      const { type } = parseDomain(text);
-      if (type != "NOT_LISTED") {
-        url = text;
+      if (text == 'new tab') {
+        url = 'about:newtab/';
+      }
+      else if (validURL(text)) {
+        url = `https://${text}`;
       } else {
         url = WebsiteNames[text]
           ? `https://${WebsiteNames[text]}`
