@@ -15,6 +15,7 @@ class Tab {
   }
 
   init = () => {
+    if (typeof document == 'undefined') return;
     const focussableElements =
       'a:not([disabled]), button:not([disabled]), input[type=text]:not([disabled]), [tabindex]:not([disabled]):not([tabindex="-1"])';
     let focussable = Array.prototype.filter.call(
