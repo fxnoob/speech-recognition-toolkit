@@ -70,7 +70,9 @@ Features:
 
 `bookmark`: Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark
 
-`Play`: Say 'Play despacito' to play the song from youtube.
+`Play`: Say 'Play song_name' to play the song from youtube.
+
+`Highlight`: Say 'Highlight keyword' to highlight keyword on current page.
 
 #### Note: 
 Commands name changes according to the selected language.

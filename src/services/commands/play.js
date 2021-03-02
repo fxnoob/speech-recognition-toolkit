@@ -22,7 +22,7 @@ export default async langId => {
     match: [alias0],
     exec: async (text, options, callback) => {
       // write your logic here.
-      var opts = {
+      const opts = {
         maxResults: 10,
         key: process.env.youtube_data_api_key // .env stuff
       };

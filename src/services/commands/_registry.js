@@ -23,3 +23,4 @@ export { default as searchGoogleCommand } from "./search";
 export { default as bookmarkCommand } from "./bookmark";
 export { default as newtabCommand } from "./newtab";
 export { default as playCommand } from "./play";
+export { default as findCommand } from "./find";
