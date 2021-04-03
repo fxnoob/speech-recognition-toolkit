@@ -11,13 +11,16 @@ const translationWorker = new TranslationWorker();
 const Routes = async (voice, contextMenus) => {
   let commands;
   MessagePassing.setOptions({ emojiWorker, translationWorker });
-  const { defaultLanguage } = await db.get("defaultLanguage");
+  const { defaultLanguage, capitalization } = await db.get("defaultLanguage", "capitalization");
   // fetch backend commands
   commands = await commandService.getCommands(defaultLanguage.code, "backend");
   voice.addCommand({
     "*text": async text => {
       // eslint-disable-next-line no-console
       console.log("recognised text:", text);
+      if (capitalization & text != "") {
+        text[0].toUpperCase();
+      }
       await commandService.getMatchingCommand(commands, text, (command, args) => {
         if (command) {
           const { originalText, commandContent } = args;

@@ -21,6 +21,7 @@ const useStyles = makeStyles(() => ({
 }));
 export default function SRS() {
   const [onBootStart, setOnBootStart] = useState(false);
+  const [capitalized, setCapitalized] = useState(false);
   const [languageSelectOptionOpen, setLanguageSelectOptionOpen] = useState(
     false
   );
@@ -30,12 +31,14 @@ export default function SRS() {
     init();
   });
   const init = async () => {
-    const { defaultLanguage, alwaysOpen } = await db.get(
+    const { defaultLanguage, alwaysOpen, capitalization } = await db.get(
       "defaultLanguage",
-      "alwaysOpen"
+      "alwaysOpen",
+      "capitalization"
     );
     setLang(defaultLanguage.label);
     setOnBootStart(alwaysOpen);
+    setCapitalized(capitalization);
   };
   const classes = useStyles();
   const closeLanguageSelectOption = () => {
@@ -55,6 +58,11 @@ export default function SRS() {
     const alwaysOpen = !onBootStart;
     setOnBootStart(!onBootStart);
     await db.set({ alwaysOpen });
+  };
+  const toggleCapitalization = async () => {
+    const capitalization = !capitalized;
+    setCapitalized(capitalization);
+    await db.set({ capitalization });
   };
   return (
     <>
@@ -111,6 +119,28 @@ export default function SRS() {
                 {i18nService.getMessage("option_onstart_setting_str")}
               </TableCell>
             </TableRow>
+            {/*capitalization setting starts*/}
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <Checkbox
+                  edge="start"
+                  checked={capitalized}
+                  tabIndex={-1}
+                  onChange={toggleCapitalization}
+                  inputProps={{ "aria-labelledby": "aria" }}
+                />
+              </TableCell>
+              <TableCell align="left">
+                Capitalize the first word.
+              </TableCell>
+            </TableRow>
+            {/*capitalization setting ends*/}
             <TableRow>
               <TableCell
                 style={{
