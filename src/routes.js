@@ -11,7 +11,7 @@ const translationWorker = new TranslationWorker();
 const Routes = async (voice, contextMenus) => {
   let commands;
   MessagePassing.setOptions({ emojiWorker, translationWorker });
-  const { defaultLanguage, capitalization } = await db.get("defaultLanguage");
+  const { defaultLanguage, capitalization } = await db.get("defaultLanguage", "capitalization");
   // fetch backend commands
   commands = await commandService.getCommands(defaultLanguage.code, "backend");
   voice.addCommand({
