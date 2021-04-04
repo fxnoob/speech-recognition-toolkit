@@ -15,6 +15,8 @@ async function promptForMissingOptions(options) {
     else if (propName == 'key') {
       if (localeJson.hasOwnProperty(value)) {
         return "key already exist!";
+      } else {
+        return true;
       }
     }
     else {
@@ -75,7 +77,10 @@ function isNull(val) {
   return val == null;
 }
 async function updateLocales(locale) {
-  localeJson[locale.key] = locale.value;
+  localeJson[locale.key] = {
+    message: locale.value,
+    description: locale.value,
+  };
   jsonfile.writeFileSync(mainLocaleJsonFile, localeJson, { flag: "w" });
   /** translate locales*/
   await translateLocales();

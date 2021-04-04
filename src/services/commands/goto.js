@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-unused-vars,no-console */
 import translationService from "../translationService";
 import WebsiteNames from "../popular_websites_files/en";
 import chromeService from "../chromeService";
@@ -24,6 +24,10 @@ export default async langId => {
     "271F0428_E067_4BEB_90D6_8117EF8E7E29"
   ); // Say 'go to facebook.com' to open facebook.com in new tab. Say 'go to bookmark bookmark_name' to open bookmark url.
 
+  const bookmarkLabel = await translationService.getMessage(
+    langId,
+    "bookmark_label"
+  ); // bookmark
   return {
     id: "84EDED19_4A31_A778_5C2C_BFBF8F5D3FA1",
     type: "backend",
@@ -34,14 +38,24 @@ export default async langId => {
     exec: async (text, options, callback) => {
       // write your logic here.
       let url;
-      if (text.startsWith("bookmark")) {
-        // eslint-disable-next-line no-console
-        console.log("bookmark logic here");
-      }
-      else if (text == 'new tab') {
-        url = 'about:newtab/';
-      }
-      else if (validURL(text)) {
+      if (text.startsWith(bookmarkLabel)) {
+        // search in bookmarks to find a match
+        const bookmarkSearchTerm = text.replace(bookmarkLabel, "");
+        chromeService.bookmark.search(bookmarkSearchTerm, results => {
+          let firstUrl;
+          for (let res of results) {
+            if (res['url']) {
+              firstUrl = res.url;
+              break;
+            }
+          }
+          if (firstUrl) {
+            chromeService.openUrl(firstUrl);
+          }
+        });
+      } else if (text == "new tab") {
+        url = "about:newtab/";
+      } else if (validURL(text)) {
         url = `https://${text}`;
       } else {
         url = WebsiteNames[text]
