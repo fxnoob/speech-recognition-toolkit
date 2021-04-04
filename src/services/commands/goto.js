@@ -4,32 +4,41 @@ import WebsiteNames from "../popular_websites_files/en";
 import chromeService from "../chromeService";
 import { validURL } from "../helper";
 export default async langId => {
-  const commandAlias = await translationService.getMessage(
+  const alias0 = await translationService.getMessage(
     langId,
-    "command_go_to_label"
+    "397795DD_FAE6_7240_5F33_9CD70BB4CB60"
   ); // go to
-  const commandAlias2 = await translationService.getMessage(
+
+  const alias1 = await translationService.getMessage(
     langId,
-    "command_go_to_label2"
+    "1387F5BE_4725_EF5C_41CF_E3953ED349B3"
   ); // visit
-  const commandAlias3 = await translationService.getMessage(
+
+  const alias2 = await translationService.getMessage(
     langId,
-    "command_go_to_label3"
+    "D4FC52CF_441B_0D7C_6DCF_631CDB617102"
   ); // open
+
   const description = await translationService.getMessage(
     langId,
-    "command_go_to_description"
-  );
+    "271F0428_E067_4BEB_90D6_8117EF8E7E29"
+  ); // Say 'go to facebook.com' to open facebook.com in new tab. Say 'go to bookmark bookmark_name' to open bookmark url.
+
   return {
-    id: "59A7532E-805F-8882-A6F1-6BF822E96612",
+    id: "84EDED19_4A31_A778_5C2C_BFBF8F5D3FA1",
     type: "backend",
-    name: commandAlias,
+    name: "84EDED19_4A31_A778_5C2C_BFBF8F5D3FA1",
     description: description,
     condition: "startsWith",
-    match: [commandAlias, commandAlias2, commandAlias3],
+    match: [alias0, alias1, alias2],
     exec: async (text, options, callback) => {
+      // write your logic here.
       let url;
-      if (text == 'new tab') {
+      if (text.startsWith("bookmark")) {
+        // eslint-disable-next-line no-console
+        console.log("bookmark logic here");
+      }
+      else if (text == 'new tab') {
         url = 'about:newtab/';
       }
       else if (validURL(text)) {
