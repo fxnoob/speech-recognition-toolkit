@@ -47,8 +47,8 @@ class Dom extends React.Component {
     });
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async req => {
-      const { text, langId } = req;
-      this.speechToTextListenerCallback(text, langId);
+      const { text, langId, mode } = req;
+      this.speechToTextListenerCallback(text, langId, { mode });
     });
     /** listen to any backend command message */
     messagePassing.on("/message", async req => {
@@ -74,7 +74,7 @@ class Dom extends React.Component {
       this.mountAckId = mountAckId;
     });
   };
-  async speechToTextListenerCallback(text, langId) {
+  async speechToTextListenerCallback(text, langId, options) {
     /** open snackbar with recognised text if any element is not active */
     this.handleClick(text)();
     text = text.toLowerCase();
@@ -86,6 +86,7 @@ class Dom extends React.Component {
     await commandService.getMatchingCommand(
       this.commands,
       text,
+      options,
       (command, args) => {
         if (command) {
           const { originalText, commandContent } = args;
@@ -99,8 +100,10 @@ class Dom extends React.Component {
             }
           );
         } else {
-          const indentedText = text != "." ? ` ${text}` : text;
-          dom.simulateWordTyping(indentedText, this.mountAckId);
+          if (options.mode == "speech") {
+            const indentedText = text != "." ? ` ${text}` : text;
+            dom.simulateWordTyping(indentedText, this.mountAckId);
+          }
         }
       }
     );

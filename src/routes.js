@@ -12,17 +12,20 @@ const translationWorker = new TranslationWorker();
 const Routes = async (voice, contextMenus) => {
   let commands;
   MessagePassing.setOptions({ emojiWorker, translationWorker });
-  const { defaultLanguage, capitalization } = await db.get("defaultLanguage", "capitalization");
+  const { defaultLanguage, capitalization } = await db.get(
+    "defaultLanguage",
+    "capitalization"
+  );
   // fetch backend commands
   commands = await commandService.getCommands(defaultLanguage.code, "backend");
   /** process text given by speech input or text input */
-  const processInput = async text => {
+  const processInput = async (text, options) => {
     // eslint-disable-next-line no-console
     console.log("recognised text:", text);
     if (capitalization & text != "") {
       text[0].toUpperCase();
     }
-    await commandService.getMatchingCommand(commands, text, (command, args) => {
+    await commandService.getMatchingCommand(commands, text, options, (command, args) => {
       if (command) {
         const { originalText, commandContent } = args;
         command.exec(commandContent, { originalText }, message => {
@@ -40,23 +43,26 @@ const Routes = async (voice, contextMenus) => {
           text,
           langId: defaultLanguage.code,
           langLabel: defaultLanguage.label,
+          mode: options.mode,
         };
         MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
       }
     });
   };
   voice.addCommand({
-    "*text": processInput
+    "*text": text => {
+      processInput(text, { mode: "speech" });
+    }
   });
   // listen for commands from commands popup
   MessagePassing.on("/process_input", async req => {
     const { text } = req;
-    processInput(text);
+    processInput(text, { mode: "text" });
   });
   // listen to requests for navigation for internal extension pages only.
   MessagePassing.on("/navigation_req", async req => {
-    const { path } = req;
-    chromeService.openHelpPage(path);
+    const { sub_path } = req;
+    chromeService.openHelpPage(sub_path);
   });
   // save selected text in storage instead writing it to clipboard
   MessagePassing.on("/set_selected_text", async req => {

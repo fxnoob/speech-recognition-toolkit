@@ -145,11 +145,10 @@ function AutoComplete(props) {
     };
     init();
   }, []);
-  const OpenSettingPage = () => {
-    messagePassing.sendMessage("/navigation_req", { path: "commands" });
-  };
   const onSubmit = e => {
-    e.preventDefault();
+    if (e) {
+      e.preventDefault();
+    }
     messagePassing.sendMessage("/process_input", { text: term });
     togglePopupWindow();
   };
@@ -170,10 +169,7 @@ function AutoComplete(props) {
         }) => 
           <div className={classes.container}>
             {renderInput({
-              openSettingPage: OpenSettingPage,
-              onSubmit: () => {
-                onSubmit(inputValue);
-              },
+              onSubmit: onSubmit,
               fullWidth: true,
               classes,
               InputProps: getInputProps({

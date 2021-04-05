@@ -39,9 +39,10 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 export default function CustomizedInputBase(props) {
+  const { onSubmit } = props;
   const classes = useStyles();
   const OpenSettingPage = () => {
-    messagePassing.sendMessage("/navigation_req", { path: "commands" });
+    messagePassing.sendMessage("/navigation_req", { sub_path: "commands" });
   };
   return (
     <Paper component="form" className={classes.root}>
@@ -58,7 +59,13 @@ export default function CustomizedInputBase(props) {
         }}
         {...props}
       />
-      <IconButton className={classes.iconButton} aria-label="search">
+      <IconButton
+        className={classes.iconButton}
+        onClick={() => {
+          onSubmit();
+        }}
+        aria-label="search"
+      >
         <SearchIcon />
       </IconButton>
       <Divider className={classes.divider} orientation="vertical" />
