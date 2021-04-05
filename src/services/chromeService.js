@@ -363,6 +363,7 @@ class ChromeApi {
    *@memberOf ChromeApi
    * */
   bookmark = {
+    search: chrome.bookmarks.search,
     create: async () => {
       const activeTab = await this.tryGetActiveTab();
       if (activeTab) {

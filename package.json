@@ -15,8 +15,8 @@
     "jsdoc": "jsdoc src -r",
     "deploy_jsdoc": "yarn jsdoc &&  gh-pages -d out",
     "test": "yarn build",
-    "generate:locale": "node scripts/translate_locales.js",
     "generate:emoji": "node scripts/transform_emoji.js",
+    "generate:locale": "node scripts/generate-locale",
     "generate:command": "node scripts/generate-command",
     "delete:command": "node scripts/delete-command",
     "fix:prettier": "prettier --write $(git ls-files --others --exclude-standard)"
