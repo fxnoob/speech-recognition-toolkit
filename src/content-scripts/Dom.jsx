@@ -8,6 +8,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
 import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
+import CommandPopup from "./CommandPopup";
 import messagePassing from "../services/messagePassing";
 import dom from "../services/dom";
 import commandService from "../services/commandsService";
@@ -26,10 +27,9 @@ class Dom extends React.Component {
   state = {
     open: false,
     messageInfo: {},
-    mountAckId: ""
+    mountAckId: "",
+    commandPopupOpened: false,
   };
-  commands = [];
-  langId = "";
 
   componentDidMount() {
     this.init();
@@ -55,6 +55,15 @@ class Dom extends React.Component {
       const { message } = req;
       this.handleClick(message)();
     });
+    /** Listen for command search popup shortcut keys callback */
+    messagePassing.on("/toggle_command_popup", async () => {
+      if (!dom.inIframe()) {
+        this.setState({ commandPopupOpened: !this.state.commandPopupOpened });
+      }
+    });
+  };
+  togglePopupWindow = () => {
+    this.setState({ commandPopupOpened: !this.state.commandPopupOpened });
   };
   mountAckDom = () => {
     messagePassing.sendMessage("/get_cs_mountAck", {}, async res => {
@@ -72,26 +81,35 @@ class Dom extends React.Component {
     if (langId != this.langId) {
       this.langId = langId;
       this.commands = await commandService.getCommands(this.langId);
+      this.setState({ commands: this.commands });
     }
-    await commandService.getMatchingCommand(this.commands,text, (command, args) => {
-      if (command) {
-        const { originalText, commandContent } = args;
-        command.exec(commandContent, { dom, ackId: this.mountAckId, originalText }, message => {
-          if (message) {
-            this.handleClick(message)();
-          }
-        });
-      } else {
-        const indentedText = text != "." ? ` ${text}` : text;
-        dom.simulateWordTyping(indentedText, this.mountAckId);
+    await commandService.getMatchingCommand(
+      this.commands,
+      text,
+      (command, args) => {
+        if (command) {
+          const { originalText, commandContent } = args;
+          command.exec(
+            commandContent,
+            { dom, ackId: this.mountAckId, originalText },
+            message => {
+              if (message) {
+                this.handleClick(message)();
+              }
+            }
+          );
+        } else {
+          const indentedText = text != "." ? ` ${text}` : text;
+          dom.simulateWordTyping(indentedText, this.mountAckId);
+        }
       }
-    });
+    );
   }
   handleClick = message => () => {
     if (dom.inIframe()) return;
     this.queue.push({
       message,
-      key: guid.generateGuid(),
+      key: guid.generateGuid()
     });
     if (this.state.open) {
       // immediately begin dismissing current message
@@ -141,7 +159,7 @@ class Dom extends React.Component {
   render() {
     // eslint-disable-next-line react/prop-types
     const { classes } = this.props;
-    const { messageInfo } = this.state;
+    const { messageInfo, commandPopupOpened } = this.state;
 
     return (
       <div>
@@ -219,6 +237,7 @@ class Dom extends React.Component {
             </IFrame>
           ]}
         />
+        {commandPopupOpened && <CommandPopup open={commandPopupOpened} togglePopupWindow={this.togglePopupWindow} />}
       </div>
     );
   }

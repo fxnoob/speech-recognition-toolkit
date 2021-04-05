@@ -4,6 +4,7 @@ import guid from "./services/guid";
 import EmojiWorker from "./services/emoji.worker";
 import TranslationWorker from "./services/translation.worker";
 import commandService from "./services/commandsService";
+import chromeService from "./services/chromeService";
 
 const emojiWorker = new EmojiWorker();
 const translationWorker = new TranslationWorker();
@@ -14,35 +15,48 @@ const Routes = async (voice, contextMenus) => {
   const { defaultLanguage, capitalization } = await db.get("defaultLanguage", "capitalization");
   // fetch backend commands
   commands = await commandService.getCommands(defaultLanguage.code, "backend");
-  voice.addCommand({
-    "*text": async text => {
-      // eslint-disable-next-line no-console
-      console.log("recognised text:", text);
-      if (capitalization & text != "") {
-        text[0].toUpperCase();
-      }
-      await commandService.getMatchingCommand(commands, text, (command, args) => {
-        if (command) {
-          const { originalText, commandContent } = args;
-          command.exec(commandContent, { originalText }, message => {
-            if (message) {
-              //send backend command message to active tab if any
-              MessagePassing.sendMessageToActiveTab(
-                "/message",
-                { message },
-                () => {}
-              );
-            }
-          });
-        } else {
-          const payload = {
-            text,
-            langId: defaultLanguage.code
-          };
-          MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
-        }
-      });
+  /** process text given by speech input or text input */
+  const processInput = async text => {
+    // eslint-disable-next-line no-console
+    console.log("recognised text:", text);
+    if (capitalization & text != "") {
+      text[0].toUpperCase();
     }
+    await commandService.getMatchingCommand(commands, text, (command, args) => {
+      if (command) {
+        const { originalText, commandContent } = args;
+        command.exec(commandContent, { originalText }, message => {
+          if (message) {
+            //send backend command message to active tab if any
+            MessagePassing.sendMessageToActiveTab(
+              "/message",
+              { message },
+              () => {}
+            );
+          }
+        });
+      } else {
+        const payload = {
+          text,
+          langId: defaultLanguage.code,
+          langLabel: defaultLanguage.label,
+        };
+        MessagePassing.sendMessageToActiveTab("/sr_text", payload, () => {});
+      }
+    });
+  };
+  voice.addCommand({
+    "*text": processInput
+  });
+  // listen for commands from commands popup
+  MessagePassing.on("/process_input", async req => {
+    const { text } = req;
+    processInput(text);
+  });
+  // listen to requests for navigation for internal extension pages only.
+  MessagePassing.on("/navigation_req", async req => {
+    const { path } = req;
+    chromeService.openHelpPage(path);
   });
   // save selected text in storage instead writing it to clipboard
   MessagePassing.on("/set_selected_text", async req => {

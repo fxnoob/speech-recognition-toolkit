@@ -27,6 +27,7 @@ class Main {
     this.startUpInit({
       startStopSRContextMenu: this.startStopSRContextMenu
     });
+    this.shortcutKeysInit();
   };
   /**
    * initialize db settings
@@ -201,6 +202,25 @@ class Main {
       );
     });
   }
+  /**
+   * Initialize shortcut keys listener
+   *
+   *@method
+   *@memberOf Main
+   * */
+  shortcutKeysInit = () => {
+    chrome.commands.onCommand.addListener(command => {
+      // eslint-disable-next-line no-console
+      console.log({ command });
+      if (command == "toggle-command-popup") {
+        messagePassing.sendMessageToActiveTab(
+          "/toggle_command_popup",
+          {},
+          () => {}
+        );
+      }
+    });
+  };
 }
 
 new Main();
