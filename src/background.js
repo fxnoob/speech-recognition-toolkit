@@ -4,6 +4,7 @@ import voice from "./services/voiceService";
 import chromeService from "./services/chromeService";
 import messagePassing from "./services/messagePassing";
 import Routes from "./routes";
+import constants from "../constants";
 
 class Main {
   constructor() {
@@ -17,6 +18,7 @@ class Main {
    * @memberof Main
    */
   init = async () => {
+    this.onInstallListener();
     await this.initDb();
     this.mountCSOnPreviouslyOpenedTabsOnlyOnce();
     await this.initContextMenu();
@@ -27,6 +29,7 @@ class Main {
     this.startUpInit({
       startStopSRContextMenu: this.startStopSRContextMenu
     });
+    this.shortcutKeysInit();
   };
   /**
    * initialize db settings
@@ -201,6 +204,47 @@ class Main {
       );
     });
   }
+  /**
+   * Initialize shortcut keys listener
+   *
+   *@method
+   *@memberOf Main
+   * */
+  shortcutKeysInit = () => {
+    chrome.commands.onCommand.addListener(command => {
+      // eslint-disable-next-line no-console
+      console.log({ command });
+      if (command == "toggle-command-popup") {
+        messagePassing.sendMessageToActiveTab(
+          "/toggle_command_popup",
+          {},
+          () => {}
+        );
+      }
+    });
+  };
+  /**
+   *On install extension event
+   *
+   * @method
+   * @memberOf Main
+   * */
+  onInstallListener = () => {
+    chrome.runtime.onInstalled.addListener(() => {
+      // details.reason for install method
+      chromeService.openHelpPage("home");
+      this.setFeedbackFormUrl();
+    });
+  };
+  /**
+   *set feedback form url shown while uninstalling
+   *
+   * @method
+   * @memberOf Main
+   * */
+  setFeedbackFormUrl = () => {
+    chrome.runtime.setUninstallURL(constants.support.googleFormLink);
+  };
 }
 
 new Main();

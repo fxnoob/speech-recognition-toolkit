@@ -16,7 +16,8 @@ class Commands {
         text.toLowerCase().startsWith(alias.toLowerCase()),
       exact: (alias, text) => text.toLowerCase() == alias.toLowerCase()
     };
-    this.isCommandEnabled = (commandIDObj, id) => {
+    this.isCommandEnabled = (commandIDObj, id, mode) => {
+      if (mode == "text") return true;
       return commandIDObj.hasOwnProperty(id)
         ? commandIDObj[id]
         : commandsDefaultConfig[id];
@@ -74,11 +75,12 @@ class Commands {
    * @memberOf Commands
    * @method
    * */
-  async getMatchingCommand(commands, text, callback) {
+  async getMatchingCommand(commands, text, options, callback) {
+    const { mode } = options;
     const { commandsConfig } = await db.get("commandsConfig") || {};
     const commandIndex = commands.findIndex(
       cmd =>
-        this.isCommandEnabled(commandsConfig, cmd.id) &&
+        this.isCommandEnabled(commandsConfig, cmd.id, mode) &&
         cmd.match.findIndex(al => this.conditions[cmd.condition](al, text)) !==
           -1
     );

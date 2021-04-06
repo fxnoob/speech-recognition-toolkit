@@ -17,6 +17,15 @@
   "background": {
     "scripts": ["background.bundle.js"]
   },
+  "commands": {
+    "toggle-command-popup": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "Command+Shift+S"
+      },
+      "description": "Toggle Command search Popup"
+    }
+  },
   "browser_action": {
     "default_title": "Speech Recognition Toolkit",
     "default_icon": "images/icon.png",

@@ -4,11 +4,12 @@ const initialContent = () => {
       <head>
         <style>
         body {
+            overflow: hidden !important;
             margin: 0px;
         }
       </style>
       </head>
-      <body>
+      <body style="overflow: hidden">
         <div id="page" class="page"></div>
       </body>
     </html>`;

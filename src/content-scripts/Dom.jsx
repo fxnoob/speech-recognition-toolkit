@@ -8,6 +8,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import SpeakerIcon from "@material-ui/icons/PlayArrow";
 import IFrame from "../components/FrameMUI";
 import initialContent from "../components/initialFrame";
+import CommandPopup from "./CommandPopup";
 import messagePassing from "../services/messagePassing";
 import dom from "../services/dom";
 import commandService from "../services/commandsService";
@@ -26,10 +27,9 @@ class Dom extends React.Component {
   state = {
     open: false,
     messageInfo: {},
-    mountAckId: ""
+    mountAckId: "",
+    commandPopupOpened: false,
   };
-  commands = [];
-  langId = "";
 
   componentDidMount() {
     this.init();
@@ -47,14 +47,23 @@ class Dom extends React.Component {
     });
     /** Listening to message sentfrom popup page, option page or background script to content script */
     messagePassing.on("/sr_text", async req => {
-      const { text, langId } = req;
-      this.speechToTextListenerCallback(text, langId);
+      const { text, langId, mode } = req;
+      this.speechToTextListenerCallback(text, langId, { mode });
     });
     /** listen to any backend command message */
     messagePassing.on("/message", async req => {
       const { message } = req;
       this.handleClick(message)();
     });
+    /** Listen for command search popup shortcut keys callback */
+    messagePassing.on("/toggle_command_popup", async () => {
+      if (!dom.inIframe()) {
+        this.setState({ commandPopupOpened: !this.state.commandPopupOpened });
+      }
+    });
+  };
+  togglePopupWindow = () => {
+    this.setState({ commandPopupOpened: !this.state.commandPopupOpened });
   };
   mountAckDom = () => {
     messagePassing.sendMessage("/get_cs_mountAck", {}, async res => {
@@ -65,33 +74,46 @@ class Dom extends React.Component {
       this.mountAckId = mountAckId;
     });
   };
-  async speechToTextListenerCallback(text, langId) {
+  async speechToTextListenerCallback(text, langId, options) {
     /** open snackbar with recognised text if any element is not active */
     this.handleClick(text)();
     text = text.toLowerCase();
     if (langId != this.langId) {
       this.langId = langId;
       this.commands = await commandService.getCommands(this.langId);
+      this.setState({ commands: this.commands });
     }
-    await commandService.getMatchingCommand(this.commands,text, (command, args) => {
-      if (command) {
-        const { originalText, commandContent } = args;
-        command.exec(commandContent, { dom, ackId: this.mountAckId, originalText }, message => {
-          if (message) {
-            this.handleClick(message)();
+    await commandService.getMatchingCommand(
+      this.commands,
+      text,
+      options,
+      (command, args) => {
+        if (command) {
+          const { originalText, commandContent } = args;
+          dom.mode = options.mode;
+          command.exec(
+            commandContent,
+            { dom, ackId: this.mountAckId, originalText, ...options },
+            message => {
+              if (message) {
+                this.handleClick(message)();
+              }
+            }
+          );
+        } else {
+          if (options.mode == "speech") {
+            const indentedText = text != "." ? ` ${text}` : text;
+            dom.simulateWordTyping(indentedText, this.mountAckId);
           }
-        });
-      } else {
-        const indentedText = text != "." ? ` ${text}` : text;
-        dom.simulateWordTyping(indentedText, this.mountAckId);
+        }
       }
-    });
+    );
   }
   handleClick = message => () => {
     if (dom.inIframe()) return;
     this.queue.push({
       message,
-      key: guid.generateGuid(),
+      key: guid.generateGuid()
     });
     if (this.state.open) {
       // immediately begin dismissing current message
@@ -141,7 +163,7 @@ class Dom extends React.Component {
   render() {
     // eslint-disable-next-line react/prop-types
     const { classes } = this.props;
-    const { messageInfo } = this.state;
+    const { messageInfo, commandPopupOpened } = this.state;
 
     return (
       <div>
@@ -157,7 +179,7 @@ class Dom extends React.Component {
             height: "3rem"
           }}
           open={this.state.open}
-          autoHideDuration={6000}
+          autoHideDuration={99999999}
           onClose={this.handleClose}
           onExited={this.handleExited}
           ContentProps={{
@@ -167,9 +189,10 @@ class Dom extends React.Component {
           action={[
             // eslint-disable-next-line react/jsx-key
             <IFrame
+              scrolling="no"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px" }}
+              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
             >
               <IconButton
                 key="copyclose"
@@ -184,10 +207,11 @@ class Dom extends React.Component {
               </IconButton>
             </IFrame>,
             <IFrame
+              scrolling="no"
               key="iframe-1"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px" }}
+              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
             >
               <IconButton
                 key="speakText"
@@ -202,10 +226,11 @@ class Dom extends React.Component {
               </IconButton>
             </IFrame>,
             <IFrame
+              scrolling="no"
               key="iframe-2"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px" }}
+              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
             >
               <IconButton
                 key="closeclose"
@@ -219,6 +244,7 @@ class Dom extends React.Component {
             </IFrame>
           ]}
         />
+        {commandPopupOpened && <CommandPopup open={commandPopupOpened} togglePopupWindow={this.togglePopupWindow} />}
       </div>
     );
   }

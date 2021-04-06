@@ -2,6 +2,7 @@ class Dom {
   constructor() {
     this.lastFocusedElementDocument = null;
     this.lastTypedWord = null;
+    this.mode = ""; // speech | text
   }
   /**
    * If the focus is in an iframe with a different origin, then attempting to
@@ -277,6 +278,7 @@ class Dom {
    * @param document active document
    */
   simulateKeyPress(array, mountAckId, document = window.document) {
+    if (this.mode == "text") return;
     const activeElement = this.findFocusedElem(document, mountAckId);
     this.keypress(array, activeElement);
   }
@@ -287,6 +289,7 @@ class Dom {
    * @param document active document
    */
   simulateWordTyping(wordString, mountAckId, document = window.document) {
+    if (this.mode == "text") return;
     this.lastTypedWord = wordString;
     const activeElement = this.findFocusedElem(document, mountAckId);
     const charArray = wordString.split("");
