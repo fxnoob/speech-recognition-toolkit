@@ -2,6 +2,7 @@ import React from "react";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Fab from "@material-ui/core/Fab";
 import GearIcon from "@material-ui/icons/Settings";
+import DesktopWindowsIcon from '@material-ui/icons/DesktopWindows';
 import KeyboardVoiceIcon from "@material-ui/icons/KeyboardVoice";
 import messagePassing from "../services/messagePassing";
 import chromeService from "../services/chromeService";
@@ -18,10 +19,12 @@ class Settings extends React.Component {
     isExtAllowed: true,
     timeStamp: +new Date(),
     data: "",
-    language: ""
+    language: "",
+    commandWindowShortCut: ""
   };
   componentDidMount() {
     this.init();
+    this.getShortCutCommands();
   }
   init = async () => {
     const { state } = await voice.permissionGranted();
@@ -43,11 +46,22 @@ class Settings extends React.Component {
   openOptionPermissionsPage() {
     chromeService.openHelpPage();
   }
-
   gotoCommandsViewer = async () => {
     chromeService.openHelpPage("commands");
   };
-
+  getShortCutCommands = async () => {
+    const shortCut = await chromeService.commands.getCommand(
+      "toggle-command-popup"
+    );
+    this.setState({ commandWindowShortCut: `(${shortCut})` });
+  };
+  openCommandWindow = async () => {
+    messagePassing.sendMessageToActiveTab(
+      "/toggle_command_popup",
+      {},
+      () => {}
+    );
+  };
   sendMessageToActivateVoiceRecognition = async () => {
     messagePassing.sendMessage(
       "/toggle_sr",
@@ -62,7 +76,7 @@ class Settings extends React.Component {
   render() {
     return (
       <>
-        {this.state.permissionGranted &&
+        {this.state.permissionGranted && 
           <div style={{ display: "flex", alignItems: "center" }}>
             <div className="language-label">
               {i18nService.getMessage("popup_default_language_label_str")}:
@@ -83,7 +97,7 @@ class Settings extends React.Component {
           </div>
         }
         {this.state.loaded &&
-          (this.state.permissionGranted ?
+          (this.state.permissionGranted ? 
             <div style={{ marginTop: "1rem" }}>
               <FormControlLabel
                 aria-label={i18nService.getMessage("popup_mic_btn_tooltip_str")}
@@ -130,28 +144,51 @@ class Settings extends React.Component {
                 <b>{i18nService.getMessage("popup_show_commands_label")}</b>
               </button>
             </div>
-            :
-            <FormControlLabel
-              aria-label={i18nService.getMessage(
-                "popup_allow_permission_btn_tooltip_str"
-              )}
-              data-balloon-pos="down"
-              style={{ marginTop: "0.5rem" }}
-              control={
-                <Fab
-                  variant="extended"
-                  onClick={this.openOptionPermissionsPage}
-                >
-                  <GearIcon />
-                  {i18nService.getMessage("popup_allow_permission_btn_str")}
-                </Fab>
-              }
-              label=""
-            />
+            : 
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center"
+              }}
+            >
+              <FormControlLabel
+                aria-label={i18nService.getMessage(
+                  "popup_allow_permission_btn_tooltip_str"
+                )}
+                data-balloon-pos="down"
+                style={{ marginTop: "0.5rem" }}
+                control={
+                  <Fab
+                    variant="extended"
+                    onClick={this.openOptionPermissionsPage}
+                  >
+                    <GearIcon />
+                    {i18nService.getMessage("popup_allow_permission_btn_str")}
+                  </Fab>
+                }
+                label=""
+              />
+              <p style={{ marginBottom: "0.5rem", marginTop: "0.5rem" }}>OR</p>
+              <FormControlLabel
+                aria-label={`Open Command Window ${this.state.commandWindowShortCut}`}
+                data-balloon-pos="up"
+                style={{ marginTop: "0.5rem" }}
+                control={
+                  <Fab variant="extended" onClick={this.openCommandWindow}>
+                    <DesktopWindowsIcon />
+                    Open command Window
+                  </Fab>
+                }
+                label=""
+              />
+            </div>
           )}
-        {this.state.loaded && this.state.isMicListening && <div>
-          <p>{i18nService.getMessage('popup_mic_listening_note')}</p>
-        </div>}
+        {this.state.loaded && this.state.isMicListening && 
+          <div>
+            <p>{i18nService.getMessage("popup_mic_listening_note")}</p>
+          </div>
+        }
       </>
     );
   }

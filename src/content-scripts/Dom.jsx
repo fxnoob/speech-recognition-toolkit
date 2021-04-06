@@ -90,9 +90,10 @@ class Dom extends React.Component {
       (command, args) => {
         if (command) {
           const { originalText, commandContent } = args;
+          dom.mode = options.mode;
           command.exec(
             commandContent,
-            { dom, ackId: this.mountAckId, originalText },
+            { dom, ackId: this.mountAckId, originalText, ...options },
             message => {
               if (message) {
                 this.handleClick(message)();
@@ -178,7 +179,7 @@ class Dom extends React.Component {
             height: "3rem"
           }}
           open={this.state.open}
-          autoHideDuration={6000}
+          autoHideDuration={99999999}
           onClose={this.handleClose}
           onExited={this.handleExited}
           ContentProps={{
@@ -188,9 +189,10 @@ class Dom extends React.Component {
           action={[
             // eslint-disable-next-line react/jsx-key
             <IFrame
+              scrolling="no"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px" }}
+              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
             >
               <IconButton
                 key="copyclose"
@@ -205,10 +207,11 @@ class Dom extends React.Component {
               </IconButton>
             </IFrame>,
             <IFrame
+              scrolling="no"
               key="iframe-1"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px" }}
+              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
             >
               <IconButton
                 key="speakText"
@@ -223,10 +226,11 @@ class Dom extends React.Component {
               </IconButton>
             </IFrame>,
             <IFrame
+              scrolling="no"
               key="iframe-2"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px" }}
+              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
             >
               <IconButton
                 key="closeclose"

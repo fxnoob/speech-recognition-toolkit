@@ -389,6 +389,22 @@ class ChromeApi {
       }
     }
   };
+  /**
+   * commands namespace
+   * @class commands
+   * @property
+   *@memberOf ChromeApi
+   * */
+  commands = {
+    getCommand: commandId => {
+      return new Promise(resolve => {
+        chrome.commands.getAll((commands) => {
+          const content = commands.find(cmd => cmd.name == commandId);
+          resolve(content.shortcut);
+        });
+      });
+    }
+  }
 }
 const chromeService = new ChromeApi();
 export default chromeService;
