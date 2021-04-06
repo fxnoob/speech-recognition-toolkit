@@ -179,7 +179,7 @@ class Dom extends React.Component {
             height: "3rem"
           }}
           open={this.state.open}
-          autoHideDuration={99999999}
+          autoHideDuration={6000}
           onClose={this.handleClose}
           onExited={this.handleExited}
           ContentProps={{

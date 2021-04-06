@@ -27,7 +27,9 @@ Features:
      available.
  - Tab Navigation using your voice. 
  - Convert your speech to morse code.
- - Toggle any command.  
+ - Toggle any command. 
+ - Quick Command window (type commands instead).
+ - Command Window Shortcut: windows (CTRL + Shift + S) and mac(Command + Shift + S) 
  - Supports On Start Feature.
  - Supports always listen mode.
  - Free to use
@@ -68,7 +70,7 @@ Features:
 
 `search`: Say 'search cat' to search cat on google or on youtube
 
-`bookmark`: Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark
+`bookmark`: Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark or Say go to bookmark bookmark_name to open matched bookmark url
 
 `Play`: Say 'Play song_name' to play the song from youtube.
 
