@@ -143,6 +143,18 @@ class Settings extends React.Component {
               >
                 <b>{i18nService.getMessage("popup_show_commands_label")}</b>
               </button>
+              <FormControlLabel
+                aria-label={`Open Command Window ${this.state.commandWindowShortCut}`}
+                data-balloon-pos="up"
+                style={{ marginTop: "1rem" }}
+                control={
+                  <Fab variant="extended" onClick={this.openCommandWindow}>
+                    <DesktopWindowsIcon />
+                    Open command Window
+                  </Fab>
+                }
+                label=""
+              />
             </div>
             : 
             <div
