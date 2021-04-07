@@ -45,7 +45,7 @@ async function promptForMissingOptions(options) {
       type: "confirm",
       name: "install",
       default: false,
-      message: "do you really want to create this command?"
+      message: "do you really want to create this locale?"
     });
   }
   const answers = await inquirer.prompt(questions);

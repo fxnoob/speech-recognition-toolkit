@@ -10,6 +10,7 @@ export default async langId => {
     langId,
     "command_search_label2"
   ); // google
+  const alias3 = await translationService.getMessage(langId, "youtube_label"); // youtube
   const description = await translationService.getMessage(
     langId,
     "command_search_description"
@@ -20,16 +21,28 @@ export default async langId => {
     name: commandAlias,
     description: description,
     condition: "startsWith",
-    match: [commandAlias, commandAlias2],
+    match: [commandAlias, commandAlias2, alias3],
     exec: async (text, options, callback) => {
-      const activeTab = await chromeService.tryGetActiveTab();
-      const url = activeTab ? activeTab.url : null;
-      if (url.match(/.*\.youtube\.com/)) {
-        chrome.tabs.update({ url: `https://www.youtube.com/results?search_query=${text}` });
-      } else if(url.match(/.*\.wikipedia\.com/)) {
-        chrome.tabs.update({ url: `https://wikipedia.org/w/index.php?search==${text}` });
+      const { originalText } = options;
+      // starts with youtube
+      if (originalText.startsWith(alias3)) {
+        chromeService.openUrl(
+          `https://www.youtube.com/results?search_query=${text}`
+        );
       } else {
-        chromeService.openUrl(`https://www.google.com/search?q=${text}`);
+        const activeTab = await chromeService.tryGetActiveTab();
+        const url = activeTab ? activeTab.url : null;
+        if (url.match(/.*\.youtube\.com/)) {
+          chrome.tabs.update({
+            url: `https://www.youtube.com/results?search_query=${text}`
+          });
+        } else if (url.match(/.*\.wikipedia\.com/)) {
+          chrome.tabs.update({
+            url: `https://wikipedia.org/w/index.php?search==${text}`
+          });
+        } else {
+          chromeService.openUrl(`https://www.google.com/search?q=${text}`);
+        }
       }
       callback();
     }
