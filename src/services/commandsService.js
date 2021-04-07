@@ -13,7 +13,7 @@ class Commands {
     this.commands = {};
     this.conditions = {
       startsWith: (alias, text) =>
-        text.toLowerCase().startsWith(alias.toLowerCase()),
+        text.toLowerCase().startsWith(alias.toLowerCase()) && alias != text,
       exact: (alias, text) => text.toLowerCase() == alias.toLowerCase()
     };
     this.isCommandEnabled = (commandIDObj, id, mode) => {
