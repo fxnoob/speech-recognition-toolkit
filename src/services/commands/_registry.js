@@ -21,3 +21,4 @@ export { default as scrollCommand } from "./scroll";
 export { default as gotoCommand } from "./goto";
 export { default as hide_unhideCommand } from "./hide_unhide";
 export { default as mediaCommand } from "./media";
+export { default as typeCommand } from "./type";
