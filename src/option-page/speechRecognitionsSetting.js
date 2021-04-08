@@ -141,6 +141,27 @@ export default function SRS() {
               </TableCell>
             </TableRow>
             {/*capitalization setting ends*/}
+            {/*expander list link starts*/}
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("see_expander_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=textExpander"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
+            {/*expander list link ends*/}
             <TableRow>
               <TableCell
                 style={{

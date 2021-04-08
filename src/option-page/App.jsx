@@ -8,6 +8,7 @@ import CommandsList from "./CommandsList";
 import EmojiList from "./EmojisList";
 import SymbolList from "./SymbolList";
 import MorseCodePanel from "./MorseCodePanel";
+import TextEpanderView from "./TextExpanderView";
 
 const queryString = require("query-string");
 const parsed = queryString.parse(location.search);
@@ -32,6 +33,9 @@ const GetView = ({ path }) => {
     break;
   case "mcode":
     view = <MorseCodePanel />;
+    break;
+  case "textExpander":
+    view = <TextEpanderView />;
     break;
   default:
     view =

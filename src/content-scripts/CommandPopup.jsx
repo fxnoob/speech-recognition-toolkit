@@ -29,8 +29,8 @@ export default function CommandPopup(props) {
         <DialogTitle id="alert-dialog-title" style={{ textAlign: "center" }}>
           {constants.appConfig.appName}
         </DialogTitle>
-        <DialogContent>
-          <AutoComplete togglePopupWindow={togglePopupWindow}/>
+        <DialogContent style={{ overflow: "hidden" }}>
+          <AutoComplete togglePopupWindow={togglePopupWindow} />
         </DialogContent>
       </IFrame>
     </Dialog>

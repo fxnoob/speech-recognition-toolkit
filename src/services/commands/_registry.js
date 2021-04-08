@@ -22,3 +22,4 @@ export { default as gotoCommand } from "./goto";
 export { default as hide_unhideCommand } from "./hide_unhide";
 export { default as mediaCommand } from "./media";
 export { default as typeCommand } from "./type";
+export { default as expandCommand } from "./expand";
