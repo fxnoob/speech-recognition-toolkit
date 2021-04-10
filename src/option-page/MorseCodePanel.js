@@ -35,6 +35,18 @@ export default function MorseCodePanel() {
   };
   return (
     <form className={classes.root} noValidate autoComplete="off">
+      <div>
+        <a
+          style={{
+            textDecoration: "underline",
+            color: "blue",
+            fontWeight: "bold"
+          }}
+          href="chrome-extension://dhchliggbldmkpkechbiplegjnhjjomi/option.html?path=home"
+        >
+          Go Back
+        </a>
+      </div>
       <div
         style={{
           display: "flex",
@@ -61,6 +73,9 @@ export default function MorseCodePanel() {
           Covert to Morse Code
         </Button>
         <audio ref={audioElement} crossOrigin="anonymous"/>
+      </div>
+      <div style={{ textAlign: "center", marginTop: "1rem" }}>
+        Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
       </div>
     </form>
   );

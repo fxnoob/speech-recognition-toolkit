@@ -34,7 +34,7 @@ module.exports = (env, options) => {
         },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"]
+          use: ["style-loader", "css-loader?modules"]
         },
         {
           test: /\.(gif|png|jpe?g|svg)$/i,
@@ -52,7 +52,7 @@ module.exports = (env, options) => {
       ]
     },
     optimization: {
-      minimize: options.mode == 'production',
+      minimize: true || options.mode == "production",
       minimizer: [new ESBuildMinifyPlugin()]
     },
     resolve: {
@@ -75,7 +75,7 @@ module.exports = (env, options) => {
         {}
       ),
       new webpack.DefinePlugin({
-        "process.env": JSON.stringify(dotenv.parsed),
+        "process.env": JSON.stringify(dotenv.parsed)
       }),
       new CopyWebpackPlugin([
         {

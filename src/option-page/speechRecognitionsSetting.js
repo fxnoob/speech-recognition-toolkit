@@ -149,6 +149,46 @@ export default function SRS() {
                   justifyContent: "center"
                 }}
               >
+                <span>{i18nService.getMessage("command_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=commands"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
+            {/*expander list link starts*/}
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("see_expander_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=textExpander"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
+            {/*expander list link ends*/}
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
                 <span>{i18nService.getMessage("imoji_list_label_new")}</span>
               </TableCell>
               <TableCell align="left">
@@ -168,26 +208,7 @@ export default function SRS() {
                   justifyContent: "center"
                 }}
               >
-                <span>{i18nService.getMessage("command_list_label")}</span>
-              </TableCell>
-              <TableCell align="left">
-                <a
-                  style={{ color: "#551a8b", textDecoration: "underline" }}
-                  href="/option.html?path=commands"
-                >
-                  {i18nService.getMessage("check_here_label")}
-                </a>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                style={{
-                  paddding: "1rem",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <span>{i18nService.getMessage("symbol_list_label")}</span>
+                <span style={{ textAlign: 'center' }}>{i18nService.getMessage("symbol_list_label")}</span>
               </TableCell>
               <TableCell align="left">
                 <a

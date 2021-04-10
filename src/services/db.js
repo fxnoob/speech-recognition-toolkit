@@ -22,6 +22,7 @@ class Schema {
       commandsConfig: constants.commands, // commands enabled/disabled list
       mountAckId: constants.contentScript.mountAckId,
       capitalization: false,
+      textExpanderMap: {},
     };
   }
 }

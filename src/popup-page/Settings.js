@@ -20,7 +20,8 @@ class Settings extends React.Component {
     timeStamp: +new Date(),
     data: "",
     language: "",
-    commandWindowShortCut: ""
+    commandWindowShortCut: "",
+    commandWindowBtnDisabled: false,
   };
   componentDidMount() {
     this.init();
@@ -39,6 +40,9 @@ class Settings extends React.Component {
       language: defaultLanguage.label
     });
     await db.set({ permissionGranted: state == "granted" });
+    const activeTab = await chromeService.tryGetActiveTab();
+    chromeService.sendMessageToActiveTab({}, () => {});
+    this.setState({ commandWindowBtnDisabled: activeTab? false : true });
   };
   openOptionPage() {
     chromeService.openHelpPage("");
@@ -148,7 +152,7 @@ class Settings extends React.Component {
                 data-balloon-pos="up"
                 style={{ marginTop: "1rem" }}
                 control={
-                  <Fab variant="extended" onClick={this.openCommandWindow}>
+                  <Fab variant="extended" onClick={this.openCommandWindow} disabled={this.state.commandWindowBtnDisabled}>
                     <DesktopWindowsIcon />
                     Open command Window
                   </Fab>
@@ -187,7 +191,7 @@ class Settings extends React.Component {
                 data-balloon-pos="up"
                 style={{ marginTop: "0.5rem" }}
                 control={
-                  <Fab variant="extended" onClick={this.openCommandWindow}>
+                  <Fab variant="extended" onClick={this.openCommandWindow} disabled={this.state.commandWindowBtnDisabled}>
                     <DesktopWindowsIcon />
                     Open command Window
                   </Fab>
