@@ -19,6 +19,7 @@
     "generate:locale": "node scripts/generate-locale",
     "generate:command": "node scripts/generate-command",
     "delete:command": "node scripts/delete-command",
+    "delete:locale": "node scripts/delete-locale",
     "fix:prettier": "prettier --write $(git ls-files --others --exclude-standard)"
   },
   "husky": {

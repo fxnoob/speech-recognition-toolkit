@@ -208,7 +208,7 @@ export default function SRS() {
                   justifyContent: "center"
                 }}
               >
-                <span>{i18nService.getMessage("symbol_list_label")}</span>
+                <span style={{ textAlign: 'center' }}>{i18nService.getMessage("symbol_list_label")}</span>
               </TableCell>
               <TableCell align="left">
                 <a
