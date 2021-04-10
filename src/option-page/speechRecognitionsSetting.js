@@ -141,6 +141,25 @@ export default function SRS() {
               </TableCell>
             </TableRow>
             {/*capitalization setting ends*/}
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("command_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=commands"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
             {/*expander list link starts*/}
             <TableRow>
               <TableCell
@@ -176,25 +195,6 @@ export default function SRS() {
                 <a
                   style={{ color: "#551a8b", textDecoration: "underline" }}
                   href="/option.html?path=emojis"
-                >
-                  {i18nService.getMessage("check_here_label")}
-                </a>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell
-                style={{
-                  paddding: "1rem",
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <span>{i18nService.getMessage("command_list_label")}</span>
-              </TableCell>
-              <TableCell align="left">
-                <a
-                  style={{ color: "#551a8b", textDecoration: "underline" }}
-                  href="/option.html?path=commands"
                 >
                   {i18nService.getMessage("check_here_label")}
                 </a>

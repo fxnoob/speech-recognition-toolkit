@@ -211,6 +211,9 @@ export default function TextExpanderView() {
           </TableBody>
         </Table>
       </TableContainer>
+      <div style={{ textAlign: "center", marginTop: "1rem" }}>
+        Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
+      </div>
     </>
   );
 }
