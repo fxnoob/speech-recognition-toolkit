@@ -23,3 +23,6 @@ export { default as hide_unhideCommand } from "./hide_unhide";
 export { default as mediaCommand } from "./media";
 export { default as typeCommand } from "./type";
 export { default as expandCommand } from "./expand";
+export { default as showCommand } from "./show";
+export { default as hideCommand } from "./hide";
+export { default as clickCommand } from "./click";
