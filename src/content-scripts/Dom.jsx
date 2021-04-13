@@ -14,7 +14,7 @@ import dom from "../services/dom";
 import commandService from "../services/commandsService";
 import db from "../services/db";
 import guid from "../services/guid";
-
+import gridService from "../services/gridService";
 const styles = theme => ({
   close: {
     padding: theme.spacing(0.5)
@@ -28,7 +28,7 @@ class Dom extends React.Component {
     open: false,
     messageInfo: {},
     mountAckId: "",
-    commandPopupOpened: false,
+    commandPopupOpened: false
   };
 
   componentDidMount() {
@@ -102,8 +102,17 @@ class Dom extends React.Component {
           );
         } else {
           if (options.mode == "speech") {
-            const indentedText = text != "." ? ` ${text}` : text;
-            dom.simulateWordTyping(indentedText, this.mountAckId);
+            if (gridService.isGridOn) {
+              const instructionInfo = `
+          Say 'Show grid #grid_number' for more details.
+          Say 'Click #grid_number' to click on grid.
+          Say 'hide grid' to hide the grid.
+          `;
+              this.handleClick(instructionInfo)();
+            } else {
+              const indentedText = text != "." ? ` ${text}` : text;
+              dom.simulateWordTyping(indentedText, this.mountAckId);
+            }
           }
         }
       }
@@ -192,7 +201,12 @@ class Dom extends React.Component {
               scrolling="no"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
+              style={{
+                border: "none",
+                height: "50px",
+                width: "50px",
+                overflow: "hidden"
+              }}
             >
               <IconButton
                 key="copyclose"
@@ -211,7 +225,12 @@ class Dom extends React.Component {
               key="iframe-1"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
+              style={{
+                border: "none",
+                height: "50px",
+                width: "50px",
+                overflow: "hidden"
+              }}
             >
               <IconButton
                 key="speakText"
@@ -230,7 +249,12 @@ class Dom extends React.Component {
               key="iframe-2"
               initialContent={initialContent()}
               className="default-iframe"
-              style={{ border: "none", height: "50px", width: "50px", overflow: "hidden" }}
+              style={{
+                border: "none",
+                height: "50px",
+                width: "50px",
+                overflow: "hidden"
+              }}
             >
               <IconButton
                 key="closeclose"
@@ -244,7 +268,12 @@ class Dom extends React.Component {
             </IFrame>
           ]}
         />
-        {commandPopupOpened && <CommandPopup open={commandPopupOpened} togglePopupWindow={this.togglePopupWindow} />}
+        {commandPopupOpened && 
+          <CommandPopup
+            open={commandPopupOpened}
+            togglePopupWindow={this.togglePopupWindow}
+          />
+        }
       </div>
     );
   }

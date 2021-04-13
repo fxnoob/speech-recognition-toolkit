@@ -9,6 +9,7 @@ import chromeService from "../services/chromeService";
 import voice from "../services/voiceService";
 import db from "../services/db";
 import i18nService from "../services/i18nService";
+import { isUrlAllowed } from "../services/helper";
 import "./Settings.css";
 
 class Settings extends React.Component {
@@ -41,8 +42,7 @@ class Settings extends React.Component {
     });
     await db.set({ permissionGranted: state == "granted" });
     const activeTab = await chromeService.tryGetActiveTab();
-    chromeService.sendMessageToActiveTab({}, () => {});
-    this.setState({ commandWindowBtnDisabled: activeTab? false : true });
+    this.setState({ commandWindowBtnDisabled: !isUrlAllowed(activeTab.url) });
   };
   openOptionPage() {
     chromeService.openHelpPage("");

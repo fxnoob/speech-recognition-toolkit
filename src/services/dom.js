@@ -298,6 +298,21 @@ class Dom {
       this.keypress(charCode, activeElement);
     });
   }
+  simulateMouseLeftClick(iClientX, iClientY, document = document) {
+    const oElement = document.body;
+    let oEvent;
+    if (document.createEventObject) { //For IE
+      oEvent = document.createEventObject();
+      oEvent.clientX = iClientX;
+      oEvent.clientY = iClientY;
+      oElement.fireEvent("onclick", oEvent);
+    } else {
+      oEvent = document.createEvent("MouseEvents");
+      oEvent.initMouseEvent("click", true, true, document.defaultView, 0, 0, 0,
+        iClientX, iClientY/*, false, false, false, false, 0, null*/);
+      oElement.dispatchEvent(oEvent);
+    }
+  }
 }
 const dom = new Dom();
 export default dom;

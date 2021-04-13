@@ -53,10 +53,40 @@ const getElementsDimensions = el => {
     ...offset(el)
   };
 };
+
+
+//
+// URL Matching test - to verify we can talk to this URL
+//
+
+var matches = ['http://*/*', 'https://*/*', 'ftp://*/*', 'file://*/*'],
+  noMatches = [/^https?:\/\/chrome.google.com\/.*$/];
+
+function isUrlAllowed(url) {
+  // couldn't find a better way to tell if executeScript
+  // wouldn't work -- so just testing against known urls
+  // for now...
+  var r, i;
+  for (i = noMatches.length - 1; i >= 0; i--) {
+    if (noMatches[i].test(url)) {
+      return false;
+    }
+  }
+  for (i = matches.length - 1; i >= 0; i--) {
+    r = new RegExp('^' + matches[i].replace(/\*/g, '.*') + '$');
+    if (r.test(url)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+
 export {
   asyncTryCatch,
   getNamespace,
   validURL,
   generateGuid,
-  getElementsDimensions
+  getElementsDimensions,
+  isUrlAllowed
 };

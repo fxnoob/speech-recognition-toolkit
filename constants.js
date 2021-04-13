@@ -20,6 +20,21 @@ const constants = {
     mountAckId: guid.generateGuid(), // <div id='${mountAckId}'/> for checking if content script is mounted in the frame
     mountId: guid.generateGuid()
   },
+  populate: {
+    textExpanderMap: {
+      form: `Hello user,
+
+Just wanted to follow up and see if you still need any help regarding your promotional tile images.
+
+If so, please reply back even if it is just to say you are still working on this, or if the issue is solved.
+
+If you do not respond, I'll be closing this case.
+
+Don't worry though, if you do respond, the case will reopen and we can pick up our conversation where we left off.
+
+Regards,`
+    },
+  },
   support: {
     googleFormLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdTB0tFZHTnRe5_L64lYCbJvQm4XD5zGoSubYYYqBEOYXkIGA/viewform?usp=sf_link",

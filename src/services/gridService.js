@@ -1,5 +1,6 @@
 import { generateGuid, getElementsDimensions } from "./helper";
 import domService from "./dom";
+
 class Grid {
   constructor() {
     this.mountEl = null;
@@ -7,16 +8,15 @@ class Grid {
     this.isGridOn = false;
     this.mountIdSyle = `display:grid; grid-template-columns: auto auto auto auto; top: 0px; left: 0px; width: 100%;height: 100%; z-index: 543454; position: absolute; background: transparent;`;
     this.initiailized = false;
-    this.mainId = "gridview";
+    this.mainId = "1EEE9BB1_3609_8616_1F61_E8986CD17E83";
     this.grids = [];
   }
   gridCss(level) {
     const fontSize = 4 - level;
-    const divCss = `color: #09131b;display: flex;justify-content: center;align-items: center;border: 2px solid black;font-size: ${fontSize}em;`;
-    return divCss;
+    return `color: #09131b;display: flex;justify-content: center;align-items: center;border: 2px solid black;font-size: ${fontSize}em;box-shadow: 0 8px 6px -6px black;`;
   }
   initiailizeGrid() {
-    if (domService.inIframe() && this.initiailized) return;
+    if (domService.inIframe() || this.initiailized) return;
     const el = document.createElement("div");
     this.mountEl = el;
     el.id = this.mainId;
@@ -45,6 +45,7 @@ class Grid {
     }
     const randomId = generateGuid();
     const divCss = this.gridCss(this.level);
+    const spanCss = "margin: 0px;padding: 0px;border: solid 1px #555;background-color: #eed;-moz-box-shadow: 10px -10px rgba(0,0,0,0.6);-webkit-box-shadow: -1px 0px rgb(0 0 0 / 60%);-o-box-shadow: 10px -10px rgba(0,0,0,0.6);border-radius: 18rem;";
     let grid = "";
     let k = 1;
     const ids = [];
@@ -53,7 +54,7 @@ class Grid {
       for (let j = 0; j < n; j++) {
         const id = `${randomId}_${k}`;
         ids.push(id);
-        row += `<div id="${id}" data="${k}" style="${divCss}"> ${k} </div>`;
+        row += `<div id="${id}" data="${k}" style="${divCss}"> <span style="${spanCss}">${k}</span> </div>`;
         k++;
       }
       grid += row;

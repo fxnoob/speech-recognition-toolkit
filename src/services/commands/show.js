@@ -45,6 +45,12 @@ export default async langId => {
         if (arg == "") {
           gridService.initiailizeGrid();
           gridService.createGrid(4, 4);
+          const instructionInfo= `
+          Say '${alias0} ${grid_label} #grid_number' for more details. \
+          Say 'Click #grid_number' to click on grid. \
+          Say 'hide grid' to hide the grid.
+          `;
+          callback(instructionInfo);
         } else {
           const n = parseInt(arg);
           if (Number.isInteger(n) && n > 0 && n < 17) {
