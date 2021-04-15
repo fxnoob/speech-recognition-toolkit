@@ -22,6 +22,7 @@ export default async langId => {
     match: [alias0],
     exec: async (text, options, callback) => {
       // write your logic here.
+      const { dom, ackId } = options;
       if (gridService.isGridOn) {
         const n = parseInt(text.trim());
         if (n > 0 && n < 17) {
@@ -32,8 +33,22 @@ export default async langId => {
           gridService.mountEl.style.display = "none";
           gridService.deleteGrid();
           setTimeout(() => {
-            document.elementFromPoint(locX, locY).click();
-          }, 100);
+            const el = document.elementFromPoint(locX, locY);
+            el?.click();
+            el?.focus();
+            setTimeout(() => {
+              dom.simulateWordTyping("\n\r", ackId);
+              dom.simulateWordTyping("\n", ackId);
+              const activeElement = dom.findFocusedElem(document, ackId);
+              dom.keypress([13, false, false, false], activeElement);
+              const ke = new KeyboardEvent("keydown", {
+                bubbles: true,
+                cancelable: true,
+                keyCode: 13
+              });
+              activeElement.dispatchEvent(ke);
+            }, 0);
+          }, 20);
         }
       }
     }

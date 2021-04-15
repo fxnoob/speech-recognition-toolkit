@@ -3,11 +3,20 @@ import TranslationWorker from "./translation.worker";
 import guid from "./guid";
 
 class Translation {
-  constructor() {}
+  constructor() {
+    this.translations = {};
+    this.translationWorker = null;
+  }
   getMessage(langId, key) {
     return new Promise(resolve => {
-      if (chromeService.getScriptContext() == "background") {
-        const translationWorker = new TranslationWorker();
+      const mapKey = `${langId}_${key}`;
+      if (this.translations[mapKey]) {
+        resolve(this.translations[mapKey]);
+      } else if (chromeService.getScriptContext() == "background") {
+        if (!this.translationWorker) {
+          this.translationWorker = new TranslationWorker();
+        }
+        const translationWorker = this.translationWorker;
         const uid = guid.generateGuid();
         translationWorker.postMessage({
           langId,
@@ -18,6 +27,7 @@ class Translation {
         translationWorker.addEventListener("message", emojiRes => {
           const { message, uid: resUid } = emojiRes.data;
           if (uid == resUid) {
+            this.translations[mapKey] = message.message;
             resolve(message.message);
           }
         });
@@ -26,6 +36,7 @@ class Translation {
           "/get_translated_message",
           { langId, key },
           res => {
+            this.translations[mapKey] = res.message;
             resolve(res.message);
           }
         );

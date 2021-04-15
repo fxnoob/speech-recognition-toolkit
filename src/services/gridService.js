@@ -1,4 +1,4 @@
-import { generateGuid, getElementsDimensions } from "./helper";
+import { generateGuid, getElementsDimensions, getScroll } from "./helper";
 import domService from "./dom";
 
 class Grid {
@@ -6,10 +6,13 @@ class Grid {
     this.mountEl = null;
     this.level = 0;
     this.isGridOn = false;
-    this.mountIdSyle = `display:grid; grid-template-columns: auto auto auto auto; top: 0px; left: 0px; width: 100%;height: 100%; z-index: 543454; position: absolute; background: transparent;`;
     this.initiailized = false;
     this.mainId = "1EEE9BB1_3609_8616_1F61_E8986CD17E83";
     this.grids = [];
+  }
+  get mountIdSyle() {
+    const [x, y] = getScroll();
+    return `display:grid; grid-template-columns: auto auto auto auto; top: ${y}px; left: ${x}px; width: 100%;height: 100%; z-index: 543454; position: absolute; background: transparent;`;
   }
   gridCss(level) {
     const fontSize = 4 - level;
@@ -45,7 +48,8 @@ class Grid {
     }
     const randomId = generateGuid();
     const divCss = this.gridCss(this.level);
-    const spanCss = "margin: 0px;padding: 0px;border: solid 1px #555;background-color: #eed;-moz-box-shadow: 10px -10px rgba(0,0,0,0.6);-webkit-box-shadow: -1px 0px rgb(0 0 0 / 60%);-o-box-shadow: 10px -10px rgba(0,0,0,0.6);border-radius: 18rem;";
+    const spanCss =
+      "margin: 0px;padding: 0px;border: solid 1px #555;background-color: #eed;-moz-box-shadow: 10px -10px rgba(0,0,0,0.6);-webkit-box-shadow: -1px 0px rgb(0 0 0 / 60%);-o-box-shadow: 10px -10px rgba(0,0,0,0.6);border-radius: 18rem;";
     let grid = "";
     let k = 1;
     const ids = [];
