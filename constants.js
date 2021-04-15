@@ -33,11 +33,13 @@ If you do not respond, I'll be closing this case.
 Don't worry though, if you do respond, the case will reopen and we can pick up our conversation where we left off.
 
 Regards,`
-    },
+    }
   },
   support: {
     googleFormLink:
       "https://docs.google.com/forms/d/e/1FAIpQLSdTB0tFZHTnRe5_L64lYCbJvQm4XD5zGoSubYYYqBEOYXkIGA/viewform?usp=sf_link",
+    uninstallFormLink:
+      "https://docs.google.com/forms/d/e/1FAIpQLScyR2hhU-o9cFGI7UuoIiSDdaKqVkXU0ElEDU96Ldp3YlqVFQ/viewform?usp=sf_link",
     howtoVideoLink: "https://www.youtube.com/watch?v=YdESohE6ESQ"
   }
 };
