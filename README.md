@@ -78,7 +78,43 @@ Hitesh Saini - [fxnoob](https://github.com/fxnoob)
 ## License
 This project is maintained under MIT license
 
-## List of available commands
+## List of available voice commands
 
 [Click here](https://github.com/fxnoob/speech-recognition-toolkit/blob/master/COMMANDS.md)
 
+## Available yarn commands
+
+````
+yarn start 
+````
+Start development build in watch mode
+
+
+````
+yarn build 
+````
+Create Production build
+
+
+````
+yarn generate:command 
+````
+Generate command template for new command. [Read more](https://github.com/fxnoob/speech-recognition-toolkit/wiki/How-to-create-new-Command-for-this-extension-%3F)
+
+
+````
+yarn delete:command  
+````
+Delete existing command and it's config files. [Read more](https://github.com/fxnoob/speech-recognition-toolkit/wiki/How-to-delete-the-command-experimental-created-command-%3F)
+
+
+````
+yarn generate:locale  
+````
+Generate locale key-value pair for all the languages.
+
+
+````
+yarn delete:locale  
+````
+Delete locale key-value pair for all the languages.
