@@ -42,19 +42,24 @@ class Commands {
    * @memberOf Commands
    * */
   async getCommands(langId, type = "frontend") {
-    const cmd = [];
-    try {
-      for (const commandName in cmds) {
-        const commandInstance = await cmds[commandName](langId);
-        if (commandInstance.type == type) {
-          cmd.push(commandInstance);
+    if (this.commands[`${langId}-${type}`]) {
+      return this.commands[`${langId}-${type}`];
+    } else {
+      const cmd = [];
+      try {
+        for (const commandName in cmds) {
+          const commandInstance = await cmds[commandName](langId);
+          if (commandInstance.type == type) {
+            cmd.push(commandInstance);
+          }
         }
+        this.commands[`${langId}-${type}`] = cmd;
+      } catch (e) {
+        // eslint-disable-next-line no-console
+        console.log({ e });
       }
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log({ e });
+      return cmd;
     }
-    return cmd;
   }
   /**
    * Get all commands

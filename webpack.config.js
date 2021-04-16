@@ -6,6 +6,7 @@ const { manifestTransform } = require("./scripts/transform");
 
 module.exports = (env, options) => {
   return {
+    mode: 'production',
     entry: {
       content_script: "./src/content-scripts/index.js",
       background: "./src/background.js",

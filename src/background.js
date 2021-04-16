@@ -243,7 +243,7 @@ class Main {
    * @memberOf Main
    * */
   setFeedbackFormUrl = () => {
-    chrome.runtime.setUninstallURL(constants.support.googleFormLink);
+    chrome.runtime.setUninstallURL(constants.support.uninstallFormLink);
   };
 }
 

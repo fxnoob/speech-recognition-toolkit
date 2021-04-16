@@ -1,8 +1,27 @@
+/**
+ *Basic utilities related to dom
+ * @Class Dom
+ * */
 class Dom {
   constructor() {
     this.lastFocusedElementDocument = null;
     this.lastTypedWord = null;
     this.mode = ""; // speech | text
+    this.defaultOptions = {
+      pointerX: 0,
+      pointerY: 0,
+      button: 0,
+      ctrlKey: false,
+      altKey: false,
+      shiftKey: false,
+      metaKey: false,
+      bubbles: true,
+      cancelable: false
+    };
+    this.eventMatchers = {
+      HTMLEvents: /^(?:load|unload|abort|error|select|change|submit|reset|focus|blur|resize|scroll)$/,
+      MouseEvents: /^(?:click|dblclick|mouse(?:down|up|over|move|out))$/
+    };
   }
   /**
    * If the focus is in an iframe with a different origin, then attempting to
@@ -225,16 +244,9 @@ class Dom {
       !alt
     ) {
       var textEvent = document.createEvent("TextEvent");
-      textEvent.initTextEvent(
-        "textInput",
-        true,
-        true,
-        null, key, 9, "en-US");
+      textEvent.initTextEvent("textInput", true, true, null, key, 9, "en-US");
       el.dispatchEvent(textEvent);
-      document.execCommand(
-        "InsertText",
-        false,
-        key);
+      document.execCommand("InsertText", false, key);
     }
     el.dispatchEvent(new KeyboardEvent("keyup", keyObj));
     if (ctrl)
@@ -298,20 +310,64 @@ class Dom {
       this.keypress(charCode, activeElement);
     });
   }
-  simulateMouseLeftClick(iClientX, iClientY, document = document) {
-    const oElement = document.body;
-    let oEvent;
-    if (document.createEventObject) { //For IE
-      oEvent = document.createEventObject();
-      oEvent.clientX = iClientX;
-      oEvent.clientY = iClientY;
-      oElement.fireEvent("onclick", oEvent);
-    } else {
-      oEvent = document.createEvent("MouseEvents");
-      oEvent.initMouseEvent("click", true, true, document.defaultView, 0, 0, 0,
-        iClientX, iClientY/*, false, false, false, false, 0, null*/);
-      oElement.dispatchEvent(oEvent);
+  /**
+   * Simulate Dom Event
+   * @param element DomElement
+   * @param eventName string event name
+   */
+  simulateEvent(element, eventName) {
+    function extend(destination, source) {
+      for (let property in source) destination[property] = source[property];
+      return destination;
     }
+    var options = extend(this.defaultOptions, arguments[2] || {});
+    var oEvent,
+      eventType = null;
+
+    for (let name in this.eventMatchers) {
+      if (this.eventMatchers[name].test(eventName)) {
+        eventType = name;
+        break;
+      }
+    }
+
+    if (!eventType)
+      throw new SyntaxError(
+        "Only HTMLEvents and MouseEvents interfaces are supported"
+      );
+
+    if (document.createEvent) {
+      oEvent = document.createEvent(eventType);
+      if (eventType == "HTMLEvents") {
+        oEvent.initEvent(eventName, options.bubbles, options.cancelable);
+      } else {
+        oEvent.initMouseEvent(
+          eventName,
+          options.bubbles,
+          options.cancelable,
+          document.defaultView,
+          options.button,
+          options.pointerX,
+          options.pointerY,
+          options.pointerX,
+          options.pointerY,
+          options.ctrlKey,
+          options.altKey,
+          options.shiftKey,
+          options.metaKey,
+          options.button,
+          element
+        );
+      }
+      element.dispatchEvent(oEvent);
+    } else {
+      options.clientX = options.pointerX;
+      options.clientY = options.pointerY;
+      let evt = document.createEventObject();
+      oEvent = extend(evt, options);
+      element.fireEvent("on" + eventName, oEvent);
+    }
+    return element;
   }
 }
 const dom = new Dom();

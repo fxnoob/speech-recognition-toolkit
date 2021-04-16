@@ -59,7 +59,7 @@ const getElementsDimensions = el => {
 // URL Matching test - to verify we can talk to this URL
 //
 
-var matches = ['http://*/*', 'https://*/*', 'ftp://*/*', 'file://*/*'],
+const matches = ['http://*/*', 'https://*/*', 'ftp://*/*', 'file://*/*'],
   noMatches = [/^https?:\/\/chrome.google.com\/.*$/];
 
 function isUrlAllowed(url) {
@@ -80,13 +80,28 @@ function isUrlAllowed(url) {
   }
   return false;
 }
-
-
+/**
+ * Get scroll value of the page.
+ * */
+function getScroll() {
+  if (window.pageYOffset != undefined) {
+    return [pageXOffset, pageYOffset];
+  } else {
+    var sx, sy, d = document,
+      r = d.documentElement,
+      b = d.body;
+    sx = r.scrollLeft || b.scrollLeft || 0;
+    sy = r.scrollTop || b.scrollTop || 0;
+    return [sx, sy];
+  }
+}
 export {
   asyncTryCatch,
   getNamespace,
   validURL,
   generateGuid,
+  offset,
   getElementsDimensions,
-  isUrlAllowed
+  isUrlAllowed,
+  getScroll
 };

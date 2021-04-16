@@ -1,3 +1,5 @@
+Install from [Chrome Web Store](https://chrome.google.com/webstore/detail/speech-recognition-toolki/hmpihaioaacpehkghnkmnmgmihalkmdf)
+
 Fill out any web form by using only your voice!
 Just select the Input field and Dictate your voice.! 
 An easy to use speech synthesis and recognition tool for your browser!
@@ -33,48 +35,86 @@ Features:
  - Supports On Start Feature.
  - Supports always listen mode.
  - Free to use
- 
- ### List of available commands
- 
-`emoji` : say 'emoji emoji_name' to insert emoji with your voice from list of 1800 emojis.
 
-`undo`: say 'undo' to undo anything on page.
+## Prerequisites
+- yarn v1.17.3
+- node v12.3.1
 
-`redo`: say 'redo' to redo anything on page.
+### Setup
+````
+git clone https://github.com/fxnoob/speech-recognition-toolkit.git
+cd speech-recognition-toolkit
+yarn
+````
 
-`new line`: say 'newline' to insert new line at the current curosor position.
+### Build
+#### For Local Development
+```
+yarn
+yarn start
+```
 
-`Press Enter`: say 'Press enter' to press enter (for form submission purposes)
+#### For Production Release
+```
+yarn build
+```
 
-`calculate`: say calculate 'expression' to calculate to math. eg. 'calculate five times fifteen' to calculate 5*15  
-    
-`math symbol`: say 'math symbol square root' to type √a (math symbol). checkout whole list of symbols from link given on homepage.
+### Install
+1. Navigate to `chrome://extensions/` in Google Chrome.
+2. Turn on `developer mode`.
+   ![](doc/screenshot/developer-mode.png)
+3. Click on `Load unpacked`.
+   ![](doc/screenshot/load-unpacked.png)
+4. Select `build` directory.
+5. **Speech Recognition Toolkit** should now up in extension list.
+   ![](doc/screenshot/extension.png)
 
-`Mindfulness`: Say 'mindfulness' to insert a random mindfulness thought in the text box.
+## List of available voice commands
 
-`scroll down`: Say 'scroll down' to scroll down the current page.
+[Click here](https://github.com/fxnoob/speech-recognition-toolkit/blob/master/COMMANDS.md)
 
-`scroll up`: Say 'scroll up' to scroll up the current page.
+## Available yarn commands
 
-`next`: Say 'next' to navigate to next element(mimics tab navigation).
+````
+yarn start 
+````
+Start development build in watch mode
 
-`previous`: Say 'previous' to navigate to previous element (mimics tab navigation).
 
-`undo all`: Say 'undo all' to undo everything on current page upto 20 depth.
+````
+yarn build 
+````
+Create Production build
 
-`Arrow`: Say 'Arrow left' to type left arrow key. (play 2048 game with your voice on https://play2048.co/ by saying arrow left , arrow right, arrow up, arrow down).
 
-`Go to`: Say 'Go to facebook.com' to open new tab for facebook.com 
+````
+yarn generate:command 
+````
+Generate command template for new command. [Read more](https://github.com/fxnoob/speech-recognition-toolkit/wiki/How-to-create-new-Command-for-this-extension-%3F)
 
-`Remind me`: Say 'Remind me in 9 minutes' to set a reminder for 10 minutes.
 
-`search`: Say 'search cat' to search cat on google or on youtube
+````
+yarn delete:command  
+````
+Delete existing command and it's config files. [Read more](https://github.com/fxnoob/speech-recognition-toolkit/wiki/How-to-delete-the-command-experimental-created-command-%3F)
 
-`bookmark`: Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark or Say go to bookmark bookmark_name to open matched bookmark url
 
-`Play`: Say 'Play song_name' to play the song from youtube.
+````
+yarn generate:locale  
+````
+Generate locale key-value pair for all the languages.
 
-`Highlight`: Say 'Highlight keyword' to highlight keyword on current page.
 
-#### Note: 
-Commands name changes according to the selected language.
+````
+yarn delete:locale  
+````
+Delete locale key-value pair for all the languages.
+
+## Contributing
+When contributing to this repository, please first discuss the change you wish to make via [issues](https://github.com/fxnoob/speech-recognition-toolkit/issues) with the owner of this repository before making a change.
+
+## Author
+Hitesh Saini - [fxnoob](https://github.com/fxnoob)
+
+## License
+This project is maintained under MIT license

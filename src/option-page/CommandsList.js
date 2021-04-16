@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Container from "@material-ui/core/Container";
 import MUIDataTable from "mui-datatables";
-import Checkbox from '@material-ui/core/Checkbox';
+import Checkbox from "@material-ui/core/Checkbox";
 import db from "../services/db";
 import i18n from "../services/i18nService";
 import commandService from "../services/commandsService";
@@ -15,6 +15,7 @@ const CommandList = () => {
   ];
   const [language, setLanguage] = useState("");
   const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const handleChange = (id, arr) => async () => {
     arr[id] = !arr[id];
     await db.set({ commandsConfig: arr });
@@ -27,25 +28,33 @@ const CommandList = () => {
     const { commandsConfig } = await db.get("commandsConfig") || {};
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
-    const commandsJson = await commandService.getAllCommands(defaultLanguage.code);
+    const commandsJson = await commandService.getAllCommands(
+      defaultLanguage.code
+    );
     const commandsList = commandsJson.map(command => {
-      return [command.match.join(', '), command.description, <Checkbox key={command.id}
-        checked={commandService.isCommandEnabled(commandsConfig, command.id)}
-        onChange={handleChange(command.id, commandsConfig)}
-        inputProps={{ 'aria-label': 'enable/disable command' }}
-      />];
+      return [
+        command.match.join(", "),
+        command.description,
+        <Checkbox
+          key={command.id}
+          checked={commandService.isCommandEnabled(commandsConfig, command.id)}
+          onChange={handleChange(command.id, commandsConfig)}
+          inputProps={{ "aria-label": "enable/disable command" }}
+        />
+      ];
     });
     setData(commandsList);
+    setLoading(false);
   };
   const options = {
-    rowsPerPage: 20,
+    rowsPerPage: 25,
     customToolbarSelect: () => {},
-    selectableRows: 'none'
+    selectableRows: "none"
   };
   return (
     <Container>
       <div>
-        <Paper style={{ padding: '1rem' }}>
+        <Paper style={{ padding: "1rem" }}>
           <a
             style={{
               textDecoration: "underline",
@@ -58,12 +67,16 @@ const CommandList = () => {
           </a>
         </Paper>
       </div>
-      <MUIDataTable
-        title={`${i18n.getMessage("commands_list_label")}: ${language}`}
-        data={data}
-        columns={columns}
-        options={options}
-      />
+      {loading ? 
+        <div id="spinner-1" />
+        : 
+        <MUIDataTable
+          title={`${i18n.getMessage("commands_list_label")}: ${language}`}
+          data={data}
+          columns={columns}
+          options={options}
+        />
+      }
       <div style={{ textAlign: "center", marginTop: "1rem" }}>
         Creator @ <a href="mailto:fxnoob71@gmail.com">Hitesh Saini</a>
       </div>
