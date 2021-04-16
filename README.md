@@ -68,15 +68,6 @@ yarn build
 4. Select `build` directory.
 5. **Speech Recognition Toolkit** should now up in extension list.
    ![](doc/screenshot/extension.png)
-   
-## Contributing
-When contributing to this repository, please first discuss the change you wish to make via [issues](https://github.com/fxnoob/speech-recognition-toolkit/issues) with the owner of this repository before making a change.
-
-## Author
-Hitesh Saini - [fxnoob](https://github.com/fxnoob)
-
-## License
-This project is maintained under MIT license
 
 ## List of available voice commands
 
@@ -118,3 +109,12 @@ Generate locale key-value pair for all the languages.
 yarn delete:locale  
 ````
 Delete locale key-value pair for all the languages.
+
+## Contributing
+When contributing to this repository, please first discuss the change you wish to make via [issues](https://github.com/fxnoob/speech-recognition-toolkit/issues) with the owner of this repository before making a change.
+
+## Author
+Hitesh Saini - [fxnoob](https://github.com/fxnoob)
+
+## License
+This project is maintained under MIT license
