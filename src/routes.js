@@ -11,18 +11,22 @@ const translationWorker = new TranslationWorker();
 
 const Routes = async (voice, contextMenus) => {
   let commands;
+  let textReplacementObj = {};
   MessagePassing.setOptions({ emojiWorker, translationWorker });
-  const { defaultLanguage, capitalization } = await db.get(
+  const { defaultLanguage, capitalization, textReplacementMap } = await db.get(
     "defaultLanguage",
-    "capitalization"
+    "capitalization",
+    "textReplacementMap"
   );
+  textReplacementObj = textReplacementMap;
   // fetch backend commands
   commands = await commandService.getCommands(defaultLanguage.code, "backend");
   /** process text given by speech input or text input */
   const processInput = async (text, options) => {
-    // eslint-disable-next-line no-console
-    console.log("recognised text:", text);
-    if (capitalization & text != "") {
+    if (textReplacementObj[text]) {
+      text = textReplacementObj[text];
+    }
+    else if (capitalization & text != "") {
       text[0].toUpperCase();
     }
     await commandService.getMatchingCommand(commands, text, options, (command, args) => {
@@ -179,6 +183,17 @@ const Routes = async (voice, contextMenus) => {
         res(message);
       }
     });
+  });
+  // open text replacement view
+  MessagePassing.on("/open_text_replacement_view", async req => {
+    const { text } = req;
+    const helpUrl = `${chrome.runtime.getURL("option.html")}?path=textReplacer&text=${text}`;
+    chrome.tabs.create({ url: helpUrl }, () => {});
+  });
+  // open text replacement view
+  MessagePassing.on("/update_text_replacement_obj", async () => {
+    const { textReplacementMap } = await db.get('textReplacementMap');
+    textReplacementObj = textReplacementMap;
   });
 };
 

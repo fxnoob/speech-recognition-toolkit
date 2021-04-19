@@ -169,11 +169,15 @@ class Dom extends React.Component {
     document.execCommand("copy");
     document.body.removeChild(dummy);
   };
+  openTextReplacer = text => () => {
+    if (!dom.inIframe()) {
+      messagePassing.sendMessage("/open_text_replacement_view", { text: text });
+    }
+  }
   render() {
     // eslint-disable-next-line react/prop-types
     const { classes } = this.props;
     const { messageInfo, commandPopupOpened } = this.state;
-
     return (
       <div>
         <Snackbar
@@ -194,7 +198,15 @@ class Dom extends React.Component {
           ContentProps={{
             "aria-describedby": "message-id"
           }}
-          message={<span id="message-id">{messageInfo.message}</span>}
+          message={
+            <span
+              onClick={this.openTextReplacer(messageInfo.message)}
+              style={{ color: 'darkpink !important', textDecoration: 'underline', cursor: 'pointer' }}
+              id="message-id"
+            >
+              {messageInfo.message}
+            </span>
+          }
           action={[
             // eslint-disable-next-line react/jsx-key
             <IFrame

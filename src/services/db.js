@@ -23,6 +23,7 @@ class Schema {
       mountAckId: constants.contentScript.mountAckId,
       capitalization: false,
       textExpanderMap: constants.populate.textExpanderMap,
+      textReplacementMap: constants.populate.textReplacementMap,
     };
   }
 }

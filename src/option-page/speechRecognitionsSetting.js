@@ -160,6 +160,27 @@ export default function SRS() {
                 </a>
               </TableCell>
             </TableRow>
+            {/*replacement list link starts*/}
+            <TableRow>
+              <TableCell
+                style={{
+                  paddding: "1rem",
+                  display: "flex",
+                  justifyContent: "center"
+                }}
+              >
+                <span>{i18nService.getMessage("see_replacement_list_label")}</span>
+              </TableCell>
+              <TableCell align="left">
+                <a
+                  style={{ color: "#551a8b", textDecoration: "underline" }}
+                  href="/option.html?path=textReplacer"
+                >
+                  {i18nService.getMessage("check_here_label")}
+                </a>
+              </TableCell>
+            </TableRow>
+            {/*replacement link link ends*/}
             {/*expander list link starts*/}
             <TableRow>
               <TableCell
