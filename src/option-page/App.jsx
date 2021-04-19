@@ -1,20 +1,20 @@
-import React from "react";
+import React, { Suspense } from "react";
 import PrivateRoute from "../components/PrivateRoute";
 import "balloon-css";
-import Permissions from "./Permissions";
-import NavBar from "./NavBar";
-import Home from "./home";
-import CommandsList from "./CommandsList";
-import EmojiList from "./EmojisList";
-import SymbolList from "./SymbolList";
-import MorseCodePanel from "./MorseCodePanel";
-import TextEpanderView from "./TextExpanderView";
-import TextReplacementView from "./TextReplacementView";
 
+const Permissions = React.lazy(() => import("./Permissions"));
+const NavBar = React.lazy(() => import("./NavBar"));
+const Home = React.lazy(() => import("./home"));
+const CommandsList = React.lazy(() => import("./CommandsList"));
+const EmojiList = React.lazy(() => import("./EmojisList"));
+const SymbolList = React.lazy(() => import("./SymbolList"));
+const MorseCodePanel = React.lazy(() => import("./MorseCodePanel"));
+const TextEpanderView = React.lazy(() => import("./TextExpanderView"));
+const TextReplacementView = React.lazy(() => import("./TextReplacementView"));
 const queryString = require("query-string");
+
 const parsed = queryString.parse(location.search);
 const path = decodeURIComponent(parsed.path ? parsed.path : "home");
-
 const GetView = ({ path }) => {
   let view;
   switch (path) {
@@ -48,12 +48,11 @@ const GetView = ({ path }) => {
   }
   return view;
 };
-
 export default function App() {
   return (
-    <>
+    <Suspense fallback={<div style={{ textAlign: 'center' }}>Loading...</div>}>
       <NavBar />
       <GetView path={path} />
-    </>
+    </Suspense>
   );
 }

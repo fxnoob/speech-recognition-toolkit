@@ -49,7 +49,7 @@ function TextExpansionDialog(props) {
       onClose={handleClose}
       aria-labelledby="form-dialog-title"
     >
-      <DialogTitle id="form-dialog-title">Create Text Expansion</DialogTitle>
+      <DialogTitle id="form-dialog-title">Create Text Replacement</DialogTitle>
       <DialogContent>
         <TextField
           autoFocus
@@ -67,7 +67,7 @@ function TextExpansionDialog(props) {
           fullWidth
           onChange={handleChange("textExp")}
           id="outlined-multiline-static"
-          label="Text Expansion"
+          label="Text Replacement"
           value={textExpVal}
           multiline
           rows={4}
@@ -142,7 +142,7 @@ export default function TextReplacementView() {
         <TableCell style={{ display: "flex", justifyContent: "center" }}>
           <IconButton
             color="primary"
-            aria-label="Edit text expansion"
+            aria-label="Edit text replacement"
             onClick={handleExpansionEdit(key)}
             component="span"
           >
@@ -150,7 +150,7 @@ export default function TextReplacementView() {
           </IconButton>
           <IconButton
             color="primary"
-            aria-label="Delete text expansion"
+            aria-label="Delete text replacement"
             onClick={handleExpansionDelete(key)}
             component="span"
           >
