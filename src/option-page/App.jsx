@@ -9,6 +9,7 @@ import EmojiList from "./EmojisList";
 import SymbolList from "./SymbolList";
 import MorseCodePanel from "./MorseCodePanel";
 import TextEpanderView from "./TextExpanderView";
+import TextReplacementView from "./TextReplacementView";
 
 const queryString = require("query-string");
 const parsed = queryString.parse(location.search);
@@ -18,7 +19,7 @@ const GetView = ({ path }) => {
   let view;
   switch (path) {
   case "home":
-    view =
+    view = 
         <PrivateRoute component={Home} permissionComponent={Permissions} />
     ;
     break;
@@ -37,8 +38,11 @@ const GetView = ({ path }) => {
   case "textExpander":
     view = <TextEpanderView />;
     break;
+  case "textReplacer":
+    view = <TextReplacementView />;
+    break;
   default:
-    view =
+    view = 
         <PrivateRoute component={Home} permissionComponent={Permissions} />
     ;
   }

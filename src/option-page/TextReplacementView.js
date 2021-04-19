@@ -16,7 +16,10 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import db from "../services/db";
-
+import messagePassing from "../services/messagePassing";
+const queryString = require("query-string");
+const parsed = queryString.parse(location.search);
+const textRep = decodeURIComponent(parsed.text ? parsed.text : "");
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -83,42 +86,44 @@ function TextExpansionDialog(props) {
   );
 }
 
-export default function TextExpanderView() {
+export default function TextReplacementView() {
   const classes = useStyles();
-  const [text, setText] = useState("");
+  const [text, setText] = useState(textRep);
   const [textExp, setTextExp] = useState("");
-  const [open, setOpen] = useState(false);
-  const [textExpanderMapObj, setTextExpanderMapObj] = React.useState({});
+  const [open, setOpen] = useState(textRep != "");
+  const [textReplacementMapObj, setTextReplacementMapObj] = React.useState({});
   React.useEffect(() => {
     init().catch(() => {});
   }, []);
   const init = async () => {
-    const { textExpanderMap } = await db.get("textExpanderMap");
-    setTextExpanderMapObj(textExpanderMap);
+    const { textReplacementMap } = await db.get("textReplacementMap");
+    setTextReplacementMapObj(textReplacementMap);
   };
   const AddTextExp = () => {
     setOpen(true);
   };
   const handleSave = async () => {
     if (text == "" || textExp == "") return;
-    const { textExpanderMap } = await db.get("textExpanderMap");
-    textExpanderMap[text] = textExp;
-    await db.set({ textExpanderMap: textExpanderMap });
-    setTextExpanderMapObj(textExpanderMap);
+    const { textReplacementMap } = await db.get("textReplacementMap");
+    textReplacementMap[text] = textExp;
+    await db.set({ textReplacementMap: textReplacementMap });
+    setTextReplacementMapObj(textReplacementMap);
     setOpen(false);
     setText("");
     setTextExp("");
+    messagePassing.sendMessage('/update_text_replacement_obj', {}, ()=>{});
   };
   const handleExpansionEdit = key => () => {
     setText(key);
-    setTextExp(textExpanderMapObj[key]);
+    setTextExp(textReplacementMapObj[key]);
     setOpen(true);
   };
   const handleExpansionDelete = key => async () => {
-    let textExpanderMap = Object.assign({}, textExpanderMapObj);
-    delete textExpanderMap[key];
-    await db.set({ textExpanderMap: textExpanderMap });
-    setTextExpanderMapObj(textExpanderMap);
+    let textReplacementMap = Object.assign({}, textReplacementMapObj);
+    delete textReplacementMap[key];
+    await db.set({ textReplacementMap: textReplacementMap });
+    setTextReplacementMapObj(textReplacementMap);
+    messagePassing.sendMessage('/update_text_replacement_obj', {}, ()=>{});
   };
   const handleChange = key => event => {
     if (key == "text") {
@@ -127,12 +132,12 @@ export default function TextExpanderView() {
       setTextExp(event.target.value);
     }
   };
-  const generate = textExpanderMap => {
-    return Object.keys(textExpanderMap).map(key => 
+  const generate = textReplacementMap => {
+    return Object.keys(textReplacementMap).map(key => 
       <TableRow key={key}>
         <TableCell style={{ textAlign: "center" }}>{key}</TableCell>
         <TableCell style={{ textAlign: "center" }}>
-          {textExpanderMap[key]}
+          {textReplacementMap[key]}
         </TableCell>
         <TableCell style={{ display: "flex", justifyContent: "center" }}>
           <IconButton
@@ -201,13 +206,13 @@ export default function TextExpanderView() {
                 Text
               </TableCell>
               <TableCell style={{ textAlign: "center", color: "white" }}>
-                Text Expansion
+                Replacement
               </TableCell>
               <TableCell style={{ textAlign: "center", color: "white" }}>
                 Action
               </TableCell>
             </TableRow>
-            {generate(textExpanderMapObj)}
+            {generate(textReplacementMapObj)}
           </TableBody>
         </Table>
       </TableContainer>

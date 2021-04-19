@@ -30,7 +30,7 @@ const EmojiList = () => {
               color: "blue",
               fontWeight: "bold"
             }}
-            href="chrome-extension://dhchliggbldmkpkechbiplegjnhjjomi/option.html?path=home"
+            href="/option.html?path=home"
           >
             Go Back
           </a>
