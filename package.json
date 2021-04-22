@@ -1,6 +1,6 @@
 {
   "name": "speech-recognition-tool",
-  "version": "4.2.3",
+  "version": "4.2.4",
   "description": "voice commands for chrome browser",
   "main": "index.js",
   "scripts": {

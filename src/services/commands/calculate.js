@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import * as math from "mathjs";
+import { parser } from "mathjs";
 const parse = content => {
-  const parser = math.parser();
+  const parser = parser();
   parser.set('pow', (numStr, powerStr) => {
     const power = parseInt(powerStr);
     const num = parseInt(numStr);

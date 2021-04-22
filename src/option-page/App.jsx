@@ -7,7 +7,6 @@ const NavBar = React.lazy(() => import("./NavBar"));
 const Home = React.lazy(() => import("./home"));
 const CommandsList = React.lazy(() => import("./CommandsList"));
 const EmojiList = React.lazy(() => import("./EmojisList"));
-const SymbolList = React.lazy(() => import("./SymbolList"));
 const MorseCodePanel = React.lazy(() => import("./MorseCodePanel"));
 const TextEpanderView = React.lazy(() => import("./TextExpanderView"));
 const TextReplacementView = React.lazy(() => import("./TextReplacementView"));
@@ -28,9 +27,6 @@ const GetView = ({ path }) => {
     break;
   case "emojis":
     view = <EmojiList />;
-    break;
-  case "symbols":
-    view = <SymbolList />;
     break;
   case "mcode":
     view = <MorseCodePanel />;

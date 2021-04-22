@@ -1,5 +1,3 @@
-import chromeService from "./chromeService";
-
 class MessagePassing {
   constructor() {
     this.routes = {};
@@ -16,6 +14,17 @@ class MessagePassing {
   on(path, callback) {
     this.routes[path] = callback;
   }
+  getActiveTab = winId => {
+    const config = { active: true, currentWindow: true };
+    if (winId) {
+      config.windowId = winId;
+    }
+    return new Promise(resolve => {
+      chrome.tabs.query(config, tabs => {
+        resolve(tabs[0]);
+      });
+    });
+  };
   addListener() {
     chrome.runtime.onMessage.addListener((req, sender, res) => {
       if (!this.listenerMode) return;
@@ -36,17 +45,26 @@ class MessagePassing {
     chrome.runtime.sendMessage(data, callback);
   }
   async sendMessageToActiveTab(path, payload, callback) {
-    const data = payload;
-    data.path = path;
-    await chromeService.sendMessageToActiveTab(data, callback);
+    payload.path = path;
+    try {
+      const tab = await this.getActiveTab();
+      chrome.tabs.sendMessage(tab.id, payload, callback);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log(e);
+    }
+    return true;
   }
   async sendMessageToTab(path, id, payload, callback) {
-    const data = payload;
-    data.path = path;
-    await chromeService.sendMessageToTab(id, data, callback);
+    payload.path = path;
+    try {
+      chrome.tabs.sendMessage(id, payload, callback);
+    } catch (e) {
+      // eslint-disable-next-line no-console
+      console.log(e);
+    }
+    return true;
   }
 }
-
 const mp = new MessagePassing();
-
 export default mp;

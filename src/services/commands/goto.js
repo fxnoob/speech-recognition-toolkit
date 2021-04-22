@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars,no-console */
 import translationService from "../translationService";
-import WebsiteNames from "../popular_websites_files/en";
 import chromeService from "../chromeService";
 import { validURL } from "../helper";
 export default async langId => {
@@ -58,9 +57,7 @@ export default async langId => {
       } else if (validURL(text)) {
         url = `https://${text}`;
       } else {
-        url = WebsiteNames[text]
-          ? `https://${WebsiteNames[text]}`
-          : `https://www.google.com/search?q=${text}`;
+        url = `https://www.google.com/search?q=${text}`;
       }
       chromeService.openUrl(url);
       callback();
