@@ -39,7 +39,8 @@ const parse = content => {
     pi: Math.PI
   };
   Object.keys(symbols).map(key => {
-    content = content.replace(key, symbols[key]);
+    const regKey = new RegExp(key, 'g');
+    content = content.replace(regKey, symbols[key]);
   });
   const regexes = [
     { match: /(\w+) percent of (\w+)/, replacement: "percentOf($2, $1)" },

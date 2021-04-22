@@ -67,9 +67,11 @@ export default async langId => {
       if (originalText == alias0 || originalText == alias3) {
         // play or unmute
         media.unmutePage();
+        callback("Unmuted the page!");
       } else if (originalText == alias1 || originalText == alias2) {
         // pause or mute
         media.mutePage();
+        callback("Muted the page!");
       }
     }
   };

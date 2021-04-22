@@ -1,6 +1,8 @@
-import jQuery from "jquery";
-const $ = jQuery;
-
+import gridService from "./gridService";
+/**
+ * Tab navigation related abstractions.
+ * @class Tab
+ * */
 class Tab {
   constructor() {
     this.Store = [];
@@ -15,7 +17,7 @@ class Tab {
   }
 
   init = () => {
-    if (typeof document == 'undefined') return;
+    if (typeof document == "undefined") return;
     const focussableElements =
       'a:not([disabled]), button:not([disabled]), input[type=text]:not([disabled]), [tabindex]:not([disabled]):not([tabindex="-1"])';
     let focussable = Array.prototype.filter.call(
@@ -29,23 +31,50 @@ class Tab {
   };
 
   nextElement = () => {
-    this.setActiveElement();
-    if (this.Store.length !== 0) {
+    if (gridService.isGridOn) {
       this.currentActiveIndex++;
-      const index = this.currentActiveIndex % this.Store.length;
-      this.applyCSS(this.Store[index], "add");
-      this.Store[index].focus();
-      if (index !== 0) this.applyCSS(this.Store[index - 1], "remove");
+      const id = gridService.grids[this.currentActiveIndex % 16];
+      const el = document.getElementById(id);
+      this.applyCSS(el, "add");
+      el.focus();
+      gridService.focusedEl = this.currentActiveIndex % 16;
+      const prevIndex = gridService.grids[this.currentActiveIndex - 1];
+      if (prevIndex != 0) {
+        const prevEl = document.getElementById(prevIndex);
+        this.applyCSS(prevEl, "remove");
+      }
+
+    } else {
+      this.setActiveElement();
+      if (this.Store.length !== 0) {
+        this.currentActiveIndex++;
+        const index = this.currentActiveIndex % this.Store.length;
+        this.applyCSS(this.Store[index], "add");
+        this.Store[index].focus();
+        if (index !== 0) this.applyCSS(this.Store[index - 1], "remove");
+      }
     }
   };
 
   previousElement = () => {
-    if (this.currentActiveIndex > -1 && this.Store.length > 0) {
+    if (gridService.isGridOn) {
       this.currentActiveIndex--;
-      const index = this.currentActiveIndex;
-      this.applyCSS(this.Store[index], "add");
-      this.applyCSS(this.Store[index + 1], "remove");
-      this.Store[index].focus();
+      const id = gridService.grids[this.currentActiveIndex % 16];
+      const el = document.getElementById(id);
+      this.applyCSS(el, "add");
+      el.focus();
+      gridService.focusedEl = this.currentActiveIndex % 16;
+      const prevIndex = gridService.grids[this.currentActiveIndex + 1];
+      const prevEl = document.getElementById(prevIndex);
+      this.applyCSS(prevEl, "remove");
+    } else {
+      if (this.currentActiveIndex > -1 && this.Store.length > 0) {
+        this.currentActiveIndex--;
+        const index = this.currentActiveIndex;
+        this.applyCSS(this.Store[index], "add");
+        this.applyCSS(this.Store[index + 1], "remove");
+        this.Store[index].focus();
+      }
     }
   };
 
@@ -61,18 +90,15 @@ class Tab {
 
   applyCSS = (selector, action) => {
     if (action === "add") {
-      $(selector).css("border", "5px solid #111");
-      $(selector).css("box-shadow", "35px 35px 7px #99999");
-      $(selector).css("border-bottom-right-radius", "15px");
-      $(selector).css("border--radius", "25px");
+      selector.style.border = "5px solid #111";
+      selector.style.boxShadow = "35px 35px 7px #99999";
+      selector.style.borderBottomRightRadius = "15px";
     } else {
-      $(selector).css("border", "");
-      $(selector).css("box-shadow", "");
-      $(selector).css("border-bottom-right-radius", "");
-      $(selector).css("border--radius", "");
+      selector.style.border = "";
+      selector.style.boxShadow = "";
+      selector.style.borderBottomRightRadius = "";
     }
   };
 }
-
 const tabNavigation = new Tab();
 export default tabNavigation;

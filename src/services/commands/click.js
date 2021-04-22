@@ -26,29 +26,9 @@ export default async langId => {
       if (gridService.isGridOn) {
         const n = parseInt(text.trim());
         if (n > 0 && n < 17) {
-          const el = document.getElementById(gridService.grids[n - 1]);
-          const { left, top, width, height } = getElementsDimensions(el);
-          const locY = Math.floor(top + height / 2);
-          const locX = Math.floor(left + width / 2);
-          gridService.mountEl.style.display = "none";
-          gridService.deleteGrid();
-          setTimeout(() => {
-            const el = document.elementFromPoint(locX, locY);
-            el?.click();
-            el?.focus();
-            setTimeout(() => {
-              dom.simulateWordTyping("\n\r", ackId);
-              dom.simulateWordTyping("\n", ackId);
-              const activeElement = dom.findFocusedElem(document, ackId);
-              dom.keypress([13, false, false, false], activeElement);
-              const ke = new KeyboardEvent("keydown", {
-                bubbles: true,
-                cancelable: true,
-                keyCode: 13
-              });
-              activeElement.dispatchEvent(ke);
-            }, 0);
-          }, 20);
+          gridService.click(n, { dom, ackId });
+        } else {
+          callback('You can click only 1-16 boxes!');
         }
       }
     }

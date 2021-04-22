@@ -94,7 +94,6 @@
     "esm": "^3.2.25",
     "execa": "latest",
     "inquirer": "^7.3.3",
-    "jquery": "^3.5.1",
     "jss": "^10.4.0",
     "jss-rtl": "^0.3.0",
     "lodash": "^4.17.21",

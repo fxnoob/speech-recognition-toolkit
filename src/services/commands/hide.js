@@ -36,11 +36,17 @@ export default async langId => {
       // write your logic here.
       if (text == number_label || text == numbers_label) {
         // hide number from links.
+        // hide gird from page.
+        if (gridService.isGridOn) {
+          gridService.deleteGrid();
+        }
       } else if (text == grid_label || text == grids_label) {
         // hide gird from page.
         if (gridService.isGridOn) {
           gridService.deleteGrid();
         }
+      } else {
+        callback(`Say ${alias0} ${number_label} or ${alias0} ${grid_label}`);
       }
     }
   };
