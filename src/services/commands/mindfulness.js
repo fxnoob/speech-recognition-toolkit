@@ -14,10 +14,11 @@ export default async langId => {
     description: description,
     condition: "exact",
     match: [commandAlias],
-    exec: async (text, options) => {
+    exec: async (text, options, callback) => {
       const { dom, ackId } = options;
       const randomTip = tips[Math.floor(Math.random() * tips.length)];
       dom.simulateWordTyping(` ${randomTip}`, ackId);
+      callback(randomTip);
     }
   };
 };

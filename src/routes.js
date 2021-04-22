@@ -171,18 +171,28 @@ const Routes = async (voice, contextMenus) => {
       }
     });
   });
+  /**
+   * Save translated keys here incase translation requested before, return from this object.
+   * */
+  const translationsLocal = {};
   // get translated key
   MessagePassing.on("/get_translated_message", async (req, res, options) => {
     const { langId, key } = req;
-    const { translationWorker } = options;
-    const uid = guid.generateGuid();
-    translationWorker.postMessage({ langId, key, uid, action: "getMessage" });
-    translationWorker.addEventListener("message", emojiRes => {
-      const { message, uid: resUid } = emojiRes.data;
-      if (uid == resUid) {
-        res(message);
-      }
-    });
+    const localKey = `${langId}-${key}`;
+    if (translationsLocal[localKey]) {
+      res(translationsLocal[localKey]);
+    } else {
+      const { translationWorker } = options;
+      const uid = guid.generateGuid();
+      translationWorker.postMessage({ langId, key, uid, action: "getMessage" });
+      translationWorker.addEventListener("message", emojiRes => {
+        const { message, uid: resUid } = emojiRes.data;
+        if (uid == resUid) {
+          translationsLocal[localKey] = message;
+          res(message);
+        }
+      });
+    }
   });
   // open text replacement view
   MessagePassing.on("/open_text_replacement_view", async req => {
@@ -190,10 +200,23 @@ const Routes = async (voice, contextMenus) => {
     const helpUrl = `${chrome.runtime.getURL("option.html")}?path=textReplacer&text=${text}`;
     chrome.tabs.create({ url: helpUrl }, () => {});
   });
-  // open text replacement view
+  // update text replacement view
   MessagePassing.on("/update_text_replacement_obj", async () => {
     const { textReplacementMap } = await db.get('textReplacementMap');
     textReplacementObj = textReplacementMap;
+  });
+  // send list of commands[translated] list.
+  MessagePassing.on("/commands_list_translated", async (req, res) => {
+    const { langId } = req;
+    const allCommands = await commandService.getAllCommands(langId);
+    const commandsList = allCommands.map(command => {
+      return [
+        command.match.join(", "),
+        command.description,
+        command.id
+      ];
+    });
+    res(commandsList);
   });
 };
 

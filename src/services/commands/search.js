@@ -24,8 +24,9 @@ export default async langId => {
     match: [commandAlias, commandAlias2, alias3],
     exec: async (text, options, callback) => {
       const { originalText } = options;
-      // starts with youtube
-      if (originalText.startsWith(alias3)) {
+      if (originalText.startsWith(commandAlias2)) {
+        chromeService.openUrl(`https://www.google.com/search?q=${text}`);
+      } else if (originalText.startsWith(alias3)) {// search on youtube
         chromeService.openUrl(
           `https://www.youtube.com/results?search_query=${text}`
         );

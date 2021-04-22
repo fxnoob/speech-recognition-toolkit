@@ -9,6 +9,7 @@ class Grid {
     this.initiailized = false;
     this.mainId = "1EEE9BB1_3609_8616_1F61_E8986CD17E83";
     this.grids = [];
+    this.focusedEl = null ;
   }
   get mountIdSyle() {
     const [x, y] = getScroll();
@@ -75,6 +76,35 @@ class Grid {
     this.initiailized = false;
     this.isGridOn = false;
     this.level = 0;
+    this.focusedEl = null;
+  }
+  click(n, options) {
+    const { dom, ackId } = options;
+    if (n > 0 && n < 17) {
+      const el = document.getElementById(this.grids[n - 1]);
+      const { left, top, width, height } = getElementsDimensions(el);
+      const locY = Math.floor(top + height / 2);
+      const locX = Math.floor(left + width / 2);
+      this.mountEl.style.display = "none";
+      this.deleteGrid();
+      setTimeout(() => {
+        const el = document.elementFromPoint(locX, locY);
+        el?.click();
+        el?.focus();
+        setTimeout(() => {
+          dom.simulateWordTyping("\n\r", ackId);
+          dom.simulateWordTyping("\n", ackId);
+          const activeElement = dom.findFocusedElem(document, ackId);
+          dom.keypress([13, false, false, false], activeElement);
+          const ke = new KeyboardEvent("keydown", {
+            bubbles: true,
+            cancelable: true,
+            keyCode: 13
+          });
+          activeElement.dispatchEvent(ke);
+        }, 0);
+      }, 20);
+    }
   }
 }
 const gridService = new Grid();

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import translationService from "../translationService";
+import gridService from "../gridService";
 export default async langId => {
   const alias0 = await translationService.getMessage(
     langId,
@@ -31,6 +32,9 @@ export default async langId => {
     exec: async (text, options, callback) => {
       // write your logic here.
       const { originalText } = options;
+      if (gridService.isGridOn) {
+        gridService.deleteGrid();
+      }
       if (originalText == alias0) {// scroll up
         window.scrollBy(0, -100);
       } else if (originalText == alias1) {// scroll down

@@ -4,6 +4,7 @@ import MUIDataTable from "mui-datatables";
 import Checkbox from "@material-ui/core/Checkbox";
 import db from "../services/db";
 import i18n from "../services/i18nService";
+import messagePassing from "../services/messagePassing";
 import commandService from "../services/commandsService";
 import Paper from "@material-ui/core/Paper";
 
@@ -28,23 +29,22 @@ const CommandList = () => {
     const { commandsConfig } = await db.get("commandsConfig") || {};
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
-    const commandsJson = await commandService.getAllCommands(
-      defaultLanguage.code
-    );
-    const commandsList = commandsJson.map(command => {
-      return [
-        command.match.join(", "),
-        command.description,
-        <Checkbox
-          key={command.id}
-          checked={commandService.isCommandEnabled(commandsConfig, command.id)}
-          onChange={handleChange(command.id, commandsConfig)}
-          inputProps={{ "aria-label": "enable/disable command" }}
-        />
-      ];
+    messagePassing.sendMessage("/commands_list_translated", { langId: defaultLanguage.label, }, data => {
+      const commandsList = data.map(dat => {
+        return [
+          dat[0],
+          dat[1],
+          <Checkbox
+            key={dat[2]}
+            checked={commandService.isCommandEnabled(commandsConfig, dat[2])}
+            onChange={handleChange(dat[2], commandsConfig)}
+            inputProps={{ "aria-label": "enable/disable command" }}
+          />
+        ];
+      });
+      setData(commandsList);
+      setLoading(false);
     });
-    setData(commandsList);
-    setLoading(false);
   };
   const options = {
     rowsPerPage: 25,

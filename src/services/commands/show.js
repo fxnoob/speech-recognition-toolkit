@@ -56,6 +56,8 @@ export default async langId => {
           if (Number.isInteger(n) && n > 0 && n < 17) {
             const el = document.getElementById("gridview");
             gridService.createGrid(4, 4, n);
+          } else {
+            callback(`Grid number can be 1 to 16 only.`);
           }
         }
       }
