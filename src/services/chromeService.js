@@ -1,115 +1,16 @@
 import { asyncTryCatch, getNamespace } from "./helper";
+const chrome = getNamespace();
 /**
  * Abstraction class to interact with the chrome extension API
  *
  * @export
  * @class ChromeApi
  */
-const chrome = getNamespace();
 class ChromeApi {
-  // chrome notification api
-  notification = chrome.notifications;
-  constructor() {}
-
-  /**
-   * Get tab info based on it's tab id
-   *
-   * @method
-   * @param {Number} tab id
-   * @memberof ChromeApi
-   */
-  getTabInfo = tabId => {
-    return new Promise(resolve => {
-      chrome.tabs.get(tabId, tab => {
-        resolve(tab);
-      });
-    });
-  };
-
-  sendMessageFromContentScript = (infoObj, callback) => {
-    const objString = JSON.stringify(infoObj);
-    chrome.runtime.sendMessage(objString, response => {
-      callback(response);
-    });
-  };
-  /**
-   *
-   *Remove url from history
-   *
-   *@method
-   *@param {string} url
-   *@memberof ChromeApi
-   */
-  removeFromHistory = url => {
-    chrome.history.deleteUrl({ url: url });
-  };
-
-  /**
-   * Create incognito window
-   *
-   * @method
-   * @memberof ChromeApi
-   */
-  createIncognitoWindow = () => {
-    return new Promise(resolve => {
-      chrome.windows.create({ focused: true, incognito: true }, win => {
-        resolve(win);
-      });
-    });
-  };
-
-  /**
-   * Get window information
-   *
-   * @method
-   *@param {Number} window id
-   * @memberof ChromeApi
-   */
-  getWindow = winId => {
-    return new Promise(resolve => {
-      chrome.windows.get(winId, info => {
-        resolve(info);
-      });
-    });
-  };
-
-  /**
-   * Callback of chrome.windows.onRemoved
-   *
-   * @method
-   *@param {Number} window id
-   * @memberof ChromeApi
-   */
-  onIncognitoWindowClosed = winId => {
-    if (this.win) {
-      if (this.win.id === winId) this.win = false;
-    }
-  };
-
-  /**
-   * Create new tab in incognito window
-   *
-   * @method
-   *@param {Object} obj Object argument for createIncognitoTab
-   * @param {string} obj.url url for the tab
-   * @memberof ChromeApi
-   */
-  createIncognitoTab = async obj => {
-    if (!this.win) {
-      this.win = await this.createIncognitoWindow();
-      const tab = await this.getActiveTab(this.win.id);
-      chrome.tabs.update(tab.id, obj);
-    } else {
-      chrome.tabs.create({
-        ...obj,
-        selected: true,
-        active: true,
-        windowId: this.win.id
-      });
-    }
-    chrome.windows.update(this.win.id, { focused: true });
-    return true;
-  };
+  constructor() {
+    // chrome notification api
+    this.notification = chrome.notifications;
+  }
 
   /**
    * Get active tab of the given window
@@ -138,88 +39,6 @@ class ChromeApi {
    */
   tryGetActiveTab = async winId => {
     return asyncTryCatch(this.getActiveTab, winId);
-  };
-
-  sendMessageToActiveTab = async (payload, callback) => {
-    try {
-      const tab = await this.getActiveTab();
-      chrome.tabs.sendMessage(tab.id, payload, callback);
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(e);
-    }
-    return true;
-  };
-
-  sendMessageToTab = async (id, payload, callback) => {
-    try {
-      chrome.tabs.sendMessage(id, payload, callback);
-    } catch (e) {
-      // eslint-disable-next-line no-console
-      console.log(e);
-    }
-    return true;
-  };
-
-  traverseTabs = callback => {
-    chrome.tabs.query({}, tabs => {
-      callback(tabs);
-    });
-  };
-
-  shiftToLeftTab = () => {
-    this.traverseTabs(tabs => {
-      let activeTabIndex = -1;
-      for (let i = 0; i < tabs.length; i++) {
-        if (tabs[i].active) {
-          activeTabIndex = i;
-          break;
-        }
-      }
-      if (activeTabIndex === 0) {
-        chrome.tabs.update(tabs[tabs.length - 2].id, { highlighted: true });
-      } else {
-        chrome.tabs.update(tabs[activeTabIndex - 1].id, { highlighted: true });
-      }
-      chrome.tabs.update(tabs[activeTabIndex].id, { highlighted: false });
-    });
-  };
-
-  takeScreenShot = () => {
-    return new Promise((resolve, reject) => {
-      try {
-        chrome.tabs.captureVisibleTab(screenshotUrl => {
-          resolve(screenshotUrl);
-        });
-      } catch (e) {
-        reject(e);
-      }
-    });
-  };
-
-  shiftToRightTab = () => {
-    this.traverseTabs(tabs => {
-      let activeTabIndex = -1;
-      for (let i = 0; i < tabs.length; i++) {
-        if (tabs[i].active) {
-          activeTabIndex = i;
-          break;
-        }
-      }
-      if (activeTabIndex === tabs.length - 1) {
-        chrome.tabs.update(tabs[0].id, { highlighted: true });
-      } else {
-        chrome.tabs.update(tabs[activeTabIndex + 1].id, { highlighted: true });
-      }
-      chrome.tabs.update(tabs[activeTabIndex].id, { highlighted: false });
-    });
-  };
-
-  closeActiveTab = callback => {
-    chrome.tabs.query({ active: true }, tabs => {
-      const tabId = tabs[0].id;
-      chrome.tabs.remove(tabId, callback);
-    });
   };
 
   /**
@@ -334,28 +153,7 @@ class ChromeApi {
     data.path = path;
     chrome.runtime.sendMessage(data, callback);
   }
-  /**
-   * request for permission access
-   * @param permissions string array
-   * @memberOf ChromeApi
-   * @method
-   * */
-  async requestPermission(...permissions) {
-    return new Promise((resolve) => {
-      chrome.permissions.request(
-        {
-          permissions: permissions
-        },
-        granted => {
-          if (granted) {
-            resolve(true);
-          } else {
-            resolve(false);
-          }
-        }
-      );
-    });
-  }
+
   /**
    * Bookmarks namespace
    * @class bookmark

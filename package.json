@@ -1,6 +1,6 @@
 {
   "name": "speech-recognition-tool",
-  "version": "4.2.3",
+  "version": "4.2.4",
   "description": "voice commands for chrome browser",
   "main": "index.js",
   "scripts": {
@@ -98,7 +98,6 @@
     "jss-rtl": "^0.3.0",
     "lodash": "^4.17.21",
     "luxon": "^1.26.0",
-    "mark.js": "^8.11.1",
     "mathjs": "^7.5.1",
     "mui-datatables": "^3.5.0",
     "ncp": "^2.0.0",

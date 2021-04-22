@@ -1,21 +1,21 @@
 /* eslint-disable no-unused-vars */
-import * as math from "mathjs";
+import { parser } from "mathjs";
 const parse = content => {
-  const parser = math.parser();
-  parser.set('pow', (numStr, powerStr) => {
+  const parser1 = parser();
+  parser1.set('pow', (numStr, powerStr) => {
     const power = parseInt(powerStr);
     const num = parseInt(numStr);
     return Math.pow(num, power);
   });
-  parser.set('hcos', (numStr) => {
+  parser1.set('hcos', (numStr) => {
     const num = parseInt(numStr);
     return Math.cosh(num);
   });
-  parser.set('hsin', (numStr) => {
+  parser1.set('hsin', (numStr) => {
     const num = parseInt(numStr);
     return Math.sinh(num);
   });
-  parser.set('percentOf', (numStr, percentStr) => {
+  parser1.set('percentOf', (numStr, percentStr) => {
     const num = parseInt(numStr);
     const percent = parseInt(percentStr);
     return num * percent / 100;
@@ -63,7 +63,7 @@ const parse = content => {
   regexes.map(regex => {
     content = content.replace(regex.match, regex.replacement);
   });
-  return parser.evaluate(content);
+  return parser1.evaluate(content);
 };
 export default async langId => {
   const commandAlias = "calculate";

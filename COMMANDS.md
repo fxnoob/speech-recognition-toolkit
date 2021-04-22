@@ -18,10 +18,6 @@
 
 `calculate`: say calculate 'expression' to calculate to math. eg. 'calculate five times fifteen' to calculate 5*15
 
-`math symbol`: say 'math symbol square root' to type √a (math symbol). checkout whole list of symbols from link given on homepage.
-
-`Mindfulness`: Say 'mindfulness' to insert a random mindfulness thought in the text box.
-
 `scroll down`: Say 'scroll down' to scroll down the current page.
 
 `scroll up`: Say 'scroll up' to scroll up the current page.
@@ -47,8 +43,6 @@
 `bookmark`: Say 'Bookmark this page' or 'remove bookmark' to add or remove bookmark or Say go to bookmark bookmark_name to open matched bookmark url
 
 `Play`: Say 'Play song_name' to play the song from youtube.
-
-`Highlight`: Say 'Highlight keyword' to highlight keyword on current page.
 
 #### Note:
 Commands name changes according to the selected language.
