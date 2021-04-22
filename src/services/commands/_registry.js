@@ -12,7 +12,6 @@ export { default as arrowCommand } from "./arrow";
 export { default as remindMeCommand } from "./remind_me";
 export { default as searchGoogleCommand } from "./search";
 export { default as bookmarkCommand } from "./bookmark";
-export { default as findCommand } from "./find";
 export { default as undo_redoCommand } from "./undo_redo";
 export { default as tab_navigationCommand } from "./tab_navigation";
 export { default as scrollCommand } from "./scroll";
