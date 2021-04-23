@@ -29,7 +29,7 @@ const CommandList = () => {
     const { commandsConfig } = await db.get("commandsConfig") || {};
     const { defaultLanguage } = await db.get("defaultLanguage");
     setLanguage(defaultLanguage.label);
-    messagePassing.sendMessage("/commands_list_translated", { langId: defaultLanguage.label, }, data => {
+    messagePassing.sendMessage("/commands_list_translated", { langId: defaultLanguage.code, }, data => {
       const commandsList = data.map(dat => {
         return [
           dat[0],
